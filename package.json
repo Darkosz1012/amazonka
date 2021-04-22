@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
+    "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js",
@@ -22,7 +23,9 @@
     "dependencies": {
         "apollo-server": "^2.23.0",
         "crypto": "^1.0.1",
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
+        "mongoose": "^5.12.5",
         "graphql": "^15.5.0",
         "jsonwebtoken": "^8.5.1"
     },

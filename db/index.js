@@ -15,8 +15,9 @@ mongoose.connect(process.env.DATABASE_LINK, {
     useUnifiedTopology: true,
 });
 
+export let User = mongoose.model("User", UserSchema);
+
 export default {
-    User: mongoose.model("User", UserSchema),
     Competition: mongoose.model("Competition", CompetitionSchema),
     CompetitionDetails: mongoose.model(
         "CompetitionDetails",

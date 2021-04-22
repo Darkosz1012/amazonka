@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    type: { type: String },
+    type: {
+        type: String,
+        required: true,
+    },
     competition_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
@@ -24,11 +27,18 @@ export default new mongoose.Schema({
             participant_id: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Participant",
+                required: true,
             },
             //Participants extended ref
-            name: { type: String },
+            name: {
+                type: String,
+                required: true,
+            },
             //Participants extended ref
-            surname: { type: String },
+            surname: {
+                type: String,
+                required: true,
+            },
         },
     ],
 });

@@ -1,8 +1,14 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    name: { type: String },
-    gender: { type: String },
+    name: {
+        type: String,
+        required: true,
+    },
+    gender: {
+        type: String,
+        required: true,
+    },
     start_stand: { type: Number },
     end_stand: { type: Number },
     distance: [

@@ -4,10 +4,12 @@ export default new mongoose.Schema({
     competition_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
+        required: true,
     },
     category_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Category",
+        required: true,
     },
     participant1: {
         id: {
@@ -42,5 +44,6 @@ export default new mongoose.Schema({
 
     round: {
         type: Number,
+        required: true,
     },
 });

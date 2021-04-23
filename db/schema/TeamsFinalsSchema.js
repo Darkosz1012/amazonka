@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    type: { type: String, required: true },
-
+    type: {
+        type: String,
+        required: true,
+    },
     competition_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
@@ -45,5 +47,6 @@ export default new mongoose.Schema({
     },
     round: {
         type: Number,
+        required: true,
     },
 });

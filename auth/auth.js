@@ -13,7 +13,6 @@ export async function verify(password, hash) {
 
 export async function hash(password) {
     return new Promise((resolve, reject) => {
-        // generate random 16 bytes long salt
         const salt = crypto.randomBytes(16).toString("hex");
 
         crypto.scrypt(password, salt, 64, (err, derivedKey) => {
@@ -24,20 +23,25 @@ export async function hash(password) {
 }
 
 export function authenticateToken(req) {
-    // Gather the jwt access token from the request header
-    const authHeader = req.headers["authorization"];
-    const token = authHeader && authHeader.split(" ")[1];
+    const token = extractTokenFromHeader(req);
+
     if (token == null) {
         throw {
-            message: "No token."
-        };// if there isn't any token
+            message: "No token.",
+        };
     }
+
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
         if (err) {
             throw {
-                message: "Authentication failed."
+                message: "Authentication failed.",
             };
         }
         return user;
     });
+}
+
+function extractTokenFromHeader(req) {
+    const authHeader = req.headers["authorization"];
+    return authHeader && authHeader.split(" ")[1];
 }

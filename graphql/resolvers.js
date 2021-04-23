@@ -10,7 +10,7 @@ export default {
                 .exec();
 
             if (await verify(password, result.password)) {
-                return createUserToken(result, username);
+                return createUserToken(result);
             } else {
                 throw {
                     message: "Username or password incorrect.",
@@ -24,27 +24,27 @@ export default {
                 password: await hash(password),
             });
             let result = await newUser.save();
-            return createUserToken(result, username);
+            return createUserToken(result);
         },
     },
 };
 
-function createUserToken(user, username) {
+function createUserToken(user) {
     return {
         accessToken: createJWT(user, "1m"),
         refreshToken: createJWT(user, "1h"),
         user_id: user._id,
-        username,
+        username: user.username,
     };
 }
 
-function createJWT(user, time) {
+function createJWT(user, expiration_time) {
     return jwt.sign(
         {
             username: user.username,
             id: user._id,
         },
         process.env.ACCESS_TOKEN_SECRET,
-        { expiresIn: time }
+        { expiresIn: expiration_time }
     );
 }

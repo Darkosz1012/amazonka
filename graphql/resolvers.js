@@ -29,34 +29,22 @@ export default {
     },
 };
 
-function createUserToken(result, username) {
-    let token = createJWT();
-
+function createUserToken(user, username) {
     return {
-        accessToken: token.accessToken,
-        refreshToken: token.refreshToken,
-        user_id: result._id,
+        accessToken: createJWT(user, "1m"),
+        refreshToken: createJWT(user, "1h"),
+        user_id: user._id,
         username,
     };
 }
 
-function createJWT(result) {
-    return {
-        accessToken: jwt.sign(
-            {
-                username: result.username,
-                id: result._id,
-            },
-            process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "1m" }
-        ),
-        refreshToken: jwt.sign(
-            {
-                username: result.username,
-                id: result._id,
-            },
-            process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "1h" }
-        ),
-    };
+function createJWT(user, time) {
+    return jwt.sign(
+        {
+            username: user.username,
+            id: user._id,
+        },
+        process.env.ACCESS_TOKEN_SECRET,
+        { expiresIn: time }
+    );
 }

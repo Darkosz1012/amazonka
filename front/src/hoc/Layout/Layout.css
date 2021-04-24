@@ -1,9 +1,14 @@
+body{
+	overflow: hidden;
+}
 .Content {
-    margin-top: 120px;
+    margin: 215px 0px 0px 0px;
+	overflow: scroll; 
+    height: 80vh;
 }
 
-@media (max-width: 499px){
+@media (max-width: 599px){
     .Content {
-        margin-top: 80px;
+		margin: 85px 0px 0px 0px;
     }
 }

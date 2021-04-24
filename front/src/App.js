@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import '../node_modules/jquery/src/jquery'; 
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.js';
 import Layout from './hoc/Layout/Layout';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import LoginPanel from './components/LoginPanel/LoginPanel';
 import CompetitionList from './components/CompetitionList/CompetitionList';
 
-class App extends Component{
-  render(){
+function App(){
     return(
       <div>
         <Layout>
@@ -21,7 +23,7 @@ class App extends Component{
         </Layout>
       </div>
     )
-  }
+  
 }
 
 export default App;

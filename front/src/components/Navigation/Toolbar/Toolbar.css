@@ -1,8 +1,8 @@
 .Toolbar {
     width: 100%;
     position: fixed;
-    background-color: #581200;
-    box-shadow: 0px 7px 10px #40a4c8;
+    background-image: url("../../../assets/pattern.png");
+	background-size: cover;
     top: 0;
     left: 0;
     align-items: center;
@@ -15,6 +15,10 @@
 
 .Toolbar nav{
     height: 100%;
+	width: 100%;
+	/* background-color: #6b9ff2; */
+	background-color: rgba(214, 193, 137, .96);
+	align-items: center;
 }
 
 .Logofs{
@@ -22,23 +26,26 @@
 }
 
 
-@media (min-width: 500px){
+@media (min-width: 600px){
     .Logofs{
-        height: 100px;
-        padding-bottom: 10px;
+        height: 140px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     .Toolbar{
-        display: flex;
         justify-content:space-evenly;
     }
 }
-
-@media (max-width: 499px){
+@media (max-width: 599px){
     .DesktopOnly{
         display: none;
     }
     .Logofs{
-        /* height:30px; */
+        height:50px;
         display:none;
+    }
+    .Toolbar{
+		box-shadow: 0px 0px 15px #4e3218;
+
     }
 }

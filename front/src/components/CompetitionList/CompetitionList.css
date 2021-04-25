@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&display=swap");
+
+.competitionsDataList {
+    font-family: "Raleway", sans-serif;
+    color: #4a3807;
+}
+
+#mainHeader {
+    font-size: 32px;
+    text-decoration: none;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+#competitionsTable {
+    width: 80%;
+    margin: 0 auto;
+}
+.container {
+    padding: 60px;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0.78;
+    justify-content: center;
+}

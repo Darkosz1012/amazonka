@@ -1,15 +1,20 @@
-.NavigationLinks{
+.NavigationLinks {
     margin: 0;
-    padding: 0;
     list-style: none;
-    display: flex;
+    display: inline-block;
     align-items: center;
     height: 100%;
     flex-flow: column;
+    vertical-align: right;
+    padding: 18px 0px 18px 0px;
+    width: 100%;
 }
 
-@media (min-width: 500px){
-    .NavigationLinks{
+@media (min-width: 600px) {
+    .NavigationLinks {
         flex-flow: row;
+        padding: 18px 0px 18px 0px;
+        /* box-shadow: 0 0 3em #4e3218; */
+        box-shadow: 0px 3px 2.5em #6e5035;
     }
 }

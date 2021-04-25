@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&display=swap");
+
+.competitionsDetailDiv {
+    font-family: "Raleway", sans-serif;
+    color: #30343b;
+}
+
+.competitionsDetailsHeader {
+    font-size: 32px;
+    text-decoration: none;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}

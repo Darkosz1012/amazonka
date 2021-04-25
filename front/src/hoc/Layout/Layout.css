@@ -1,9 +1,20 @@
+body {
+    overflow: hidden;
+}
 .Content {
-    margin-top: 120px;
+    margin: 215px 0px 0px 0px;
+    overflow-y: scroll;
+    height: 80vh;
+    background-image: url("../../assets/bg.png");
 }
 
-@media (max-width: 499px){
+@media (max-width: 599px) {
     .Content {
-        margin-top: 80px;
+        margin: 75px 0px 0px 0px;
+    }
+}
+@media (min-width: 600px) {
+    .Content {
+        padding-bottom: 100px;
     }
 }

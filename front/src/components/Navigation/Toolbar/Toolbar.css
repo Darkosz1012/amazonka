@@ -1,8 +1,14 @@
 .Toolbar {
     width: 100%;
     position: fixed;
-    background-color: #581200;
-    box-shadow: 0px 7px 10px #40a4c8;
+    /* background-image: url("../../../assets/pattern.png"); */
+    background: rgb(205, 143, 86);
+    background: linear-gradient(
+        180deg,
+        rgba(205, 143, 86, 1) 0%,
+        rgba(217, 235, 52, 1) 78%
+    );
+    background-size: cover;
     top: 0;
     left: 0;
     align-items: center;
@@ -11,34 +17,43 @@
     text-align: center;
 }
 
-
-
-.Toolbar nav{
+.Toolbar nav {
     height: 100%;
+    width: 100%;
+    /* background-color: #6b9ff2; */
+    background-color: rgba(214, 193, 137, 0.96);
+    align-items: center;
 }
 
-.Logofs{
+.Logofs {
     margin-left: 20px;
 }
 
-
-@media (min-width: 500px){
-    .Logofs{
-        height: 100px;
-        padding-bottom: 10px;
+@media (min-width: 600px) {
+    .Logofs {
+        height: 140px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
-    .Toolbar{
-        display: flex;
-        justify-content:space-evenly;
+    .Toolbar {
+        justify-content: space-evenly;
     }
 }
-
-@media (max-width: 499px){
-    .DesktopOnly{
+@media (max-width: 599px) {
+    .DesktopOnly {
         display: none;
     }
-    .Logofs{
-        /* height:30px; */
-        display:none;
+    .Logofs {
+        height: 50px;
+        display: none;
+    }
+    .Toolbar {
+        box-shadow: 0px 0px 15px #4e3218;
+        background: rgb(205, 143, 86);
+        background: linear-gradient(
+            180deg,
+            rgba(205, 143, 86, 1) 0%,
+            rgba(217, 235, 52, 1) 98%
+        );
     }
 }

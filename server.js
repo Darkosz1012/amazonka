@@ -1,10 +1,24 @@
-const express = require('express')
-const app = express()
+// noinspection ES6UnusedImports
+import {} from "./config/getENV.js";
 
-const port = process.env.PORT || 3001
+import { ApolloServer } from "apollo-server";
+import fs from "fs";
 
-app.use(express.static('./frontend/build'))
+import resolvers from "./graphql/resolvers.js";
 
+const port = process.env.PORT || 3001;
+const typeDefs = fs.readFileSync("./graphql/schema.graphql", "utf-8");
+
+// noinspection JSCheckFunctionSignatures
+const app = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: ({ req }) => {
+        return req;
+    },
+});
+
+// noinspection JSIgnoredPromiseFromCall
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
+    console.log(`Example app listening at http://localhost:${port}`);
+});

@@ -1,0 +1,16 @@
+.submit-btn
+{
+    width: 150px;
+    height: 8%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.choose-btn
+{
+    width: 47%;
+    margin: 20px 5px; 
+    width: 150px;
+    height: 8%;
+    cursor: pointer;
+}

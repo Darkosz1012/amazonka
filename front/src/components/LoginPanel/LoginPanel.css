@@ -1,0 +1,43 @@
+.login-register-div
+{
+    width: 380px;
+    min-height: 500px;
+    margin: 30px auto;
+    border: 1px solid black;
+    box-shadow: 10px 10px 10px black;
+    background-color: rgb(223, 205, 146, 0.4);
+}
+
+.buttons
+{
+    margin: 20px auto;
+    /* border: 1px solid red; */
+}
+
+.login-register-div p
+{
+    font-size: 23px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5%;
+    
+}
+
+.login-div
+{
+    width: 52%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 600px){
+    .buttons{
+        width: 325px;
+    }
+}
+
+@media (max-width: 599px){
+    .buttons{
+        width: 325px;
+    }
+}

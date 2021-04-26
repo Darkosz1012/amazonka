@@ -12,9 +12,6 @@ function App() {
         <div>
             <Layout>
                 <Switch>
-                    {/* <Route path="/competitions" component={CompetitionsList}/>
-            <Route path="/competitors" component={CompetitorsList}/>
-            <Route path="/score" component={AddScore}/> */}
                     <Route
                         path="/competitionsdetails"
                         component={CompetitionDetails}

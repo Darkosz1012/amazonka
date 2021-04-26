@@ -1,0 +1,39 @@
+.Brackets {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+.Round {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    list-style: none;
+    padding: 0;
+}
+
+li.game {
+    padding-left: 20px;
+}
+
+li.game.winner {
+    font-weight: bold;
+}
+li.game span {
+    float: right;
+    margin-right: 5px;
+}
+
+li.game-top {
+    border-bottom: 1px solid #aaa;
+}
+
+li.game-spacer {
+    border-right: 1px solid #aaa;
+    min-height: 40px;
+}
+
+li.game-bottom {
+    border-top: 1px solid #aaa;
+}

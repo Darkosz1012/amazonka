@@ -1,55 +1,70 @@
-import React, { Component } from 'react'
-import Input from '../../UI/Input/Input'
-import Button from '../../UI/Button/Button'
+import React, { useState, useEffect } from "react";
+import Input from "../../UI/Input/Input";
+import Button from "../../UI/Button/Button";
+import { gql, useMutation } from "@apollo/client";
 
-class LoginForm extends Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            login: '',
-            password: ''
+const LOGIN_USER = gql`
+    mutation login($username: String!, $password: String!) {
+        login(username: $username, password: $password) {
+            user_id
         }
     }
+`;
 
-    handleLoginChange = (event) => {
-        this.setState({
-            login: event.target.value
-        })
-    }
+const LoginForm = (props) => {
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
 
-    handlePasswordChange = (event) => {
-        this.setState({
-            password: event.target.value
-        })
-    }
+    const [loginUser, { data }] = useMutation(LOGIN_USER);
 
-    handleSubmit = (event) => {
-        alert(`${this.state.login} - ${this.state.password}`);
-    }
+    const handleLoginChange = (event) => {
+        setLogin(event.target.value);
+    };
 
-    render() {
-        const {login, password} = this.state
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <Input 
-                    type="text" 
-                    placeholder="Login" 
-                    className="text-input"
-                    value={login} 
-                    onChange={this.handleLoginChange}
-                    /> <br/>
-                <Input 
-                    type="password" 
-                    placeholder="Hasło"
-                    className="text-input"
-                    value={password} 
-                    onChange={this.handlePasswordChange}
-                    /> <br/>
-                <Button type="submit" placeholder="Zaloguj się" className="submit-btn"/>
-            </form>
-        )
-    }
-}
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(login, password);
+        loginUser({
+            variables: {
+                username: login,
+                password: password,
+            },
+        });
+    };
+
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <Input
+                type="text"
+                placeholder="Login"
+                className="text-input"
+                value={login}
+                onChange={handleLoginChange}
+            />{" "}
+            <br />
+            <Input
+                type="password"
+                placeholder="Hasło"
+                className="text-input"
+                value={password}
+                onChange={handlePasswordChange}
+            />{" "}
+            <br />
+            <Button
+                type="submit"
+                placeholder="Zaloguj się"
+                className="submit-btn"
+            />
+        </form>
+    );
+};
 
 export default LoginForm;

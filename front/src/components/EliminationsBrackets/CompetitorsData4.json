@@ -1,0 +1,26 @@
+[
+    {
+        "participant1": {
+            "fullname": "Jan Nowak",
+            "score": 25,
+            "pos": 1
+        },
+        "participant2": {
+            "fullname": "Arnold Kowal",
+            "score": 22,
+            "pos": 4
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Stefan Janicki",
+            "score": 30,
+            "pos": 2
+        },
+        "participant2": {
+            "fullname": "Jan Janicki",
+            "score": 48,
+            "pos": 3
+        }
+    }
+]

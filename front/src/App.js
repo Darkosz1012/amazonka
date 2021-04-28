@@ -8,7 +8,7 @@ import CompetitionList from "./components/CompetitionList/CompetitionList";
 import CompetitionDetails from "./components/CompetitionList/Details/CompetitionDetails";
 import Positions from "./components/CompetitionList/Details/Positions/Positions";
 import Qualifications from "./components/CompetitionList/Details/Qualifications/Qualifications";
-import Eliminations from "./components/CompetitionList/Details/Eliminations/Eliminations";
+import EliminationsBrackets from "./components/EliminationsBrackets/EliminationsBrackets";
 
 function App() {
     return (
@@ -25,7 +25,7 @@ function App() {
                     />
                     <Route
                         path="/competitionsdetails/:id/:cat/elimination"
-                        component={Eliminations}
+                        component={EliminationsBrackets}
                     />
                     <Route
                         path="/competitionsdetails/:id"
@@ -37,7 +37,6 @@ function App() {
                     />
                     <Route path="/competitions" component={CompetitionList} />
                     <Route path="/login" component={LoginPanel} />
-                    <Route path="/" exact component={LoginPanel} />
                     <Redirect to="/" />
                 </Switch>
             </Layout>

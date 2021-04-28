@@ -1,0 +1,14 @@
+[
+    {
+        "participant1": {
+            "fullname": "Jan Nowak",
+            "score": 25,
+            "pos": 1
+        },
+        "participant2": {
+            "fullname": "Adam Niedźwiedzki",
+            "score": 33,
+            "pos": 2
+        }
+    }
+]

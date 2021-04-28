@@ -44,8 +44,6 @@ export function authenticateToken(req) {
 }
 
 export function extractTokenFromHeader(req) {
-    const authHeader = req.hasOwnProperty("headers")
-        ? req.headers["authorization"]
-        : undefined;
+    const authHeader = req.headers["authorization"];
     return authHeader && authHeader.split(" ")[1];
 }

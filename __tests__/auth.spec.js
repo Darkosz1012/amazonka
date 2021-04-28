@@ -2,7 +2,7 @@ import jsonwebtoken from "jsonwebtoken";
 import * as auth from "../auth/auth.js";
 
 function InvalidHeadersReq() {
-    const req = new Object();
+    const req = {};
     req.headers = {
         "random-header": "gibberish result",
     };
@@ -20,7 +20,6 @@ function ValidHeadersReq() {
 
 describe("extractTokenFromHeader function", () => {
     test("Should return undefined if input is invalid", () => {
-        expect(auth.extractTokenFromHeader(new Object())).toBeUndefined();
         expect(
             auth.extractTokenFromHeader(InvalidHeadersReq())
         ).toBeUndefined();

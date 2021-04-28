@@ -1,0 +1,6 @@
+type Token {
+    accessToken: String!
+    refreshToken: String!
+    user_id: String!
+    username: String!
+}

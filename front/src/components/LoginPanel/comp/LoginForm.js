@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
 import { gql, useMutation } from "@apollo/client";
 
@@ -42,18 +41,18 @@ const LoginForm = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <Input
+            <input
                 type="text"
                 placeholder="Login"
-                className="text-input"
+                className="form-control"
                 value={login}
                 onChange={handleLoginChange}
             />{" "}
             <br />
-            <Input
+            <input
                 type="password"
                 placeholder="Hasło"
-                className="text-input"
+                className="form-control"
                 value={password}
                 onChange={handlePasswordChange}
             />{" "}
@@ -61,7 +60,7 @@ const LoginForm = (props) => {
             <Button
                 type="submit"
                 placeholder="Zaloguj się"
-                className="submit-btn"
+                className="btn btn-primary btn-lg"
             />
         </form>
     );

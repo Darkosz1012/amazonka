@@ -29,8 +29,8 @@ class LoginPanel extends Component{
         return(
             <div className="login-register-div">
                 <div className="buttons">
-                    <Button className="choose-btn" onClick={this.showLogin} placeholder="ZALOGUJ SIĘ" />
-                    <Button className="choose-btn" onClick={this.showRegister} placeholder="ZAREJESTRUJ SIĘ"/>
+                    <Button className={!this.state.isRegister ? "btn btn-outline-primary btn-lg active" : "btn btn-outline-primary"} onClick={this.showLogin} placeholder="ZALOGUJ SIĘ" />               
+                    <Button className={ this.state.isRegister ? "btn btn-outline-primary btn-lg active" : "btn btn-outline-primary "} onClick={this.showRegister} placeholder="ZAREJESTRUJ SIĘ"/>
                 </div>
                 <br/>
                 <div className="login-div"> 

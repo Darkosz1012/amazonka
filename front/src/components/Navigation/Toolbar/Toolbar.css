@@ -1,12 +1,11 @@
 .Toolbar {
     width: 100%;
     position: fixed;
-    /* background-image: url("../../../assets/pattern.png"); */
-    background: rgb(205, 143, 86);
+    /* background: rgb(205, 143, 86); */
     background: linear-gradient(
-        180deg,
-        rgba(205, 143, 86, 1) 0%,
-        rgba(217, 235, 52, 1) 78%
+        120deg,
+        rgba(205, 143, 86, 1) 20%,
+        rgba(217, 235, 52, 1) 98%
     );
     background-size: cover;
     top: 0;
@@ -49,10 +48,10 @@
     }
     .Toolbar {
         box-shadow: 0px 0px 15px #4e3218;
-        background: rgb(205, 143, 86);
+        /* background: rgb(205, 143, 86); */
         background: linear-gradient(
-            180deg,
-            rgba(205, 143, 86, 1) 0%,
+            120deg,
+            rgba(205, 143, 86, 1) 20%,
             rgba(217, 235, 52, 1) 98%
         );
     }

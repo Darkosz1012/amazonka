@@ -1,16 +1,35 @@
-.submit-btn
-{
+.submit-btn {
     width: 150px;
     height: 8%;
     margin-top: 20px;
     cursor: pointer;
 }
 
-.choose-btn
-{
+.choose-btn {
     width: 47%;
-    margin: 20px 5px; 
+    margin: 20px 5px;
     width: 150px;
     height: 8%;
     cursor: pointer;
+}
+
+.category-btn {
+    margin: 0px 10px 20px 10px;
+    font-size: 15px;
+    font-weight: 700;
+    height: 8%;
+    cursor: pointer;
+    color: #33322f;
+    background-color: #d6c189;
+    border-radius: 10px;
+    padding: 5px 20px 5px 20px;
+    border: none;
+    box-shadow: 0px 0px 5px #d6c189;
+}
+
+.category-btn:hover {
+    font-size: 15.5px;
+    padding: 4px 18px 4px 18px;
+    text-shadow: 0px 0px 15px #fff;
+    box-shadow: 0px 0px 25px #d6c189;
 }

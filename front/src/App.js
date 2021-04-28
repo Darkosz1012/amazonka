@@ -6,12 +6,31 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import LoginPanel from "./components/LoginPanel/LoginPanel";
 import CompetitionList from "./components/CompetitionList/CompetitionList";
 import CompetitionDetails from "./components/CompetitionList/Details/CompetitionDetails";
+import Positions from "./components/CompetitionList/Details/Positions/Positions";
+import Qualifications from "./components/CompetitionList/Details/Qualifications/Qualifications";
+import Eliminations from "./components/CompetitionList/Details/Eliminations/Eliminations";
 
 function App() {
     return (
         <div>
             <Layout>
                 <Switch>
+                    <Route
+                        path="/competitionsdetails/:id/:cat/position"
+                        component={Positions}
+                    />
+                    <Route
+                        path="/competitionsdetails/:id/:cat/qualification"
+                        component={Qualifications}
+                    />
+                    <Route
+                        path="/competitionsdetails/:id/:cat/elimination"
+                        component={Eliminations}
+                    />
+                    <Route
+                        path="/competitionsdetails/:id"
+                        component={CompetitionDetails}
+                    />
                     <Route
                         path="/competitionsdetails"
                         component={CompetitionDetails}

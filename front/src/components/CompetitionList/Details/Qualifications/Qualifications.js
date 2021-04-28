@@ -1,7 +1,11 @@
 import BootstrapTable from "react-bootstrap-table-next";
-import competitionsData from "./competitionsData";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
-import "./CompetitionList.css";
+import "../../CompetitionList.css";
+import "./Qualifications.css";
+
+const odl1 = "70m";
+const odl2 = "90m";
+const competitionsData = [];
 
 const columns = [
     {
@@ -10,43 +14,62 @@ const columns = [
         text: "Id",
     },
     {
-        dataField: "nazwa",
-        text: "Nazwa",
-        sort: true,
-        formatter: (value, row) => (
-            <div>
-                <a href={"competitionsdetails/" + row.id}>{value} </a>
-            </div>
-        ),
+        dataField: "poz",
+        text: "Poz",
+        sort: false,
     },
     {
-        dataField: "lokalizacja",
-        text: "Lokalizacja",
+        dataField: "imie",
+        text: "Imię",
         sort: true,
     },
     {
-        dataField: "data_start",
-        text: "Data rozpoczęcia",
+        dataField: "nazwisko",
+        text: "Nazwisko",
         sort: true,
     },
     {
-        dataField: "data_koniec",
-        text: "Data zakończenia",
+        dataField: "klub",
+        text: "Klub",
+        sort: true,
+    },
+    {
+        dataField: "odl1",
+        text: odl1,
+        sort: true,
+    },
+    {
+        dataField: "odl2",
+        text: odl2,
+        sort: true,
+    },
+    {
+        dataField: "suma",
+        text: "Suma pkt",
+        sort: true,
+    },
+    {
+        dataField: "x10",
+        text: "x + 10",
+        sort: true,
+    },
+    {
+        dataField: "x",
+        text: "x",
         sort: true,
     },
 ];
-
 const defaultSorted = [
     {
-        dataField: "nazwa",
+        dataField: "suma",
         order: "desc",
     },
 ];
 
-function CompetitionList() {
+function Qualifications() {
     return (
         <div className="competitionsDataList">
-            <p id="mainHeader">Lista wszystkich zawodów</p>
+            <p id="mainHeader">Wyniki kwalifikacji</p>
             <div className="container">
                 <BootstrapTable
                     striped
@@ -62,4 +85,5 @@ function CompetitionList() {
         </div>
     );
 }
-export default CompetitionList;
+
+export default Qualifications;

@@ -2,7 +2,7 @@
 
 .competitionsDataList {
     font-family: "Raleway", sans-serif;
-    color: #4a3807;
+    color: #8a7c58;
 }
 
 #mainHeader {
@@ -10,18 +10,74 @@
     text-decoration: none;
     text-decoration: underline;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 10px;
+    margin-top: 60px;
+    margin-bottom: 15px;
+    font-weight: 900;
 }
 
-#competitionsTable {
-    width: 80%;
+.table {
     margin: 0 auto;
 }
+.table {
+    table-layout: auto !important;
+}
+.table tbody tr:hover {
+    /* font-weight: 700 !important; */
+    background-color: rgba(110, 112, 10, 0.12) !important;
+}
+.table thead {
+    font-weight: 700 !important;
+    font-size: 17px;
+    background-color: rgba(110, 112, 10, 0.65);
+    color: #fff;
+}
+.table thead tr th {
+    text-align: center;
+}
+
+.table > tbody > tr > td:nth-child(2) {
+    text-align: center;
+}
+.table > tbody > tr > td:nth-child(3) {
+    text-align: center;
+}
+.table > tbody > tr > td:nth-child(4) {
+    text-align: center;
+}
+
 .container {
-    padding: 60px;
+    padding: 20px 20px;
     border-radius: 20px;
     background-color: #fff;
     opacity: 0.78;
     justify-content: center;
+}
+@media (max-width: 599px) {
+    #mainHeader {
+        font-size: 22px;
+    }
+    .table {
+        font-size: 12px;
+    }
+    .table thead {
+        font-size: 12px;
+    }
+    .table {
+        margin-bottom: 0px;
+    }
+    .container {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 999px) {
+    #mainHeader {
+        font-size: 22px;
+    }
+    .table {
+        font-size: 12px;
+    }
+    .table thead {
+        font-size: 12px;
+    }
 }

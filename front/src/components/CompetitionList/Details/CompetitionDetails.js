@@ -6,26 +6,22 @@ import Button from "../../UI/Button/Button";
 function CompetitionDetails() {
     const params = useParams();
     const name = competitionDetaildata[params.id - 1]["nazwa"];
-    const location_ = competitionDetaildata[params.id - 1]["lokalizacja"];
+    const location = competitionDetaildata[params.id - 1]["lokalizacja"];
     const start_date = competitionDetaildata[params.id - 1]["data_start"];
     const end_date = competitionDetaildata[params.id - 1]["data_koniec"];
     const description = competitionDetaildata[params.id - 1]["opis"];
     const schedule = competitionDetaildata[params.id - 1]["program"];
     const categories = competitionDetaildata[params.id - 1]["kategorie"].map(
-        (kategorie) => kategorie.nazwa_kategorii
+        (category) => category.nazwa_kategorii
     );
     const categ_num = Object.keys(categories).length;
 
-    let categorieStr = "";
-    for (var i = 0; i < categ_num - 1; i++)
-        categorieStr = categorieStr + categories[i] + ", ";
-    categorieStr = categorieStr + categories[categ_num - 1];
+    let categoriesStr = categories.join(", ");
 
-    let k = 0;
+    let catButtonsNumber = 0;
     function createButtonsList(subpath) {
         let list = [];
         for (let i = 0; i < categ_num; i++) {
-            console.log(k);
             list.push(
                 <a
                     id="params.id"
@@ -40,7 +36,7 @@ function CompetitionDetails() {
                 >
                     <Button
                         className="category-btn"
-                        key={k++}
+                        key={catButtonsNumber++}
                         placeholder={categories[i]}
                     />
                 </a>
@@ -50,14 +46,14 @@ function CompetitionDetails() {
     }
 
     return (
-        <div className="container2">
+        <div className="DetailsContainer">
             <div id="competitionsDetailLeftDiv">
                 <div className="detailDiv">
                     <p id="compName">{name}</p>
                     <br />
                     <div className="insideDetailDiv">
                         <p className="title_p">
-                            <b>Lokalizacja:</b> {location_}
+                            <b>Lokalizacja:</b> {location}
                         </p>
                         <p className="title_p">
                             <b>Data rozpoczęcia:</b> {start_date}
@@ -71,7 +67,7 @@ function CompetitionDetails() {
                         <p id="compShortDescr">{description}</p>
                         <br />
                         <p className="title_p" key="p">
-                            <b>Kategorie:</b> {categorieStr}
+                            <b>Kategorie:</b> {categoriesStr}
                         </p>
                     </div>
                 </div>

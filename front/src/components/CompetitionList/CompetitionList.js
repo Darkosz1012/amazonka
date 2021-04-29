@@ -10,7 +10,7 @@ const columns = [
         text: "Id",
     },
     {
-        dataField: "nazwa",
+        dataField: "name",
         text: "Nazwa",
         sort: true,
         formatter: (value, row) => (
@@ -20,17 +20,17 @@ const columns = [
         ),
     },
     {
-        dataField: "lokalizacja",
+        dataField: "location",
         text: "Lokalizacja",
         sort: true,
     },
     {
-        dataField: "data_start",
+        dataField: "date_start",
         text: "Data rozpoczęcia",
         sort: true,
     },
     {
-        dataField: "data_koniec",
+        dataField: "date_end",
         text: "Data zakończenia",
         sort: true,
     },
@@ -38,7 +38,7 @@ const columns = [
 
 const defaultSorted = [
     {
-        dataField: "nazwa",
+        dataField: "name",
         order: "desc",
     },
 ];

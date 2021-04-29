@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&display=swap");
 
-.container2 {
+.DetailsContainer {
     margin-top: 10px;
     padding: 20px 30px 10px 30px;
     border-radius: 20px;
@@ -14,10 +14,12 @@
 #competitionsDetailLeftDiv {
     width: 30%;
 }
+
 #competitionsDetailRightDiv {
     width: 60%;
     padding-top: 20px;
 }
+
 #insidecompetitionsDetailRightDiv {
     width: 95%;
     margin-left: 5%;
@@ -34,8 +36,8 @@
     padding-left: 12px;
     padding-right: 12px;
     box-shadow: 0px 0px 30px #d6c189;
-    /* font-style: italic; */
 }
+
 .middleHeader {
     font-weight: 700;
 }
@@ -52,15 +54,19 @@
     margin-bottom: 20px;
     border-radius: 20px;
 }
+
 .insideDetailDiv {
     padding: 10px;
 }
+
 .title_p {
     padding-top: 5px;
 }
+
 .title_pn {
     margin-bottom: 0px;
 }
+
 .scheduleDiv {
     background-color: #fffbed;
 }
@@ -69,6 +75,7 @@
     border: 2px solid #a19778;
     padding: 0px 30px 10px 30px;
 }
+
 #fs legend {
     width: auto;
     margin-left: 10px;
@@ -79,16 +86,7 @@
     font-weight: 700;
     border: none;
 }
+
 #buttonList {
     margin: 0px 20px 0px 20px;
-}
-
-@media (max-width: 900px) {
-    .container2 {
-    }
-
-    #competitionsDetailLeftDiv {
-    }
-    #competitionsDetailRightDiv {
-    }
 }

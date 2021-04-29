@@ -40,10 +40,7 @@ const EliminationsBrackets = () => {
         return Math.pow(2, total);
     };
 
-    let numberOfPositions = generatePowerOf2(testCompetitorsData[0].length);
-    let orderArray = generateOrder(numberOfPositions);
-
-    const generateRoundColumn = (arrayOfPairs, arrayOfPositions) => {
+    const generateMapOfPairs = (arrayOfPairs) => {
         const mapOfPairs = new Map();
         for (let pair of arrayOfPairs) {
             let p1 = pair.participant1.pos;
@@ -51,17 +48,21 @@ const EliminationsBrackets = () => {
             let key = p1.toString() + "-" + p2.toString();
             mapOfPairs.set(key, pair);
         }
+        return mapOfPairs;
+    };
+
+    let numberOfPositions = generatePowerOf2(testCompetitorsData[0].length);
+    let orderArray = generateOrder(numberOfPositions);
+
+    const generateRoundColumn = (duels, positions) => {
+        const mapOfPairs = generateMapOfPairs(duels);
 
         let column = [];
-        for (let iter = 0; iter < arrayOfPositions.length; iter += 2) {
-            let key =
-                arrayOfPositions[iter].toString() +
-                "-" +
-                arrayOfPositions[iter + 1].toString();
-            let revKey =
-                arrayOfPositions[iter + 1].toString() +
-                "-" +
-                arrayOfPositions[iter].toString();
+        for (let iter = 0; iter < positions.length; iter += 2) {
+            let p1 = positions[iter].toString();
+            let p2 = positions[iter + 1].toString();
+            let key = p1 + "-" + p2;
+            let revKey = p2 + "-" + p1;
             let pair = mapOfPairs.get(key) || mapOfPairs.get(revKey);
             column.push(
                 <EliminationsElement
@@ -81,8 +82,6 @@ const EliminationsBrackets = () => {
         columnsToDisplay.push(col);
         i += 1;
     }
-
-    console.log("Finished: ", columnsToDisplay);
 
     let finalBrackets = columnsToDisplay.map((col) => (
         <ul className="Round">

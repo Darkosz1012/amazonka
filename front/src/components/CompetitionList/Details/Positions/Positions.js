@@ -1,30 +1,30 @@
-import './Positions.css'
+import "./Positions.css";
 import BootstrapTable from "react-bootstrap-table-next";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
-import positionsData from "./positionsData.json"
+import positionsData from "./positionsData.json";
 
 const columns = [
     {
-        datafield: "stanowisko",
+        datafield: "position",
         text: "Stanowisko",
     },
     {
-        datafield: "kolejnosc",
+        datafield: "order",
         text: "Kolejność",
     },
     {
-        datafield: "imie_nazwisko",
+        datafield: "fullname",
         text: "Imię i nazwisko",
     },
     {
-        datafield: "klub",
+        datafield: "club",
         text: "Klub",
-    }
+    },
 ];
 
 const defaultSorted = [
     {
-        dataField: "stanowisko",
+        dataField: "position",
         order: "desc",
     },
 ];

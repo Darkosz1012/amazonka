@@ -17,20 +17,20 @@
 
 .table {
     margin: 0 auto;
-}
-.table {
     table-layout: auto !important;
 }
+
 .table tbody tr:hover {
-    /* font-weight: 700 !important; */
     background-color: rgba(110, 112, 10, 0.12) !important;
 }
+
 .table thead {
     font-weight: 700 !important;
     font-size: 17px;
     background-color: rgba(110, 112, 10, 0.65);
     color: #fff;
 }
+
 .table thead tr th {
     text-align: center;
 }
@@ -52,17 +52,13 @@
     opacity: 0.78;
     justify-content: center;
 }
+
 @media (max-width: 599px) {
     #mainHeader {
         font-size: 22px;
     }
     .table {
         font-size: 12px;
-    }
-    .table thead {
-        font-size: 12px;
-    }
-    .table {
         margin-bottom: 0px;
     }
     .container {

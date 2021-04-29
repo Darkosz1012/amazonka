@@ -14,37 +14,37 @@ const columns = [
         text: "Id",
     },
     {
-        dataField: "poz",
-        text: "Poz",
+        dataField: "position",
+        text: "Pozycja",
         sort: false,
     },
     {
-        dataField: "imie",
+        dataField: "name",
         text: "Imię",
         sort: true,
     },
     {
-        dataField: "nazwisko",
+        dataField: "surname",
         text: "Nazwisko",
         sort: true,
     },
     {
-        dataField: "klub",
+        dataField: "club",
         text: "Klub",
         sort: true,
     },
     {
-        dataField: "odl1",
+        dataField: "dist1",
         text: odl1,
         sort: true,
     },
     {
-        dataField: "odl2",
+        dataField: "dist2",
         text: odl2,
         sort: true,
     },
     {
-        dataField: "suma",
+        dataField: "sum",
         text: "Suma pkt",
         sort: true,
     },
@@ -61,7 +61,7 @@ const columns = [
 ];
 const defaultSorted = [
     {
-        dataField: "suma",
+        dataField: "sum",
         order: "desc",
     },
 ];

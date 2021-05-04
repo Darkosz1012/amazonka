@@ -14,7 +14,11 @@ const LoginForm = (props) => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
 
-    const [loginUser, { data }] = useMutation(LOGIN_USER);
+    const [loginUser, { data }] = useMutation(LOGIN_USER, {
+        onError(err) {
+            console.log(err);
+        },
+    });
 
     const handleLoginChange = (event) => {
         setLogin(event.target.value);
@@ -34,10 +38,6 @@ const LoginForm = (props) => {
             },
         });
     };
-
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
 
     return (
         <form onSubmit={handleSubmit}>

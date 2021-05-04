@@ -7,14 +7,12 @@
     width: 180px;
 }
 
-.Round .spacer {
+.Round .spacer,
+.Round .game-spacer {
     flex-grow: 1;
 }
+
 .Round .spacer:first-child,
 .Round .spacer:last-child {
     flex-grow: 0.5;
-}
-
-.Round .game-spacer {
-    flex-grow: 1;
 }

@@ -25,7 +25,7 @@ const RegisterForm = (props) => {
         setLogin(event.target.value);
     };
 
-    const handlePasswordChange = (event) => {
+    const handlePassword1Change = (event) => {
         setPassword1(event.target.value);
     };
 
@@ -46,10 +46,6 @@ const RegisterForm = (props) => {
         }
     };
 
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
-
     return (
         <form onSubmit={handleSubmit}>
             <input
@@ -65,7 +61,7 @@ const RegisterForm = (props) => {
                 placeholder="Hasło"
                 className="form-control"
                 value={password1}
-                onChange={handlePasswordChange}
+                onChange={handlePassword1Change}
             />{" "}
             <br />
             <input

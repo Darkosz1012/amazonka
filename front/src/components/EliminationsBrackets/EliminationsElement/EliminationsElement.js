@@ -17,20 +17,3 @@ const EliminationsElement = ({ p1, p2 }, props) => {
 };
 
 export default EliminationsElement;
-
-// return(
-//     <div>
-//         <table className="CompetitorsEliminationsTable">
-//             <tbody>
-//             <tr>
-//                 <th>{p1.fullname}</th>
-//                 <th>{p1.score}</th>
-//             </tr>
-//             <tr>
-//                 <th>{p2.fullname}</th>
-//                 <th>{p2.score}</th>
-//             </tr>
-//             </tbody>
-//         </table>
-//     </div>
-// );

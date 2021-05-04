@@ -14,7 +14,6 @@
     .NavigationLinks {
         flex-flow: row;
         padding: 18px 0px 18px 0px;
-        /* box-shadow: 0 0 3em #4e3218; */
         box-shadow: 0px 3px 2.5em #6e5035;
     }
 }

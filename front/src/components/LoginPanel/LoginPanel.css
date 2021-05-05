@@ -1,0 +1,28 @@
+.login-register-div {
+    width: 400px;
+    min-height: 500px;
+    margin: 30px auto;
+    padding: 20px 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0.78;
+    justify-content: center;
+}
+
+.buttons {
+    margin: 20px auto;
+    width: 320px;
+}
+
+.login-register-div p {
+    font-size: 23px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: 5%;
+}
+
+.login-div {
+    width: 52%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}

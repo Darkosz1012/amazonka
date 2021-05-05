@@ -1,43 +1,43 @@
 [
     {
         "stanowisko": 1,
-        "kolejnosc" : "A",
+        "kolejnosc": "A",
         "imie_nazwisko": "Dariusz Biela",
         "klub": "KS Kraków"
     },
     {
         "stanowisko": 1,
-        "kolejnosc" : "B",
+        "kolejnosc": "B",
         "imie_nazwisko": "Dariusz Biela",
         "klub": "KS Kraków"
     },
     {
         "stanowisko": 1,
-        "kolejnosc" : "C",
+        "kolejnosc": "C",
         "imie_nazwisko": "Dariusz Biela",
         "klub": "KS Kraków"
     },
     {
         "stanowisko": 2,
-        "kolejnosc" : "A",
+        "kolejnosc": "A",
         "imie_nazwisko": "Dariusz Biela",
         "klub": "KS Kraków"
     },
     {
         "stanowisko": 2,
-        "kolejnosc" : "B",
+        "kolejnosc": "B",
         "imie_nazwisko": "Dariusz Biela",
         "klub": "KS Kraków"
     },
     {
         "stanowisko": 2,
-        "kolejnosc" : "C",
+        "kolejnosc": "C",
         "imie_nazwisko": "Dariusz Biela",
         "klub": "KS Kraków"
     },
     {
         "stanowisko": 2,
-        "kolejnosc" : "D",
+        "kolejnosc": "D",
         "imie_nazwisko": "Dariusz Biela",
         "klub": "KS Kraków"
     }

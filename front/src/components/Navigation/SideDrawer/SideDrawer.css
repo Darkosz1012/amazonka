@@ -12,8 +12,8 @@
     transition: transform 0.3s ease-out;
 }
 
-@media (min-width: 600px){
-    .SideDrawer{
+@media (min-width: 600px) {
+    .SideDrawer {
         display: none;
     }
 }
@@ -26,13 +26,13 @@
     transform: translateX(-100%);
 }
 
-@media (max-width: 599px){
-    .Logo{
+@media (max-width: 599px) {
+    .Logo {
         height: 15%;
-        margin:auto;
+        margin: auto;
     }
 
-    .Logo img{
+    .Logo img {
         height: 100%;
     }
 }

@@ -1,4 +1,4 @@
-import * as actionTypes from './actionTypes';
-import axios from './../../axios';
+import * as actionTypes from "./actionTypes";
+import axios from "./../../axios";
 
-//there would be actions for reducer 
+//there would be actions for reducer

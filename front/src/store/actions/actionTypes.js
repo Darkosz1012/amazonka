@@ -1,1 +1,1 @@
-//there would be action types for reducer 
+//there would be action types for reducer

@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react';
-import './DrawerToggle.css';
-import logo from './../../../../assets/logoWHR.png';
+import React, { Fragment } from "react";
+import "./DrawerToggle.css";
+import logo from "./../../../../assets/logoWHR.png";
 
 const DrawerToggle = (props) => (
     <Fragment>
@@ -10,11 +10,9 @@ const DrawerToggle = (props) => (
                 <div></div>
                 <div></div>
             </div>
-            <img className="FlexContainerImg" src={logo} alt="Amazonka"/>
+            <img className="FlexContainerImg" src={logo} alt="Amazonka" />
         </div>
-        
     </Fragment>
-
 );
 
 export default DrawerToggle;

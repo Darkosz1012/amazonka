@@ -1,4 +1,4 @@
-.FlexContainer{
+.FlexContainer {
     display: flex;
     justify-content: space-between;
     margin-left: 15px;
@@ -33,5 +33,4 @@
     .FlexContainer {
         display: none;
     }
-
 }

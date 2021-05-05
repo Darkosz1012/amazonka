@@ -1,5 +1,4 @@
-.login-register-div
-{
+.login-register-div {
     width: 400px;
     min-height: 500px;
     margin: 30px auto;
@@ -10,22 +9,18 @@
     justify-content: center;
 }
 
-.buttons
-{
+.buttons {
     margin: 20px auto;
     width: 320px;
 }
 
-.login-register-div p
-{
+.login-register-div p {
     font-size: 23px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     margin: 5%;
-    
 }
 
-.login-div
-{
+.login-div {
     width: 52%;
     text-align: center;
     margin-right: auto;

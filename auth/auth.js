@@ -1,6 +1,8 @@
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 
+import * as auth from "./auth";
+
 export async function verify(password, hash) {
     return new Promise((resolve, reject) => {
         const [salt, key] = hash.split(":");
@@ -23,7 +25,7 @@ export async function hash(password) {
 }
 
 export function authenticateToken(req) {
-    const token = extractTokenFromHeader(req);
+    const token = auth.extractTokenFromHeader(req);
 
     if (token == null) {
         throw {
@@ -41,7 +43,7 @@ export function authenticateToken(req) {
     });
 }
 
-function extractTokenFromHeader(req) {
+export function extractTokenFromHeader(req) {
     const authHeader = req.headers["authorization"];
     return authHeader && authHeader.split(" ")[1];
 }

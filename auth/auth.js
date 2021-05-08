@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 
-import * as auth from "./auth";
+import * as auth from "./auth.js";
 
 export async function verify(password, hash) {
     return new Promise((resolve, reject) => {

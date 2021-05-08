@@ -2,16 +2,23 @@ import { User } from "../../../db/index.js";
 import { hash, verify } from "../../../auth/auth.js";
 import jwt from "jsonwebtoken";
 
+import * as mutations from "./mutations.js";
+
 export default {
     login: async (_, { username, password }) => {
-        const result = await User.findOne({ username })
-            .select("+password")
-            .exec();
+        if (username === undefined || password === undefined) {
+            throw {
+                message: "Username or password incorrect.",
+            };
+        }
+
+        const result = await mutations.findUser(username);
         if (result == null) {
             throw {
                 message: "Username or password incorrect.",
             };
         }
+
         if (await verify(password, result.password)) {
             return createUserToken(result, username);
         }
@@ -32,14 +39,17 @@ export default {
 
 function createUserToken(user, username) {
     return {
-        accessToken: createJWT(user, "1m"),
-        refreshToken: createJWT(user, "1h"),
+        accessToken: mutations.createJWT(user, "1m"),
+        refreshToken: mutations.createJWT(user, "1h"),
         user_id: user._id,
         username,
     };
 }
+export async function findUser(username) {
+    return await User.findOne({ username }).select("+password").exec();
+}
 
-function createJWT(user, time) {
+export function createJWT(user, time) {
     return jwt.sign(
         {
             username: user.username,

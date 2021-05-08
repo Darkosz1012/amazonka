@@ -9,10 +9,12 @@ import TeamSchema from "./schema/TeamSchema.js";
 import FinalsSchema from "./schema/FinalsSchema.js";
 import TeamsFinalsSchema from "./schema/TeamsFinalsSchema.js";
 
-mongoose.connect(process.env.DATABASE_LINK, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+if (process.env.DATABASE_LINK !== undefined) {
+    mongoose.connect(process.env.DATABASE_LINK, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+}
 
 export const User = mongoose.model("User", UserSchema);
 

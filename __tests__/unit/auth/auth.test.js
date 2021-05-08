@@ -1,5 +1,5 @@
 import jsonwebtoken from "jsonwebtoken";
-import * as auth from "../auth/auth.js";
+import * as auth from "../../../auth/auth.js";
 
 function InvalidHeadersReq() {
     const req = {};
@@ -10,7 +10,7 @@ function InvalidHeadersReq() {
 }
 
 function ValidHeadersReq() {
-    const req = new Object();
+    const req = {};
     req.headers = {
         authorization:
             "UNEXPECTED\r\nUNEXPECTED\t~ż result UNEXPECTED UNEXPECTED    ",
@@ -65,14 +65,14 @@ describe("authenticateToken function", () => {
         expect(extractTokenFromHeaderSpy).toHaveBeenCalledTimes(2);
     });
 
-    test("Should call JSW.verify if token extracted succesfully", () => {
+    test("Should call JSW.verify if token extracted successfully", () => {
         const extractTokenFromHeaderSpy = jest.spyOn(
             auth,
             "extractTokenFromHeader"
         );
         extractTokenFromHeaderSpy.mockReturnValue("token");
 
-        expect(() => auth.authenticateToken(new Object())).not.toThrow();
+        expect(() => auth.authenticateToken({})).not.toThrow();
 
         expect(jsonwebtoken.verify).toHaveBeenCalledWith(
             "token",

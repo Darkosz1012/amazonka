@@ -1,0 +1,50 @@
+[
+    {
+        "participant1": {
+            "fullname": "Jan Nowak",
+            "score": 25,
+            "pos": 1
+        },
+        "participant2": {
+            "fullname": "Jarosław Kowalski",
+            "score": 33,
+            "pos": 8
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Stefan Janicki",
+            "score": 30,
+            "pos": 2
+        },
+        "participant2": {
+            "fullname": "Antoni Dydejczyk",
+            "score": 43,
+            "pos": 7
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Stefan Janicki",
+            "score": 30,
+            "pos": 3
+        },
+        "participant2": {
+            "fullname": "Jan Kamiński",
+            "score": 22,
+            "pos": 6
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Karol Nowakowski",
+            "score": 27,
+            "pos": 4
+        },
+        "participant2": {
+            "fullname": "Przemysław Jasiński",
+            "score": 20,
+            "pos": 5
+        }
+    }
+]

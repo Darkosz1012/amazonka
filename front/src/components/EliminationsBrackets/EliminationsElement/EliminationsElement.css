@@ -1,0 +1,18 @@
+.CompetitorsEliminationsTable {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: #a9fa84;
+    margin: 10px;
+    width: 180px;
+}
+
+.Round .spacer,
+.Round .game-spacer {
+    flex-grow: 1;
+}
+
+.Round .spacer:first-child,
+.Round .spacer:last-child {
+    flex-grow: 0.5;
+}

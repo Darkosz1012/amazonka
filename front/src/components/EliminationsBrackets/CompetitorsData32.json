@@ -1,0 +1,194 @@
+[
+    {
+        "participant1": {
+            "fullname": "Jan Nowak",
+            "score": 25,
+            "pos": 1
+        },
+        "participant2": {
+            "fullname": "",
+            "score": -1,
+            "pos": 32
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Stefan Janicki",
+            "score": 30,
+            "pos": 2
+        },
+        "participant2": {
+            "fullname": "",
+            "score": -1,
+            "pos": 31
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Stefan Janicki",
+            "score": 30,
+            "pos": 3
+        },
+        "participant2": {
+            "fullname": "Jan Kamiński",
+            "score": 22,
+            "pos": 30
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Karol Nowakowski",
+            "score": 27,
+            "pos": 4
+        },
+        "participant2": {
+            "fullname": "Przemysław Jasiński",
+            "score": 20,
+            "pos": 29
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Konrad Dratwa",
+            "score": 45,
+            "pos": 5
+        },
+        "participant2": {
+            "fullname": "Jan Nowak",
+            "score": 25,
+            "pos": 28
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Karol Dratwa",
+            "score": 46,
+            "pos": 6
+        },
+        "participant2": {
+            "fullname": "Jan Kowalski",
+            "score": 28,
+            "pos": 27
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Adam Kowalski",
+            "score": 50,
+            "pos": 7
+        },
+        "participant2": {
+            "fullname": "Jan Nowak",
+            "score": 25,
+            "pos": 26
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Adam Kowalski",
+            "score": 50,
+            "pos": 8
+        },
+        "participant2": {
+            "fullname": "Jan Nowak",
+            "score": 40,
+            "pos": 25
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Adam Kowalski",
+            "score": 33,
+            "pos": 9
+        },
+        "participant2": {
+            "fullname": "Stefan Janicki",
+            "score": 44,
+            "pos": 24
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Karol Nowakowski",
+            "score": 47,
+            "pos": 10
+        },
+        "participant2": {
+            "fullname": "Przemysław Jasiński",
+            "score": 40,
+            "pos": 23
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Konrad Dratwa",
+            "score": 35,
+            "pos": 11
+        },
+        "participant2": {
+            "fullname": "Jan Nowak",
+            "score": 15,
+            "pos": 22
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Adam Kowalski",
+            "score": 30,
+            "pos": 12
+        },
+        "participant2": {
+            "fullname": "Jan Nowak",
+            "score": 35,
+            "pos": 21
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Adam Kowalski",
+            "score": 22,
+            "pos": 13
+        },
+        "participant2": {
+            "fullname": "Jan Nowak",
+            "score": 19,
+            "pos": 20
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Adam Kowalski",
+            "score": 33,
+            "pos": 14
+        },
+        "participant2": {
+            "fullname": "Stefan Janicki",
+            "score": 20,
+            "pos": 19
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Karol Nowakowski",
+            "score": 17,
+            "pos": 15
+        },
+        "participant2": {
+            "fullname": "Przemysław Jasiński",
+            "score": 40,
+            "pos": 18
+        }
+    },
+    {
+        "participant1": {
+            "fullname": "Konrad Dratwa",
+            "score": 18,
+            "pos": 16
+        },
+        "participant2": {
+            "fullname": "Jan Nowak",
+            "score": 47,
+            "pos": 17
+        }
+    }
+]

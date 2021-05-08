@@ -1,0 +1,36 @@
+.FlexContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+
+.DrawerToggle {
+    width: 40px;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.DrawerToggle div {
+    width: 90%;
+    height: 3px;
+    margin: 5px 15px;
+    background-color: white;
+}
+
+.FlexContainerImg {
+    height: 60px;
+    padding: 0px 7px;
+    margin-top: 5px;
+}
+
+@media (min-width: 600px) {
+    .FlexContainer {
+        display: none;
+    }
+}

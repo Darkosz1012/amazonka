@@ -11,6 +11,7 @@
         "@testing-library/user-event": "^12.8.3",
         "axios": "^0.21.1",
         "bootstrap": "^4.6.0",
+        "enzyme": "^3.11.0",
         "graphql": "^15.5.0",
         "jquery": "^3.6.0",
         "popper.js": "^1.16.1",
@@ -48,5 +49,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "enzyme-adapter-react-16": "^1.15.6"
     }
 }

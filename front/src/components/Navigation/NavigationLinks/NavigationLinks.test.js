@@ -2,29 +2,29 @@ import { render, screen, cleanup } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import NavigationLinks from "./NavigationLinks";
 
-afterEach(() => {
-    cleanup();
-});
+describe("Navigation Links", () => {
+    let navigationList;
 
-test("should render list", () => {
-    render(
-        <Router>
-            <NavigationLinks />
-        </Router>
-    );
-    const navigationList = screen.getByRole("list");
-    expect(navigationList).toBeInTheDocument();
-});
+    beforeEach(() => {
+        render(
+            <Router>
+                <NavigationLinks />
+            </Router>
+        );
 
-test("should be 5 elements in list", () => {
-    render(
-        <Router>
-            <NavigationLinks />
-        </Router>
-    );
-    const listElements = screen.getAllByRole("listitem");
-    for (let el of listElements) {
-        expect(el).toBeInTheDocument();
-    }
-    expect(listElements.length).toBe(5);
+        navigationList = screen.getByRole("list");
+    });
+
+    it("should be a list", () => {
+        expect(navigationList).toBeInTheDocument();
+    });
+
+    it("should render 5 list elements", () => {
+        const listElements = screen.getAllByRole("listitem");
+        expect(listElements).toHaveLength(5);
+
+        for (let el of listElements) {
+            expect(el).toBeInTheDocument();
+        }
+    });
 });

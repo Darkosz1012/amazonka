@@ -54,6 +54,7 @@
         "easygraphql-tester": "^6.0.1",
         "husky": "^6.0.0",
         "jest": "26.6.0",
+        "mockingoose": "^2.15.2",
         "nodemon": "^2.0.7",
         "prettier": "2.2.1",
         "pretty-quick": "^3.1.0"

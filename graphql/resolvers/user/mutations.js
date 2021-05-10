@@ -12,7 +12,9 @@ export default {
             };
         }
 
-        const result = await mutations.findUser(username);
+        const result = await User.findOne({ username })
+            .select("+password")
+            .exec();
         if (result == null) {
             throw {
                 message: "Username or password incorrect.",
@@ -44,9 +46,6 @@ function createUserToken(user, username) {
         user_id: user._id,
         username,
     };
-}
-export async function findUser(username) {
-    return await User.findOne({ username }).select("+password").exec();
 }
 
 export function createJWT(user, time) {

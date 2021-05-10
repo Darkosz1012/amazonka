@@ -5,21 +5,26 @@ import schema from "../../../../graphql/schema.js";
 
 import * as mutations from "../../../../graphql/resolvers/user/mutations.js";
 
+import * as mockingoose from "mockingoose";
+import { User } from "../../../../db/index.js";
+
 process.env.ACCESS_TOKEN_SECRET = "secret";
 
 describe("login function", () => {
     beforeAll(async () => {
         const password = await hash("pass");
-
-        mutations.findUser = jest.fn().mockImplementation(() => ({
-            _id: 1,
-            user: "user",
+        const _user_data = {
+            _id: "507f191e810c19729de860ea",
+            username: "user",
             password: password,
-        }));
+        };
+
+        mockingoose(User).toReturn(_user_data, "findOne");
     });
 
     afterAll(() => {
         jest.clearAllMocks();
+        mockingoose.resetAll();
     });
 
     test("Should login if login data is valid", async () => {
@@ -33,7 +38,9 @@ describe("login function", () => {
         expect(result.username).toBe("user");
         expect(result.accessToken).not.toBeUndefined();
         expect(result.refreshToken).not.toBeUndefined();
-        expect(result.user_id).toBe(1);
+        expect(JSON.stringify(result.user_id)).toBe(
+            '"507f191e810c19729de860ea"'
+        );
 
         expect(result.accessToken).not.toBe(result.refreshToken);
     });

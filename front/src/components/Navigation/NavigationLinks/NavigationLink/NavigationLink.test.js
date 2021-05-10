@@ -1,19 +1,34 @@
 import { render, screen, cleanup } from "@testing-library/react";
+import { within } from "@testing-library/dom";
 import { MemoryRouter as Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import NavigationLink from "./NavigationLink";
 
-afterEach(() => {
-    cleanup();
-});
+describe("Navigation Link", () => {
+    let navigationLink;
 
-test("should be list element with certain content", () => {
-    render(
-        <Router>
-            <NavigationLink link="/testpath">test link</NavigationLink>
-        </Router>
-    );
-    const navigationLink = screen.getByRole("listitem");
-    expect(navigationLink).toBeInTheDocument();
-    expect(navigationLink).toHaveTextContent("test link");
+    beforeEach(() => {
+        render(
+            <Router>
+                <NavigationLink link="/testpath">test link</NavigationLink>
+            </Router>
+        );
+
+        navigationLink = screen.getByRole("listitem");
+    });
+
+    it("should be a list item", () => {
+        expect(navigationLink).toBeInTheDocument();
+    });
+
+    it("should render passed text", () => {
+        expect(navigationLink).toHaveTextContent("test link");
+    });
+
+    it("should link to given address", () => {
+        expect(within(navigationLink).getByRole("link")).toHaveAttribute(
+            "href",
+            "/testpath"
+        );
+    });
 });

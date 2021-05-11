@@ -5,13 +5,13 @@ import Button from "../../UI/Button/Button";
 
 function CompetitionDetails() {
     const params = useParams();
-    const name = competitionDetaildata[params.id - 1]["nazwa"];
-    const location = competitionDetaildata[params.id - 1]["lokalizacja"];
-    const start_date = competitionDetaildata[params.id - 1]["data_start"];
-    const end_date = competitionDetaildata[params.id - 1]["data_koniec"];
-    const description = competitionDetaildata[params.id - 1]["opis"];
-    const schedule = competitionDetaildata[params.id - 1]["program"];
-    const categories = competitionDetaildata[params.id - 1]["kategorie"].map(
+    const name = competitionDetaildata[params.id - 1]["name"];
+    const location = competitionDetaildata[params.id - 1]["location"];
+    const start_date = competitionDetaildata[params.id - 1]["date_start"];
+    const end_date = competitionDetaildata[params.id - 1]["date_end"];
+    const description = competitionDetaildata[params.id - 1]["description"];
+    const schedule = competitionDetaildata[params.id - 1]["schedule"];
+    const categories = competitionDetaildata[params.id - 1]["category"].map(
         (category) => category.nazwa_kategorii
     );
     const categ_num = Object.keys(categories).length;

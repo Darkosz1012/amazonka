@@ -1,5 +1,5 @@
 import jsonwebtoken from "jsonwebtoken";
-import * as auth from "../../../auth/auth.js";
+import * as auth from "$/auth/auth.js";
 
 function InvalidHeadersReq() {
     const req = {};

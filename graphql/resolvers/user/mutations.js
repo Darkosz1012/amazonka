@@ -1,5 +1,6 @@
-import { User } from "../../../db/index.js";
-import { hash, verify } from "../../../auth/auth.js";
+import { User } from "$/db/index.js";
+
+import { hash, verify } from "$/auth/auth.js";
 import jwt from "jsonwebtoken";
 
 export default {

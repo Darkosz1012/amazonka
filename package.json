@@ -5,21 +5,19 @@
     "main": "server.js",
     "type": "module",
     "scripts": {
-        "test": "npx basetag link --hook && jest",
+        "test": "jest",
         "test-f": "cd front && npm test",
         "test-a": "npm run test && npm run test-f",
-        "start:dev": "npx basetag link --hook && npx nodemon server.js",
-        "start": "npx basetag link --hook && node server",
+        "start:dev": "npx nodemon server.js",
+        "start": "node server",
         "prepare": "husky install",
-        "pre-commit": "pretty-quick --staged"
+        "pre-commit": "pretty-quick --staged",
+        "postinstall": "cd front && npm install && cd .. && npx basetag link"
     },
     "jest": {
         "transform": {
             "^.+\\.jsx?$": "babel-jest"
-        },
-        "modulePathIgnorePatterns": [
-            "<rootDir>/front"
-        ]
+        }
     },
     "repository": {
         "type": "git",

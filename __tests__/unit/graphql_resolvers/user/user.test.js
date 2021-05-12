@@ -25,7 +25,7 @@ describe("login function", () => {
         mockingoose.resetAll();
     });
 
-    test("Should login if login data is valid", async () => {
+    test("should login if login data is valid", async () => {
         const valid_login = {
             username: "user",
             password: "pass",
@@ -43,7 +43,7 @@ describe("login function", () => {
         expect(result.accessToken).not.toBe(result.refreshToken);
     });
 
-    test("Should throw error if login data is invalid", async () => {
+    test("should throw if login and password are undefined", async () => {
         const invalid_login = {};
 
         await expect(
@@ -69,7 +69,7 @@ describe("register function", () => {
         expect(result.user_id).not.toBeUndefined();
     });
 
-    test("should not register if user already exists", async () => {
+    test("should throw if user already exists", async () => {
         mockingoose(User).toReturn(
             new Error("MongoError: E11000 duplicate key error collection"),
             "save"
@@ -85,7 +85,7 @@ describe("register function", () => {
         }
     });
 
-    test("should not register if data is wrong", async () => {
+    test("should throw if login or password are undefined", async () => {
         try {
             await mutations.register(undefined, { username: "user" });
         } catch (e) {

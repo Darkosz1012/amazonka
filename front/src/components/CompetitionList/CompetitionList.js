@@ -15,7 +15,12 @@ const columns = [
         sort: true,
         formatter: (value, row) => (
             <div>
-                <a href={"competitionsdetails/" + row.id}>{value} </a>
+                <a
+                    data-testid="linktext"
+                    href={"competitionsdetails/" + row.id}
+                >
+                    {value}{" "}
+                </a>
             </div>
         ),
     },
@@ -46,7 +51,9 @@ const defaultSorted = [
 function CompetitionList() {
     return (
         <div className="competitionsDataList">
-            <p id="mainHeader">Lista wszystkich zawodów</p>
+            <p id="mainHeader" role="heading" aria-level="1">
+                Lista wszystkich zawodów
+            </p>
             <div className="container">
                 <BootstrapTable
                     striped

@@ -1,18 +1,18 @@
-import { useParams } from "react-router-dom";
 import "./CompetitionDetails.css";
+import { useParams } from "react-router-dom";
 import competitionDetaildata from "../competitionsData";
 import Button from "../../UI/Button/Button";
 
-function CompetitionDetails() {
+function CompetitionDetails(props) {
     const params = useParams();
     const name = competitionDetaildata[params.id - 1]["name"];
     const location = competitionDetaildata[params.id - 1]["location"];
     const start_date = competitionDetaildata[params.id - 1]["date_start"];
     const end_date = competitionDetaildata[params.id - 1]["date_end"];
-    const description = competitionDetaildata[params.id - 1]["description"];
+    const description = competitionDetaildata[params.id - 1]["descriptions"];
     const schedule = competitionDetaildata[params.id - 1]["schedule"];
     const categories = competitionDetaildata[params.id - 1]["category"].map(
-        (category) => category.nazwa_kategorii
+        (category) => category.category_name
     );
     const categ_num = Object.keys(categories).length;
 
@@ -48,7 +48,7 @@ function CompetitionDetails() {
     return (
         <div className="DetailsContainer">
             <div id="competitionsDetailLeftDiv">
-                <div className="detailDiv">
+                <div className="detailDiv" data-testid="detailDiv">
                     <p id="compName">{name}</p>
                     <br />
                     <div className="insideDetailDiv">
@@ -71,14 +71,17 @@ function CompetitionDetails() {
                         </p>
                     </div>
                 </div>
-                <div className="scheduleDiv">
+                <div className="scheduleDiv" data-testid="scheduleDiv">
                     <p className="title_p">
                         <b>Harmonogram:</b>
                     </p>
                     <p>{schedule}</p>
                 </div>
             </div>
-            <div id="competitionsDetailRightDiv">
+            <div
+                id="competitionsDetailRightDiv"
+                data-testid="competitionsDetailCatPosScoresDiv"
+            >
                 <div id="insidecompetitionsDetailRightDiv">
                     <fieldset id="fs">
                         <legend>Rozstawienie zawodników</legend>

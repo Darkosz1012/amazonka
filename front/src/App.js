@@ -9,12 +9,27 @@ import CompetitionDetails from "./components/CompetitionList/Details/Competition
 import Positions from "./components/CompetitionList/Details/Positions/Positions";
 import Qualifications from "./components/CompetitionList/Details/Qualifications/Qualifications";
 import EliminationsBrackets from "./components/EliminationsBrackets/EliminationsBrackets";
+import AdminCompetitionsMenu from "./components/AdminPanel/CompetitionsMenu";
+import AdminNewCompetition from "../src/components/AdminPanel/NewCompetition/NewCompetition";
+// import AdminCompetitionDetail from "./components/AdminPanel/Panel/CompetitionDetails";
 
 function App() {
     return (
         <div>
             <Layout>
                 <Switch>
+                    {/* <Route
+                        path="admin/competitions/panel/:id/details"
+                        component={AdminCompetitionDetail}
+                    /> */}
+                    <Route
+                        path="/admin/newcompetition"
+                        component={AdminNewCompetition}
+                    />
+                    <Route
+                        path="/admin/competitions"
+                        component={AdminCompetitionsMenu}
+                    />
                     <Route
                         path="/competitionsdetails/:id/:cat/position"
                         component={Positions}

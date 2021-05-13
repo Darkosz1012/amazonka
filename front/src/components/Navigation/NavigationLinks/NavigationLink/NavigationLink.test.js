@@ -1,7 +1,6 @@
 import { render, screen, cleanup } from "@testing-library/react";
-import { within } from "@testing-library/dom";
+import { within } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
-import { createMemoryHistory } from "history";
 import NavigationLink from "./NavigationLink";
 
 describe("Navigation Link", () => {

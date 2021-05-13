@@ -1,27 +1,23 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Toolbar from "./Toolbar";
 
-afterEach(() => {
-    cleanup();
-});
+describe("Toolbar", () => {
+    beforeEach(() => {
+        render(
+            <Router>
+                <Toolbar />
+            </Router>
+        );
+    });
 
-test("should render toolbar as nav", () => {
-    render(
-        <Router>
-            <Toolbar />
-        </Router>
-    );
-    const navHeader = screen.getByRole("navigation");
-    expect(navHeader).toBeInTheDocument();
-});
+    it("should render toolbar as nav", () => {
+        const navHeader = screen.getByRole("navigation");
+        expect(navHeader).toBeInTheDocument();
+    });
 
-test("should render Toolbar as header", () => {
-    render(
-        <Router>
-            <Toolbar />
-        </Router>
-    );
-    const toolbar = screen.getByRole("banner");
-    expect(toolbar).toContainHTML("header");
+    it("should render Toolbar as header", () => {
+        const toolbar = screen.getByRole("banner");
+        expect(toolbar).toContainHTML("header");
+    });
 });

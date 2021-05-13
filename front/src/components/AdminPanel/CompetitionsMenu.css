@@ -1,0 +1,27 @@
+#adminMenuContainer {
+    margin-top: 80px;
+}
+/* 
+@media (max-width: 599px) {
+    #mainHeader {
+        font-size: 22px;
+    }
+    .table {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+    .container {
+        padding: 20px 10px;
+    }
+} */
+
+.newCompetitionButtonDiv {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.custom-button-1 {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+}

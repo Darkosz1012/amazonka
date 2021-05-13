@@ -43,13 +43,13 @@ describe("Competition Details", () => {
     //     expect(div1).toBeInTheDocument();
     // });
 
-    // test('should render basic schedule div', () => {
-    //     const div2 = screen.getByTestId("competitionsDetailLeftDiv");
-    //     expect(div2).toBeInTheDocument();
-    // });
+    test("should render basic schedule div", () => {
+        const div2 = screen.getByTestId("competitionsDetailLeftDiv");
+        expect(div2).toBeInTheDocument();
+    });
 
-    // test('should render category, position, scores div', () => {
-    //     const div3 = screen.getByTestId("competitionsDetailCatPosScoresDiv");
-    //     expect(div3).toBeInTheDocument();
-    // });
+    test("should render category, position, scores div", () => {
+        const div3 = screen.getByTestId("competitionsDetailCatPosScoresDiv");
+        expect(div3).toBeInTheDocument();
+    });
 });

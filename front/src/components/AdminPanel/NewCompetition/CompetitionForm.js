@@ -32,14 +32,14 @@ const CompetitionForm = (props) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div class="row">
-                    <div class="column">
-                        <div class="label-column">
+                <div className="row">
+                    <div className="column">
+                        <div className="label-column">
                             <label htmlFor="name">Nazwa zawodów:</label>
                         </div>
                     </div>
-                    <div class="column">
-                        <div class="input-column">
+                    <div className="column">
+                        <div className="input-column">
                             <input
                                 required
                                 type="text"
@@ -51,16 +51,16 @@ const CompetitionForm = (props) => {
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="label-column">
+                <div className="row">
+                    <div className="column">
+                        <div className="label-column">
                             <label htmlFor="start_date">
                                 Data rozpoczęcia:
                             </label>
                         </div>
                     </div>
-                    <div class="column">
-                        <div class="input-column">
+                    <div className="column">
+                        <div className="input-column">
                             <input
                                 required
                                 type="text"
@@ -74,14 +74,14 @@ const CompetitionForm = (props) => {
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="label-column">
+                <div className="row">
+                    <div className="column">
+                        <div className="label-column">
                             <label htmlFor="end_date">Data zakończenia:</label>
                         </div>
                     </div>
-                    <div class="column">
-                        <div class="input-column">
+                    <div className="column">
+                        <div className="input-column">
                             <input
                                 required
                                 type="text"
@@ -95,14 +95,14 @@ const CompetitionForm = (props) => {
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="label-column">
+                <div className="row">
+                    <div className="column">
+                        <div className="label-column">
                             <label htmlFor="location">Lokalizacja:</label>
                         </div>
                     </div>
-                    <div class="column">
-                        <div class="input-column">
+                    <div className="column">
+                        <div className="input-column">
                             <input
                                 required
                                 type="text"

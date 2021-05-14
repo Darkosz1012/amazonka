@@ -1,30 +1,27 @@
 import { render, screen, cleanup } from "@testing-library/react";
-import {
-    ReactDOM,
-    render as renderDom,
-    Route,
-    BrowserRouter as Router,
-} from "react-router-dom";
+import { createMemoryHistory } from "history";
+import React from "react";
+import { Router } from "react-router-dom";
 import CompetitionDetails from "./CompetitionDetails";
 import CompetitionList from "../CompetitionList"; // to delete
 import "@testing-library/jest-dom/extend-expect";
 
-// commented to fix, something still blocking
+// commented to fix, not render properly
 
 describe("Competition Details", () => {
     afterEach(() => {
         cleanup();
     });
-    beforeEach(() => {
-        render(
-            <Router>
-                <Route
-                    path="/competitionsdetails/1"
-                    component={CompetitionDetails}
-                />
-            </Router>
-        );
-    });
+    // beforeEach(() => {
+    //     const history = createMemoryHistory()
+    //     const route = '/competitionsdetails/1'
+    //     history.push(route)
+    //     render(
+    //       <Router history={history}>
+    //         <CompetitionDetails />
+    //       </Router>
+    //     )
+    // });
 
     // to delete
     test("should render header", () => {

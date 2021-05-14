@@ -1,17 +1,16 @@
 import "./CompetitionDetails.css";
-import { useParams } from "react-router-dom";
 import competitionDetaildata from "../competitionsData";
 import Button from "../../UI/Button/Button";
 
 function CompetitionDetails(props) {
-    const params = useParams();
-    const name = competitionDetaildata[params.id - 1]["name"];
-    const location = competitionDetaildata[params.id - 1]["location"];
-    const start_date = competitionDetaildata[params.id - 1]["date_start"];
-    const end_date = competitionDetaildata[params.id - 1]["date_end"];
-    const description = competitionDetaildata[params.id - 1]["descriptions"];
-    const schedule = competitionDetaildata[params.id - 1]["schedule"];
-    const categories = competitionDetaildata[params.id - 1]["category"].map(
+    const _id = props.match.params.id;
+    const name = competitionDetaildata[_id - 1]["name"];
+    const location = competitionDetaildata[_id - 1]["location"];
+    const start_date = competitionDetaildata[_id - 1]["date_start"];
+    const end_date = competitionDetaildata[_id - 1]["date_end"];
+    const description = competitionDetaildata[_id - 1]["descriptions"];
+    const schedule = competitionDetaildata[_id - 1]["schedule"];
+    const categories = competitionDetaildata[_id - 1]["category"].map(
         (category) => category.category_name
     );
     const categ_num = Object.keys(categories).length;
@@ -24,10 +23,10 @@ function CompetitionDetails(props) {
         for (let i = 0; i < categ_num; i++) {
             list.push(
                 <a
-                    id="params.id"
+                    id="_id"
                     href={
                         "/competitionsdetails/" +
-                        params.id +
+                        _id +
                         "/" +
                         categories[i] +
                         "/" +

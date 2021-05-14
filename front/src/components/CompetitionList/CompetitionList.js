@@ -17,7 +17,8 @@ const columns = [
             <div>
                 <a
                     data-testid="linktext"
-                    href={"competitionsdetails/" + row.id}
+                    href={"/competitionsdetails/" + row.id}
+                    params={{ id: row.id }}
                 >
                     {value}{" "}
                 </a>

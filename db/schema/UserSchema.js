@@ -16,7 +16,7 @@ export default new mongoose.Schema({
         required: true,
         unique: true,
     },
-    accepted: {
+    verified: {
         type: Boolean,
         required: true,
     },

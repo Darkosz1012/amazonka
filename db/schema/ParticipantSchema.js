@@ -20,6 +20,7 @@ export default new mongoose.Schema({
     },
     gender: {
         type: String,
+        enum: ["M", "F"],
         required: true,
     },
     country: {

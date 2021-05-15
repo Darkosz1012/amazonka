@@ -11,6 +11,18 @@ export default new mongoose.Schema({
         select: false,
         required: true,
     },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    accepted: {
+        type: Boolean,
+        required: true,
+    },
+    reason_for_creating_account: {
+        type: String,
+    },
     competitions: [
         {
             type: mongoose.Schema.Types.ObjectId,

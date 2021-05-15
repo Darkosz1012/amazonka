@@ -33,12 +33,12 @@ export default new mongoose.Schema({
                 required: true,
             },
             //Participants extended ref
-            name: {
+            first_name: {
                 type: String,
                 required: true,
             },
             //Participants extended ref
-            surname: {
+            last_name: {
                 type: String,
                 required: true,
             },

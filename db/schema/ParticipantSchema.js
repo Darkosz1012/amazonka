@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    name: {
+    first_name: {
         type: String,
         required: true,
     },
-    surname: {
+    last_name: {
         type: String,
         required: true,
     },
@@ -13,7 +13,7 @@ export default new mongoose.Schema({
         type: String,
         required: true,
     },
-    license: {
+    license_no: {
         type: String,
         required: true,
         unique: true,
@@ -21,5 +21,13 @@ export default new mongoose.Schema({
     gender: {
         type: String,
         required: true,
+    },
+    country: {
+        type: String,
+        required: false,
+    },
+    club: {
+        type: String,
+        required: false,
     },
 });

@@ -8,7 +8,7 @@ export default new mongoose.Schema({
     },
     details_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "CompetitionDetail",
+        ref: "CompetitionDetails",
         required: true,
     },
 

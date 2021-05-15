@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    user_id: {
+    owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true,
     },
-    details_id: {
+    details: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "CompetitionDetails",
         required: true,

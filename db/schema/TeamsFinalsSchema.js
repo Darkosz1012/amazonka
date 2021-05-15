@@ -19,7 +19,7 @@ export default new mongoose.Schema({
         },
     ],
     team1: {
-        id: {
+        team_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Team",
         },
@@ -34,7 +34,7 @@ export default new mongoose.Schema({
         },
     },
     team2: {
-        id: {
+        team_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Team",
         },

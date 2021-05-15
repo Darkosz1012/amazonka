@@ -1,9 +1,10 @@
 import { userMutations } from "./user/index.js";
-
+import { categoryMutations, categoryQueries } from "./category/index.js";
 const resolvers = {
-    Query: {},
+    Query: { ...categoryQueries },
     Mutation: {
         ...userMutations,
+        ...categoryMutations,
     },
 };
 

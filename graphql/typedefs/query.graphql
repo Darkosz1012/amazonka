@@ -1,3 +1,4 @@
 type Query {
-    tmp_root_query: String!
+    categories: [Category]
+    category(id: String): Category
 }

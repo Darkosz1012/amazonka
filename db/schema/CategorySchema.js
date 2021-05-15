@@ -19,6 +19,11 @@ export default new mongoose.Schema({
     end_stand: { type: Number },
     distance: [
         {
+            _id: {
+                type: mongoose.Schema.Types.ObjectId,
+                required: true,
+                unique: true,
+            },
             name: { type: String },
             series_type: { type: Number },
         },

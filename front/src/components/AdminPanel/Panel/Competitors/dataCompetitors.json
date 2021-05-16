@@ -1,0 +1,12 @@
+[
+    {
+        "id" : 1,
+        "name" : "Dariusz",
+        "surname" : "Biela",
+        "year" : 1998,
+        "gender" : "Mężczyzna",
+        "licenceNumber" : 1234,
+        "category": "x",
+        "action" : "z"
+    }
+]

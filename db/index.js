@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { connectToMongoose } from "./connectToMongoose.js";
 import UserSchema from "./schema/UserSchema.js";
 import CompetitionSchema from "./schema/CompetitionSchema.js";
 import CompetitionDetailsSchema from "./schema/CompetitionDetailsSchema.js";
@@ -9,12 +10,7 @@ import TeamSchema from "./schema/TeamSchema.js";
 import FinalsSchema from "./schema/FinalsSchema.js";
 import TeamsFinalsSchema from "./schema/TeamsFinalsSchema.js";
 
-if (process.env.DATABASE_LINK !== undefined) {
-    mongoose.connect(process.env.DATABASE_LINK, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-}
+connectToMongoose(process.env.DATABASE_LINK);
 
 export const User = mongoose.model("User", UserSchema);
 

@@ -5,13 +5,19 @@ const port = process.env.PORT || 3001;
 import express from "express";
 import graphqlServer from "./graphql/index.js";
 
-const app = express();
+export function setup(app) {
+    graphqlServer.applyMiddleware({
+        app,
+    });
 
-graphqlServer.applyMiddleware({
-    app,
-});
+    return app;
+}
 
-// noinspection JSIgnoredPromiseFromCall
-app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
-});
+if (process.env.FUNCTIONAL_TESTS !== "true") {
+    const app = setup(express());
+
+    // noinspection JSIgnoredPromiseFromCall
+    app.listen(port, () => {
+        console.log(`App listening at http://localhost:${port}`);
+    });
+}

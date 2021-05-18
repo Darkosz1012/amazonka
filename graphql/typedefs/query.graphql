@@ -1,3 +1,5 @@
 type Query {
     tmp_root_query: String!
+
+    competitions(_id: ID, owner: String, name: String): [Competition]
 }

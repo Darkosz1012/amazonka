@@ -1,4 +1,24 @@
 type Mutation {
     login(username: String!, password: String!): Token!
     register(username: String!, password: String!): Token!
+
+    newCompetition(
+        owner: ID!
+        name: String!
+
+        start_date: String
+        end_date: String
+        location: String
+    ): Competition
+
+    updateCompetition(
+        _id: ID!
+        name: String
+        start_date: String
+        end_date: String
+        location: String
+        details: inputDetails
+    ): Competition
+
+    removeCompetition(_id: ID!): Competition
 }

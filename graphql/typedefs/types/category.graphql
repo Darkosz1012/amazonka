@@ -1,3 +1,8 @@
 type Category {
-    name: String
+    _id: String!
+    name: String!
+    gender: String!
+    start_stand: Int
+    end_stand: Int
+    distance: [Distance]
 }

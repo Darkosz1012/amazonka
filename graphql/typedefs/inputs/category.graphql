@@ -1,0 +1,13 @@
+input inputCategory {
+    _id: ID!
+    name: String
+    gender: String
+    start_stand: Int
+    end_stand: Int
+    distance: [inputDistance]
+}
+
+input inputDistance {
+    name: String
+    series_type: Int
+}

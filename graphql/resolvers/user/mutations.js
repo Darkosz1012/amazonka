@@ -22,13 +22,16 @@ export default {
         }
     },
 
-    register: async (_, { username, password }) => {
+    register: async (_, { username, password, email }) => {
         verify_login_data(username, password);
+        verify_email(email);
 
         try {
             let result = await User.create({
                 username,
                 password: await hash(password),
+                email,
+                verified: false,
             });
 
             return createUserToken(result, username);
@@ -61,5 +64,11 @@ function createJWT(user, time) {
 function verify_login_data(username, password) {
     if (username === undefined || password === undefined) {
         throw new UserInputError("Username or password incorrect.");
+    }
+}
+
+function verify_email(email) {
+    if (email === undefined) {
+        throw new UserInputError("No email provided.");
     }
 }

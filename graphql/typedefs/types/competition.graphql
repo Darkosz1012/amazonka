@@ -1,5 +1,5 @@
 type Competition {
-    id: ID!
+    _id: ID!
     user_id: ID!
 
     name: String!
@@ -7,12 +7,12 @@ type Competition {
     end_date: String
     location: String
 
-    details_id: CompetitionDetails
+    details: CompetitionDetails
     categories: [Category]
 }
 
 type CompetitionDetails {
-    id: ID
+    _id: ID
     description: String
     timetable: String
 }

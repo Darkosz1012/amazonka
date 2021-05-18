@@ -1,0 +1,12 @@
+type Team {
+    type: String!
+    competition: Competition!
+
+    name: String!
+    categories: [Category]!
+    final_score: Int
+    finals_initial_placement: Int
+    finals_placement: Int
+
+    participants: [Participant]
+}

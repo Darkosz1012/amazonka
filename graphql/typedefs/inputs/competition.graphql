@@ -1,0 +1,12 @@
+input CompetitionUpdateParams {
+    _id: ID!
+    name: String
+    start_date: String
+    end_date: String
+    location: String
+}
+
+input Details {
+    description: String
+    timetable: String
+}

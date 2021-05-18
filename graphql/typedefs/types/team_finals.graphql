@@ -1,0 +1,15 @@
+type TeamFinals {
+    _id: ID!
+    type: String
+    competition: Competition
+    categories: [Category]
+    team1: [TeamScore]
+    team2: [TeamScore]
+
+    round: Int
+}
+
+type TeamScore {
+    team_id: ID!
+    team: Team
+}

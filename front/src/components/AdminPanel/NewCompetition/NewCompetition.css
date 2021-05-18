@@ -7,9 +7,11 @@
     opacity: 0.78;
     justify-content: center;
 }
+
 form {
     margin: 30px 30px 30px 30px;
 }
+
 .row {
     display: flex;
     flex-direction: row;

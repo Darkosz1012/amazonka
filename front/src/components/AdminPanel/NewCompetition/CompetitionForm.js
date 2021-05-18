@@ -17,6 +17,7 @@ const CompetitionForm = (props) => {
         setStartDate(event.target.value);
     };
     const handleEndDateChange = (event) => {
+        console.log(event.target.value);
         setEndDate(event.target.value);
     };
     const handleLocationChange = (event) => {
@@ -25,17 +26,17 @@ const CompetitionForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(name, start_date, end_date, location);
         alert("Zatwierdzono");
         history.push("/admin/competitions");
     };
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="column">
                         <div className="label-column">
-                            <label htmlFor="name">Nazwa zawodów:</label>
+                            <label htmlFor="compname">Nazwa zawodów:</label>
                         </div>
                     </div>
                     <div className="column">
@@ -43,7 +44,7 @@ const CompetitionForm = (props) => {
                             <input
                                 required
                                 type="text"
-                                id="name"
+                                id="compname"
                                 className="form-control"
                                 value={name}
                                 onChange={handleNameChange}
@@ -63,12 +64,13 @@ const CompetitionForm = (props) => {
                         <div className="input-column">
                             <input
                                 required
-                                type="text"
+                                type="date"
                                 id="start_date"
-                                placeholder="dd-mm-rrrr"
+                                placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={start_date}
-                                pattern="[0-9]{1,2}-[0-9]{1,2}-[0-9]{4}"
+                                min="2021-05-01"
+                                max="2030-12-31"
                                 onChange={handleStartDateChange}
                             />{" "}
                         </div>
@@ -84,12 +86,13 @@ const CompetitionForm = (props) => {
                         <div className="input-column">
                             <input
                                 required
-                                type="text"
+                                type="date"
                                 id="end_date"
-                                placeholder="dd-mm-rrrr"
+                                placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={end_date}
-                                pattern="[0-9]{1,2}-[0-9]{1,2}-[0-9]{4}"
+                                min="2021-05-01"
+                                max="2030-12-31"
                                 onChange={handleEndDateChange}
                             />{" "}
                         </div>

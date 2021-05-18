@@ -47,6 +47,7 @@ function CompetitionsMenu() {
     function handleClick() {
         history.push("/admin/newcompetition");
     }
+
     return (
         <div className="competitionsMenu">
             <div className="container" id="adminMenuContainer">

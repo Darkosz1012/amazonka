@@ -9,7 +9,7 @@ function CompetitionDetails(props) {
     const location = competitionDetaildata[params.id - 1]["location"];
     const start_date = competitionDetaildata[params.id - 1]["date_start"];
     const end_date = competitionDetaildata[params.id - 1]["date_end"];
-    const description = competitionDetaildata[params.id - 1]["descriptions"];
+    const description = competitionDetaildata[params.id - 1]["description"];
     const schedule = competitionDetaildata[params.id - 1]["schedule"];
     const categories = competitionDetaildata[params.id - 1]["category"].map(
         (category) => category.category_name
@@ -18,13 +18,15 @@ function CompetitionDetails(props) {
 
     let categoriesStr = categories.join(", ");
 
-    let catButtonsNumber = 0;
+    let catButtonsNumber = 1;
+
     function createButtonsList(subpath) {
         let list = [];
         for (let i = 0; i < categ_num; i++) {
             list.push(
                 <a
                     id="params.id"
+                    key={subpath + catButtonsNumber++}
                     href={
                         "/competitionsdetails/" +
                         params.id +
@@ -36,12 +38,13 @@ function CompetitionDetails(props) {
                 >
                     <Button
                         className="category-btn"
-                        key={catButtonsNumber++}
+                        key={subpath + catButtonsNumber++}
                         placeholder={categories[i]}
                     />
                 </a>
             );
         }
+        catButtonsNumber = 0;
         return list;
     }
 
@@ -83,21 +86,21 @@ function CompetitionDetails(props) {
                 data-testid="competitionsDetailCatPosScoresDiv"
             >
                 <div id="insidecompetitionsDetailRightDiv">
-                    <fieldset id="fs">
+                    <fieldset className="fs">
                         <legend>Rozstawienie zawodników</legend>
-                        <div id="buttonList">
+                        <div className="buttonList">
                             {createButtonsList("position")}
                         </div>
                     </fieldset>
-                    <fieldset id="fs">
+                    <fieldset className="fs">
                         <legend>Wyniki kwalifikacji</legend>
-                        <div id="buttonList">
+                        <div className="buttonList">
                             {createButtonsList("qualification")}
                         </div>
                     </fieldset>
-                    <fieldset id="fs">
+                    <fieldset className="fs">
                         <legend>Wyniki eliminacji</legend>
-                        <div id="buttonList">
+                        <div className="buttonList">
                             {createButtonsList("elimination")}
                         </div>
                     </fieldset>

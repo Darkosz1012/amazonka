@@ -71,12 +71,12 @@
     background-color: #fffbed;
 }
 
-#fs {
+.fs {
     border: 2px solid #a19778;
     padding: 0px 30px 10px 30px;
 }
 
-#fs legend {
+.fs legend {
     width: auto;
     margin-left: 10px;
     padding-left: 10px;
@@ -87,6 +87,6 @@
     border: none;
 }
 
-#buttonList {
+.buttonList {
     margin: 0px 20px 0px 20px;
 }

@@ -1,55 +1,73 @@
 import { render, screen, cleanup } from "@testing-library/react";
-import {
-    ReactDOM,
-    render as renderDom,
-    Route,
-    BrowserRouter as Router,
-} from "react-router-dom";
-import CompetitionDetails from "./CompetitionDetails";
-import CompetitionList from "../CompetitionList"; // to delete
+import { Route, MemoryRouter as Router } from "react-router-dom";
+import ReactDOM from "react-dom";
 import "@testing-library/jest-dom/extend-expect";
 
-// commented to fix, something still blocking
-
 describe("Competition Details", () => {
+	const compData = {
+			"id": 1,
+			"name": "Puchar",
+			"location": "Nowy Sącz",
+			"date_start": "15-05-2021",
+			"date_end": "17-05-2021",
+			"description": "Lorem ipsum",
+			"schedule": "15.05.2021-sobota",
+			"category": [
+				{
+					"id": 1,
+					"category_name": "juniorzy"
+				},
+				{
+					"id": 2,
+					"category_name": "kobiety 18-25"
+				}
+			]
+		};
+		
+    jest.mock('../competitionsData.json', ()=>(
+	[
+		compData
+	]
+	));
+	
+	const CompetitionDetails = require('./CompetitionDetails.js');
+	
+	const competitionDetailsComponent = (
+        <Router initialEntries={["/competitionsdetails/1"]}>
+            <Route
+                path="/competitionsdetails/:id"
+                component={CompetitionDetails.default}
+            />
+        </Router>
+    );
+	
+    beforeEach(() => {
+        render(competitionDetailsComponent);        
+    });
+	
     afterEach(() => {
         cleanup();
     });
-    beforeEach(() => {
-        render(
-            <Router>
-                <Route
-                    path="/competitionsdetails/1"
-                    component={CompetitionDetails}
-                />
-            </Router>
-        );
+	
+    test("renders without crashing", () => {
+        const div = document.createElement("div");
+        ReactDOM.render(competitionDetailsComponent, div);
     });
-
-    // to delete
-    test("should render header", () => {
-        render(<CompetitionList />);
-        const header = screen.getByRole("heading");
-        expect(header).toHaveTextContent("Lista wszystkich zawodów");
+	
+    test("should render basic info", () => {
+        const div = screen.getByTestId("detailDiv");
+        expect(div).toBeInTheDocument();
+        expect(div).toHaveTextContent(compData.name);
+        expect(div).toHaveTextContent(compData.description);
     });
-
-    // test('renders without crashing', () => {
-    //     const div = document.createElement('div');
-    //     ReactDOM.renderDom(<CompetitionDetails/>, div);
-    // });
-
-    // test('should render basic info div', () => {
-    //     const div1 = screen.getByTestId("detailDiv");
-    //     expect(div1).toBeInTheDocument();
-    // });
-
-    // test("should render basic schedule div", () => {
-    //     const div2 = screen.getByTestId("competitionsDetailLeftDiv");
-    //     expect(div2).toBeInTheDocument();
-    // });
-
-    // test("should render category, position, scores div", () => {
-    //     const div3 = screen.getByTestId("competitionsDetailCatPosScoresDiv");
-    //     expect(div3).toBeInTheDocument();
-    // });
+	
+    test("should render basic schedule div", () => {
+        const div = screen.getByTestId("scheduleDiv");
+        expect(div).toBeInTheDocument();
+    });
+	
+    test("should render category, position, scores div", () => {
+        const div = screen.getByTestId("competitionsDetailCatPosScoresDiv");
+        expect(div).toBeInTheDocument();
+    });
 });

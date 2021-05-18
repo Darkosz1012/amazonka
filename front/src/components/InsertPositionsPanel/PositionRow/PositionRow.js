@@ -5,7 +5,8 @@ const PositionRow = (props) => {
     let [order, setOrder] = useState(props.order);
 
     const handlePositionChange = (event) => {
-        setPosition(event.target.value);
+        let pos = Math.min(Math.max(event.target.value, props.min), props.max);
+        setPosition(pos);
     };
 
     const handleOrderChange = (event) => {

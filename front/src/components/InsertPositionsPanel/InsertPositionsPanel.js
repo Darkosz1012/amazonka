@@ -65,7 +65,7 @@ function InsertPositions() {
                 <table className="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th className="col-md-4">Imie:</th>
+                            <th className="col-md-4">Imię:</th>
                             <th className="col-md-4">Nazwisko:</th>
                             <th className="col-md-2">Rocznik:</th>
                             <th className="col-md-2">Płeć:</th>

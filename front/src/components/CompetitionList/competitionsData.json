@@ -5,24 +5,24 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
                 "id": 1,
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
                 "id": 2,
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
                 "id": 3,
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
                 "id": 4,
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -32,20 +32,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -55,20 +55,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -78,20 +78,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -101,20 +101,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -124,20 +124,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -147,20 +147,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -170,20 +170,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -193,20 +193,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -216,20 +216,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -239,20 +239,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -262,20 +262,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -285,20 +285,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -308,20 +308,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -331,20 +331,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -354,20 +354,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -377,20 +377,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -400,20 +400,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -423,20 +423,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -446,20 +446,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -469,20 +469,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -492,20 +492,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -515,20 +515,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -538,20 +538,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -561,20 +561,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -584,20 +584,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -607,20 +607,20 @@
         "location": "Nowy Sącz",
         "date_start": "15-05-2021",
         "date_end": "17-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -630,20 +630,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -653,20 +653,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -676,20 +676,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -699,20 +699,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -722,20 +722,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -745,20 +745,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -768,20 +768,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -791,20 +791,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -814,20 +814,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -837,20 +837,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -860,20 +860,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -883,20 +883,20 @@
         "location": "Rzeszów",
         "date_start": "21-05-2021",
         "date_end": "22-05-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     },
@@ -906,20 +906,20 @@
         "location": "Kraków",
         "date_start": "03-06-2021",
         "date_end": "04-06-2021",
-        "opis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
-        "program": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
-        "kategorie": [
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
             {
-                "nazwa_kategorii": "juniorzy"
+                "category_name": "juniorzy"
             },
             {
-                "nazwa_kategorii": "kobiety 18-25"
+                "category_name": "kobiety 18-25"
             },
             {
-                "nazwa_kategorii": "mężczyżni 18-25"
+                "category_name": "mężczyżni 18-25"
             },
             {
-                "nazwa_kategorii": "seniorzy"
+                "category_name": "seniorzy"
             }
         ]
     }

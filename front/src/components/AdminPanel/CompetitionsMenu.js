@@ -1,7 +1,9 @@
 import BootstrapTable from "react-bootstrap-table-next";
-import competitionsData from "./competitionsData";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
-import "./CompetitionList.css";
+import { useHistory } from "react-router-dom";
+import "./CompetitionsMenu.css";
+import competitionsData from "./competitionsData";
+import Button from "../UI/Button/Button";
 
 const columns = [
     {
@@ -17,7 +19,8 @@ const columns = [
             <div>
                 <a
                     data-testid="linktext"
-                    href={"competitionsdetails/" + row.id}
+                    href={"/admin/panel/" + row.id + "/details"}
+                    params={{ id: row.id }}
                 >
                     {value}{" "}
                 </a>
@@ -27,34 +30,27 @@ const columns = [
     {
         dataField: "location",
         text: "Lokalizacja",
-        sort: true,
     },
     {
         dataField: "date_start",
         text: "Data rozpoczęcia",
-        sort: true,
     },
     {
         dataField: "date_end",
         text: "Data zakończenia",
-        sort: true,
     },
 ];
 
-const defaultSorted = [
-    {
-        dataField: "name",
-        order: "desc",
-    },
-];
+function CompetitionsMenu() {
+    const history = useHistory();
 
-function CompetitionList() {
+    function handleClick() {
+        history.push("/admin/newcompetition");
+    }
+
     return (
-        <div className="competitionsDataList">
-            <p id="mainHeader" role="heading" aria-level="1">
-                Lista wszystkich zawodów
-            </p>
-            <div className="container">
+        <div className="competitionsMenu">
+            <div className="container" id="adminMenuContainer">
                 <BootstrapTable
                     striped
                     bordered
@@ -63,10 +59,18 @@ function CompetitionList() {
                     keyField="id"
                     data={competitionsData}
                     columns={columns}
-                    defaultSorted={defaultSorted}
                 />
+                <div className="newCompetitionButtonDiv">
+                    <form>
+                        <Button
+                            className="btn btn-outline-primary btn-lg active custom-button-1"
+                            placeholder="Dodaj nowe zawody"
+                            onClick={handleClick}
+                        />
+                    </form>
+                </div>
             </div>
         </div>
     );
 }
-export default CompetitionList;
+export default CompetitionsMenu;

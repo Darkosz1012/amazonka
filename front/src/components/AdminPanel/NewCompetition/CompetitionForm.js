@@ -17,7 +17,6 @@ const CompetitionForm = (props) => {
         setStartDate(event.target.value);
     };
     const handleEndDateChange = (event) => {
-        console.log(event.target.value);
         setEndDate(event.target.value);
     };
     const handleLocationChange = (event) => {

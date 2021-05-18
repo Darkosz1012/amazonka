@@ -85,8 +85,9 @@ const InsertResultsPanel = () => {
         i += 1;
     }
 
+    let iterKey = 0;
     let finalBrackets = columnsToDisplay.map((col) => (
-        <ul className="Round">
+        <ul className="Round" key={(iterKey += 1)}>
             <li className="spacer"></li>
             {col}
         </ul>

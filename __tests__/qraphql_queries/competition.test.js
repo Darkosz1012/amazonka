@@ -101,17 +101,21 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
             mutation{
                 updateCompetition(
                     _id: "60a42ec1778fc8238412570f"
+                   name: "name",
+                   start_date: "01-01-1990",
+                   end_date: "01-01-1990",
+                   location: "some_location",
+                   details: {
+                       description: "No description",
+                       timetable: "No timetable"
+                   }
                 ){
                     _id
                 }
             }
         `;
 
-        test("should pass if _id is specified", () => {
-            tester.test(true, valid_mutation);
-        });
-
-        const invalid_mutation = `
+        const invalid_mutation_with_no_id = `
             mutation{
                 updateCompetition(
                    name: "name",
@@ -128,8 +132,37 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
             }
         `;
 
+        test("should pass if _id is specified", () => {
+            tester.test(true, valid_mutation);
+        });
+
         test("should fail if _id is not specified", () => {
-            tester.test(false, invalid_mutation);
+            tester.test(false, invalid_mutation_with_no_id);
+        });
+    });
+
+    describe("removeCompetition mutation", () => {
+        const valid_mutation = `
+            mutation{
+                removeCompetition(_id: 60a42ec1778fc8238412570f){
+                    _id
+                }
+            }
+        `;
+        const invalid_mutation_with_no_id = `
+            mutation {s
+                removeCompetition(){
+                    _id
+                }
+            }
+        `;
+
+        test("should pass if _id is specified", () => {
+            tester.test(true, valid_mutation);
+        });
+
+        test("should fail if _id is not specified", () => {
+            tester.test(false, invalid_mutation_with_no_id);
         });
     });
 });

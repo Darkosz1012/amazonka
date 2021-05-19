@@ -1,11 +1,17 @@
-import { Competition, CompetitionDetails } from "$/db/index.js";
+import { Competition } from "$/db/index.js";
 
 export default {
-    competitions: async () => await Competition.find().populate("details_id"),
-    competitionsByUser: async (_, args) =>
-        await Competition.find({ user_id: args.user_id }).populate(
-            "details_id"
-        ),
-    competitionById: async (_, args) =>
-        await Competition.findById(args.id).populate("details_id"),
+    competitions: async (_, args) => {
+        let query = Competition.find(args);
+        if ("details" in args) {
+            query.populate("details");
+        }
+        if ("owner" in args) {
+            query.populate("owner");
+        }
+        if ("categories" in args) {
+            query.populate("categories");
+        }
+        return await query.exec();
+    },
 };

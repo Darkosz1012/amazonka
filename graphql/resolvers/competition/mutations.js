@@ -2,33 +2,27 @@ import { Competition, CompetitionDetails } from "$/db/index.js";
 
 export default {
     newCompetition: async (_, args) => {
+        let competition = new Competition(args);
         let competitionDetails = new CompetitionDetails({
+            competition: competition._id,
             description: "No description",
             timetable: "No timetable",
         });
-
-        competitionDetails = await competitionDetails.save();
-
-        let competition = new Competition({
-            details_id: competitionDetails._id,
-
-            user_id: args.user_id,
-            name: args.name,
-            start_date: args.start_date,
-            end_date: args.end_date,
-            location: args.location,
-        });
+        competition.details = competitionDetails._id;
 
         return await competition.save();
     },
 
     updateCompetition: async (_, args) => {
-        return Competition.findByIdAndUpdate(
-            args.id,
-            args.competitionUpdateParams,
-            { new: true }
-        );
+        return await Competition.findOneAndUpdate({ _id: args._id }, args, {
+            new: true,
+        })
+            .populate("details")
+            .populate("owner")
+            .exec();
     },
 
-    addDetails: async (_, args) => {},
+    removeCompetition: async (_, args) => {
+        return Competition.findByIdAndDelete(args._id);
+    },
 };

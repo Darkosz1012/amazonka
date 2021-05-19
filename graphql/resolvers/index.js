@@ -1,9 +1,16 @@
 import { userMutations } from "./user/index.js";
+import {
+    competitionMutations,
+    competitionQueries,
+} from "./competition/index.js";
 
 const resolvers = {
-    Query: {},
+    Query: {
+        ...competitionQueries,
+    },
     Mutation: {
         ...userMutations,
+        ...competitionMutations,
     },
 };
 

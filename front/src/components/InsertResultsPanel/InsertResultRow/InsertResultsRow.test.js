@@ -104,8 +104,8 @@ describe("InsertResultRow with free pass", () => {
         expect(numInput).toHaveLength(1);
     });
 
-    it("shoulr render '/wolne przejście/", () => {
-        let przejscie = screen.getByText(/wolne przejście/i);
-        expect(przejscie).toBeInTheDocument();
+    it("should render '/wolne przejście/", () => {
+        let pass = screen.getByText(/wolne przejście/i);
+        expect(pass).toBeInTheDocument();
     });
 });

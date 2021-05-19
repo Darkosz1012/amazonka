@@ -1,0 +1,13 @@
+type Distance {
+    _id: ID!
+    name: String
+    series_type: Int!
+}
+
+type DistanceWithScore {
+    _id: ID!
+    name: String!
+    score: Int!
+    scores: [Series]
+    distance: Distance
+}

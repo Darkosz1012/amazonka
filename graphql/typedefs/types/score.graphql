@@ -1,0 +1,11 @@
+type Score {
+    _id: ID!
+    participant: Participant!
+    competition: Competition!
+    category: Category!
+    stand: Int
+    order: String
+    pre_eliminations_score: Int
+    finals_initial_placement: Int
+    distances: [DistanceWithScore]
+}

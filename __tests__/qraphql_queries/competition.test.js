@@ -36,20 +36,45 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
     });
 
     describe("newCompetition mutation", () => {
-        const newCompetition_mutation = `
-            mutation newCompetition (
-                $owner: ID
-                $name: String
-                $start_date: String
-                $end_date: String
-                $location: String
-            ){
+        const valid_mutation_with_all_fields = `
+            mutation{
                 newCompetition(
-                    owner: $owner
-                    name: $name
-                    start_date: $start_date
-                    end_date: $end_date
-                    location: $location
+                    owner: "609aa4bde6483525a06b8e5b",
+                    name: "competition",
+                    start_date: "01-01-1990",
+                    end_date: "01-01-1990",
+                    location: "some_location",
+                ){
+                    _id
+                }
+            }
+        `;
+
+        const valid_mutation_with_owner_and_name = `
+            mutation{
+                newCompetition(
+                    owner: "609aa4bde6483525a06b8e5b",
+                    name: "competition",
+                ){
+                    _id
+                }
+            }
+        `;
+
+        const invalid_mutation_with_name_missing = `
+            mutation{
+                newCompetition(
+                    owner: "609aa4bde6483525a06b8e5b",
+                ){
+                    _id
+                }
+            }
+        `;
+
+        const invalid_mutation_with_owner_missing = `
+            mutation{
+                newCompetition(
+                    name: "competition",
                 ){
                     _id
                 }
@@ -57,30 +82,17 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
         `;
 
         test("should pass if all fields are specified", () => {
-            tester.test(true, newCompetition_mutation, {
-                owner: "609aa4bde6483525a06b8e5b",
-                name: "competition",
-                start_date: "01-01-1990",
-                end_date: "01-01-1990",
-                location: "some_location",
-            });
+            tester.test(true, valid_mutation_with_all_fields);
         });
 
         test("should pass if owner and name are specified", () => {
-            tester.test(true, newCompetition_mutation, {
-                owner: "609aa4bde6483525a06b8e5b",
-                name: "competition",
-            });
+            tester.test(true, valid_mutation_with_owner_and_name);
         });
 
         test("should fail if owner or name is not specified", () => {
-            tester.test(false, newCompetition_mutation, {
-                owner: "609aa4bde6483525a06b8e5b",
-            });
+            tester.test(false, invalid_mutation_with_name_missing);
 
-            tester.test(false, newCompetition_mutation, {
-                name: "competition",
-            });
+            tester.test(false, invalid_mutation_with_owner_missing);
         });
     });
 

@@ -20,6 +20,7 @@ describe("newCompetition function", () => {
         expect(result._id).not.toBeUndefined();
         expect(result.owner.toString()).toBe("609aa4bde6483525a06b8e5b");
         expect(result.name).toBe(input.name);
+        expect(result.start_date).toBe(input.start_date);
         expect(result.details).not.toBeUndefined();
         expect(result.categories).toHaveLength(0);
     });
@@ -36,8 +37,8 @@ describe("updateCompetition function", () => {
                 password: "pass",
             },
             name: "test_competition",
-            start_date: "1990-01-01T00:00:00.000Z",
-            end_date: "1990-01-01T00:00:00.000Z",
+            start_date: new Date("1990-01-01T00:00:00.000Z"),
+            end_date: new Date("1990-01-01T00:00:00.000Z"),
             location: "Unknown",
             details: {
                 _id: "5ca4af76384306089c1c30ba",
@@ -68,5 +69,6 @@ describe("updateCompetition function", () => {
         expect(result.name).toBe(input.name);
         expect(result.location).toBe(input.location);
         expect(result.details.timetable).toBe(input.details.timetable);
+        expect(result.start_date).toBe(input.start_date);
     });
 });

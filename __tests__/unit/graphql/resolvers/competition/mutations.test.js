@@ -4,7 +4,7 @@ import * as mockingoose from "mockingoose";
 import { Competition } from "$/db/index.js";
 
 describe("newCompetition function", () => {
-    test("should pass if data is valid", async () => {
+    test("should pass if owner and name is defined", async () => {
         mockingoose(Competition).toReturn((query) => query, "save");
 
         const input = {
@@ -27,7 +27,7 @@ describe("newCompetition function", () => {
 });
 
 describe("updateCompetition function", () => {
-    test("should pass if data is valid", async () => {
+    test("should pass if _id is defined", async () => {
         const competitionMock = {
             _id: "609aa4bde6483525a06b8e5b",
             owner: {

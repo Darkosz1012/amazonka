@@ -14,30 +14,33 @@ const EliminationsElement = ({ p1, p2 }, props) => {
         setScore2(event.target.value);
     };
 
+    const generateRow = (participant, score, changeScore) => {
+        return (
+            <Fragment>
+                {participant.pos}.{" "}
+                {participant.fullname !== ""
+                    ? participant.fullname
+                    : "wolne przejście"}
+                {participant.fullname !== "" ? (
+                    <input
+                        className="InputResult"
+                        type="number"
+                        onChange={changeScore}
+                        value={score}
+                    />
+                ) : null}
+            </Fragment>
+        );
+    };
+
     return (
         <Fragment>
             <li className="game game-top winner">
-                {p1.pos}. {p1.fullname !== "" ? p1.fullname : "wolne przejście"}
-                {p1.fullname !== "" ? (
-                    <input
-                        className="InputResult"
-                        type="number"
-                        onChange={handleScoreChange1}
-                        value={score1}
-                    />
-                ) : null}
+                {generateRow(p1, score1, handleScoreChange1)}
             </li>
             <li className="game game-spacer"></li>
             <li className="game game-bottom ">
-                {p2.pos}. {p2.fullname !== "" ? p2.fullname : "wolne przejście"}
-                {p2.fullname !== "" ? (
-                    <input
-                        className="InputResult"
-                        type="number"
-                        onChange={handleScoreChange2}
-                        value={score2}
-                    />
-                ) : null}
+                {generateRow(p2, score2, handleScoreChange2)}
             </li>
             <li className="spacer"></li>
         </Fragment>

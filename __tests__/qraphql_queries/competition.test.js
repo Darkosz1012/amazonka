@@ -144,7 +144,7 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
     describe("removeCompetition mutation", () => {
         const valid_mutation = `
             mutation{
-                removeCompetition(_id: 60a42ec1778fc8238412570f){
+                removeCompetition(_id: "60a42ec1778fc8238412570f"){
                     _id
                 }
             }

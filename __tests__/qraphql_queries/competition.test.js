@@ -150,7 +150,7 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
             }
         `;
         const invalid_mutation_with_no_id = `
-            mutation {s
+            mutation {
                 removeCompetition(){
                     _id
                 }

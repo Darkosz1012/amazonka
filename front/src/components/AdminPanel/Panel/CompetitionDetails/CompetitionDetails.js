@@ -12,7 +12,14 @@ function CompetitionDetails(props) {
     const end_date = competitionDetaildata[_id - 1]["date_end"];
     return (
         <div>
-            <p className="panel-detail-header">Szczegóły zawodów</p>
+            <p className="editLinkText">
+                <span className="panel-detail-header">Szczegóły zawodów</span>
+                <span><a
+                        href={"/admin/panel/" + _id + "/details/edit"}>
+                        edytuj
+                     </a>
+                </span>
+            </p>
             <Container fluid className="infoContainer" style={{ paddingLeft: 30, paddingRight: 30 }}>
                 <Row className="compNameDetailDiv" xs={2} md={2} lg={3} xl={4}>
                             <Col id="name-label" className="left">Nazwa:</Col>

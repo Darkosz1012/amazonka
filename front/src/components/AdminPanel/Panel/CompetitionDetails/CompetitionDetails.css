@@ -1,123 +1,40 @@
 .panel-detail-header {
     color: #92b9c5;
     font-weight: 700;
-    padding-top: 28px;
-    font-size: 24px;
+    padding-top: 22px;
+    font-size: 20px;
 }
 
-.infoDiv {
-    padding-top: 20px;
-    margin-right: 30px;
+.infoContainer {
     background-color: #fff;
     opacity: 0.78;
-    padding: 20px 20px;
+    padding: 30px 30px 30px 30px;
     border-radius: 20px;
 }
 
-.column {
-    float: left;
-    padding: 10px;
-}
-
 .left {
-    width: 200px;
-    padding-left: 20px;
     font-weight: 900;
-    font-size: 16px;
+    font-size: 14px;
     color: rgb(192, 188, 174);
     text-decoration: underline;
+    padding-bottom: 5px;
 }
 
 .right {
-    width: 65%;
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 14px;
     font-weight: 800;
     color: rgb(155, 150, 128);
+    padding-bottom: 5px;
 }
 
 #name {
     color: #6ac3e4;
     font-weight: 800;
+    padding-bottom: 15px;
+    font-size: 18px;
 }
 
-#name-label,
-#name {
-    padding-bottom: 20px;
-    font-size: 20px;
-}
-
-.infoDiv:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-@media (max-width: 1100px) {
-    .left {
-        width: 200px;
-    }
-    .right {
-        width: 50%;
-    }
-    #name-label {
-        padding-bottom: 40px;
-    }
-}
-
-@media (max-width: 999px) {
-    .left {
-        width: 220px;
-    }
-    .right {
-        width: 60%;
-    }
-    #name-label {
-        padding-bottom: 20px;
-    }
-}
-
-@media (max-width: 799px) {
-    .left {
-        font-size: 13px;
-        width: 180px;
-    }
-    .right {
-        font-size: 12px;
-        line-height: 20px;
-    }
-    #name-label,
-    #name {
-        padding-bottom: 16px;
-        font-size: 16px;
-    }
-    #name {
-        width: 100%;
-    }
-}
-
-@media (max-width: 699px) {
-    .right {
-        width: 50%;
-    }
-    #name-label {
-        padding-bottom: 40px;
-    }
-}
-
-@media (max-width: 549px) {
-    .left {
-        width: 130px;
-    }
-    .right {
-        line-height: 30px;
-        width: 58%;
-    }
-    #name {
-        padding-bottom: 10px;
-        line-height: 20px;
-    }
-    #name-label {
-        padding-bottom: 20px;
-    }
+#name-label{
+    padding-bottom: 15px;
+    font-size: 18px;
 }

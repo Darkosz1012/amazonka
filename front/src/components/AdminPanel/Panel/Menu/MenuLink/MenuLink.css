@@ -43,22 +43,10 @@
 @media (max-width: 999px) {
     .MenuLink {
         height: 30px;
-        width: 540px;
+        width: 100%;
         margin: 4px 5px 4px 0px;
     }
     .MenuLink a {
         padding: 6px 6px 6px 18px;
-    }
-}
-
-@media (max-width: 699px) {
-    .MenuLink {
-        width: 440px;
-    }
-}
-
-@media (max-width: 550px) {
-    .MenuLink {
-        width: 240px;
     }
 }

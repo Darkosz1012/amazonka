@@ -1,4 +1,7 @@
 import "./CompetitionDetails.css";
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import competitionDetaildata from "../../competitionsData.json";
 
 function CompetitionDetails(props) {
@@ -10,20 +13,26 @@ function CompetitionDetails(props) {
     return (
         <div>
             <p className="panel-detail-header">Szczegóły zawodów</p>
-            <div className="infoDiv">
-                <div className="column left">
-                    <p id="name-label">Nazwa:</p>
-                    <p>Data rozpoczęcia:</p>
-                    <p>Data zakończenia:</p>
-                    <p>Lokalizacja:</p>
+            <Container fluid className="infoContainer" style={{ paddingLeft: 30, paddingRight: 30 }}>
+                <Row className="compNameDetailDiv" xs={2} md={2} lg={3} xl={4}>
+                            <Col id="name-label" className="left">Nazwa:</Col>
+                            <Col id="name" className="right">{name}</Col>
+                </Row>
+                <div id="restDetailsDiv" xs={2} md={2} lg={3} xl={4}>
+                    <Row xs={2} md={2} lg={3} xl={4}>
+                        <Col className="left">Data rozpoczęcia:</Col>
+                        <Col  className="right">{start_date}</Col>
+                    </Row>
+                    <Row xs={2} md={2} lg={3} xl={4}>
+                        <Col className="left">Data zakończenia:</Col>
+                        <Col className="right">{end_date}</Col>
+                    </Row>
+                    <Row xs={2} md={2} lg={3} xl={4}>
+                        <Col className="left">Lokalizacja:</Col>
+                        <Col className="right">{location}</Col>
+                    </Row>
                 </div>
-                <div className="column right">
-                    <p id="name">{name}</p>
-                    <p>{start_date}</p>
-                    <p>{end_date}</p>
-                    <p>{location}</p>
-                </div>
-            </div>
+            </Container>
         </div>
     );
 }

@@ -1,0 +1,11 @@
+type Series {
+    participant: Participant!
+    competition: Competition!
+
+    distance_id: ID!
+
+    series_no: Int!
+    was_counted: Boolean!
+    score: Int!
+    arrows: [String]
+}

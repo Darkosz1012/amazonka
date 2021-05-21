@@ -1,5 +1,5 @@
 input inputCategory {
-    _id: String
+    _id: ID!
     name: String
     gender: String
     start_stand: Int

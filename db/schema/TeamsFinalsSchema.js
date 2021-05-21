@@ -3,20 +3,23 @@ import mongoose from "mongoose";
 export default new mongoose.Schema({
     type: {
         type: String,
+        enum: ["team", "mixed"],
         required: true,
     },
-    competition_id: {
+    competition: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
         required: true,
     },
-    category_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Category",
-        required: true,
-    },
+    category: [
+        {
+            required: true,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Category",
+        },
+    ],
     team1: {
-        id: {
+        team_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Team",
         },
@@ -31,7 +34,7 @@ export default new mongoose.Schema({
         },
     },
     team2: {
-        id: {
+        team_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Team",
         },

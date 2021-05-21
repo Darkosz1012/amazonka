@@ -1,0 +1,20 @@
+type Finals {
+    _id: ID!
+
+    competition: Competition!
+    category: Category!
+
+    participant1: Participant!
+    participant2: Participant!
+
+    round: Int!
+}
+
+type ParticipantScore {
+    _id: ID!
+    first_name: String!
+    last_name: String!
+
+    placement: Int!
+    score: Int!
+}

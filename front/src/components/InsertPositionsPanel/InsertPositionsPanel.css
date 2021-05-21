@@ -1,0 +1,28 @@
+.InsertPositionsPanel table td {
+    position: relative;
+}
+
+.InsertPositionsPanel table td input {
+    position: absolute;
+    display: block;
+    background-color: #adff422a;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 100% !important;
+    width: 100%;
+    border-radius: 0 !important;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.InsertPositionsPanelForm input {
+    margin: 10px;
+    width: 50px;
+}
+
+.InsertPositionsPanelForm select {
+    margin: 10px;
+    width: 100px;
+}

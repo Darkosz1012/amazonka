@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    competition_id: {
+    competition: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
         required: true,
     },
-    category_id: {
+    category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Category",
         required: true,
@@ -16,7 +16,10 @@ export default new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "Participant",
         },
-        name: {
+        first_name: {
+            type: String,
+        },
+        last_name: {
             type: String,
         },
         placement: {
@@ -31,7 +34,10 @@ export default new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "Participant",
         },
-        name: {
+        first_name: {
+            type: String,
+        },
+        last_name: {
             type: String,
         },
         placement: {

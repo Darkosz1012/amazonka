@@ -6,8 +6,3 @@ type Category {
     end_stand: Int
     distance: [Distance]
 }
-
-type Distance {
-    name: String!
-    series_type: Int!
-}

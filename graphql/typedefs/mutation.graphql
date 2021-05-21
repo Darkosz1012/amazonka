@@ -5,4 +5,23 @@ type Mutation {
     addCategory(category: inputCategory!): Category!
     updateCategory(category: inputCategory!): Category!
     deleteCategory(_id: String!): Category!
+    newCompetition(
+        owner: ID!
+        name: String!
+
+        start_date: String
+        end_date: String
+        location: String
+    ): Competition
+
+    updateCompetition(
+        _id: ID!
+        name: String
+        start_date: String
+        end_date: String
+        location: String
+        details: inputDetails
+    ): Competition
+
+    removeCompetition(_id: ID!): Competition
 }

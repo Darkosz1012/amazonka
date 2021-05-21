@@ -4,7 +4,6 @@ import mutations from "$/graphql/resolvers/user/mutations.js";
 
 import * as mockingoose from "mockingoose";
 import { User } from "$/db/index.js";
-import { query } from "express";
 
 process.env.ACCESS_TOKEN_SECRET = "secret";
 
@@ -15,6 +14,8 @@ describe("login function", () => {
             _id: "507f191e810c19729de860ea",
             username: "user",
             password: password,
+            verified: false,
+            email: "aaa@aaa.com",
         };
 
         mockingoose(User).toReturn(_user_data, "findOne");
@@ -61,6 +62,7 @@ describe("register function", () => {
         let result = await mutations.register(undefined, {
             username: "new_user",
             password: "pass",
+            email: "email@provider.com",
         });
 
         expect(result.username).toBe("new_user");
@@ -79,9 +81,21 @@ describe("register function", () => {
             await mutations.register(undefined, {
                 username: "old_user",
                 password: "pass",
+                email: "email@provider.com",
             });
         } catch (e) {
             expect(e.message).toBe("User already exists.");
+        }
+    });
+
+    test("should throw if email is undefined", async () => {
+        try {
+            await mutations.register(undefined, {
+                username: "old_user",
+                password: "pass",
+            });
+        } catch (e) {
+            expect(e.message).toBe("No email provided.");
         }
     });
 

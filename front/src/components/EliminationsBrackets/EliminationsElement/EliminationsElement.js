@@ -11,7 +11,7 @@ const EliminationsElement = ({ p1, p2 }, props) => {
             <li className="game game-bottom ">
                 {p2.fullname} <span>{p2.score}</span>
             </li>
-            <li class="spacer"></li>
+            <li className="spacer"></li>
         </Fragment>
     );
 };

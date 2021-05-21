@@ -1,0 +1,4 @@
+input inputDetails {
+    description: String
+    timetable: String
+}

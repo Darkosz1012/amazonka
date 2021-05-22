@@ -5,11 +5,7 @@
     font-size: 24px;
 }
 
-.category-left-div {
-    float: left;
-}
-
-.category-right-div {
+.category-column-div {
     float: left;
 }
 
@@ -18,17 +14,14 @@
 }
 
 .activeRow {
-    background-color: #2AB1E1;
+    background-color: #2ab1e1;
     color: white;
     font-weight: bolder;
     padding-left: 30px;
 }
 
 @media (max-width: 1299px) {
-    .category-left-div {
-        width: 100%;
-    }
-    .category-right-div {
+    .category-column-div {
         width: 100%;
     }
     .category-tile-div {
@@ -38,10 +31,7 @@
 }
 
 @media (min-width: 1300px) {
-    .category-left-div {
-        width: 50%;
-    }
-    .category-right-div {
+    .category-column-div {
         width: 50%;
     }
     .category-tile-div {

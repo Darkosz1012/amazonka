@@ -35,10 +35,10 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
         });
     });
 
-    describe("newCompetition mutation", () => {
+    describe("addCompetition mutation", () => {
         const valid_mutation_with_all_fields = `
             mutation{
-                newCompetition(
+                addCompetition(
                     owner: "609aa4bde6483525a06b8e5b",
                     name: "competition",
                     start_date: "01-01-1990",
@@ -52,7 +52,7 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
 
         const valid_mutation_with_owner_and_name = `
             mutation{
-                newCompetition(
+                addCompetition(
                     owner: "609aa4bde6483525a06b8e5b",
                     name: "competition",
                 ){
@@ -63,7 +63,7 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
 
         const invalid_mutation_with_name_missing = `
             mutation{
-                newCompetition(
+                addCompetition(
                     owner: "609aa4bde6483525a06b8e5b",
                 ){
                     _id
@@ -73,7 +73,7 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
 
         const invalid_mutation_with_owner_missing = `
             mutation{
-                newCompetition(
+                addCompetition(
                     name: "competition",
                 ){
                     _id
@@ -141,17 +141,17 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
         });
     });
 
-    describe("removeCompetition mutation", () => {
+    describe("deleteCompetition mutation", () => {
         const valid_mutation = `
             mutation{
-                removeCompetition(_id: "60a42ec1778fc8238412570f"){
+                deleteCompetition(_id: "60a42ec1778fc8238412570f"){
                     _id
                 }
             }
         `;
         const invalid_mutation_with_no_id = `
             mutation {
-                removeCompetition(){
+                deleteCompetition(){
                     _id
                 }
             }

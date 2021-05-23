@@ -2,7 +2,7 @@ type Mutation {
     login(username: String!, password: String!): Token!
     register(username: String!, password: String!): Token!
 
-    newCompetition(
+    addCompetition(
         owner: ID!
         name: String!
 
@@ -20,5 +20,5 @@ type Mutation {
         details: inputDetails
     ): Competition
 
-    removeCompetition(_id: ID!): Competition
+    deleteCompetition(_id: ID!): Competition
 }

@@ -3,7 +3,7 @@ import mutations from "$/graphql/resolvers/competition/mutations.js";
 import * as mockingoose from "mockingoose";
 import { Competition } from "$/db/index.js";
 
-describe("newCompetition function", () => {
+describe("addCompetition function", () => {
     test("should pass if owner and name is defined", async () => {
         mockingoose(Competition).toReturn((query) => query, "save");
 
@@ -15,7 +15,7 @@ describe("newCompetition function", () => {
             location: "Unknown",
         };
 
-        let result = await mutations.newCompetition(undefined, input);
+        let result = await mutations.addCompetition(undefined, input);
 
         expect(result._id).not.toBeUndefined();
         expect(result.owner.toString()).toBe("609aa4bde6483525a06b8e5b");

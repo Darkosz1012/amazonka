@@ -1,7 +1,7 @@
 import { Competition, CompetitionDetails } from "$/db/index.js";
 
 export default {
-    newCompetition: async (_, args) => {
+    addCompetition: async (_, args) => {
         let competition = new Competition(args);
         let competitionDetails = new CompetitionDetails({
             competition: competition._id,
@@ -22,7 +22,7 @@ export default {
             .exec();
     },
 
-    removeCompetition: async (_, args) => {
+    deleteCompetition: async (_, args) => {
         return Competition.findByIdAndDelete(args._id);
     },
 };

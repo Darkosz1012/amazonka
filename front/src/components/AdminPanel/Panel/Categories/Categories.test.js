@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import Categories from "./Categories";
 
 describe("Categories", () => {
@@ -13,40 +13,60 @@ describe("Categories", () => {
         });
 
         it("should have one select field", () => {
-            let selectInput = screen.getAllByRole("combobox");
-            expect(selectInput).toHaveLength(1);
+            let selectInputs = screen.getAllByRole("combobox");
+            expect(selectInputs).toHaveLength(1);
         });
     });
 
     describe("table with added categories", () => {
-        let categoryTable;
-        beforeEach(() => {
-            categoryTable = screen.getByRole("table");
-        });
         it("should render", () => {
+            let categoryTable = screen.getByRole("table");
             expect(categoryTable).toBeInTheDocument();
+        });
+
+        it("should have radio button in each row", () => {
+            let rows = screen.getAllByRole("row");
+            for (let row of rows) {
+                expect(within(row).getByRole("radio")).toBeInTheDocument();
+            }
         });
     });
 
     it("should have two buttons", () => {
-        let button = screen.getAllByRole("button");
-        expect(button).toHaveLength(2);
+        let buttons = screen.getAllByRole("button");
+        expect(buttons).toHaveLength(2);
     });
 
-    it("after choosing a category", () => {
-        let radioInputs = screen.getAllByRole("radio");
-        radioInputs[0].click();
+    describe("after choosing a category", () => {
+        beforeEach(() => {
+            screen.getAllByRole("radio")[0].click();
+        });
 
-        let inputFields = screen.getAllByRole("textbox");
-        expect(inputFields).toHaveLength(3);
+        it("should have three input fields", () => {
+            let inputFields = screen.getAllByRole("textbox");
+            expect(inputFields).toHaveLength(3);
+        });
 
-        let numberInputFields = screen.getAllByRole("spinbutton");
-        expect(numberInputFields).toHaveLength(1);
+        it("should have one spinbutton", () => {
+            let numberInputFields = screen.getAllByRole("spinbutton");
+            expect(numberInputFields).toHaveLength(1);
+        });
 
-        let buttons = screen.getAllByRole("button");
-        expect(buttons).toHaveLength(4);
+        it("should have four buttons", () => {
+            let buttons = screen.getAllByRole("button");
+            expect(buttons).toHaveLength(4);
+        });
 
-        let tables = screen.getAllByRole("table");
-        expect(tables).toHaveLength(2);
+        it("should have two tables", () => {
+            let tables = screen.getAllByRole("table");
+            expect(tables).toHaveLength(2);
+        });
+
+        it("should have radio button in each row", () => {
+            let rows = screen.getAllByRole("row");
+            for (let row of rows) {
+                expect(within(row).getByRole("radio")).toBeInTheDocument();
+            }
+        });
     });
 });

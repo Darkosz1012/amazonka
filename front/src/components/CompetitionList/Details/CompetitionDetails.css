@@ -2,7 +2,7 @@
 
 .DetailsContainer {
     margin-top: 10px;
-    padding: 20px 30px 10px 30px;
+    padding: 20px 10px 20px 10px;
     border-radius: 20px;
     background-color: #fff;
     opacity: 0.78;
@@ -12,18 +12,16 @@
 }
 
 #competitionsDetailLeftDiv {
-    width: 30%;
+    width: 35%;
 }
 
 #competitionsDetailRightDiv {
-    width: 60%;
+    width: 55%;
     padding-top: 20px;
 }
 
 #insidecompetitionsDetailRightDiv {
-    width: 95%;
-    margin-left: 5%;
-    margin-right: 5%;
+    padding-left: 40px;
 }
 
 #compName {
@@ -44,9 +42,7 @@
 
 .detailDiv,
 .scheduleDiv {
-    padding: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 30px 30px 30px;
     font-size: 15px;
     background-color: #f0ead8;
     opacity: 0.98;
@@ -73,7 +69,7 @@
 
 .fs {
     border: 2px solid #a19778;
-    padding: 0px 30px 10px 30px;
+    padding: 0px 0px 10px 20px;
 }
 
 .fs legend {
@@ -89,4 +85,40 @@
 
 .buttonList {
     margin: 0px 20px 0px 20px;
+}
+
+@media (max-width: 989px) {
+    .DetailsContainer {
+        display: list-item;
+        margin: 10px;
+        padding: 30px 30px 50px 30px;
+    }
+    #competitionsDetailLeftDiv,
+    #competitionsDetailRightDiv {
+        width: 100%;
+    }
+
+    #insidecompetitionsDetailRightDiv {
+        padding: 0px 30px 0px 30px;
+    }
+    #compName {
+        font-size: 22px;
+    }
+    .fs {
+        padding: 0px 0px 3px 5px;
+        margin-bottom: 10px;
+    }
+    .detailDiv,
+    .scheduleDiv {
+        padding: 20px 20px 20px 20px;
+        font-size: 14.5px;
+    }
+}
+
+@media (max-width: 499px) {
+    .detailDiv,
+    .scheduleDiv {
+        padding: 20px 14px 14px 14px;
+        font-size: 14.5px;
+    }
 }

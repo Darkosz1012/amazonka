@@ -6,7 +6,7 @@ export default new mongoose.Schema({
         enum: ["team", "mixed"],
         required: true,
     },
-    competition: {
+    competition_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
         required: true,
@@ -15,7 +15,7 @@ export default new mongoose.Schema({
         type: String,
         required: true,
     },
-    categories: [
+    categories_id: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Category",
@@ -27,7 +27,7 @@ export default new mongoose.Schema({
     finals_placement: { type: Number },
     participants: [
         {
-            participant: {
+            participant_id: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Participant",
                 required: true,

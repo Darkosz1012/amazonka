@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    participant: {
+    participant_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Participant",
         required: true,
     },
-    competition: {
+    competition_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
         required: true,
@@ -14,6 +14,7 @@ export default new mongoose.Schema({
 
     distance_id: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: "Distance",
         required: true,
     },
 

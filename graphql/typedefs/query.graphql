@@ -1,4 +1,6 @@
 type Query {
+    categories: [Category]
+    category(id: String): Category
     tmp_root_query: String!
 
     competitions(_id: ID, owner: ID, name: String): [Competition]

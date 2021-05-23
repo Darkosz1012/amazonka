@@ -53,15 +53,14 @@ function CompetitionDetails(props) {
             <div id="competitionsDetailLeftDiv">
                 <div className="detailDiv" data-testid="detailDiv">
                     <p id="compName">{name}</p>
-                    <br />
                     <div className="insideDetailDiv">
                         <p className="title_p">
                             <b>Lokalizacja:</b> {location}
                         </p>
-                        <p className="title_p">
+                        <p className="i">
                             <b>Data rozpoczęcia:</b> {start_date}
                         </p>
-                        <p className="title_p">
+                        <p className="i">
                             <b>Data zakończenia:</b> {end_date}
                         </p>
                         <p className="title_pn">

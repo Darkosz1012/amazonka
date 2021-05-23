@@ -10,7 +10,7 @@
         "test-a": "npm run test && npm run test-f",
         "start:dev": "npx nodemon server.js",
         "start": "node server",
-        "prepare": "husky install",
+        "prepare": "npx husky install",
         "pre-commit": "pretty-quick --staged",
         "postinstall": "cd front && npm install && cd .. && npx basetag link"
     },

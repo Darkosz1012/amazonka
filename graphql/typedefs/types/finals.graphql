@@ -1,17 +1,21 @@
 type Finals {
     _id: ID!
 
+    competition_id: ID!
     competition: Competition!
+    category_id: ID!
     category: Category!
 
-    participant1: Participant!
-    participant2: Participant!
+    participant_score1: ParticipantScore!
+    participant_score2: ParticipantScore!
 
     round: Int!
 }
 
 type ParticipantScore {
-    _id: ID!
+    participant_id: ID!
+    participant: Participant!
+
     first_name: String!
     last_name: String!
 

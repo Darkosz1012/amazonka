@@ -1,4 +1,5 @@
 import { userMutations } from "./user/index.js";
+import { categoryMutations, categoryQueries } from "./category/index.js";
 import {
     competitionMutations,
     competitionQueries,
@@ -7,10 +8,12 @@ import {
 const resolvers = {
     Query: {
         ...competitionQueries,
+        ...categoryQueries,
     },
     Mutation: {
         ...userMutations,
         ...competitionMutations,
+        ...categoryMutations,
     },
 };
 

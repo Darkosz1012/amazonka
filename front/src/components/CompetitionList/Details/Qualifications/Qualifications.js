@@ -69,7 +69,10 @@ const defaultSorted = [
 function Qualifications() {
     return (
         <div className="competitionsDataList">
-            <p id="mainHeader">Wyniki kwalifikacji</p>
+            <p id="mainHeader" role="heading" aria-level="1">
+                {" "}
+                Wyniki kwalifikacji
+            </p>
             <div className="container">
                 <BootstrapTable
                     striped

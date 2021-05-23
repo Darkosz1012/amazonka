@@ -4,11 +4,11 @@ export default {
     addCompetition: async (_, args) => {
         let competition = new Competition(args);
         let competitionDetails = new CompetitionDetails({
-            competition: competition._id,
+            competition_id: competition._id,
             description: "No description",
             timetable: "No timetable",
         });
-        competition.details = competitionDetails._id;
+        competition.details_id = competitionDetails._id;
 
         return await competition.save();
     },

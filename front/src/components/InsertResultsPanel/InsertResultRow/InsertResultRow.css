@@ -1,0 +1,28 @@
+input.InputResult {
+    max-width: 30px;
+}
+
+.game {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.topMarginForContainer {
+    margin-top: 700px;
+}
+
+.ResultInputContainer {
+    margin: 20px 50px;
+    padding: 20px 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0.78;
+    justify-content: center;
+}
+
+@media (max-width: 599px) {
+    .ResultInputContainer {
+        margin: 20px 0px;
+    }
+}

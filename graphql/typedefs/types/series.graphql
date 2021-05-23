@@ -1,5 +1,7 @@
 type Series {
+    participant_id: ID!
     participant: Participant!
+    competition_id: ID!
     competition: Competition!
 
     distance_id: ID!

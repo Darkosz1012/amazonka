@@ -1,15 +1,25 @@
 type TeamFinals {
     _id: ID!
     type: String
-    competition: Competition
+    competition_id: ID!
+    competition: Competition!
+    categories_id: ID
     categories: [Category]
-    team1: [TeamScore]
-    team2: [TeamScore]
+
+    team_score1_id: ID
+    team_score1: TeamScore
+    team_score2_id: ID
+    team_score2: TeamScore
 
     round: Int
 }
 
 type TeamScore {
     team_id: ID!
-    team: Team
+    team: Team!
+
+    name: String!
+
+    placement: Int!
+    score: Int!
 }

@@ -89,17 +89,16 @@
 
 @media (max-width: 989px) {
     .DetailsContainer {
-        display:list-item;
+        display: list-item;
         margin: 10px;
         padding: 30px 30px 50px 30px;
     }
-    #competitionsDetailLeftDiv {
-        width: 100%;
-    }
+    #competitionsDetailLeftDiv,
     #competitionsDetailRightDiv {
         width: 100%;
     }
-    #insidecompetitionsDetailRightDiv{
+
+    #insidecompetitionsDetailRightDiv {
         padding: 0px 30px 0px 30px;
     }
     #compName {
@@ -115,7 +114,6 @@
         font-size: 14.5px;
     }
 }
-
 
 @media (max-width: 499px) {
     .detailDiv,

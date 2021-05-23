@@ -1,7 +1,6 @@
 .panel-detail-header {
     color: #92b9c5;
     font-weight: 700;
-    padding-top: 22px;
     font-size: 20px;
 }
 
@@ -30,22 +29,21 @@
 #name {
     color: #6ac3e4;
     font-weight: 800;
+}
+
+#name,
+#name-label {
     padding-bottom: 15px;
     font-size: 18px;
 }
 
-#name-label{
-    padding-bottom: 15px;
-    font-size: 18px;
-}
-
-.editLinkText{
+.editLinkText {
     padding-left: 8px;
     font-size: 10px;
     color: rgb(192, 188, 174);
 }
 
-.editLinkText a{
+.editLinkText a {
     padding-left: 8px;
     font-size: 10px;
     color: rgb(192, 188, 174);

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../../../UI/Button/Button";
-import competitionDetaildata from "../../../competitionsData.json"
+import competitionDetaildata from "../../../competitionsData.json";
 
-function revertDateFormat(dateStr)
-{
-    const arr = dateStr.split('-');
+function revertDateFormat(dateStr) {
+    const arr = dateStr.split("-");
     const res = arr[2] + "-" + arr[1] + "-" + arr[0];
-    return res
+    return res;
 }
 
 const CompetitionForm = (props) => {
@@ -15,8 +14,12 @@ const CompetitionForm = (props) => {
 
     const _id = props.id;
     const _name = competitionDetaildata[_id - 1]["name"];
-    const _start_date = revertDateFormat(competitionDetaildata[_id - 1]["date_start"]);
-    const _end_date = revertDateFormat(competitionDetaildata[_id - 1]["date_end"]);
+    const _start_date = revertDateFormat(
+        competitionDetaildata[_id - 1]["date_start"]
+    );
+    const _end_date = revertDateFormat(
+        competitionDetaildata[_id - 1]["date_end"]
+    );
     const _location = competitionDetaildata[_id - 1]["location"];
 
     const [name, setName] = useState(_name);
@@ -39,13 +42,14 @@ const CompetitionForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert("Zatwierdzono edycje szczegółów");
+        alert("Zatwierdzono edycję szczegółów");
         history.push("/admin/panel/" + _id + "/details");
     };
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="editDetailForm">
+                <p id="editFormTitle">Edytuj szczegóły</p>
                 <div className="row">
                     <div className="column">
                         <div className="label-column">

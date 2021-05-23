@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import Competitors from "./Competitors";
 
 describe("Competitors", () => {
@@ -41,14 +41,15 @@ describe("Competitors", () => {
     });
 
     describe("table with added competitors", () => {
-
+        let competitorsTable;
         it("should render", () => {
-            let competitorsTable = screen.getAllByRole("table");
+            competitorsTable = screen.getAllByRole("table");
             expect(competitorsTable[1]).toBeInTheDocument();
         });
 
+        let colheaders;
         it("should have 7 colheaders", () => {
-            let colheaders = screen.getAllByRole("columnheader");
+            colheaders = within(competitorsTable[1]).getAllByRole("columnheader");
             expect(colheaders).toHaveLength(7);
         });
     
@@ -62,9 +63,9 @@ describe("Competitors", () => {
                 "Kategoria",
                 "Akcje"
             ];
-    
-            for (let header of headers) {
-                expect(screen.getByText(header)).toBeInTheDocument();
+
+            for (let i=0; i<colheaders.length; i++) {
+                expect(within(colheaders[i]).getByText(headers[i]));
             }
         });
     });

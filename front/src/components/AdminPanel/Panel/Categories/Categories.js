@@ -4,31 +4,31 @@ import Button from "../../../UI/Button/Button";
 
 const categoriesNames = [
     {
-        id: 1,
+        id: "1",
         name: "seniorki",
     },
     {
-        id: 2,
+        id: "2",
         name: "juniorki",
     },
     {
-        id: 3,
+        id: "3",
         name: "seniorzy",
     },
     {
-        id: 4,
+        id: "4",
         name: "juniorzy",
     },
 ];
 
 const distances = [
     {
-        distance: 90,
+        distance: "90",
         seriesAmount: 12,
         seriesType: "3-strzałowe",
     },
     {
-        distance: 70,
+        distance: "70",
         seriesAmount: 6,
         seriesType: "6-strzałowe",
     },
@@ -86,13 +86,13 @@ const Categories = () => {
                                     Mężczyźni{" "}
                                 </option>
                             </select>{" "}
+                            <br />
+                            <Button
+                                type="submit"
+                                placeholder="Dodaj kategorię"
+                                className="btn btn-primary btn-lg"
+                            />
                         </form>
-                        <br />
-                        <Button
-                            type="submit"
-                            placeholder="Dodaj kategorię"
-                            className="btn btn-primary btn-lg ml-5"
-                        />
                     </div>
                     <div className="category-tile-div">
                         <p className="categories-header">
@@ -182,9 +182,16 @@ const Categories = () => {
                                     placeholder="Ilość serii"
                                     className="form-control"
                                     value={seriesAmount}
-                                    onChange={(event) =>
-                                        setSeriesAmount(event.target.value)
-                                    }
+                                    onChange={(event) => {
+                                        let seriesAmt =
+                                            event.target.value === ""
+                                                ? ""
+                                                : Math.max(
+                                                      event.target.value,
+                                                      1
+                                                  );
+                                        setSeriesAmount(seriesAmt);
+                                    }}
                                 />{" "}
                                 <br />
                                 <input
@@ -196,13 +203,13 @@ const Categories = () => {
                                         setSeriesType(event.target.value)
                                     }
                                 />{" "}
+                                <br />
+                                <Button
+                                    type="submit"
+                                    placeholder="Dodaj odległość"
+                                    className="btn btn-primary btn-lg"
+                                />
                             </form>
-                            <br />
-                            <Button
-                                type="submit"
-                                placeholder="Dodaj odległość"
-                                className="btn btn-primary btn-lg ml-4"
-                            />
                         </div>
                     )}
                     {chosenCategory && (

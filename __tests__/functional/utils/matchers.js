@@ -3,6 +3,7 @@ function expectNoErrors(response) {
 }
 
 function expectAnyError(response) {
+    expect(response.body).not.toBeUndefined();
     return expect(response.body.errors).not.toBeUndefined();
 }
 

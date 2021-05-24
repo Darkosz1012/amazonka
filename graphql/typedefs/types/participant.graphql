@@ -1,0 +1,9 @@
+type Participant {
+    first_name: String!
+    last_name: String!
+    birth_year: String!
+    license_no: String!
+    gender: String!
+    country: String
+    club: String
+}

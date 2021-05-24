@@ -1,0 +1,41 @@
+.panelContainer {
+    display: flex;
+    margin: 30px 40px 0px 40px;
+}
+
+.menuDiv {
+    width: 290px;
+    border-radius: 10px;
+    padding: 20px 0px 0px 0px;
+    opacity: 0.78;
+    justify-content: center;
+}
+
+.panelContentDiv {
+    flex-grow: 1;
+    padding-top: 20px;
+    margin-left: 30px;
+    padding-right: 30px;
+}
+
+@media (max-width: 999px) {
+    .panelContainer {
+        display: block;
+        margin: 20px 10px 0px 10px;
+    }
+    .menuDiv {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 40px 0px 0px;
+        text-align: center;
+        width: 100%;
+    }
+    .panelContentDiv {
+        width: 100%;
+    }
+}
+
+@media (max-width: 499px) {
+    .panelContentDiv {
+        width: 100%;
+    }
+}

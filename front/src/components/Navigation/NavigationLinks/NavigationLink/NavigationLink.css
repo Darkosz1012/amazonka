@@ -1,0 +1,62 @@
+.NavigationLink {
+    margin: 10px 0;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+}
+
+.NavigationLink a {
+    color: #333333;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.NavigationLink a:hover,
+.NavigationLink a:active,
+.NavigationLink a.active {
+    color: #fe382b;
+}
+
+/* for full screen */
+@media (min-width: 600px) {
+    .NavigationLink {
+        margin: 0px 5px;
+        width: auto;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .NavigationLink a {
+        color: #3490b2;
+        font-weight: 700;
+        height: 100%;
+        padding: 5px 15px;
+        border-bottom: 4px solid transparent;
+        box-shadow: 0px 0px 6px #998c66;
+    }
+
+    .NavigationLink a:hover,
+    .NavigationLink a:active,
+    .NavigationLink a.active {
+        background-color: rgb(245, 221, 149, 0.9);
+        box-shadow: 0px 0px 2px #675a32;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        text-shadow: 0 0 12px #4e3218;
+    }
+
+    .NavigationLink a:active,
+    .NavigationLink a.active {
+        box-shadow: 0px 0px 6px #675a32;
+    }
+}
+
+@media (max-width: 800px) {
+    .NavigationLink a {
+        font-size: 12px;
+        padding: 4px 6px 0px 6px;
+    }
+}

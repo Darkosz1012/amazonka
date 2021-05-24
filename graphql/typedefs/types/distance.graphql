@@ -1,0 +1,18 @@
+type Distance {
+    _id: ID!
+
+    competition_id: ID!
+    category_id: ID!
+
+    order: Int
+    name: String
+    series_type: Int
+}
+
+type DistanceWithScore {
+    distance_id: ID!
+    distance: Distance!
+
+    name: String
+    score: Int
+}

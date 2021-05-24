@@ -1,0 +1,20 @@
+type Competition {
+    _id: ID!
+    owner: User!
+
+    name: String!
+    start_date: String
+    end_date: String
+    location: String
+
+    details_id: ID
+    details: CompetitionDetails
+    categories_id: ID
+    categories: [Category]
+}
+
+type CompetitionDetails {
+    _id: ID
+    description: String
+    timetable: String
+}

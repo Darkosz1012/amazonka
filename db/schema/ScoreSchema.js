@@ -20,20 +20,15 @@ export default new mongoose.Schema({
     order: { type: String },
     pre_eliminations_score: { type: Number },
     finals_initial_placement: { type: Number },
-    distance: [
+    distances: [
         {
+            distance_id: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Distance",
+                required: true,
+            },
             name: { type: String },
             score: { type: Number },
-            series: [
-                {
-                    score: { type: Number },
-                    arrows: [
-                        {
-                            type: String,
-                        },
-                    ],
-                },
-            ],
         },
     ],
 });

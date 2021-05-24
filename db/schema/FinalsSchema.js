@@ -12,11 +12,14 @@ export default new mongoose.Schema({
         required: true,
     },
     participant1: {
-        id: {
+        participant_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Participant",
         },
-        name: {
+        first_name: {
+            type: String,
+        },
+        last_name: {
             type: String,
         },
         placement: {
@@ -27,11 +30,14 @@ export default new mongoose.Schema({
         },
     },
     participant2: {
-        id: {
+        participant_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Participant",
         },
-        name: {
+        first_name: {
+            type: String,
+        },
+        last_name: {
             type: String,
         },
         placement: {

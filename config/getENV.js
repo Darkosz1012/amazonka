@@ -5,5 +5,4 @@ export default (function () {
     if (env.error) {
         throw env.error;
     }
-    console.log(env.parsed);
 })();

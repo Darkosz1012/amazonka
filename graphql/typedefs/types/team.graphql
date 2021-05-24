@@ -1,0 +1,15 @@
+type Team {
+    type: String!
+    competition_id: ID!
+    competition: Competition!
+
+    name: String!
+    categories_id: [ID!]
+    categories: [Category]!
+    final_score: Int
+    finals_initial_placement: Int
+    finals_placement: Int
+
+    participants_id: [ID]
+    participants: [Participant]
+}

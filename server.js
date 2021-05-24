@@ -1,24 +1,17 @@
 // noinspection ES6UnusedImports
 import {} from "./config/getENV.js";
-
-import { ApolloServer } from "apollo-server";
-import fs from "fs";
-
-import resolvers from "./graphql/resolvers.js";
-
 const port = process.env.PORT || 3001;
-const typeDefs = fs.readFileSync("./graphql/schema.graphql", "utf-8");
 
-// noinspection JSCheckFunctionSignatures
-const app = new ApolloServer({
-    typeDefs,
-    resolvers,
-    context: ({ req }) => {
-        return req;
-    },
+import express from "express";
+import graphqlServer from "./graphql/index.js";
+
+const app = express();
+
+graphqlServer.applyMiddleware({
+    app,
 });
 
 // noinspection JSIgnoredPromiseFromCall
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`App listening at http://localhost:${port}`);
 });

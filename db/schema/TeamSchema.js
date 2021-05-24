@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 export default new mongoose.Schema({
     type: {
         type: String,
+        enum: ["team", "mixed"],
         required: true,
     },
     competition_id: {
@@ -14,11 +15,13 @@ export default new mongoose.Schema({
         type: String,
         required: true,
     },
-    category_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Category",
-        required: true,
-    },
+    categories_id: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Category",
+            required: true,
+        },
+    ],
     final_score: { type: Number },
     finals_initial_placement: { type: Number },
     finals_placement: { type: Number },
@@ -30,12 +33,12 @@ export default new mongoose.Schema({
                 required: true,
             },
             //Participants extended ref
-            name: {
+            first_name: {
                 type: String,
                 required: true,
             },
             //Participants extended ref
-            surname: {
+            last_name: {
                 type: String,
                 required: true,
             },

@@ -1,0 +1,926 @@
+[
+    {
+        "id": 1,
+        "name": "Puchar łucznika sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "id": 1,
+                "category_name": "juniorzy"
+            },
+            {
+                "id": 2,
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "id": 3,
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "id": 4,
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Łucznik sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "name": "Łucznicze zawody podkarpacia",
+        "location": "Rzeszów",
+        "date_start": "21-05-2021",
+        "date_end": "22-05-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "name": "Krakowskie zawody łucznicze",
+        "location": "Kraków",
+        "date_start": "03-06-2021",
+        "date_end": "04-06-2021",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
+        "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
+        "category": [
+            {
+                "category_name": "juniorzy"
+            },
+            {
+                "category_name": "kobiety 18-25"
+            },
+            {
+                "category_name": "mężczyżni 18-25"
+            },
+            {
+                "category_name": "seniorzy"
+            }
+        ]
+    }
+]

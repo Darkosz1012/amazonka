@@ -1,0 +1,42 @@
+.competition-form-div {
+    width: 400px;
+    margin: 60px auto;
+    padding: 20px 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0.78;
+    justify-content: center;
+}
+
+form {
+    margin: 30px 30px 30px 30px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.label-column {
+    height: 50px;
+}
+
+.input-column {
+    height: 50px;
+}
+
+@media (max-width: 450px) {
+    .competition-form-div {
+        width: 360px;
+        padding: 10px 20px 10px 20px;
+    }
+}

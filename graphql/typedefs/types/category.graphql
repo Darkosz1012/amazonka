@@ -1,0 +1,9 @@
+type Category {
+    _id: String!
+    name: String!
+    gender: String!
+    start_stand: Int
+    end_stand: Int
+    distances_id: [Distance]
+    distances: [Distance]
+}

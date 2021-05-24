@@ -1,0 +1,59 @@
+.panel-detail-header {
+    color: #92b9c5;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.infoContainer {
+    background-color: #fff;
+    opacity: 0.78;
+    padding: 30px 30px 30px 30px;
+    border-radius: 20px;
+}
+
+.left {
+    font-weight: 900;
+    font-size: 14px;
+    color: rgb(192, 188, 174);
+    text-decoration: underline;
+    padding-bottom: 5px;
+}
+
+.right {
+    font-size: 14px;
+    font-weight: 800;
+    color: rgb(155, 150, 128);
+    padding-bottom: 5px;
+}
+
+#name {
+    color: #6ac3e4;
+    font-weight: 800;
+}
+
+#name,
+#name-label {
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+.editLinkText {
+    padding-left: 8px;
+    font-size: 10px;
+    color: rgb(192, 188, 174);
+}
+
+.editLinkText a {
+    padding-left: 8px;
+    font-size: 10px;
+    color: rgb(192, 188, 174);
+}
+
+.editLinkText a:hover,
+.editLinkText a:active,
+.editLinkText a.active {
+    text-decoration: underline;
+    text-shadow: 0 0 20px rgb(192, 188, 174);
+    color: #6c7217;
+    transition: 0.35s;
+}

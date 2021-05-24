@@ -27,9 +27,9 @@ describe("RegisterForm", () => {
             expect(textbox).toBeInTheDocument();
         });
     
-        it("should have one button", () => {
-            let buttons = screen.getAllByRole("button");
-            expect(buttons).toHaveLength(1);
+it("should have register button", () => {
+            let btn = screen.getByRole("button", { name: "Zarejestruj się" });
+            expect(btn).toBeInTheDocument();
         });
     });
 });

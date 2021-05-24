@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import InsertResultsPanel from "./InsertResultsPanel";
-import mockData from "./../EliminationsBrackets/CompetitorsData8.json";
+import mockData from "../../../EliminationsBrackets/CompetitorsData8.json";
 
 describe("InsertResultsPanel", () => {
     beforeEach(() => {

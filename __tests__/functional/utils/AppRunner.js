@@ -21,13 +21,17 @@ export default class AppRunner {
     }
 
     async start() {
-        this.dbUrl = await this.server.getUri();
-        this.connection = await MongoClient.connect(this.dbUrl, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        this.db = this.connection.db(await this.server.getDbName());
-        connectToMongooseFunctionalTests(this.dbUrl);
+        try {
+            this.dbUrl = await this.server.getUri();
+            this.connection = await MongoClient.connect(this.dbUrl, {
+                useNewUrlParser: true,
+                useUnifiedTopology: true,
+            });
+            this.db = this.connection.db(await this.server.getDbName());
+            connectToMongooseFunctionalTests(this.dbUrl);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     async stop() {
@@ -52,5 +56,9 @@ export default class AppRunner {
 
     request() {
         return st_request(this.app);
+    }
+
+    async getDocumentsCount(collection) {
+        return await this.db.collection(collection).countDocuments();
     }
 }

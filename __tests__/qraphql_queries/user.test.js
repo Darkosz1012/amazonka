@@ -43,4 +43,18 @@ describe("test validity of GraphQL queries and mutations", () => {
             tester.test(false, register_mutation, { user: "user" });
         });
     });
+
+    describe("refresh mutation", () => {
+        const valid_mutation = `
+            mutation {
+                refresh(refreshToken: "token"){
+                    accessToken
+                }
+            }
+        `;
+
+        test("should pass if refreshToken is specified", () => {
+            tester.test(true, valid_mutation);
+        });
+    });
 });

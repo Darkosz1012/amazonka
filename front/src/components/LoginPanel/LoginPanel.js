@@ -3,6 +3,7 @@ import "./LoginPanel.css";
 import LoginForm from "./comp/LoginForm";
 import RegisterForm from "./comp/RegisterForm";
 import Button from "../UI/Button/Button";
+import { Fragment } from "react";
 
 class LoginPanel extends Component {
     constructor(props) {
@@ -27,30 +28,30 @@ class LoginPanel extends Component {
     render() {
         return (
             <div className="login-register-div">
-                <div className="buttons">
-                    <Button
-                        className={
-                            !this.state.isRegister
-                                ? "btn btn-outline-primary btn-lg active"
-                                : "btn btn-outline-primary"
-                        }
-                        onClick={this.showLogin}
-                        placeholder="ZALOGUJ SIĘ"
-                    />
-                    <Button
-                        className={
-                            this.state.isRegister
-                                ? "btn btn-outline-primary btn-lg active"
-                                : "btn btn-outline-primary "
-                        }
-                        onClick={this.showRegister}
-                        placeholder="ZAREJESTRUJ SIĘ"
-                    />
-                </div>
-                <br />
                 <div className="login-div">
                     {!this.state.isRegister && <LoginForm />}
                     {this.state.isRegister && <RegisterForm />}
+                </div>
+                <div className="buttons">
+                    {this.state.isRegister ? (
+                        <Fragment>
+                            Masz już konto?
+                            <Button
+                                className="btn btn-outline-primary"
+                                onClick={this.showLogin}
+                                placeholder="Zaloguj się!"
+                            />
+                        </Fragment>
+                    ) : (
+                        <Fragment>
+                            Nie masz jeszcz konta?
+                            <Button
+                                className="btn btn-outline-primary"
+                                onClick={this.showRegister}
+                                placeholder="Zarejestruj się!"
+                            />
+                        </Fragment>
+                    )}
                 </div>
             </div>
         );

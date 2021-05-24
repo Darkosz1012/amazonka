@@ -25,8 +25,8 @@ describe("test validity of GraphQL queries and mutations", () => {
 
     describe("register mutation", () => {
         const register_mutation = `
-            mutation Register ($user: String!, $pass: String!){
-                register(username: $user, password: $pass){
+            mutation Register ($user: String!, $email: String!, $pass: String!){
+                register(username: $user, email: $email, password: $pass){
                     user_id
                 }
             }
@@ -36,6 +36,7 @@ describe("test validity of GraphQL queries and mutations", () => {
             tester.test(true, register_mutation, {
                 user: "user",
                 pass: "pass",
+                email: "aaa@aaa",
             });
         });
 

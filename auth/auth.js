@@ -23,12 +23,6 @@ export async function hash(password) {
 }
 
 export function authenticateToken(token) {
-    if (token == null) {
-        throw {
-            message: "No token.",
-        };
-    }
-
     return jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
         if (err) {
             throw {

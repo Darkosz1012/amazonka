@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../UI/Button/Button";
+import { pushToHistoryEvent } from "./pushToHistoryEvent.js";
 
 const CompetitionForm = (props) => {
     const history = useHistory();
@@ -30,7 +31,10 @@ const CompetitionForm = (props) => {
     };
 
     return (
-        <form data-testid="newCompetitionFormTestId" onSubmit={handleSubmit}>
+        <form
+            data-testid="newCompetitionFormTestId"
+            onSubmit={pushToHistoryEvent(history, "/admin/competitions")}
+        >
             <div className="row">
                 <div className="column">
                     <div className="label-column">

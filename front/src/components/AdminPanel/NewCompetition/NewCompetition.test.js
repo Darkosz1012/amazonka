@@ -9,10 +9,11 @@ import { Route, MemoryRouter as Router } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
 import NewCompetition from "./NewCompetition";
 import CompetitionForm from "./CompetitionForm";
+import * as handler from "./pushToHistoryEvent.js";
 
 describe("New competition", () => {
     afterEach(() => {
-        cleanup();
+        jest.clearAllMocks();
     });
 
     test("should render new competition form", () => {
@@ -38,15 +39,18 @@ describe("New competition", () => {
         expect(endDateInput).toBeInTheDocument();
     });
 
-    window.alert = jest.fn();
-
     test("should submit valid form", async () => {
-        window.alert.mockClear();
-        const handleSubmit = jest.fn();
+        const onSubmitMock = jest.fn();
+        const handleSubmit = jest
+            .spyOn(handler, "pushToHistoryEvent")
+            .mockReturnValue((event) => {
+                event.preventDefault();
+                onSubmitMock(event);
+            });
 
         const formComponent = (
             <Router initialEntries={["/admin/newcompetition"]}>
-                <CompetitionForm onSubmit={handleSubmit} />
+                <CompetitionForm />
             </Router>
         );
         render(formComponent);
@@ -69,12 +73,22 @@ describe("New competition", () => {
 
         fireEvent.click(screen.getByRole("button"));
 
-        await waitFor(() =>
-            expect(handleSubmit).toHaveBeenCalledWith({
-                name: "ZawodyXXX",
-                start_date: "2021-05-28",
-                end_date: "2021-05-30",
-                location: "Kraków",
+        /*
+		
+		"name": "ZawodyXXX",
+		"start_date": "2021-05-28",
+		"end_date": "2021-05-30",
+		"location": "Kraków"
+		*/
+
+        console.log(onSubmitMock.mock.calls[0][0].target);
+        expect(onSubmitMock).toHaveBeenCalledWith(
+            expect.objectContaining({
+                target: expect.arrayContaining([
+                    expect.objectContaining({
+                        value: expect.anything(),
+                    }),
+                ]),
             })
         );
     });

@@ -27,5 +27,6 @@ function getTypeDefs(dir) {
             typeDefs += getTypeDefs(join(dir, file));
         }
     });
+    console.log(typeDefs);
     return typeDefs;
 }

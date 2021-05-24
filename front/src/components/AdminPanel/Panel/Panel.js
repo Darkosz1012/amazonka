@@ -7,11 +7,16 @@ import Positions from "./Positions/Positions";
 import Teams from "./Teams/Teams";
 import QualificationScores from "./QualificationScores/QualificationScores";
 import EliminationScores from "./EliminationScores/EliminationScores";
+import EditCompetitionDetails from "./CompetitionDetails/EditDetails/EditDetails";
 
 const Panel = (props) => (
     <div>
         <PanelLayout params={{ id: props.match.params.id }}>
             <Switch>
+                <Route
+                    path="/admin/panel/:id/details/edit"
+                    component={EditCompetitionDetails}
+                />
                 <Route
                     path="/admin/panel/:id/eliminationscores"
                     component={EliminationScores}

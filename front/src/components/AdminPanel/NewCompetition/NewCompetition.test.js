@@ -5,7 +5,8 @@ import {
     fireEvent,
     waitFor,
 } from "@testing-library/react";
-import { Route, MemoryRouter as Router } from "react-router-dom";
+import { Router } from "react-router-dom";
+import { createMemoryHistory } from "history";
 import "@testing-library/jest-dom/extend-expect";
 import NewCompetition from "./NewCompetition";
 import CompetitionForm from "./CompetitionForm";
@@ -43,8 +44,13 @@ describe("New competition", () => {
     test("should submit valid form", async () => {
         window.alert.mockClear();
 
+        const history = createMemoryHistory();
+
         const formComponent = (
-            <Router initialEntries={["/admin/newcompetition"]}>
+            <Router
+                history={history}
+                initialEntries={["/admin/newcompetition"]}
+            >
                 <CompetitionForm />
             </Router>
         );
@@ -65,6 +71,8 @@ describe("New competition", () => {
 
         fireEvent.submit(screen.getByTestId("newCompetitionFormTestId"));
 
-        await waitFor(() => expect(window.alert).toHaveBeenCalledTimes(1));
+        await waitFor(() =>
+            expect(history.location.pathname).toBe("/admin/competitions")
+        );
     });
 });

@@ -5,7 +5,7 @@ import {
     fireEvent,
     waitFor,
 } from "@testing-library/react";
-import { Router, Route } from "react-router-dom";
+import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import "@testing-library/jest-dom/extend-expect";
 import EditDetails from "./EditDetails";
@@ -43,30 +43,7 @@ describe("Edit competition details", () => {
 
     test("should render form with initial (not edited yet) inputs value", () => {
         window.alert.mockClear();
-
         const history = createMemoryHistory();
-
-        const compData = {
-            id: 1,
-            name: "Puchar Polski",
-            location: "Nowy Sącz",
-            date_start: "15-05-2021",
-            date_end: "17-05-2021",
-            description: "Lorem ipsum",
-            schedule: "15.05.2021-sobota",
-            category: [
-                {
-                    id: 1,
-                    category_name: "juniorzy",
-                },
-                {
-                    id: 2,
-                    category_name: "kobiety 18-25",
-                },
-            ],
-        };
-
-        jest.mock("../../../competitionsData.json", () => [compData]);
 
         const formComponent = (
             <Router
@@ -87,30 +64,7 @@ describe("Edit competition details", () => {
 
     test("should submit valid form", async () => {
         window.alert.mockClear();
-
         const history = createMemoryHistory();
-
-        const compData = {
-            id: 1,
-            name: "Puchar",
-            location: "Nowy Sącz",
-            date_start: "15-05-2021",
-            date_end: "17-05-2021",
-            description: "Lorem ipsum",
-            schedule: "15.05.2021-sobota",
-            category: [
-                {
-                    id: 1,
-                    category_name: "juniorzy",
-                },
-                {
-                    id: 2,
-                    category_name: "kobiety 18-25",
-                },
-            ],
-        };
-
-        jest.mock("../../../competitionsData.json", () => [compData]);
 
         const formComponent = (
             <Router

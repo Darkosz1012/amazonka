@@ -1,5 +1,6 @@
 import jsonwebtoken from "jsonwebtoken";
 import * as auth from "$/auth/auth.js";
+import { authenticateToken, extractTokenFromHeader } from "$/auth/auth.js";
 
 function InvalidHeadersReq() {
     const req = {};
@@ -40,45 +41,49 @@ describe("extractTokenFromHeader function", () => {
 });
 
 describe("authenticateToken function", () => {
-    beforeEach(() => {
-        jsonwebtoken.verify = jest.fn();
+    afterAll(() => jest.clearAllMocks());
+
+    test("should return payload if token is valid", () => {
+        const payload = {
+            user: "user",
+            user_id: "1",
+        };
+
+        jsonwebtoken.verify = jest.fn(() => payload);
+
+        expect(authenticateToken("token")).toMatchObject(payload);
     });
 
-    afterEach(() => {
-        jest.clearAllMocks();
+    test("should throw if token is invalid", () => {
+        jsonwebtoken.verify = jest.fn(() => {
+            throw {
+                message: "Authentication failed.",
+            };
+        });
+
+        expect(() => authenticateToken("token")).toThrow(
+            "Authentication failed."
+        );
+    });
+});
+
+describe("extractTokenFromHeader function", () => {
+    const requestWithToken = {
+        headers: {
+            authorization: "auth token",
+        },
+    };
+    const requestWithoutToken = {
+        headers: {
+            not_authorization: "auth token",
+        },
+    };
+
+    test("should return authorization token if present in request", () => {
+        expect(extractTokenFromHeader(requestWithToken)).toBe("token");
     });
 
-    test("Should throw if token not present in header", () => {
-        const extractTokenFromHeaderSpy = jest.spyOn(
-            auth,
-            "extractTokenFromHeader"
-        );
-        extractTokenFromHeaderSpy.mockReturnValue(undefined);
-
-        expect(() => auth.authenticateToken(InvalidHeadersReq())).toThrow(
-            "No token."
-        );
-        expect(() => auth.authenticateToken(ValidHeadersReq())).toThrow(
-            "No token."
-        );
-
-        expect(extractTokenFromHeaderSpy).toHaveBeenCalledTimes(2);
-    });
-
-    test("Should call JSW.verify if token extracted successfully", () => {
-        const extractTokenFromHeaderSpy = jest.spyOn(
-            auth,
-            "extractTokenFromHeader"
-        );
-        extractTokenFromHeaderSpy.mockReturnValue("token");
-
-        expect(() => auth.authenticateToken({})).not.toThrow();
-
-        expect(jsonwebtoken.verify).toHaveBeenCalledWith(
-            "token",
-            process.env.ACCESS_TOKEN_SECRET,
-            expect.any(Function)
-        );
-        expect(extractTokenFromHeaderSpy).toHaveBeenCalledTimes(1);
+    test("should return undefined if token is not present in request", () => {
+        expect(extractTokenFromHeader(requestWithoutToken)).toBe(undefined);
     });
 });

@@ -65,8 +65,6 @@ describe("authenticateToken function", () => {
             "Authentication failed."
         );
     });
-
-    jest.clearAllMocks();
 });
 
 describe("extractTokenFromHeader function", () => {

@@ -42,13 +42,24 @@ const CompetitionForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert("Zatwierdzono edycję szczegółów");
-        history.push("/admin/panel/" + _id + "/details");
+        if (
+            (name !== "") &
+            (start_date !== "") &
+            (end_date !== "") &
+            (location !== "")
+        ) {
+            alert("Zatwierdzono edycję szczegółów");
+            history.push("/admin/panel/" + _id + "/details");
+        }
     };
 
     return (
         <div>
-            <form onSubmit={handleSubmit} id="editDetailForm">
+            <form
+                id="editDetailForm"
+                data-testid="editCompetitionDetailsForm"
+                onSubmit={handleSubmit}
+            >
                 <p id="editFormTitle">Edytuj szczegóły</p>
                 <div className="row">
                     <div className="column">
@@ -62,10 +73,12 @@ const CompetitionForm = (props) => {
                                 required
                                 type="text"
                                 id="compname"
+                                data-testid="compname"
                                 className="form-control"
                                 value={name}
                                 onChange={handleNameChange}
-                            />{" "}
+                            />
+                            {""}
                         </div>
                     </div>
                 </div>
@@ -83,6 +96,7 @@ const CompetitionForm = (props) => {
                                 required
                                 type="date"
                                 id="start_date"
+                                data-testid="start_date"
                                 placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={start_date}
@@ -105,6 +119,7 @@ const CompetitionForm = (props) => {
                                 required
                                 type="date"
                                 id="end_date"
+                                data-testid="end_date"
                                 placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={end_date}
@@ -127,6 +142,7 @@ const CompetitionForm = (props) => {
                                 required
                                 type="text"
                                 id="location"
+                                data-testid="location"
                                 className="form-control"
                                 value={location}
                                 onChange={handleLocationChange}

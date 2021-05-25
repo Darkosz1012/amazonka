@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../UI/Button/Button";
-import { pushToHistoryEvent } from "./pushToHistoryEvent.js";
 
 const CompetitionForm = (props) => {
     const history = useHistory();
@@ -26,15 +25,19 @@ const CompetitionForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert("Zatwierdzono");
-        history.push("/admin/competitions");
+        if (
+            (name !== "") &
+            (start_date !== "") &
+            (end_date !== "") &
+            (location !== "")
+        ) {
+            alert("Zatwierdzono");
+            history.push("/admin/competitions");
+        }
     };
 
     return (
-        <form
-            data-testid="newCompetitionFormTestId"
-            onSubmit={pushToHistoryEvent(history, "/admin/competitions")}
-        >
+        <form data-testid="newCompetitionFormTestId" onSubmit={handleSubmit}>
             <div className="row">
                 <div className="column">
                     <div className="label-column">
@@ -47,6 +50,7 @@ const CompetitionForm = (props) => {
                             required
                             type="text"
                             id="compname"
+                            data-testid="compname"
                             className="form-control"
                             value={name}
                             onChange={handleNameChange}
@@ -113,6 +117,7 @@ const CompetitionForm = (props) => {
                             required
                             type="text"
                             id="location"
+                            data-testid="location"
                             className="form-control"
                             value={location}
                             onChange={handleLocationChange}

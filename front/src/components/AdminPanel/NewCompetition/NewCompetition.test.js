@@ -9,11 +9,10 @@ import { Route, MemoryRouter as Router } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
 import NewCompetition from "./NewCompetition";
 import CompetitionForm from "./CompetitionForm";
-import * as handler from "./pushToHistoryEvent.js";
 
 describe("New competition", () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        cleanup();
     });
 
     test("should render new competition form", () => {
@@ -39,14 +38,10 @@ describe("New competition", () => {
         expect(endDateInput).toBeInTheDocument();
     });
 
+    window.alert = jest.fn();
+
     test("should submit valid form", async () => {
-        const onSubmitMock = jest.fn();
-        const handleSubmit = jest
-            .spyOn(handler, "pushToHistoryEvent")
-            .mockReturnValue((event) => {
-                event.preventDefault();
-                onSubmitMock(event);
-            });
+        window.alert.mockClear();
 
         const formComponent = (
             <Router initialEntries={["/admin/newcompetition"]}>
@@ -55,41 +50,21 @@ describe("New competition", () => {
         );
         render(formComponent);
 
-        fireEvent.input(
-            screen.getByRole("textbox", { name: "Nazwa zawodów:" }),
-            {
-                target: { value: "ZawodyXXX" },
-            }
-        );
+        fireEvent.input(screen.getByTestId("compname"), {
+            target: { value: "ZawodyXXX" },
+        });
         fireEvent.input(screen.getByTestId("start_date"), {
             target: { value: "2021-05-28" },
         });
         fireEvent.input(screen.getByTestId("end_date"), {
             target: { value: "2021-05-30" },
         });
-        fireEvent.input(screen.getByRole("textbox", { name: "Lokalizacja:" }), {
+        fireEvent.input(screen.getByTestId("location"), {
             target: { value: "Kraków" },
         });
 
-        fireEvent.click(screen.getByRole("button"));
+        fireEvent.submit(screen.getByTestId("newCompetitionFormTestId"));
 
-        /*
-		
-		"name": "ZawodyXXX",
-		"start_date": "2021-05-28",
-		"end_date": "2021-05-30",
-		"location": "Kraków"
-		*/
-
-        console.log(onSubmitMock.mock.calls[0][0].target);
-        expect(onSubmitMock).toHaveBeenCalledWith(
-            expect.objectContaining({
-                target: expect.arrayContaining([
-                    expect.objectContaining({
-                        value: expect.anything(),
-                    }),
-                ]),
-            })
-        );
+        await waitFor(() => expect(window.alert).toHaveBeenCalledTimes(1));
     });
 });

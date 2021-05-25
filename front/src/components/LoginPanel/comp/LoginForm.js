@@ -35,7 +35,6 @@ const LoginForm = (props) => {
                     data.login.user_id
                 )
             );
-            console.log(data);
         },
     });
 
@@ -49,7 +48,6 @@ const LoginForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(login, password);
         loginUser({
             variables: {
                 username: login,

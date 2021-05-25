@@ -21,7 +21,7 @@ const RegisterForm = (props) => {
             console.log(err);
         },
         onCompleted(data) {
-            console.log(data);
+            //there will go what will happen if compleated succesfully
         },
     });
 
@@ -43,7 +43,6 @@ const RegisterForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(login, email, password1, password2);
         if (password2 === password1) {
             registerUser({
                 variables: {

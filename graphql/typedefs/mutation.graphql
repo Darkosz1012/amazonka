@@ -2,8 +2,12 @@ type Mutation {
     login(username: String!, password: String!): Token!
     register(username: String!, password: String!): Token!
 
+    addCategory(category: inputCategory!): Category!
+    updateCategory(category: inputCategory!): Category!
+    deleteCategory(_id: String!): Category!
+
     addCompetition(
-        owner: ID!
+        owner_id: ID!
         name: String!
 
         start_date: String

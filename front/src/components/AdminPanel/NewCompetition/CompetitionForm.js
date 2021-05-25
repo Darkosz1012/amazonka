@@ -24,12 +24,6 @@ const CompetitionForm = (props) => {
         setLocation(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        alert("Zatwierdzono");
-        history.push("/admin/competitions");
-    };
-
     return (
         <form
             data-testid="newCompetitionFormTestId"

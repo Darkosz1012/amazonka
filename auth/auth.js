@@ -23,14 +23,13 @@ export async function hash(password) {
 }
 
 export function authenticateToken(token) {
-    return jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-        if (err) {
-            throw {
-                message: "Authentication failed.",
-            };
-        }
-        return user;
-    });
+    try {
+        return jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    } catch (err) {
+        throw {
+            message: "Authentication failed.",
+        };
+    }
 }
 
 export function extractTokenFromHeader(req) {

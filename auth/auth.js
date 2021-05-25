@@ -22,7 +22,23 @@ export async function hash(password) {
     });
 }
 
-export function authenticateToken(token) {
+export function verifyRequest(req) {
+    const token = extractTokenFromHeader(req);
+
+    if (token == null) {
+        throw {
+            message: "No token.",
+        };
+    }
+
+    return authenticateToken(token);
+}
+
+export function verifyToken(token) {
+    return authenticateToken(token);
+}
+
+function authenticateToken(token) {
     try {
         return jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     } catch (err) {
@@ -32,7 +48,7 @@ export function authenticateToken(token) {
     }
 }
 
-export function extractTokenFromHeader(req) {
+function extractTokenFromHeader(req) {
     const authHeader = req.headers["authorization"];
     return authHeader && authHeader.split(" ")[1];
 }

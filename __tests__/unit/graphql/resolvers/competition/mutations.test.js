@@ -1,16 +1,12 @@
+import * as mockingoose from "mockingoose";
+import { Competition, CompetitionDetails } from "$/db/index.js";
+
 import mutations from "$/graphql/resolvers/competition/mutations.js";
 
-import * as mockingoose from "mockingoose";
-import { Competition } from "$/db/index.js";
-import { authenticateToken } from "$/auth/auth.js";
-
 describe("addCompetition function", () => {
-    beforeAll(() => {
-        authenticateToken = jest.fn();
-    });
-
     test("should pass if owner and name is defined", async () => {
         mockingoose(Competition).toReturn((query) => query, "save");
+        mockingoose(CompetitionDetails).toReturn();
 
         const input = {
             owner_id: "609aa4bde6483525a06b8e5b",
@@ -28,18 +24,10 @@ describe("addCompetition function", () => {
         expect(result.start_date).toStrictEqual(new Date(input.start_date));
         expect(result.details_id).not.toBeUndefined();
         expect(result.categories_id).toHaveLength(0);
-
-        expect(authenticateToken).toBeCalledTimes(1);
     });
-
-    afterAll(() => jest.clearAllMocks());
 });
 
 describe("updateCompetition function", () => {
-    beforeAll(() => {
-        authenticateToken = jest.fn();
-    });
-
     test("should pass if _id is defined", async () => {
         const competitionMock = {
             _id: "609aa4bde6483525a06b8e5b",
@@ -84,9 +72,5 @@ describe("updateCompetition function", () => {
             competitionMock.details_id.timetable
         );
         expect(result.start_date).toBe(competitionMock.start_date);
-
-        expect(authenticateToken).toBeCalledTimes(1);
     });
-
-    afterAll(() => jest.clearAllMocks());
 });

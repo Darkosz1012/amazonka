@@ -1,7 +1,7 @@
 import { User } from "$/db/index.js";
 import { UserInputError } from "apollo-server";
 
-import { authenticateToken, hash, verify } from "$/auth/auth.js";
+import { hash, verify, verifyToken } from "$/auth/auth.js";
 import jwt from "jsonwebtoken";
 
 export default {
@@ -41,7 +41,7 @@ export default {
     },
 
     refresh: async (_, { token }) => {
-        let user = authenticateToken(token);
+        let user = verifyToken(token);
         return refreshToken(user, token);
     },
 };

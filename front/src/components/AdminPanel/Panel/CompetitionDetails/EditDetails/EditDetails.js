@@ -2,7 +2,6 @@ import "./EditDetails.css";
 import EditForm from "./EditCompetitionDetailsForm";
 
 function EditDetails(props) {
-    console.log(props);
     return (
         <>
             <p className="detail-header">Szczegóły zawodów</p>

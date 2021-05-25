@@ -41,6 +41,50 @@ describe("Edit competition details", () => {
 
     window.alert = jest.fn();
 
+    test("should render form with initial (not edited yet) inputs value", () => {
+        window.alert.mockClear();
+
+        const history = createMemoryHistory();
+
+        const compData = {
+            id: 1,
+            name: "Puchar Polski",
+            location: "Nowy Sącz",
+            date_start: "15-05-2021",
+            date_end: "17-05-2021",
+            description: "Lorem ipsum",
+            schedule: "15.05.2021-sobota",
+            category: [
+                {
+                    id: 1,
+                    category_name: "juniorzy",
+                },
+                {
+                    id: 2,
+                    category_name: "kobiety 18-25",
+                },
+            ],
+        };
+
+        jest.mock("../../../competitionsData.json", () => [compData]);
+
+        const formComponent = (
+            <Router
+                history={history}
+                initialEntries={["/admin/panel/1/details/edit"]}
+            >
+                <EditForm id={1} />
+            </Router>
+        );
+
+        render(formComponent);
+
+        expect(screen.getByTestId("compname")).toHaveValue();
+        expect(screen.getByTestId("start_date")).toHaveValue();
+        expect(screen.getByTestId("end_date")).toHaveValue();
+        expect(screen.getByTestId("location")).toHaveValue();
+    });
+
     test("should submit valid form", async () => {
         window.alert.mockClear();
 

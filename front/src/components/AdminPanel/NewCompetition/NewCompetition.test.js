@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { getByLabelText, within } from "@testing-library/dom";
-import { Route, MemoryRouter as Router } from "react-router-dom";
+import { within } from "@testing-library/react";
+import { MemoryRouter as Router } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
 import NewCompetition from "./NewCompetition";
 import CompetitionForm from "./CompetitionForm";

@@ -22,6 +22,7 @@ type Mutation {
         end_date: String
         location: String
         details: inputDetails
+        categories_id: [ID]
     ): Competition
 
     deleteCompetition(_id: ID!): Competition

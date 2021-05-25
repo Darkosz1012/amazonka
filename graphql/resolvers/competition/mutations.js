@@ -8,18 +8,24 @@ export default {
             description: "No description",
             timetable: "No timetable",
         });
+        competitionDetails = await competitionDetails.save();
         competition.details_id = competitionDetails._id;
 
         return await competition.save();
     },
 
     updateCompetition: async (_, args) => {
-        return await Competition.findOneAndUpdate({ _id: args._id }, args, {
+        await CompetitionDetails.findOneAndUpdate(
+            { competition_id: args._id },
+            args.details,
+            {
+                new: true,
+            }
+        );
+
+        return Competition.findOneAndUpdate({ _id: args._id }, args, {
             new: true,
-        })
-            .populate("details")
-            .populate("owner")
-            .exec();
+        });
     },
 
     deleteCompetition: async (_, args) => {

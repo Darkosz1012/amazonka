@@ -1,7 +1,10 @@
 import { Competition, CompetitionDetails } from "$/db/index.js";
+import { verifyRequest } from "../../../auth/auth.js";
 
 export default {
-    addCompetition: async (_, args) => {
+    addCompetition: async (_, args, context) => {
+        verifyRequest(context.req);
+
         let competition = new Competition(args);
         let competitionDetails = new CompetitionDetails({
             competition_id: competition._id,
@@ -14,7 +17,9 @@ export default {
         return await competition.save();
     },
 
-    updateCompetition: async (_, args) => {
+    updateCompetition: async (_, args, context) => {
+        verifyRequest(context.req);
+
         await CompetitionDetails.findOneAndUpdate(
             { competition_id: args._id },
             args.details,
@@ -28,7 +33,11 @@ export default {
         });
     },
 
-    deleteCompetition: async (_, args) => {
-        return Competition.findByIdAndDelete(args._id);
+    deleteCompetition: async (_, args, context) => {
+        verifyRequest(context.req);
+
+        let competition = await Competition.findByIdAndDelete(args._id);
+        await CompetitionDetails.findByIdAndDelete(competition.details_id);
+        return competition;
     },
 };

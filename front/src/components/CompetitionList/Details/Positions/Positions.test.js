@@ -9,7 +9,7 @@ describe("Positions", () => {
     describe("table with positions", () => {
         let positionsTable;
         it("should render", () => {
-            positionsTable = screen.getByRole("table");
+            positionsTable = screen.getByRole("table", {id: /positionsTable/i});
             expect(positionsTable).toBeInTheDocument();
         });
 

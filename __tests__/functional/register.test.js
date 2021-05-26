@@ -69,12 +69,12 @@ describe("register users", () => {
 
     //currently this password is accepted and test fails!
     test.skip("register a user with empty password, should return error", async () => {
-        let registerUserEmptyPassword = createRegisterUserMsg();
-        registerUserEmptyPassword.variables.password = "";
+        let registerUserEmptyPasswordMsg = createRegisterUserMsg();
+        registerUserEmptyPasswordMsg.variables.password = "";
 
         const response = await SUT.request()
             .post("/graphql")
-            .send(registerUserEmptyPassword)
+            .send(registerUserEmptyPasswordMsg)
             .expect(200);
 
         expectAnyError(response);
@@ -84,12 +84,12 @@ describe("register users", () => {
     test("register two users with different emails, but the same usernames, should return error", async () => {
         await expectSuccessfulRegistration(registerUserMsg);
 
-        let registerUserDifferentEmail = createRegisterUserMsg();
-        registerUserDifferentEmail.variables.email += "123";
+        let registerUserDifferentEmailMsg = createRegisterUserMsg();
+        registerUserDifferentEmailMsg.variables.email += "123";
 
         const response = await SUT.request()
             .post("/graphql")
-            .send(registerUserDifferentEmail)
+            .send(registerUserDifferentEmailMsg)
             .expect(200);
 
         expectAnyErrorMessageToBe("User already exists.", response);
@@ -99,12 +99,12 @@ describe("register users", () => {
     test("register two users with different usernames, but the same emails, should return error", async () => {
         await expectSuccessfulRegistration(registerUserMsg);
 
-        let registerUserDifferentUsername = createRegisterUserMsg();
-        registerUserDifferentUsername.variables.username += "123";
+        let registerUserDifferentUsernameMsg = createRegisterUserMsg();
+        registerUserDifferentUsernameMsg.variables.username += "123";
 
         const response = await SUT.request()
             .post("/graphql")
-            .send(registerUserDifferentUsername)
+            .send(registerUserDifferentUsernameMsg)
             .expect(200);
 
         expectAnyErrorMessageToBe("User already exists.", response);
@@ -114,12 +114,12 @@ describe("register users", () => {
     test("register two unique users successfully", async () => {
         await expectSuccessfulRegistration(registerUserMsg);
 
-        let registerUserDifferentUsernameAndEmail = createRegisterUserMsg();
-        registerUserDifferentUsernameAndEmail.variables.username += "123";
-        registerUserDifferentUsernameAndEmail.variables.email += "123";
+        let registerUserDifferentUsernameAndEmailMsg = createRegisterUserMsg();
+        registerUserDifferentUsernameAndEmailMsg.variables.username += "123";
+        registerUserDifferentUsernameAndEmailMsg.variables.email += "123";
 
         await expectSuccessfulRegistration(
-            registerUserDifferentUsernameAndEmail
+            registerUserDifferentUsernameAndEmailMsg
         );
     });
 });

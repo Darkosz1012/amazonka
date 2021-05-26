@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "../../UI/Button/Button";
 import { gql, useMutation } from "@apollo/client";
 
@@ -47,7 +47,7 @@ const RegisterForm = (props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form data-testid="registerForm" onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="Login"

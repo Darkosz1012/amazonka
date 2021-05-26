@@ -23,11 +23,4 @@ describe("Navigation Link", () => {
     it("should render passed text", () => {
         expect(navigationLink).toHaveTextContent("test link");
     });
-
-    it("should link to given address", () => {
-        expect(within(navigationLink).getByRole("link")).toHaveAttribute(
-            "href",
-            "/testpath"
-        );
-    });
 });

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./RegisterForm.css";
 import Button from "../../UI/Button/Button";
 import { gql, useMutation } from "@apollo/client";
 
@@ -15,8 +16,9 @@ const RegisterForm = (props) => {
     const [email, setEmail] = useState("");
     const [password1, setPassword1] = useState("");
     const [password2, setPassword2] = useState("");
-    const [reasonForCreatingAccount, setReasonForCreatingAccount] = useState("");
-    
+    const [reasonForCreatingAccount, setReasonForCreatingAccount] =
+        useState("");
+
     const [registerUser] = useMutation(REGISTER_USER, {
         onError(err) {
             console.log(err);
@@ -42,11 +44,14 @@ const RegisterForm = (props) => {
     const handlereasonForCreatingAccount = (event) => {
         setReasonForCreatingAccount(event.target.value);
     };
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(login, password1, password2);
-        if (password2 === password1) {
+        if (
+            /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email) &&
+            password1 &&
+            password2 === password1
+        ) {
             registerUser({
                 variables: {
                     username: login,
@@ -57,12 +62,11 @@ const RegisterForm = (props) => {
     };
 
     return (
-        <form label="form" onSubmit={handleSubmit}>
+        <form data-testid="registerForm" onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="Login"
-                className="form-control"
-                style={{width:"200px", marginLeft:"-30px"}}
+                className="form-control register-input"
                 value={login}
                 onChange={handleLoginChange}
             />{" "}
@@ -70,8 +74,7 @@ const RegisterForm = (props) => {
             <input
                 type="text"
                 placeholder="Email"
-                className="form-control"
-                style={{width:"200px", marginLeft:"-30px"}}
+                className="form-control register-input"
                 value={email}
                 onChange={handleEmailChange}
             />{" "}
@@ -79,8 +82,7 @@ const RegisterForm = (props) => {
             <input
                 type="password"
                 placeholder="Hasło"
-                className="form-control"
-                style={{width:"200px", marginLeft:"-30px"}}
+                className="form-control register-input"
                 value={password1}
                 onChange={handlePassword1Change}
             />{" "}
@@ -88,16 +90,14 @@ const RegisterForm = (props) => {
             <input
                 type="password"
                 placeholder="Powtórz hasło"
-                className="form-control"
-                style={{width:"200px", marginLeft:"-30px"}}
+                className="form-control register-input"
                 value={password2}
                 onChange={handlePassword2Change}
             />{" "}
             <br />
             <textarea
                 placeholder="Dlaczego chcesz założyć konto?"
-                className="form-control"
-                style={{width:"200px", marginLeft:"-30px"}}
+                className="form-control register-input"
                 rows="5"
                 value={reasonForCreatingAccount}
                 onChange={handlereasonForCreatingAccount}

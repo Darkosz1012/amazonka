@@ -10,26 +10,27 @@ const client = new ApolloClient({
 
 describe("RegisterForm", () => {
     beforeEach(() => {
-        render(<ApolloProvider client={client}>
-            <RegisterForm />
-        </ApolloProvider>
+        render(
+            <ApolloProvider client={client}>
+                <RegisterForm />
+            </ApolloProvider>
         );
     });
 
-    describe("should be one register form", () => {
-        it("should have three text inputs", () => {
-            let textInputs = screen.getAllByRole("textbox");
-            expect(textInputs).toHaveLength(3);
-        });
-    
-        it("should have one textbox", () => {
-            let textbox = screen.getByPlaceholderText("Dlaczego chcesz założyć konto?");
-            expect(textbox).toBeInTheDocument();
-        });
-    
-it("should have register button", () => {
-            let btn = screen.getByRole("button", { name: "Zarejestruj się" });
-            expect(btn).toBeInTheDocument();
-        });
+    it("should have three textboxes", () => {
+        let textInputs = screen.getAllByRole("textbox");
+        expect(textInputs).toHaveLength(3);
+    });
+
+    it("should have an element with placeholder asking for reason to create an account", () => {
+        let textbox = screen.getByPlaceholderText(
+            "Dlaczego chcesz założyć konto?"
+        );
+        expect(textbox).toBeInTheDocument();
+    });
+
+    it("should have register button", () => {
+        let btn = screen.getByRole("button", { name: "Zarejestruj się" });
+        expect(btn).toBeInTheDocument();
     });
 });

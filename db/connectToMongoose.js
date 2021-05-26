@@ -1,24 +1,31 @@
 import mongoose from "mongoose";
 
-export function connectToMongoose(database_address) {
-    if (
-        database_address !== undefined &&
-        process.env.FUNCTIONAL_TESTS !== "true"
-    )
-        connMongoose(database_address);
+export function connectToMongoose(databaseAddress) {
+    connMongoose(
+        databaseAddress,
+        () => process.env.FUNCTIONAL_TESTS !== "true"
+    );
 }
 
-export function connectToMongooseFunctionalTests(database_address) {
-    if (
-        database_address !== undefined &&
-        process.env.FUNCTIONAL_TESTS === "true"
-    )
-        connMongoose(database_address);
+export function connectToMongooseFunctionalTests(databaseAddress) {
+    connMongoose(
+        databaseAddress,
+        () => process.env.FUNCTIONAL_TESTS === "true"
+    );
 }
 
-function connMongoose(database_address) {
-    mongoose.connect(database_address, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
+function connMongoose(databaseAddress, condition) {
+    if (databaseAddress == null) return;
+
+    if (condition()) {
+        mongoose.connect(databaseAddress, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+    } else
+        console.log(
+            "Not trying to connect to Mongoose ",
+            databaseAddress,
+            " because given condition was not met"
+        );
 }

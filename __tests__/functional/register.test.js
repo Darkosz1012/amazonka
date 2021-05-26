@@ -21,7 +21,7 @@ function createRegisterUserMsg() {
         operationName: "registerUser",
         variables: {
             username: "test_user",
-            email: "grzesiekkasprzak", //currently this email is accepted!
+            email: "grzesiekkasprzak@google.com",
             password: "qwerty",
         },
     };

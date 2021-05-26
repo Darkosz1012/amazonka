@@ -9,11 +9,8 @@ import { connectToMongooseFunctionalTests } from "$/db/connectToMongoose.js";
 jest.setTimeout(60000);
 
 export default class AppRunner {
-    constructor(collections_to_clean) {
-        if (collections_to_clean !== undefined) {
-            this.global_collections = collections_to_clean;
-        }
-
+    constructor(collectionsEmptiedOnCleanup = []) {
+        this.globalEmptiedCollections = collectionsEmptiedOnCleanup;
         this.db = null;
         this.server = new MongoMemoryServer();
         this.app = setup(express());
@@ -44,10 +41,8 @@ export default class AppRunner {
         }
     }
 
-    cleanup(collections) {
-        var merged = (collections === undefined ? [] : collections).concat(
-            this.global_collections === undefined ? [] : this.global_collections
-        );
+    cleanup(emptiedCollections = []) {
+        var merged = emptiedCollections.concat(this.globalEmptiedCollections);
 
         return Promise.all(
             merged.map((c) => this.db.collection(c).deleteMany({}))

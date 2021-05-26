@@ -5,13 +5,15 @@ import {
     expectAnyErrorMessageToBe,
 } from "./utils/matchers.js";
 
-let SUT = new AppRunner(["users"]); //collection 'users' will be emptied after every test
+const collectionsEmptiedOnCleanup = ["users"];
+let SUT = new AppRunner(collectionsEmptiedOnCleanup);
 
 const registerQuery = `mutation registerUser($username: String!, $password: String!, $email: String!) {
-				register(username: $username, password: $password, email: $email) {
-				user_id
-				username
-			}}`;
+							register(username: $username, password: $password, email: $email) {
+								user_id
+								username
+							}
+						}`;
 
 function createRegisterUserMsg() {
     return {
@@ -26,7 +28,7 @@ function createRegisterUserMsg() {
 }
 
 describe("register users", () => {
-    const registerUser = createRegisterUserMsg();
+    const registerUserMsg = createRegisterUserMsg();
 
     beforeAll(async () => {
         await SUT.start();
@@ -45,7 +47,7 @@ describe("register users", () => {
     });
 
     async function expectSuccessfulRegistration(request) {
-        const usersCount = await SUT.getDocumentsCount("users");
+        const userCount = await SUT.getDocumentsCount("users");
 
         var response = await SUT.request()
             .post("/graphql")
@@ -56,13 +58,13 @@ describe("register users", () => {
         expect(response.body.data.register.username).toBe(
             request.variables.username
         );
-        expect(await SUT.getDocumentsCount("users")).toBe(usersCount + 1);
+        expect(await SUT.getDocumentsCount("users")).toBe(userCount + 1);
 
         return response;
     }
 
     test("register a user, should respond with registered username and add user to database", async () => {
-        await expectSuccessfulRegistration(registerUser);
+        await expectSuccessfulRegistration(registerUserMsg);
     });
 
     //currently this password is accepted and test fails!
@@ -80,7 +82,7 @@ describe("register users", () => {
     });
 
     test("register two users with different emails, but the same usernames, should return error", async () => {
-        await expectSuccessfulRegistration(registerUser);
+        await expectSuccessfulRegistration(registerUserMsg);
 
         let registerUserDifferentEmail = createRegisterUserMsg();
         registerUserDifferentEmail.variables.email += "123";
@@ -95,7 +97,7 @@ describe("register users", () => {
     });
 
     test("register two users with different usernames, but the same emails, should return error", async () => {
-        await expectSuccessfulRegistration(registerUser);
+        await expectSuccessfulRegistration(registerUserMsg);
 
         let registerUserDifferentUsername = createRegisterUserMsg();
         registerUserDifferentUsername.variables.username += "123";
@@ -110,7 +112,7 @@ describe("register users", () => {
     });
 
     test("register two unique users successfully", async () => {
-        await expectSuccessfulRegistration(registerUser);
+        await expectSuccessfulRegistration(registerUserMsg);
 
         let registerUserDifferentUsernameAndEmail = createRegisterUserMsg();
         registerUserDifferentUsernameAndEmail.variables.username += "123";

@@ -24,7 +24,7 @@ type Mutation {
 
 
     addCategory(
-        competition: ID!
+        competition_id: ID!
         name: String!
         gender: String!
         start_stand: Int
@@ -32,7 +32,7 @@ type Mutation {
     ): Category
     updateCategory(
         _id: ID!
-        competition: ID
+        competition_id: ID
         name: String
         gender: String
         start_stand: Int

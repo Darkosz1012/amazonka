@@ -1,10 +1,10 @@
 type Category {
     _id: String
+    competition_id: ID
     competition: Competition
     name: String
     gender: String
     start_stand: Int
     end_stand: Int
-    distances_id: [Distance]
-    distances: [Distance]
+    distances: [DistanceWithName]
 }

@@ -18,7 +18,7 @@ export default new mongoose.Schema({
     },
     start_stand: { type: Number },
     end_stand: { type: Number },
-    distance: [
+    distances: [
         {
             distance_id: {
                 type: mongoose.Schema.Types.ObjectId,

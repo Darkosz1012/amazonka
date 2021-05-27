@@ -1,12 +1,16 @@
-import { Category } from "$/db/index.js";
+import { Category, Competition } from "$/db/index.js";
 
 export default {
     categories: async (parent, args, context, info) => {
-        let result = await Category.find();
+        let result = [];
+        if ("competition" in args) {
+            result = await Category.find({competition: args.competition});
+        }else{
+            result = await Category.find();
+        }
         return result;
     },
     category: async (parent, args, context, info) => {
-        let result = await Category.findOne(args.id);
-        return result;
+        return Category.findOne(args.id);
     },
 };

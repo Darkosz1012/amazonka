@@ -22,8 +22,6 @@ export default new mongoose.Schema({
         {
             _id: {
                 type: mongoose.Schema.Types.ObjectId,
-                required: true,
-                unique: true,
             },
             name: { type: String },
             series_type: { type: Number },

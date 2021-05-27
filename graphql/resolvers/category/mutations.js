@@ -1,19 +1,25 @@
-import { Category } from "$/db/index.js";
+import { Category, Competition} from "$/db/index.js";
 
 export default {
     addCategory: async (parent, args, context, info) => {
-        let result = await Category.create(args.category);
+        let result = await Category.create(args);
+        await Competition.updateOne({_id:result.competition},{$push:{categories: result._id}});
         return result;
     },
     updateCategory: async (parent, args, context, info) => {
-        let result = await Category.findOneAndUpdate(
+        let result = Category.findOneAndUpdate(
             { _id: args.category._id },
             { $set: args.category }
         );
-        return result;
+        if("competition" in args){
+            await Competition.updateOne({_id:result.competition},{$pull:{categories: result._id}});
+            await Competition.updateOne({_id:args.competition},{$push:{categories: result._id}});
+        }
+        return Category.findOne({ _id: args.category._id })
     },
     deleteCategory: async (parent, args, context, info) => {
-        let result = await Category.findOneAndRemove({ _id: args._id });
+        let result = Category.findOneAndDelete({ _id: args._id });
+        await Competition.updateOne({_id:result.competition},{$pull:{categories: result._id}});
         return result;
     },
 };

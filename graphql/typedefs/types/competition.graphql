@@ -9,7 +9,7 @@ type Competition {
 
     details_id: ID
     details: CompetitionDetails
-    categories_id: ID
+    categories_id: [ID]
     categories: [Category]
 }
 

@@ -1,4 +1,4 @@
-import { Category, Competition } from "$/db/index.js";
+import { Category } from "$/db/index.js";
 
 export default {
     categories: async (parent, args, context, info) => {

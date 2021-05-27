@@ -7,9 +7,8 @@ import { Fragment } from "react";
 const NavigationLinks = (props) => {
     const isAuthenticated = useSelector((state) => state.isAuthenticated);
 
-    let navLinks = null;
-    if (isAuthenticated) {
-        navLinks = (
+    const linksForLoggedUser = () => {
+        return (
             <Fragment>
                 <NavigationLink link="/admin/competitions">
                     Moje zawody
@@ -17,9 +16,11 @@ const NavigationLinks = (props) => {
                 <NavigationLink link="/logout">Wyloguj</NavigationLink>
             </Fragment>
         );
-    } else {
-        navLinks = <NavigationLink link="/login">Zaloguj się</NavigationLink>;
-    }
+    };
+
+    const linksForUnknownUser = () => {
+        return <NavigationLink link="/login">Zaloguj się</NavigationLink>;
+    };
 
     return (
         <ul className="NavigationLinks">
@@ -31,7 +32,7 @@ const NavigationLinks = (props) => {
                 Ranking zawodników
             </NavigationLink>
             <NavigationLink link="/score">Wprowadź wyniki</NavigationLink>
-            {navLinks}
+            {isAuthenticated ? linksForLoggedUser() : linksForUnknownUser()}
         </ul>
     );
 };

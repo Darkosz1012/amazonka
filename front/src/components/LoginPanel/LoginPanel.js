@@ -44,7 +44,7 @@ class LoginPanel extends Component {
                         </Fragment>
                     ) : (
                         <Fragment>
-                            Nie masz jeszcz konta?
+                            Nie masz jeszcze konta?
                             <Button
                                 className="btn btn-outline-primary"
                                 onClick={this.showRegister}

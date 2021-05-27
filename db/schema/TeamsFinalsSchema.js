@@ -6,12 +6,12 @@ export default new mongoose.Schema({
         enum: ["team", "mixed"],
         required: true,
     },
-    competition: {
+    competition_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
         required: true,
     },
-    category: [
+    category_id: [
         {
             required: true,
             type: mongoose.Schema.Types.ObjectId,

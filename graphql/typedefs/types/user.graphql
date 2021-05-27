@@ -2,5 +2,6 @@ type User {
     _id: ID!
     username: String!
     email: String!
+    competitions_id: [ID]
     competitions: [Competition]
 }

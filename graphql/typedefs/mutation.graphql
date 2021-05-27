@@ -29,7 +29,6 @@ type Mutation {
         gender: String!
         start_stand: Int
         end_stand: Int
-        distance: [inputDistance]
     ): Category
     updateCategory(
         _id: ID!
@@ -38,7 +37,6 @@ type Mutation {
         gender: String
         start_stand: Int
         end_stand: Int
-        distance: [inputDistance]
     ): Category
     deleteCategory(_id: String!): Category
 }

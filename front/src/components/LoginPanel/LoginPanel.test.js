@@ -1,25 +1,17 @@
 import { render, screen } from "@testing-library/react";
+import { within } from "@testing-library/dom";
+import userEvent from "@testing-library/user-event";
+import { MockedProvider } from "@apollo/client/testing";
 import LoginPanel from "./LoginPanel";
-import { ApolloProvider } from "@apollo/client/react";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-
-const client = new ApolloClient({
-    uri: "http://localhost:3001/graphql",
-    cache: new InMemoryCache(),
-});
 
 describe("LoginPanel", () => {
+    var container;
     beforeEach(() => {
-        render(
-            <ApolloProvider client={client}>
+        container = render(
+            <MockedProvider mocks={[]} addTypename={false}>
                 <LoginPanel />
-            </ApolloProvider>
-        );
-    });
-
-    it("should have three buttons", () => {
-        let buttons = screen.getAllByRole("button");
-        expect(buttons).toHaveLength(3);
+            </MockedProvider>
+        ).container;
     });
 
     it("should render login panel by default", () => {
@@ -27,9 +19,17 @@ describe("LoginPanel", () => {
         expect(loginForm).toBeInTheDocument();
     });
 
+    it("should have two buttons to change subpanels", () => {
+        let buttonsDiv = container.querySelector(".buttons");
+        expect(buttonsDiv).not.toBeNull();
+        expect(within(buttonsDiv).getAllByRole("button")).toHaveLength(2);
+    });
+
     it("should render register panel after clicking appropriate button", () => {
-        let registerButton = screen.getByPlaceholderText("ZAREJESTRUJ SIĘ");
-        registerButton.click();
+        let registerButton = screen.getByRole("button", {
+            name: /zarejestruj się/i,
+        });
+        userEvent.click(registerButton);
         let registerForm = screen.getByTestId("registerForm");
         expect(registerForm).toBeInTheDocument();
     });

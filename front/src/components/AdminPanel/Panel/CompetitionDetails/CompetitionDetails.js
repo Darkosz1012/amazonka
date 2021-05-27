@@ -1,7 +1,7 @@
 import "./CompetitionDetails.css";
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import competitionDetaildata from "../../competitionsData.json";
 
 function CompetitionDetails(props) {
@@ -14,21 +14,27 @@ function CompetitionDetails(props) {
         <div>
             <p className="editLinkText">
                 <span className="panel-detail-header">Szczegóły zawodów</span>
-                <span><a
-                        href={"/admin/panel/" + _id + "/details/edit"}>
-                        edytuj
-                     </a>
+                <span>
+                    <a href={"/admin/panel/" + _id + "/details/edit"}>edytuj</a>
                 </span>
             </p>
-            <Container fluid className="infoContainer" style={{ paddingLeft: 30, paddingRight: 30 }}>
+            <Container
+                fluid
+                className="infoContainer"
+                style={{ paddingLeft: 30, paddingRight: 30 }}
+            >
                 <Row className="compNameDetailDiv" xs={2} md={2} lg={3} xl={4}>
-                            <Col id="name-label" className="left">Nazwa:</Col>
-                            <Col id="name" className="right">{name}</Col>
+                    <Col id="name-label" className="left">
+                        Nazwa:
+                    </Col>
+                    <Col id="name" className="right">
+                        {name}
+                    </Col>
                 </Row>
                 <div id="restDetailsDiv" xs={2} md={2} lg={3} xl={4}>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Data rozpoczęcia:</Col>
-                        <Col  className="right">{start_date}</Col>
+                        <Col className="right">{start_date}</Col>
                     </Row>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Data zakończenia:</Col>

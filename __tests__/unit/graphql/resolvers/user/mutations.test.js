@@ -1,9 +1,10 @@
+import jwt from "jsonwebtoken";
+import * as mockingoose from "mockingoose";
+
 import { hash } from "$/auth/auth.js";
+import { User } from "$/db/index.js";
 
 import mutations from "$/graphql/resolvers/user/mutations.js";
-
-import * as mockingoose from "mockingoose";
-import { User } from "$/db/index.js";
 
 process.env.ACCESS_TOKEN_SECRET = "secret";
 
@@ -116,5 +117,29 @@ describe("register function", () => {
     afterAll(() => {
         jest.clearAllMocks();
         mockingoose.resetAll();
+    });
+});
+
+describe("refresh mutation", () => {
+    const user = {
+        username: "user",
+        user_id: "507f191e810c19729de860ea",
+    };
+
+    const refreshToken = jwt.sign(
+        {
+            username: user.username,
+            user_id: user.user_id,
+        },
+        process.env.ACCESS_TOKEN_SECRET,
+        { expiresIn: "10m" }
+    );
+
+    test("should return new token if token passed in context is valid", async () => {
+        let result = await mutations.refresh(undefined, {
+            token: refreshToken,
+        });
+        expect(result.refreshToken).toBe(refreshToken);
+        expect(result.accessToken).not.toBe(undefined);
     });
 });

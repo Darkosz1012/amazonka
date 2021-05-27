@@ -25,8 +25,8 @@ describe("test validity of GraphQL queries and mutations", () => {
 
     describe("register mutation", () => {
         const register_mutation = `
-            mutation Register ($user: String!, $pass: String!){
-                register(username: $user, password: $pass){
+            mutation Register ($user: String!, $email: String!, $pass: String!){
+                register(username: $user, email: $email, password: $pass){
                     user_id
                 }
             }
@@ -36,11 +36,26 @@ describe("test validity of GraphQL queries and mutations", () => {
             tester.test(true, register_mutation, {
                 user: "user",
                 pass: "pass",
+                email: "aaa@aaa",
             });
         });
 
         test("should fail if password is missing", () => {
             tester.test(false, register_mutation, { user: "user" });
+        });
+    });
+
+    describe("refresh mutation", () => {
+        const valid_mutation = `
+            mutation {
+                refresh(refreshToken: "token"){
+                    accessToken
+                }
+            }
+        `;
+
+        test("should pass if refreshToken is specified", () => {
+            tester.test(true, valid_mutation);
         });
     });
 });

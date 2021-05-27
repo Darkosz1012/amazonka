@@ -1,51 +1,50 @@
 [
     {
-        "id" : "1",
-        "name" : "Dariusz",
-        "surname" : "Biela",
-        "year" : 1998,
-        "gender" : "Mężczyzna",
-        "licenceNumber" : 1234
-        
+        "id": "1",
+        "name": "Dariusz",
+        "surname": "Biela",
+        "year": 1998,
+        "gender": "Mężczyzna",
+        "licenceNumber": 1234
     },
     {
-        "id" : "2",
-        "name" : "Dariusz",
-        "surname" : "Biela",
-        "year" : 1998,
-        "gender" : "Mężczyzna",
-        "licenceNumber" : 1234
+        "id": "2",
+        "name": "Dariusz",
+        "surname": "Biela",
+        "year": 1998,
+        "gender": "Mężczyzna",
+        "licenceNumber": 1234
     },
     {
-        "id" : "3",
-        "name" : "Dariusz",
-        "surname" : "Biela",
-        "year" : 1998,
-        "gender" : "Mężczyzna",
-        "licenceNumber" : 1234
+        "id": "3",
+        "name": "Dariusz",
+        "surname": "Biela",
+        "year": 1998,
+        "gender": "Mężczyzna",
+        "licenceNumber": 1234
     },
     {
-        "id" : "4",
-        "name" : "Dariusz",
-        "surname" : "Biela",
-        "year" : 1998,
-        "gender" : "Mężczyzna",
-        "licenceNumber" : 1234
+        "id": "4",
+        "name": "Dariusz",
+        "surname": "Biela",
+        "year": 1998,
+        "gender": "Mężczyzna",
+        "licenceNumber": 1234
     },
     {
-        "id" : "5",
-        "name" : "Dariusz",
-        "surname" : "Biela",
-        "year" : 1998,
-        "gender" : "Mężczyzna",
-        "licenceNumber" : 1234
+        "id": "5",
+        "name": "Dariusz",
+        "surname": "Biela",
+        "year": 1998,
+        "gender": "Mężczyzna",
+        "licenceNumber": 1234
     },
     {
-        "id" : "16",
-        "name" : "Dariusz",
-        "surname" : "Biela",
-        "year" : 1998,
-        "gender" : "Mężczyzna",
-        "licenceNumber" : 1234
+        "id": "16",
+        "name": "Dariusz",
+        "surname": "Biela",
+        "year": 1998,
+        "gender": "Mężczyzna",
+        "licenceNumber": 1234
     }
 ]

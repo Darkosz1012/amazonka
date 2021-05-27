@@ -4,6 +4,9 @@ import {
     competitionMutations,
     competitionQueries,
 } from "./competition/index.js";
+import {
+    DistanceWithName
+} from "./distance/index.js"
 
 
 const resolvers = {
@@ -16,7 +19,8 @@ const resolvers = {
         ...competitionMutations,
         ...categoryMutations,
     },
-    Category
+    Category,
+    DistanceWithName
 };
 
 export default resolvers;

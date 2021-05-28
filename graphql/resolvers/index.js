@@ -5,7 +5,10 @@ import {
     competitionQueries,
 } from "./competition/index.js";
 import {
-    DistanceWithName
+    DistanceWithName,
+    Distance,
+    distanceMutations,
+    distanceQueries
 } from "./distance/index.js"
 
 
@@ -13,14 +16,17 @@ const resolvers = {
     Query: {
         ...competitionQueries,
         ...categoryQueries,
+        ...distanceQueries,
     },
     Mutation: {
         ...userMutations,
         ...competitionMutations,
         ...categoryMutations,
+        ...distanceMutations,
     },
     Category,
-    DistanceWithName
+    DistanceWithName,
+    Distance
 };
 
 export default resolvers;

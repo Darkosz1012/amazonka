@@ -6,4 +6,7 @@ type Query {
 
     competition(_id: ID!): Competition
     competitions(owner: ID, name: String): [Competition]
+
+    participant(_id: ID!): Participant
+    participants(name: String): [Participant]
 }

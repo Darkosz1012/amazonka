@@ -25,7 +25,7 @@ export default new mongoose.Schema({
                 ref: "Distance",
                 required: true,
             },
-            name: { type: String }
+            name: { type: String },
         },
     ],
 });

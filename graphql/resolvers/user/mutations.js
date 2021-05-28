@@ -1,7 +1,7 @@
 import { User } from "$/db/index.js";
 import { UserInputError } from "apollo-server";
 
-import { hash, verify } from "$/auth/auth.js";
+import { authenticateToken, hash, verify } from "$/auth/auth.js";
 import jwt from "jsonwebtoken";
 
 export default {
@@ -39,7 +39,21 @@ export default {
             throw new UserInputError("User already exists.");
         }
     },
+
+    refresh: async (_, { token }) => {
+        let user = authenticateToken(token);
+        return refreshToken(user, token);
+    },
 };
+
+function refreshToken(user, refreshToken) {
+    return {
+        accessToken: createJWT(user, "1m"),
+        refreshToken: refreshToken,
+        user_id: user.user_id,
+        username: user.username,
+    };
+}
 
 function createUserToken(user, username) {
     return {

@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
+import WithProvider from "./hoc/WithProvider/WithProvider";
 
 describe("App", () => {
     beforeEach(() => {
         render(
-            <Router>
+            <WithProvider>
                 <App />
-            </Router>
+            </WithProvider>
         );
     });
 

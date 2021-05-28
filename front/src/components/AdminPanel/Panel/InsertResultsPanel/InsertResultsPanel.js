@@ -1,11 +1,10 @@
 import InsertResultRow from "./InsertResultRow/InsertResultRow";
-import "./../EliminationsBrackets/EliminationsBrackets.css";
-import CompetitorsData32 from "./../EliminationsBrackets/CompetitorsData32.json";
-import CompetitorsData16 from "./../EliminationsBrackets/CompetitorsData16.json";
-import CompetitorsData8 from "./../EliminationsBrackets/CompetitorsData8.json";
-import CompetitorsData4 from "./../EliminationsBrackets/CompetitorsData4.json";
-import CompetitorsData2 from "./../EliminationsBrackets/CompetitorsData2.json";
-import { Fragment } from "react";
+import "./../../../EliminationsBrackets/EliminationsBrackets.css";
+import CompetitorsData32 from "../../../EliminationsBrackets/CompetitorsData32.json";
+import CompetitorsData16 from "../../../EliminationsBrackets/CompetitorsData16.json";
+import CompetitorsData8 from "../../../EliminationsBrackets/CompetitorsData8.json";
+import CompetitorsData4 from "../../../EliminationsBrackets/CompetitorsData4.json";
+import CompetitorsData2 from "../../../EliminationsBrackets/CompetitorsData2.json";
 
 const InsertResultsPanel = () => {
     const testCompetitorsData = [

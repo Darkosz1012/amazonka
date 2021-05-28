@@ -1,15 +1,15 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
 import NavigationLinks from "./NavigationLinks";
+import WithProvider from "./../../../hoc/WithProvider/WithProvider";
 
 describe("Navigation Links", () => {
     let navigationList;
 
     beforeEach(() => {
         render(
-            <Router>
+            <WithProvider>
                 <NavigationLinks />
-            </Router>
+            </WithProvider>
         );
 
         navigationList = screen.getByRole("list");

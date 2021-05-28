@@ -54,8 +54,10 @@ function CompetitionsMenu() {
 
     return (
         <div className="competitionsMenu">
+            <p id="mainHeader" role="heading" aria-level="1">
+                Lista organizowanych przez Ciebie zawodów
+            </p>
             <div className="container" id="adminMenuContainer">
-                <h1>Lista organizowanych przez ciebie zawodów:</h1>
                 <BootstrapTable
                     striped
                     bordered

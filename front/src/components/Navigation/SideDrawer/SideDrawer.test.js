@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
 import SideDrawer from "./SideDrawer";
+import WithProvider from "./../../../hoc/WithProvider/WithProvider";
 
 describe("SideDrawer", () => {
     beforeEach(() => {
         render(
-            <Router>
+            <WithProvider>
                 <SideDrawer />
-            </Router>
+            </WithProvider>
         );
     });
 

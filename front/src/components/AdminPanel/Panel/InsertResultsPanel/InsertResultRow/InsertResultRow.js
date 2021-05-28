@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import "./../../EliminationsBrackets/EliminationsElement/EliminationsElement.css";
+import "./../../../../EliminationsBrackets/EliminationsElement/EliminationsElement.css";
 import "./InsertResultRow.css";
 
 const EliminationsElement = ({ p1, p2 }, props) => {

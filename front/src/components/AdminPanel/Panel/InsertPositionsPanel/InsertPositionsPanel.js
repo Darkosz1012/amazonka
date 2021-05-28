@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./InsertPositionsPanel.css";
 import PositionRow from "./PositionRow/PositionRow";
 import mockData from "./positionsData.json";
-import Button from "./../UI/Button/Button";
+import Button from "./../../../UI/Button/Button";
 
 function InsertPositions() {
     let [boundaries, setBoundaries] = useState({ min: 0, max: 10 });

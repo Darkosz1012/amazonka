@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { connectToMongoose } from "./connectToMongoose.js";
 import UserSchema from "./schema/UserSchema.js";
 import CompetitionSchema from "./schema/CompetitionSchema.js";
 import CompetitionDetailsSchema from "./schema/CompetitionDetailsSchema.js";
@@ -8,13 +9,10 @@ import ScoreSchema from "./schema/ScoreSchema.js";
 import TeamSchema from "./schema/TeamSchema.js";
 import FinalsSchema from "./schema/FinalsSchema.js";
 import TeamsFinalsSchema from "./schema/TeamsFinalsSchema.js";
+import DistanceSchema from "./schema/DistanceSchema.js";
+import SeriesSchema from "./schema/SeriesSchema.js";
 
-if (process.env.DATABASE_LINK !== undefined) {
-    mongoose.connect(process.env.DATABASE_LINK, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-}
+connectToMongoose(process.env.DATABASE_LINK);
 
 export const User = mongoose.model("User", UserSchema);
 
@@ -36,3 +34,7 @@ export const Team = mongoose.model("Team", TeamSchema);
 export const Finals = mongoose.model("Finals", FinalsSchema);
 
 export const TeamsFinals = mongoose.model("TeamsFinals", TeamsFinalsSchema);
+
+export const Distance = mongoose.model("Distance", DistanceSchema);
+
+export const Series = mongoose.model("Series", SeriesSchema);

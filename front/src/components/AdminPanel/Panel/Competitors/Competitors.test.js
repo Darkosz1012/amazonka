@@ -16,13 +16,13 @@ describe("Competitors", () => {
             let numberInputs = screen.getAllByRole("spinbutton");
             expect(numberInputs).toHaveLength(1);
         });
-    
+
         it("should have at least one select field", () => {
             let selectInputs = screen.getAllByRole("combobox");
             expect(selectInputs.length).toBeGreaterThanOrEqual(1);
         });
     });
-    
+
     it("should have at least two buttons", () => {
         let buttons = screen.getAllByRole("button");
         expect(buttons.length).toBeGreaterThanOrEqual(2);
@@ -49,10 +49,12 @@ describe("Competitors", () => {
 
         let colheaders;
         it("should have 7 colheaders", () => {
-            colheaders = within(competitorsTable[1]).getAllByRole("columnheader");
+            colheaders = within(competitorsTable[1]).getAllByRole(
+                "columnheader"
+            );
             expect(colheaders).toHaveLength(7);
         });
-    
+
         it("should have headers with proper text", () => {
             let headers = [
                 "Nazwisko",
@@ -61,10 +63,10 @@ describe("Competitors", () => {
                 "Płeć",
                 "Numer licencji",
                 "Kategoria",
-                "Akcje"
+                "Akcje",
             ];
 
-            for (let i=0; i<colheaders.length; i++) {
+            for (let i = 0; i < colheaders.length; i++) {
                 expect(within(colheaders[i]).getByText(headers[i]));
             }
         });

@@ -3,6 +3,6 @@ type Query {
 
     competitions(_id: ID, owner: ID, name: String): [Competition]
 
-    categories(competition: ID): [Category]
+    categories(competition_id: ID): [Category]
     category(_id: String!): Category
 }

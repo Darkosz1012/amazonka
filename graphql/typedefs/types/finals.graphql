@@ -16,8 +16,7 @@ type ParticipantScore {
     participant_id: ID!
     participant: Participant!
 
-    first_name: String!
-    last_name: String!
+    name: String!
 
     placement: Int!
     score: Int!

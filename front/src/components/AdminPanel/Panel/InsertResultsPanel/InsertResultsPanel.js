@@ -93,9 +93,12 @@ const InsertResultsPanel = () => {
     ));
 
     return (
-        <div className="ResultInputContainer">
-            <div className="Brackets">{finalBrackets}</div>
-        </div>
+        <>
+            <p className="panel-content-header">Wyniki eliminacji</p>
+            <div className="ResultInputContainer">
+                <div className="Brackets">{finalBrackets}</div>
+            </div>
+        </>
     );
 };
 

@@ -1,7 +1,8 @@
-.panel-detail-header {
+.panel-content-header {
     color: #92b9c5;
     font-weight: 700;
     font-size: 20px;
+    padding-left: 8px;
 }
 
 .infoContainer {
@@ -35,12 +36,6 @@
 #name-label {
     padding-bottom: 15px;
     font-size: 18px;
-}
-
-.editLinkText {
-    padding-left: 8px;
-    font-size: 10px;
-    color: rgb(192, 188, 174);
 }
 
 .smallEditLinkText {

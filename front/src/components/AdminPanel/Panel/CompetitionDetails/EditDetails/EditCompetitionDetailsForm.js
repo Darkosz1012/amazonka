@@ -50,6 +50,7 @@ const CompetitionForm = (props) => {
                     _id
                 )}
                 id="editDetailForm"
+                data-testid="editDetailFormTestId"
             >
                 <p id="editFormTitle">Edytuj szczegóły</p>
                 <div className="row">
@@ -85,6 +86,7 @@ const CompetitionForm = (props) => {
                                 required
                                 type="date"
                                 id="start_date"
+                                data-testid="start_date"
                                 placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={start_date}
@@ -107,6 +109,7 @@ const CompetitionForm = (props) => {
                                 required
                                 type="date"
                                 id="end_date"
+                                data-testid="end_date"
                                 placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={end_date}

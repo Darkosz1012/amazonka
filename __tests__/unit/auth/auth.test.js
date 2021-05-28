@@ -1,7 +1,7 @@
 import jsonwebtoken from "jsonwebtoken";
-import { verifyToken } from "$/auth/auth.js";
+import { authenticateToken } from "$/auth/auth.js";
 
-describe("verifyToken function", () => {
+describe("authenticateToken function", () => {
     afterAll(() => jest.clearAllMocks());
 
     test("should return payload if token is valid", () => {
@@ -12,7 +12,7 @@ describe("verifyToken function", () => {
 
         jsonwebtoken.verify = jest.fn(() => payload);
 
-        expect(verifyToken("token")).toMatchObject(payload);
+        expect(authenticateToken("token")).toMatchObject(payload);
     });
 
     test("should throw if token is invalid", () => {
@@ -22,6 +22,8 @@ describe("verifyToken function", () => {
             };
         });
 
-        expect(() => verifyToken("token")).toThrow("Authentication failed.");
+        expect(() => authenticateToken("token")).toThrow(
+            "Authentication failed."
+        );
     });
 });

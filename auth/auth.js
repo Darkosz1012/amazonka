@@ -34,11 +34,7 @@ export function verifyRequest(req) {
     return authenticateToken(token);
 }
 
-export function verifyToken(token) {
-    return authenticateToken(token);
-}
-
-function authenticateToken(token) {
+export function authenticateToken(token) {
     try {
         return jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     } catch (err) {

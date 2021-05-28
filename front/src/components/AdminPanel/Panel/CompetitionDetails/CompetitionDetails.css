@@ -43,17 +43,18 @@
     color: rgb(192, 188, 174);
 }
 
-.editLinkText a {
+.smallEditLinkText {
     padding-left: 8px;
     font-size: 10px;
     color: rgb(192, 188, 174);
 }
 
-.editLinkText a:hover,
-.editLinkText a:active,
-.editLinkText a.active {
+.smallEditLinkText:hover,
+.smallEditLinkText:active,
+.smallEditLinkText.active {
     text-decoration: underline;
     text-shadow: 0 0 20px rgb(192, 188, 174);
     color: #6c7217;
     transition: 0.35s;
+    cursor: pointer;
 }

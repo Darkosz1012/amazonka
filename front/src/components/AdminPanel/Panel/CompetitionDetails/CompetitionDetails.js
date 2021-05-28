@@ -1,4 +1,5 @@
 import "./CompetitionDetails.css";
+import { useHistory } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,12 +11,22 @@ function CompetitionDetails(props) {
     const location = competitionDetaildata[_id - 1]["location"];
     const start_date = competitionDetaildata[_id - 1]["date_start"];
     const end_date = competitionDetaildata[_id - 1]["date_end"];
+
+    let history = useHistory();
+
+    function handleClick(ID) {
+        history.push("/admin/panel/" + ID + "/details/edit");
+    }
+
     return (
         <div>
             <p className="editLinkText">
                 <span className="panel-detail-header">Szczegóły zawodów</span>
-                <span>
-                    <a href={"/admin/panel/" + _id + "/details/edit"}>edytuj</a>
+                <span
+                    className="smallEditLinkText"
+                    onClick={() => handleClick(_id)}
+                >
+                    edytuj
                 </span>
             </p>
             <Container

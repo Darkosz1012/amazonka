@@ -45,6 +45,16 @@
     text-align: center;
 }
 
+.linkText {
+    color: rgb(10, 144, 221);
+}
+
+.linkText:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    text-shadow: 01px 1px 3px rgb(205, 231, 250);
+}
+
 .container {
     padding: 20px 20px;
     border-radius: 20px;

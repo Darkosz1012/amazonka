@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../../../UI/Button/Button";
 import competitionDetaildata from "../../../competitionsData.json";
+import { handleSubmit } from "./handleSubmit.js";
 
 function revertDateFormat(dateStr) {
     const arr = dateStr.split("-");
@@ -40,15 +41,16 @@ const CompetitionForm = (props) => {
         setLocation(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        alert("Zatwierdzono edycję szczegółów");
-        history.push("/admin/panel/" + _id + "/details");
-    };
-
     return (
         <div>
-            <form onSubmit={handleSubmit} id="editDetailForm">
+            <form
+                onSubmit={handleSubmit(
+                    history,
+                    "/admin/panel/" + _id + "/details",
+                    _id
+                )}
+                id="editDetailForm"
+            >
                 <p id="editFormTitle">Edytuj szczegóły</p>
                 <div className="row">
                     <div className="column">

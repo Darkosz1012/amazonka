@@ -3,28 +3,28 @@ import * as mockingoose from "mockingoose";
 import {Competition} from "$/db";
 import transform_by_JSON from "$/utils/transform_by_JSON.js";
 
-describe("Competition data loader for graphql.", ()=>{
+describe("createDefaultLoader: standard data loader for graphql.", ()=>{
     let loader;
     const competition_data = [
         {
             _id: '507f191e810c19729de860ea',
-            owner: "609aa4bde6483525a06b8e5b",
+            owner_id: "609aa4bde6483525a06b8e5b",
             name: 'comp1',
             start_date: "1989-12-31T23:00:00.000Z",
             end_date: "1989-12-31T23:00:00.000Z",
             location: 'sherwood',
-            details: "60a42ec1778fc82384125710",
-            categories:  []
+            details_id: "60a42ec1778fc82384125710",
+            categories_id:  []
         },
         {
             _id: '507f191e810c19729de860ed',
-            owner: "609aa4bde6483525a06b8e5b",
+            owner_id: "609aa4bde6483525a06b8e5b",
             name: 'comp2',
             start_date: "1989-12-31T23:00:00.000Z",
             end_date: "1989-12-31T23:00:00.000Z",
             location: 'sherwood',
-            details: "60a42ec1778fc82384125710",
-            categories:  []
+            details_id: "60a42ec1778fc82384125710",
+            categories_id:  []
         }
     ];
 

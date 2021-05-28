@@ -22,7 +22,7 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
             }
         `;
 
-        test("should pass if query is contains _id", () => {
+        test("should pass if query contains _id", () => {
             tester.test(true, valid_query);
         });
 

@@ -1,11 +1,7 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    first_name: {
-        type: String,
-        required: true,
-    },
-    last_name: {
+    full_name: {
         type: String,
         required: true,
     },

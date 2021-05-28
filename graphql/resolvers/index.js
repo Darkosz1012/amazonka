@@ -5,6 +5,7 @@ import {
     competitionQueries,
     competition,
 } from "./competition/index.js";
+import { scoreMutations } from "./score/index.js";
 
 const resolvers = {
     Query: {
@@ -15,6 +16,7 @@ const resolvers = {
         ...userMutations,
         ...competitionMutations,
         ...categoryMutations,
+        ...scoreMutations,
     },
     Competition: {
         ...competition,

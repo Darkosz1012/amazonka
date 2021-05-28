@@ -27,4 +27,12 @@ type Mutation {
     ): Competition
 
     deleteCompetition(_id: ID!): Competition
+
+    addScore(
+        participant_id: ID!
+        competition_id: ID!
+        category_id: ID!
+
+        distance_id: ID!
+    ): Score
 }

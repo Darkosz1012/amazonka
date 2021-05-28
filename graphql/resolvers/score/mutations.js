@@ -12,4 +12,14 @@ export default {
 
         return await score.save();
     },
+
+    updateScore: async (_, args, context) => {
+        verifyRequest(context.req);
+
+        return Score.findByIdAndUpdate(args._id, args);
+    },
+
+    addDistanceToScore: async (_, args, context) => {
+        verifyRequest(context.req);
+    },
 };

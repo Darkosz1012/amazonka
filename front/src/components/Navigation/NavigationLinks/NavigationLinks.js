@@ -28,9 +28,6 @@ const NavigationLinks = (props) => {
                 Strona startowa
             </NavigationLink>
             <NavigationLink link="/competitions">Lista zawodów</NavigationLink>
-            <NavigationLink link="/competitors">
-                Ranking zawodników
-            </NavigationLink>
             <NavigationLink link="/score">Wprowadź wyniki</NavigationLink>
             {isAuthenticated ? linksForLoggedUser() : linksForUnknownUser()}
         </ul>

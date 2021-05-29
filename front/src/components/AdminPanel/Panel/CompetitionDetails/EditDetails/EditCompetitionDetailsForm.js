@@ -4,12 +4,6 @@ import Button from "../../../../UI/Button/Button";
 import competitionDetaildata from "../../../competitionsData.json";
 import { handleSubmit } from "./handleSubmit.js";
 
-function revertDateFormat(dateStr) {
-    const arr = dateStr.split("-");
-    const res = arr[2] + "-" + arr[1] + "-" + arr[0];
-    return res;
-}
-
 const CompetitionForm = (props) => {
     const history = useHistory();
     const params = useParams();
@@ -22,8 +16,8 @@ const CompetitionForm = (props) => {
     });
 
     const _name = desiredCompetition["name"];
-    const _start_date = revertDateFormat(desiredCompetition["date_start"]);
-    const _end_date = revertDateFormat(desiredCompetition["date_end"]);
+    const _start_date = desiredCompetition["date_start"];
+    const _end_date = desiredCompetition["date_end"];
     const _location = desiredCompetition["location"];
 
     const [name, setName] = useState(_name);

@@ -3,8 +3,8 @@
         "id": 1,
         "name": "Puchar łucznika sądeczyzny",
         "location": "Nowy Sącz",
-        "date_start": "15-05-2021",
-        "date_end": "17-05-2021",
+        "date_start": "2021-05-15",
+        "date_end": "2021-05-17",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
         "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
         "category": [
@@ -30,8 +30,8 @@
         "id": 4,
         "name": "Krakowskie zawody łucznicze",
         "location": "Kraków",
-        "date_start": "03-06-2021",
-        "date_end": "04-06-2021",
+        "date_start": "2021-06-03",
+        "date_end": "2021-06-05",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
         "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
         "category": [
@@ -53,8 +53,8 @@
         "id": 9,
         "name": "Łucznicze zawody podkarpacia",
         "location": "Rzeszów",
-        "date_start": "21-05-2021",
-        "date_end": "22-05-2021",
+        "date_start": "2021-05-21",
+        "date_end": "2021-05-22",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac volutpat orci. Morbi lobortis sodales purus, sed rhoncus risus. Praesent quis risus sem. Sed maximus dolor non dignissim vulputate. Integer porta ornare nulla eu fringilla. Nunc sed libero ut enim consectetur suscipit. Vivamus cursus porta mauris eget dapibus. Praesent pharetra molestie enim, a posuere dui fermentum sit amet. Vestibulum nec tortor pulvinar, tristique est vel, condimentum nulla.",
         "schedule": "15.05.2021-sobota\ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy\n16.05.2021-niedziela \ngodz. – 8:00 –11:30 - strzelanie konkurencji 2 x 70m -kobiety \ngodz. -12:00-14:30 - strzelanie konkurencji 2 x 70m  – juniorzy\ngodz.15.00 –17:30– strzelanie konkurencji 2 x 70m  - seniorzy",
         "category": [

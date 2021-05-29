@@ -2,6 +2,7 @@ import "./CompetitionDetails.css";
 import { useParams, useHistory } from "react-router-dom";
 import competitionDetaildata from "../competitionsData";
 import Button from "../../UI/Button/Button";
+import { revertDateFormat } from "../../revertDateFormat.js";
 
 function CompetitionDetails(props) {
     const params = useParams();
@@ -65,10 +66,12 @@ function CompetitionDetails(props) {
                             <b>Lokalizacja:</b> {location}
                         </p>
                         <p className="i">
-                            <b>Data rozpoczęcia:</b> {start_date}
+                            <b>Data rozpoczęcia:</b>{" "}
+                            {revertDateFormat(start_date)}
                         </p>
                         <p className="i">
-                            <b>Data zakończenia:</b> {end_date}
+                            <b>Data zakończenia:</b>{" "}
+                            {revertDateFormat(end_date)}
                         </p>
                         <p className="title_pn">
                             <b>Opis:</b>

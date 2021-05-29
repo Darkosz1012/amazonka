@@ -8,8 +8,8 @@ const compData = {
     id: 222,
     name: "ZawodyXYZ",
     location: "Warszawa",
-    date_start: "15-05-2021",
-    date_end: "17-05-2021",
+    date_start: "2021-05-15",
+    date_end: "2021-05-17",
     description: "Lorem ipsum dolor",
     schedule: "Sed maximus dolor non",
     category: [

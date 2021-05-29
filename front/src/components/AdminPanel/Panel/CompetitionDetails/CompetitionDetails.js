@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import competitionDetaildata from "../../competitionsData.json";
+import { revertDateFormat } from "../../../revertDateFormat.js";
 
 function CompetitionDetails(props) {
     const _id = props.match.params.id;
@@ -52,11 +53,15 @@ function CompetitionDetails(props) {
                 <div id="restDetailsDiv" xs={2} md={2} lg={3} xl={4}>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Data rozpoczęcia:</Col>
-                        <Col className="right">{start_date}</Col>
+                        <Col className="right">
+                            {revertDateFormat(start_date)}
+                        </Col>
                     </Row>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Data zakończenia:</Col>
-                        <Col className="right">{end_date}</Col>
+                        <Col className="right">
+                            {revertDateFormat(end_date)}
+                        </Col>
                     </Row>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Lokalizacja:</Col>

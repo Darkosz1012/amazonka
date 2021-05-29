@@ -2,13 +2,12 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { within } from "@testing-library/react";
 import { Route, MemoryRouter as Router } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
-import EditDetails from "./EditDetails";
 import CompetitionForm from "./EditCompetitionDetailsForm";
 import * as handler from "./handleSubmit.js";
 
 describe("EditDetails", () => {
     beforeEach(() => {
-        render(<EditDetails id="1" />);
+        render(<CompetitionForm id={1} />);
     });
 
     it("should render", () => {
@@ -33,7 +32,7 @@ describe("EditDetails", () => {
             expect(endDateInput).toBeInTheDocument();
         });
 
-        test("button with name containing 'Dodaj zawody'", async () => {
+        test("button with name containing 'Zatwierdź zmiany'", async () => {
             const button = screen.getByRole("button", {
                 name: /Zatwierdź zmiany/i,
             });
@@ -56,15 +55,46 @@ describe("CompetitionForm", () => {
                 onSubmitMock(event);
             });
 
-        const formComponent = (
-            <Router initialEntries={["/admin/panel/1/details"]}>
+        const compData = {
+            id: 1,
+            name: "Puchar łucznika sądeczyzny",
+            location: "Nowy Sącz",
+            date_start: "15-05-2021",
+            date_end: "17-05-2021",
+            description: "Lorem ipsum dolor",
+            schedule: "Sed maximus dolor non",
+            category: [
+                {
+                    id: 1,
+                    category_name: "juniorzy",
+                },
+                {
+                    id: 2,
+                    category_name: "kobiety 18-25",
+                },
+                {
+                    id: 3,
+                    category_name: "mężczyżni 18-25",
+                },
+                {
+                    id: 4,
+                    category_name: "seniorzy",
+                },
+            ],
+        };
+        jest.mock("../../../competitionsData.json", () => [compData]);
+
+        const EditCompetitionDetails = require("./EditDetails.js");
+
+        const editDetailsComponent = (
+            <Router initialEntries={["/admin/panel/1/details/edit"]}>
                 <Route
-                    path="/admin/panel/:id/details"
-                    component={CompetitionForm}
+                    path="/admin/panel/:id/details/edit"
+                    component={EditCompetitionDetails.default}
                 />
             </Router>
         );
-        render(formComponent);
+        render(editDetailsComponent);
 
         const nameObj = { value: "ZawodyXXX" };
         const startObj = { value: "2021-05-28" };

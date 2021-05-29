@@ -12,16 +12,18 @@ function revertDateFormat(dateStr) {
 
 const CompetitionForm = (props) => {
     const history = useHistory();
-
     const _id = props.id;
-    const _name = competitionDetaildata[_id - 1]["name"];
-    const _start_date = revertDateFormat(
-        competitionDetaildata[_id - 1]["date_start"]
-    );
-    const _end_date = revertDateFormat(
-        competitionDetaildata[_id - 1]["date_end"]
-    );
-    const _location = competitionDetaildata[_id - 1]["location"];
+
+    let desiredCompetition = {};
+    Object.keys(competitionDetaildata).forEach((oneComp) => {
+        if (competitionDetaildata[oneComp].id === parseInt(_id))
+            desiredCompetition = competitionDetaildata[oneComp];
+    });
+
+    const _name = desiredCompetition["name"];
+    const _start_date = revertDateFormat(desiredCompetition["date_start"]);
+    const _end_date = revertDateFormat(desiredCompetition["date_end"]);
+    const _location = desiredCompetition["location"];
 
     const [name, setName] = useState(_name);
     const [start_date, setStartDate] = useState(_start_date);

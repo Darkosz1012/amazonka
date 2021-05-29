@@ -41,7 +41,7 @@ const RegisterForm = (props) => {
         setEmail(event.target.value);
     };
 
-    const handlereasonForCreatingAccount = (event) => {
+    const handleReasonForCreatingAccount = (event) => {
         setReasonForCreatingAccount(event.target.value);
     };
 

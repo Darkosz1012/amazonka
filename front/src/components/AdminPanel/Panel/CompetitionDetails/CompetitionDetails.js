@@ -3,17 +3,28 @@ import { useHistory } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { handleEditLinkClick } from "./handleEditLinkClick.js";
 import competitionDetaildata from "../../competitionsData.json";
+import { revertDateFormat } from "../../../revertDateFormat.js";
 
 function CompetitionDetails(props) {
     const _id = props.match.params.id;
-    const name = competitionDetaildata[_id - 1]["name"];
-    const location = competitionDetaildata[_id - 1]["location"];
-    const start_date = competitionDetaildata[_id - 1]["date_start"];
-    const end_date = competitionDetaildata[_id - 1]["date_end"];
+
+    let desiredCompetition = {};
+    Object.keys(competitionDetaildata).forEach((oneComp) => {
+        if (competitionDetaildata[oneComp].id === parseInt(_id))
+            desiredCompetition = competitionDetaildata[oneComp];
+    });
+
+    const name = desiredCompetition["name"];
+    const location = desiredCompetition["location"];
+    const start_date = desiredCompetition["date_start"];
+    const end_date = desiredCompetition["date_end"];
 
     let history = useHistory();
+
+    function handleClick(ID) {
+        history.push("/admin/panel/" + ID + "/details/edit");
+    }
 
     return (
         <div>
@@ -21,10 +32,7 @@ function CompetitionDetails(props) {
                 <span className="panel-detail-header">Szczegóły zawodów</span>
                 <span
                     className="smallEditLinkText"
-                    onClick={handleEditLinkClick(
-                        history,
-                        "/admin/panel/" + _id + "/details/edit"
-                    )}
+                    onClick={() => handleClick(_id)}
                 >
                     edytuj
                 </span>
@@ -45,11 +53,15 @@ function CompetitionDetails(props) {
                 <div id="restDetailsDiv" xs={2} md={2} lg={3} xl={4}>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Data rozpoczęcia:</Col>
-                        <Col className="right">{start_date}</Col>
+                        <Col className="right">
+                            {revertDateFormat(start_date)}
+                        </Col>
                     </Row>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Data zakończenia:</Col>
-                        <Col className="right">{end_date}</Col>
+                        <Col className="right">
+                            {revertDateFormat(end_date)}
+                        </Col>
                     </Row>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Lokalizacja:</Col>

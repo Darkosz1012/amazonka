@@ -55,9 +55,14 @@ describe("EditDetails", () => {
     });
 
     describe("should have form fields", () => {
-        test("two textboxes", async () => {
-            const textInputs = screen.getAllByRole("textbox");
-            expect(textInputs).toHaveLength(2);
+        test("field labeled 'Lokalizacja'", async () => {
+            const location = screen.getByLabelText(/Lokalizacja/i);
+            expect(location).toBeInTheDocument();
+        });
+
+        test("field labeled 'Nazwa'", async () => {
+            const compName = screen.getByLabelText(/Nazwa/i);
+            expect(compName).toBeInTheDocument();
         });
 
         test("field labeled 'Data rozpoczęcia'", async () => {
@@ -70,22 +75,23 @@ describe("EditDetails", () => {
             expect(endDateInput).toBeInTheDocument();
         });
 
-        test("button with name containing 'Zatwierdź zmiany'", async () => {
+        test("button with name containing 'Zatwierdź'", async () => {
             const button = screen.getByRole("button", {
-                name: /Zatwierdź zmiany/i,
+                name: /Zatwierdź/i,
             });
+
             expect(button).toBeInTheDocument();
         });
     });
 });
 
 describe("CompetitionForm", () => {
-    afterEach(() => {
-        jest.clearAllMocks();
-    });
-    test("should render form with initial, not edited yet input value", async () => {
-        const onSubmitMock = jest.fn();
-        const handleSubmit = jest
+    var onSubmitMock;
+    var handleSubmit;
+
+    beforeEach(() => {
+        onSubmitMock = jest.fn();
+        handleSubmit = jest
             .spyOn(handler, "handleSubmit")
             .mockReturnValue((event) => {
                 event.preventDefault();
@@ -93,30 +99,33 @@ describe("CompetitionForm", () => {
             });
 
         render(editDetailsComponent);
+    });
 
-        expect(
-            screen.getByRole("textbox", { name: /Nazwa zawodów/i }).value
-        ).toContain(compData.name);
-        expect(screen.getByTestId("start_date").value).toBe(
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
+    it("should be pre-populated with unedited competition details", async () => {
+        expect(onSubmitMock).not.toHaveBeenCalled();
+
+        expect(screen.getByRole("textbox", { name: /Nazwa/i }).value).toContain(
+            compData.name
+        );
+
+        expect(screen.getByLabelText(/Data rozpoczęcia/i).value).toBe(
             compData.date_start
         );
-        expect(screen.getByTestId("end_date").value).toBe(compData.date_end);
+
+        expect(screen.getByLabelText(/Data zakończenia/i).value).toBe(
+            compData.date_end
+        );
+
         expect(
             screen.getByRole("textbox", { name: /Lokalizacja/i }).value
         ).toContain(compData.location);
     });
 
-    test("click on 'Zatwierdź zmiany' should submit form", async () => {
-        const onSubmitMock = jest.fn();
-        const handleSubmit = jest
-            .spyOn(handler, "handleSubmit")
-            .mockReturnValue((event) => {
-                event.preventDefault();
-                onSubmitMock(event);
-            });
-
-        render(editDetailsComponent);
-
+    test("click on 'Zatwierdź' should submit form", async () => {
         const nameObj = { value: "ZawodyXXX" };
         const startObj = { value: "2021-05-28" };
         const endObj = { value: "2021-05-30" };
@@ -128,12 +137,15 @@ describe("CompetitionForm", () => {
                 target: nameObj,
             }
         );
-        fireEvent.input(screen.getByTestId("start_date"), {
+
+        fireEvent.input(screen.getByLabelText(/Data rozpoczęcia/i), {
             target: startObj,
         });
-        fireEvent.input(screen.getByTestId("end_date"), {
+
+        fireEvent.input(screen.getByLabelText(/Data zakończenia/i), {
             target: endObj,
         });
+
         fireEvent.input(screen.getByRole("textbox", { name: /Lokalizacja/i }), {
             target: localObj,
         });
@@ -142,17 +154,21 @@ describe("CompetitionForm", () => {
             screen.getByRole("button", { name: /Zatwierdź zmiany/i })
         );
 
-        expect(onSubmitMock).toHaveBeenCalled();
+        expect(onSubmitMock).toHaveBeenCalledTimes(1);
         const eventTarget = onSubmitMock.mock.calls[0][0].target;
+
         expect(
             within(eventTarget).getByLabelText(/Nazwa zawodów/i)
         ).toMatchObject(nameObj);
+
         expect(
             within(eventTarget).getByLabelText(/Data rozpoczęcia/i)
         ).toMatchObject(startObj);
+
         expect(
             within(eventTarget).getByLabelText(/Data zakończenia/i)
         ).toMatchObject(endObj);
+
         expect(
             within(eventTarget).getByLabelText(/Lokalizacja/i)
         ).toMatchObject(localObj);

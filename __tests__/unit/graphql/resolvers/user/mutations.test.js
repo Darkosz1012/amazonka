@@ -141,7 +141,7 @@ describe("register function", () => {
             ).rejects.toThrow("Invalid username.");
         });
 
-        it("should throw if username is not alphanumeric", async () => {
+        it("should throw if username is not ascii", async () => {
             let userData = createUserData();
             userData.username = "user_1!?";
 

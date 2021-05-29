@@ -1,17 +1,14 @@
 import { render, screen } from "@testing-library/react";
-import { within } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import { MockedProvider } from "@apollo/client/testing";
 import RegisterForm from "./RegisterForm";
 
 describe("RegisterForm", () => {
-    var container;
     beforeEach(() => {
-        container = render(
+        render(
             <MockedProvider mocks={[]} addTypename={false}>
                 <RegisterForm />
             </MockedProvider>
-        ).container;
+        );
     });
 
     it("should have three textboxes", () => {

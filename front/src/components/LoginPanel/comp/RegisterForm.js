@@ -5,7 +5,12 @@ import { gql, useMutation } from "@apollo/client";
 
 const REGISTER_USER = gql`
     mutation register($username: String!, $password: String!) {
-        register(username: $username, password: $password) {
+        register(
+            username: $username
+            password: $password
+            email: $email
+            reason_for_creating_account: $reasonForCreatingAccount
+        ) {
             user_id
         }
     }
@@ -65,6 +70,8 @@ const RegisterForm = (props) => {
                 variables: {
                     username: login,
                     password: password1,
+                    email: email,
+                    reason_for_creating_account: reasonForCreatingAccount,
                 },
             });
         }
@@ -80,6 +87,7 @@ const RegisterForm = (props) => {
                     className="form-control register-input"
                     value={login}
                     onChange={handleLoginChange}
+                    autoComplete="on"
                 />{" "}
                 <br />
                 <input
@@ -88,6 +96,7 @@ const RegisterForm = (props) => {
                     className="form-control register-input"
                     value={email}
                     onChange={handleEmailChange}
+                    autoComplete="on"
                 />{" "}
                 <br />
                 <input
@@ -96,6 +105,7 @@ const RegisterForm = (props) => {
                     className="form-control register-input"
                     value={password1}
                     onChange={handlePassword1Change}
+                    autoComplete="on"
                 />{" "}
                 <br />
                 <input
@@ -104,6 +114,7 @@ const RegisterForm = (props) => {
                     className="form-control register-input"
                     value={password2}
                     onChange={handlePassword2Change}
+                    autoComplete="on"
                 />{" "}
                 <br />
                 <textarea
@@ -112,6 +123,7 @@ const RegisterForm = (props) => {
                     rows="5"
                     value={reasonForCreatingAccount}
                     onChange={handleReasonForCreatingAccount}
+                    autoComplete="on"
                 />{" "}
                 <br />
                 <Button

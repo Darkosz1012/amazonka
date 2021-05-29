@@ -1,44 +1,51 @@
 [
     {
-        "stanowisko": 1,
-        "kolejnosc": "A",
-        "imie_nazwisko": "Dariusz Biela",
-        "klub": "KS Kraków"
+        "id": 1,
+        "position": 1,
+        "order": "A",
+        "fullname": "Dariusz Biela",
+        "club": "KS Kraków"
     },
     {
-        "stanowisko": 1,
-        "kolejnosc": "B",
-        "imie_nazwisko": "Dariusz Biela",
-        "klub": "KS Kraków"
+        "id": 2,
+        "position": 1,
+        "order": "B",
+        "fullname": "Dariusz Biela",
+        "club": "KS Kraków"
     },
     {
-        "stanowisko": 1,
-        "kolejnosc": "C",
-        "imie_nazwisko": "Dariusz Biela",
-        "klub": "KS Kraków"
+        "id": 3,
+        "position": 1,
+        "order": "C",
+        "fullname": "Dariusz Biela",
+        "club": "KS Kraków"
     },
     {
-        "stanowisko": 2,
-        "kolejnosc": "A",
-        "imie_nazwisko": "Dariusz Biela",
-        "klub": "KS Kraków"
+        "id": 4,
+        "position": 2,
+        "order": "A",
+        "fullname": "Dariusz Biela",
+        "club": "KS Kraków"
     },
     {
-        "stanowisko": 2,
-        "kolejnosc": "B",
-        "imie_nazwisko": "Dariusz Biela",
-        "klub": "KS Kraków"
+        "id": 5,
+        "position": 2,
+        "order": "B",
+        "fullname": "Dariusz Biela",
+        "club": "KS Kraków"
     },
     {
-        "stanowisko": 2,
-        "kolejnosc": "C",
-        "imie_nazwisko": "Dariusz Biela",
-        "klub": "KS Kraków"
+        "id": 6,
+        "position": 2,
+        "order": "C",
+        "fullname": "Dariusz Biela",
+        "club": "KS Kraków"
     },
     {
-        "stanowisko": 2,
-        "kolejnosc": "D",
-        "imie_nazwisko": "Dariusz Biela",
-        "klub": "KS Kraków"
+        "id": 7,
+        "position": 2,
+        "order": "D",
+        "fullname": "Dariusz Biela",
+        "club": "KS Kraków"
     }
 ]

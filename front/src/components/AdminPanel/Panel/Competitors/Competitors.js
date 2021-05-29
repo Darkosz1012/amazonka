@@ -94,7 +94,7 @@ const Competitors = () => {
 
     return (
         <div>
-            <p className="panel-detail-header">Zawodnicy </p>
+            <p className="panel-content-header">Zawodnicy</p>
             <div className="infoDiv">
                 <div className="competitors-column-div">
                     <div className="competitors-tile-div">

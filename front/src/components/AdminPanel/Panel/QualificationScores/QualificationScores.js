@@ -1,7 +1,7 @@
 function QualificationScores() {
     return (
         <div>
-            <p>Wyniki kwalifikacji</p>
+            <p className="panel-content-header">Wyniki kwalifikacji</p>
         </div>
     );
 }

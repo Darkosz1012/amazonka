@@ -5,13 +5,21 @@ import Button from "../../UI/Button/Button";
 
 function CompetitionDetails(props) {
     const params = useParams();
-    const name = competitionDetaildata[params.id - 1]["name"];
-    const location = competitionDetaildata[params.id - 1]["location"];
-    const start_date = competitionDetaildata[params.id - 1]["date_start"];
-    const end_date = competitionDetaildata[params.id - 1]["date_end"];
-    const description = competitionDetaildata[params.id - 1]["description"];
-    const schedule = competitionDetaildata[params.id - 1]["schedule"];
-    const categories = competitionDetaildata[params.id - 1]["category"].map(
+    const _id = params.id;
+
+    let desiredCompetition = {};
+    Object.keys(competitionDetaildata).forEach((oneComp) => {
+        if (competitionDetaildata[oneComp].id === parseInt(_id))
+            desiredCompetition = competitionDetaildata[oneComp];
+    });
+
+    const name = desiredCompetition["name"];
+    const location = desiredCompetition["location"];
+    const start_date = desiredCompetition["date_start"];
+    const end_date = desiredCompetition["date_end"];
+    const description = desiredCompetition["description"];
+    const schedule = desiredCompetition["schedule"];
+    const categories = desiredCompetition["category"].map(
         (category) => category.category_name
     );
     const categ_num = Object.keys(categories).length;

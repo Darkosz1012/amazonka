@@ -27,7 +27,7 @@
         ]
     },
     {
-        "id": 2,
+        "id": 4,
         "name": "Krakowskie zawody łucznicze",
         "location": "Kraków",
         "date_start": "03-06-2021",
@@ -50,7 +50,7 @@
         ]
     },
     {
-        "id": 3,
+        "id": 9,
         "name": "Łucznicze zawody podkarpacia",
         "location": "Rzeszów",
         "date_start": "21-05-2021",

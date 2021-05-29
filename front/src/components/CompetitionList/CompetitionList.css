@@ -6,13 +6,13 @@
 }
 
 #mainHeader {
-    font-size: 32px;
+    font-size: 24px;
     text-decoration: none;
     text-decoration: underline;
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: 15px;
+    margin: 40px 14% 10px 14%;
     font-weight: 900;
+    color: #91927b;
 }
 
 .table {
@@ -65,7 +65,7 @@
 
 @media (max-width: 599px) {
     #mainHeader {
-        font-size: 22px;
+        font-size: 20px;
     }
     .table {
         font-size: 12px;

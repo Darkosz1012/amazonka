@@ -34,9 +34,8 @@ function InsertPositions() {
 
     return (
         <div className="InsertPositionsPanel">
+            <p className="panel-content-header">Rozstawienie </p>
             <div className="container">
-                <p id="mainHeader">Rozstawienie</p>
-
                 <form className="InsertPositionsPanelForm">
                     <label forhtml="categories">Wybierz kategorię: </label>
                     <select id="categories" name="categories">

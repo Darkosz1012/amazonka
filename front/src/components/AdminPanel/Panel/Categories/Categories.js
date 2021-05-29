@@ -52,7 +52,7 @@ const Categories = () => {
 
     return (
         <div>
-            <p className="panel-detail-header">Kategorie </p>
+            <p className="panel-content-header">Kategorie </p>
             <div className="infoDiv">
                 <div className="category-column-div">
                     <div className="category-tile-div">

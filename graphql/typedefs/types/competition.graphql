@@ -1,5 +1,6 @@
 type Competition {
     _id: ID!
+    owner_id: ID!
     owner: User!
 
     name: String!

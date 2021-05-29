@@ -3,6 +3,7 @@ import { categoryMutations, categoryQueries } from "./category/index.js";
 import {
     competitionMutations,
     competitionQueries,
+    competition,
 } from "./competition/index.js";
 
 const resolvers = {
@@ -14,6 +15,9 @@ const resolvers = {
         ...userMutations,
         ...competitionMutations,
         ...categoryMutations,
+    },
+    Competition: {
+        ...competition,
     },
 };
 

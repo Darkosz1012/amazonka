@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { handleEditLinkClick } from "./handleEditLinkClick.js";
 import competitionDetaildata from "../../competitionsData.json";
 
 function CompetitionDetails(props) {
@@ -14,17 +15,16 @@ function CompetitionDetails(props) {
 
     let history = useHistory();
 
-    function handleClick(ID) {
-        history.push("/admin/panel/" + ID + "/details/edit");
-    }
-
     return (
         <div>
             <p className="editLinkText">
                 <span className="panel-detail-header">Szczegóły zawodów</span>
                 <span
                     className="smallEditLinkText"
-                    onClick={() => handleClick(_id)}
+                    onClick={handleEditLinkClick(
+                        history,
+                        "/admin/panel/" + _id + "/details/edit"
+                    )}
                 >
                     edytuj
                 </span>

@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../../../UI/Button/Button";
 import competitionDetaildata from "../../../competitionsData.json";
-
-function revertDateFormat(dateStr) {
-    const arr = dateStr.split("-");
-    const res = arr[2] + "-" + arr[1] + "-" + arr[0];
-    return res;
-}
+import { revertDateFormat } from "../../../../revertDateFormat.js";
 
 const CompetitionForm = (props) => {
     const history = useHistory();
@@ -23,8 +18,8 @@ const CompetitionForm = (props) => {
     const _location = competitionDetaildata[_id - 1]["location"];
 
     const [name, setName] = useState(_name);
-    const [start_date, setStartDate] = useState(_start_date);
-    const [end_date, setEndDate] = useState(_end_date);
+    const [start_date, setStartDate] = useState(revertDateFormat(_start_date));
+    const [end_date, setEndDate] = useState(revertDateFormat(_end_date));
     const [location, setLocation] = useState(_location);
 
     const handleNameChange = (event) => {

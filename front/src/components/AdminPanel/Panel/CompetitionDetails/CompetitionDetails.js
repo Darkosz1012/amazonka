@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import competitionDetaildata from "../../competitionsData.json";
+import { handleEditLinkClick } from "./handleEditLinkClick.js";
 import { revertDateFormat } from "../../../revertDateFormat.js";
 
 function CompetitionDetails(props) {
@@ -22,50 +23,53 @@ function CompetitionDetails(props) {
 
     let history = useHistory();
 
-    function handleClick(ID) {
-        history.push("/admin/panel/" + ID + "/details/edit");
-    }
-
     return (
         <div>
             <p className="editLinkText">
                 <span className="panel-detail-header">Szczegóły zawodów</span>
-                <span
+                <button
                     className="smallEditLinkText"
-                    onClick={() => handleClick(_id)}
+                    data-testid="editLink"
+                    onClick={handleEditLinkClick(
+                        history,
+                        "/admin/panel/" + _id + "/details/edit"
+                    )}
                 >
                     edytuj
-                </span>
+                </button>
             </p>
             <Container
                 fluid
                 className="infoContainer"
+                data-testid="infoContainer"
                 style={{ paddingLeft: 30, paddingRight: 30 }}
             >
                 <Row className="compNameDetailDiv" xs={2} md={2} lg={3} xl={4}>
                     <Col id="name-label" className="left">
                         Nazwa:
                     </Col>
-                    <Col id="name" className="right">
+                    <Col id="name" className="right" data-testid="name">
                         {name}
                     </Col>
                 </Row>
                 <div id="restDetailsDiv" xs={2} md={2} lg={3} xl={4}>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Data rozpoczęcia:</Col>
-                        <Col className="right">
+                        <Col className="right" data-testid="start_date">
                             {revertDateFormat(start_date)}
                         </Col>
                     </Row>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Data zakończenia:</Col>
-                        <Col className="right">
+                        <Col className="right" data-testid="end_date">
                             {revertDateFormat(end_date)}
                         </Col>
                     </Row>
                     <Row xs={2} md={2} lg={3} xl={4}>
                         <Col className="left">Lokalizacja:</Col>
-                        <Col className="right">{location}</Col>
+                        <Col className="right" data-testid="location">
+                            {location}
+                        </Col>
                     </Row>
                 </div>
             </Container>

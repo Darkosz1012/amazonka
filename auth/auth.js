@@ -22,6 +22,18 @@ export async function hash(password) {
     });
 }
 
+export function verifyRequest(req) {
+    const token = extractTokenFromHeader(req);
+
+    if (token == null) {
+        throw {
+            message: "No token.",
+        };
+    }
+
+    return authenticateToken(token);
+}
+
 export function authenticateToken(token) {
     try {
         return jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
@@ -32,7 +44,7 @@ export function authenticateToken(token) {
     }
 }
 
-export function extractTokenFromHeader(req) {
+function extractTokenFromHeader(req) {
     const authHeader = req.headers["authorization"];
     return authHeader && authHeader.split(" ")[1];
 }

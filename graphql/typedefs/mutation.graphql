@@ -2,7 +2,6 @@ type Mutation {
     login(username: String!, password: String!): Token!
     register(username: String!, email: String!, password: String!): Token!
 
-    
     newCompetition(
         owner: ID!
         name: String!
@@ -22,7 +21,6 @@ type Mutation {
 
     removeCompetition(_id: ID!): Competition
 
-
     addCategory(
         competition_id: ID!
         name: String!
@@ -30,6 +28,7 @@ type Mutation {
         start_stand: Int
         end_stand: Int
     ): Category
+
     updateCategory(
         _id: ID!
         name: String
@@ -37,5 +36,6 @@ type Mutation {
         start_stand: Int
         end_stand: Int
     ): Category
+
     deleteCategory(_id: String!): Category
 }

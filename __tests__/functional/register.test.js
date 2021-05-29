@@ -22,7 +22,7 @@ function createRegisterUserMsg() {
         variables: {
             username: "test_user",
             email: "grzesiekkasprzak@google.com",
-            password: "qwerty",
+            password: "Passw0rd!",
         },
     };
 }
@@ -49,7 +49,7 @@ describe("register users", () => {
     async function expectSuccessfulRegistration(request) {
         const userCount = await SUT.getDocumentsCount("users");
 
-        var response = await SUT.request()
+        const response = await SUT.request()
             .post("/graphql")
             .send(request)
             .expect(200);
@@ -68,7 +68,7 @@ describe("register users", () => {
     });
 
     //currently this password is accepted and test fails!
-    test.skip("register a user with empty password, should return error", async () => {
+    test("register a user with empty password, should return error", async () => {
         let registerUserEmptyPasswordMsg = createRegisterUserMsg();
         registerUserEmptyPasswordMsg.variables.password = "";
 
@@ -78,14 +78,14 @@ describe("register users", () => {
             .expect(200);
 
         expectAnyError(response);
-        expect(await SUT.getDocumentsCount("users")).toBe(1);
+        expect(await SUT.getDocumentsCount("users")).toBe(0);
     });
 
     test("register two users with different emails, but the same usernames, should return error", async () => {
         await expectSuccessfulRegistration(registerUserMsg);
 
         let registerUserDifferentEmailMsg = createRegisterUserMsg();
-        registerUserDifferentEmailMsg.variables.email += "123";
+        registerUserDifferentEmailMsg.variables.email = "kasprzak@google.com";
 
         const response = await SUT.request()
             .post("/graphql")
@@ -116,7 +116,8 @@ describe("register users", () => {
 
         let registerUserDifferentUsernameAndEmailMsg = createRegisterUserMsg();
         registerUserDifferentUsernameAndEmailMsg.variables.username += "123";
-        registerUserDifferentUsernameAndEmailMsg.variables.email += "123";
+        registerUserDifferentUsernameAndEmailMsg.variables.email =
+            "kasprzak@google.com";
 
         await expectSuccessfulRegistration(
             registerUserDifferentUsernameAndEmailMsg

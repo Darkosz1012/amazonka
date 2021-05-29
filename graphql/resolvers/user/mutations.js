@@ -3,10 +3,16 @@ import { UserInputError } from "apollo-server";
 
 import { authenticateToken, hash, verify } from "$/auth/auth.js";
 import jwt from "jsonwebtoken";
+import validator from "validator";
 
 export default {
     login: async (_, { username, password }) => {
-        verify_login_data(username, password);
+        try {
+            validate_password(password);
+            validate_username(username);
+        } catch (e) {
+            throw new UserInputError("Username or password incorrect.");
+        }
 
         const result = await User.findOne({ username })
             .select("+password")
@@ -23,8 +29,9 @@ export default {
     },
 
     register: async (_, { username, password, email }) => {
-        verify_login_data(username, password);
-        verify_email(email);
+        validate_username(username);
+        validate_email(email);
+        validate_password(password);
 
         try {
             let result = await User.create({
@@ -75,14 +82,36 @@ function createJWT(user, time) {
     );
 }
 
-function verify_login_data(username, password) {
-    if (username === undefined || password === undefined) {
-        throw new UserInputError("Username or password incorrect.");
+function validate_username(username) {
+    if (isUsernameInvalid(username)) {
+        throw new UserInputError("Invalid username.");
+    }
+
+    function isUsernameInvalid(username) {
+        return (
+            username === undefined ||
+            !validator.isAscii(username) ||
+            username.length > 50
+        );
     }
 }
 
-function verify_email(email) {
-    if (email === undefined) {
-        throw new UserInputError("No email provided.");
+function validate_password(password) {
+    if (isPasswordInvalid(password)) {
+        throw new UserInputError("Invalid password.");
+    }
+
+    function isPasswordInvalid(password) {
+        return password === undefined || !validator.isStrongPassword(password);
+    }
+}
+
+function validate_email(email) {
+    if (isEmailInvalid(email)) {
+        throw new UserInputError("Invalid email.");
+    }
+
+    function isEmailInvalid(email) {
+        return email === undefined || !validator.isEmail(email);
     }
 }

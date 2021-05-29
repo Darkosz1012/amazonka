@@ -43,33 +43,20 @@ describe("createLoaderWithSpecificKey: dataloader with specific parameter for gr
         mockingoose(Competition).toReturn(competition_data, "find");
     });
     test("Should return array with the correct number of elements.", async () => {
-        const result = await loader.loadMany(["609aa4bde6483525a06b8e5b"]);
-        expect(result).toHaveLength(1);
+        const result = await loader.loadMany(["609aa4bde6483525a06b8e5b","609aa4bde6483525a06b8e5z"]);
+        expect(result).toHaveLength(2);
     });
     test("Should return array with the correct structure of object.", async () => {
-        const competition_data = [
-            {
-                _id: "507f191e810c19729de860ea",
-                owner_id: "609aa4bde6483525a06b8e5b",
-                name: "comp1",
-                start_date: "1989-12-31T23:00:00.000Z",
-                end_date: "1989-12-31T23:00:00.000Z",
-                location: "sherwood",
-                details_id: "60a42ec1778fc82384125710",
-                categories_id: [],
-            },
-            {
-                _id: "507f191e810c19729de860ed",
-                owner_id: "609aa4bde6483525a06b8e5b",
-                name: "comp2",
-                start_date: "1989-12-31T23:00:00.000Z",
-                end_date: "1989-12-31T23:00:00.000Z",
-                location: "sherwood",
-                details_id: "60a42ec1778fc82384125710",
-                categories_id: [],
-            },
+        const data = [
+            competition_data[0],
+            competition_data[1],
         ];
-        const result = await loader.loadMany(["609aa4bde6483525a06b8e5b"]);
-        expect(transform_by_JSON(result[0])).toMatchObject(competition_data);
+        const result = await loader.loadMany(["609aa4bde6483525a06b8e5b"])
+        console.log(result[1])
+        expect(transform_by_JSON(result[0])).toMatchObject(data);
+    });
+    test("Should return empty array when key when the key is not present in the data.", async () => {
+        const result = await loader.loadMany(["609aa4bde6483525a06b8e5z"]);
+        expect(transform_by_JSON(result[0])).toMatchObject([]);
     });
 });

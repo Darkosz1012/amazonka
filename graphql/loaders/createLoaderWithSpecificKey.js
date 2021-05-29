@@ -10,6 +10,6 @@ export default function (model, parameter) {
             return acc;
         }, {});
 
-        return keys.map((parameter) => dataMap[parameter]);
+        return keys.map((parameter) => dataMap[parameter] || []);
     });
 }

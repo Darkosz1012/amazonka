@@ -143,7 +143,7 @@ describe("register function", () => {
 
         it("should throw if username is not ascii", async () => {
             let userData = createUserData();
-            userData.username = "😸";
+            userData.username = "🦝";
 
             await expect(
                 mutations.register(undefined, userData)

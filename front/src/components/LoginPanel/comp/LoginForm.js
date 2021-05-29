@@ -17,7 +17,8 @@ const LoginForm = (props) => {
 
     const [loginUser, { data }] = useMutation(LOGIN_USER, {
         onError(err) {
-            console.log(err);
+            document.getElementById("error-msg").innerHTML =
+                "Błędny login lub hasło";
         },
     });
 
@@ -40,29 +41,33 @@ const LoginForm = (props) => {
     };
 
     return (
-        <form data-testid="loginForm" onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Login/email"
-                className="form-control login-input"
-                value={login}
-                onChange={handleLoginChange}
-            />{" "}
-            <br />
-            <input
-                type="password"
-                placeholder="Hasło"
-                className="form-control login-input"
-                value={password}
-                onChange={handlePasswordChange}
-            />{" "}
-            <br />
-            <Button
-                type="submit"
-                placeholder="Zaloguj się"
-                className="btn btn-primary btn-lg"
-            />
-        </form>
+        <div>
+            <div id="error-msg"></div>
+            <form data-testid="loginForm" onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Login/email"
+                    className="form-control login-input"
+                    value={login}
+                    onChange={handleLoginChange}
+                />{" "}
+                <br />
+                <input
+                    type="password"
+                    placeholder="Hasło"
+                    className="form-control login-input"
+                    value={password}
+                    onChange={handlePasswordChange}
+                />{" "}
+                <br />
+                <Button
+                    type="submit"
+                    placeholder="Zaloguj się"
+                    className="btn btn-primary btn-lg"
+                    onClick={handleSubmit}
+                />
+            </form>
+        </div>
     );
 };
 

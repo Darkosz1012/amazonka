@@ -1,29 +1,26 @@
 import { render, screen } from "@testing-library/react";
+import { MockedProvider } from "@apollo/client/testing";
 import LoginForm from "./LoginForm";
-import { ApolloProvider } from "@apollo/client/react";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-
-const client = new ApolloClient({
-    uri: "http://localhost:3001/graphql",
-    cache: new InMemoryCache(),
-});
 
 describe("LoginForm", () => {
+    var container;
     beforeEach(() => {
-        render(
-            <ApolloProvider client={client}>
+        container = render(
+            <MockedProvider mocks={[]} addTypename={false}>
                 <LoginForm />
-            </ApolloProvider>
-        );
+            </MockedProvider>
+        ).container;
     });
 
     it("should have one text input", () => {
-        let textInputs = screen.getAllByRole("textbox");
-        expect(textInputs).toHaveLength(1);
+        let textInput = screen.getByRole("textbox");
+        expect(textInput).toBeInTheDocument();
     });
 
     it("should have one button", () => {
-        let buttons = screen.getAllByRole("button");
-        expect(buttons).toHaveLength(1);
+        let loginButton = screen.getByRole("button", {
+            name: /zaloguj się/i,
+        });
+        expect(loginButton).toBeInTheDocument();
     });
 });

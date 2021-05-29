@@ -83,6 +83,28 @@ describe("CompetitionForm", () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
+    test("should render form with initial, not edited yet input value", async () => {
+        const onSubmitMock = jest.fn();
+        const handleSubmit = jest
+            .spyOn(handler, "handleSubmit")
+            .mockReturnValue((event) => {
+                event.preventDefault();
+                onSubmitMock(event);
+            });
+
+        render(editDetailsComponent);
+
+        expect(
+            screen.getByRole("textbox", { name: /Nazwa zawodów/i }).value
+        ).toContain(compData.name);
+        expect(screen.getByTestId("start_date").value).toBe(
+            compData.date_start
+        );
+        expect(screen.getByTestId("end_date").value).toBe(compData.date_end);
+        expect(
+            screen.getByRole("textbox", { name: /Lokalizacja/i }).value
+        ).toContain(compData.location);
+    });
 
     test("click on 'Zatwierdź zmiany' should submit form", async () => {
         const onSubmitMock = jest.fn();
@@ -99,17 +121,6 @@ describe("CompetitionForm", () => {
         const startObj = { value: "2021-05-28" };
         const endObj = { value: "2021-05-30" };
         const localObj = { value: "Kraków" };
-
-        expect(
-            screen.getByRole("textbox", { name: /Nazwa zawodów/i }).value
-        ).toContain(compData.name);
-        expect(screen.getByTestId("start_date").value).toBe(
-            compData.date_start
-        );
-        expect(screen.getByTestId("end_date").value).toBe(compData.date_end);
-        expect(
-            screen.getByRole("textbox", { name: /Lokalizacja/i }).value
-        ).toContain(compData.location);
 
         fireEvent.input(
             screen.getByRole("textbox", { name: /Nazwa zawodów/i }),

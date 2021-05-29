@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Button from "../../../../UI/Button/Button";
 import competitionDetaildata from "../../../competitionsData.json";
 import { handleSubmit } from "./handleSubmit.js";
@@ -12,7 +12,8 @@ function revertDateFormat(dateStr) {
 
 const CompetitionForm = (props) => {
     const history = useHistory();
-    const _id = props.id;
+    const params = useParams();
+    const _id = params.id;
 
     let desiredCompetition = {};
     Object.keys(competitionDetaildata).forEach((oneComp) => {

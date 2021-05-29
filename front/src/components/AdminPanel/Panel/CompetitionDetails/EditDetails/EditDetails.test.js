@@ -2,17 +2,55 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { within } from "@testing-library/react";
 import { Route, MemoryRouter as Router } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
-import CompetitionForm from "./EditCompetitionDetailsForm";
 import * as handler from "./handleSubmit.js";
+
+const compData = {
+    id: 222,
+    name: "ZawodyXYZ",
+    location: "Warszawa",
+    date_start: "15-05-2021",
+    date_end: "17-05-2021",
+    description: "Lorem ipsum dolor",
+    schedule: "Sed maximus dolor non",
+    category: [
+        {
+            id: 1,
+            category_name: "juniorzy",
+        },
+        {
+            id: 2,
+            category_name: "kobiety 18-25",
+        },
+        {
+            id: 3,
+            category_name: "mężczyżni 18-25",
+        },
+        {
+            id: 4,
+            category_name: "seniorzy",
+        },
+    ],
+};
+jest.mock("../../../competitionsData.json", () => [compData]);
+
+const CompetitionForm = require("./EditCompetitionDetailsForm.js");
+
+const editDetailsComponent = (
+    <Router initialEntries={["/admin/panel/222/details/edit"]}>
+        <Route
+            path="/admin/panel/:id/details/edit"
+            component={CompetitionForm.default}
+        />
+    </Router>
+);
 
 describe("EditDetails", () => {
     beforeEach(() => {
-        render(<CompetitionForm id={1} />);
+        render(editDetailsComponent);
     });
 
     it("should render", () => {
         const editCompetitionForm = screen.getByTestId("editDetailFormTestId");
-
         expect(editCompetitionForm).toBeInTheDocument();
     });
 
@@ -55,51 +93,23 @@ describe("CompetitionForm", () => {
                 onSubmitMock(event);
             });
 
-        const compData = {
-            id: 1,
-            name: "Puchar łucznika sądeczyzny",
-            location: "Nowy Sącz",
-            date_start: "15-05-2021",
-            date_end: "17-05-2021",
-            description: "Lorem ipsum dolor",
-            schedule: "Sed maximus dolor non",
-            category: [
-                {
-                    id: 1,
-                    category_name: "juniorzy",
-                },
-                {
-                    id: 2,
-                    category_name: "kobiety 18-25",
-                },
-                {
-                    id: 3,
-                    category_name: "mężczyżni 18-25",
-                },
-                {
-                    id: 4,
-                    category_name: "seniorzy",
-                },
-            ],
-        };
-        jest.mock("../../../competitionsData.json", () => [compData]);
-
-        const EditCompetitionDetails = require("./EditDetails.js");
-
-        const editDetailsComponent = (
-            <Router initialEntries={["/admin/panel/1/details/edit"]}>
-                <Route
-                    path="/admin/panel/:id/details/edit"
-                    component={EditCompetitionDetails.default}
-                />
-            </Router>
-        );
         render(editDetailsComponent);
 
         const nameObj = { value: "ZawodyXXX" };
         const startObj = { value: "2021-05-28" };
         const endObj = { value: "2021-05-30" };
         const localObj = { value: "Kraków" };
+
+        expect(
+            screen.getByRole("textbox", { name: /Nazwa zawodów/i }).value
+        ).toContain(compData.name);
+        expect(screen.getByTestId("start_date").value).toBe(
+            compData.date_start
+        );
+        expect(screen.getByTestId("end_date").value).toBe(compData.date_end);
+        expect(
+            screen.getByRole("textbox", { name: /Lokalizacja/i }).value
+        ).toContain(compData.location);
 
         fireEvent.input(
             screen.getByRole("textbox", { name: /Nazwa zawodów/i }),

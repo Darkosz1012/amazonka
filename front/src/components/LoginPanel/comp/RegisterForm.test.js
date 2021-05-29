@@ -1,20 +1,17 @@
 import { render, screen } from "@testing-library/react";
+import { within } from "@testing-library/dom";
+import userEvent from "@testing-library/user-event";
+import { MockedProvider } from "@apollo/client/testing";
 import RegisterForm from "./RegisterForm";
-import { ApolloProvider } from "@apollo/client/react";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-
-const client = new ApolloClient({
-    uri: "http://localhost:3001/graphql",
-    cache: new InMemoryCache(),
-});
 
 describe("RegisterForm", () => {
+    var container;
     beforeEach(() => {
-        render(
-            <ApolloProvider client={client}>
+        container = render(
+            <MockedProvider mocks={[]} addTypename={false}>
                 <RegisterForm />
-            </ApolloProvider>
-        );
+            </MockedProvider>
+        ).container;
     });
 
     it("should have three textboxes", () => {
@@ -30,7 +27,9 @@ describe("RegisterForm", () => {
     });
 
     it("should have register button", () => {
-        let btn = screen.getByRole("button", { name: "Zarejestruj się" });
+        let btn = screen.getByRole("button", {
+            name: /zarejestruj się/i,
+        });
         expect(btn).toBeInTheDocument();
     });
 });

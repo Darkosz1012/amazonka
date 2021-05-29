@@ -21,7 +21,7 @@ const RegisterForm = (props) => {
 
     const [registerUser] = useMutation(REGISTER_USER, {
         onError(err) {
-            console.log(err);
+            document.getElementById("error-msg").innerHTML = "Niepoprawne dane";
         },
     });
 
@@ -47,11 +47,20 @@ const RegisterForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (
-            /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email) &&
-            password1 &&
-            password2 === password1
-        ) {
+        if (!login) {
+            document.getElementById("error-msg").innerHTML = "Podaj login";
+        } else if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
+            document.getElementById("error-msg").innerHTML = "Błędny email";
+        } else if (password1.length < 6) {
+            document.getElementById("error-msg").innerHTML =
+                "Hasło jest za krótkie";
+        } else if (password2 !== password1) {
+            document.getElementById("error-msg").innerHTML =
+                "Hasła nie są takie same";
+        } else if (!reasonForCreatingAccount) {
+            document.getElementById("error-msg").innerHTML =
+                "Podaj powód rejestracji";
+        } else {
             registerUser({
                 variables: {
                     username: login,
@@ -62,53 +71,57 @@ const RegisterForm = (props) => {
     };
 
     return (
-        <form data-testid="registerForm" onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Login"
-                className="form-control register-input"
-                value={login}
-                onChange={handleLoginChange}
-            />{" "}
-            <br />
-            <input
-                type="text"
-                placeholder="Email"
-                className="form-control register-input"
-                value={email}
-                onChange={handleEmailChange}
-            />{" "}
-            <br />
-            <input
-                type="password"
-                placeholder="Hasło"
-                className="form-control register-input"
-                value={password1}
-                onChange={handlePassword1Change}
-            />{" "}
-            <br />
-            <input
-                type="password"
-                placeholder="Powtórz hasło"
-                className="form-control register-input"
-                value={password2}
-                onChange={handlePassword2Change}
-            />{" "}
-            <br />
-            <textarea
-                placeholder="Dlaczego chcesz założyć konto?"
-                className="form-control register-input"
-                rows="5"
-                value={reasonForCreatingAccount}
-                onChange={handlereasonForCreatingAccount}
-            />{" "}
-            <br />
-            <Button
-                type="submit"
-                className="btn btn-primary btn-lg"
-                placeholder="Zarejestruj się"
-            />
-        </form>
+        <div>
+            <div id="error-msg"></div>
+            <form data-testid="registerForm" onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Login"
+                    className="form-control register-input"
+                    value={login}
+                    onChange={handleLoginChange}
+                />{" "}
+                <br />
+                <input
+                    type="text"
+                    placeholder="Email"
+                    className="form-control register-input"
+                    value={email}
+                    onChange={handleEmailChange}
+                />{" "}
+                <br />
+                <input
+                    type="password"
+                    placeholder="Hasło"
+                    className="form-control register-input"
+                    value={password1}
+                    onChange={handlePassword1Change}
+                />{" "}
+                <br />
+                <input
+                    type="password"
+                    placeholder="Powtórz hasło"
+                    className="form-control register-input"
+                    value={password2}
+                    onChange={handlePassword2Change}
+                />{" "}
+                <br />
+                <textarea
+                    placeholder="Dlaczego chcesz założyć konto?"
+                    className="form-control register-input"
+                    rows="5"
+                    value={reasonForCreatingAccount}
+                    onChange={handleReasonForCreatingAccount}
+                />{" "}
+                <br />
+                <Button
+                    type="submit"
+                    className="btn btn-primary btn-lg"
+                    placeholder="Zarejestruj się"
+                    onClick={handleSubmit}
+                />
+            </form>
+        </div>
     );
 };
 

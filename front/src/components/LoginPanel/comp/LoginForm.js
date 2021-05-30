@@ -15,8 +15,8 @@ const LoginForm = (props) => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
 
-    const [loginUser, { data }] = useMutation(LOGIN_USER, {
-        onError(err) {
+    const [loginUser] = useMutation(LOGIN_USER, {
+        onError() {
             document.getElementById("error-msg").innerHTML =
                 "Błędny login lub hasło";
         },
@@ -47,9 +47,11 @@ const LoginForm = (props) => {
                 <input
                     type="text"
                     placeholder="Login/email"
+                    aria-label="login"
                     className="form-control login-input"
                     value={login}
                     onChange={handleLoginChange}
+                    autoComplete="username"
                 />{" "}
                 <br />
                 <input
@@ -58,6 +60,7 @@ const LoginForm = (props) => {
                     className="form-control login-input"
                     value={password}
                     onChange={handlePasswordChange}
+                    autoComplete="new-password"
                 />{" "}
                 <br />
                 <Button

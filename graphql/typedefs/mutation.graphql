@@ -39,7 +39,7 @@ type Mutation {
 
     updateParticipant(
         _id: ID!
-        full_name: String!
+        full_name: String
         birth_year: String
         license_no: String
         gender: String

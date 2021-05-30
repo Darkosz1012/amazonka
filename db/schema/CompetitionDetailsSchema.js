@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    competition: {
+    competition_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
         required: true,

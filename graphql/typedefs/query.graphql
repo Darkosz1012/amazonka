@@ -1,5 +1,9 @@
 type Query {
     tmp_root_query: String!
 
-    competitions(_id: ID, owner: ID, name: String): [Competition]
+    categories: [Category]
+    category(id: String): Category
+
+    competition(_id: ID!): Competition
+    competitions(owner: ID, name: String): [Competition]
 }

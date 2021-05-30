@@ -1,17 +1,17 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    participant: {
+    participant_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Participant",
         required: true,
     },
-    competition: {
+    competition_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
         required: true,
     },
-    category: {
+    category_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Category",
         required: true,
@@ -22,9 +22,9 @@ export default new mongoose.Schema({
     finals_initial_placement: { type: Number },
     distances: [
         {
-            //ref Category.distance
-            _id: {
+            distance_id: {
                 type: mongoose.Schema.Types.ObjectId,
+                ref: "Distance",
                 required: true,
             },
             name: { type: String },

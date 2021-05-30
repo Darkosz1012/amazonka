@@ -1,28 +1,43 @@
 import { Competition, CompetitionDetails } from "$/db/index.js";
+import { verifyRequest } from "../../../auth/auth.js";
 
 export default {
-    newCompetition: async (_, args) => {
+    addCompetition: async (_, args, context) => {
+        verifyRequest(context.req);
+
         let competition = new Competition(args);
         let competitionDetails = new CompetitionDetails({
-            competition: competition._id,
+            competition_id: competition._id,
             description: "No description",
             timetable: "No timetable",
         });
-        competition.details = competitionDetails._id;
+        competitionDetails = await competitionDetails.save();
+        competition.details_id = competitionDetails._id;
 
         return await competition.save();
     },
 
-    updateCompetition: async (_, args) => {
-        return await Competition.findOneAndUpdate({ _id: args._id }, args, {
+    updateCompetition: async (_, args, context) => {
+        verifyRequest(context.req);
+
+        await CompetitionDetails.findOneAndUpdate(
+            { competition_id: args._id },
+            args.details,
+            {
+                new: true,
+            }
+        );
+
+        return Competition.findOneAndUpdate({ _id: args._id }, args, {
             new: true,
-        })
-            .populate("details")
-            .populate("owner")
-            .exec();
+        });
     },
 
-    removeCompetition: async (_, args) => {
-        return Competition.findByIdAndDelete(args._id);
+    deleteCompetition: async (_, args, context) => {
+        verifyRequest(context.req);
+
+        let competition = await Competition.findByIdAndDelete(args._id);
+        await CompetitionDetails.findByIdAndDelete(competition.details_id);
+        return competition;
     },
 };

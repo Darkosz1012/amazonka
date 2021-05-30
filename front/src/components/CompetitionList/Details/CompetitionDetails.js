@@ -1,5 +1,5 @@
 import "./CompetitionDetails.css";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import competitionDetaildata from "../competitionsData";
 import Button from "../../UI/Button/Button";
 
@@ -20,28 +20,27 @@ function CompetitionDetails(props) {
 
     let catButtonsNumber = 1;
 
+    let history = useHistory();
+
+    function handleClick(id, category, subpath) {
+        history.push(
+            "/competitionsdetails/" + id + "/" + category + "/" + subpath
+        );
+    }
+
     function createButtonsList(subpath) {
         let list = [];
         for (let i = 0; i < categ_num; i++) {
             list.push(
-                <a
+                <Button
+                    className="category-btn"
                     id="params.id"
                     key={subpath + catButtonsNumber++}
-                    href={
-                        "/competitionsdetails/" +
-                        params.id +
-                        "/" +
-                        categories[i] +
-                        "/" +
-                        subpath
+                    placeholder={categories[i]}
+                    onClick={() =>
+                        handleClick(params.id, categories[i], subpath)
                     }
-                >
-                    <Button
-                        className="category-btn"
-                        key={subpath + catButtonsNumber++}
-                        placeholder={categories[i]}
-                    />
-                </a>
+                />
             );
         }
         catButtonsNumber = 0;
@@ -53,15 +52,14 @@ function CompetitionDetails(props) {
             <div id="competitionsDetailLeftDiv">
                 <div className="detailDiv" data-testid="detailDiv">
                     <p id="compName">{name}</p>
-                    <br />
                     <div className="insideDetailDiv">
                         <p className="title_p">
                             <b>Lokalizacja:</b> {location}
                         </p>
-                        <p className="title_p">
+                        <p className="i">
                             <b>Data rozpoczęcia:</b> {start_date}
                         </p>
-                        <p className="title_p">
+                        <p className="i">
                             <b>Data zakończenia:</b> {end_date}
                         </p>
                         <p className="title_pn">

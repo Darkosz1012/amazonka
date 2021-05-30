@@ -4,7 +4,7 @@ import Button from "../../UI/Button/Button";
 import { gql, useMutation } from "@apollo/client";
 
 const REGISTER_USER = gql`
-    mutation register($username: String!, $password: String!) {
+    mutation register($username: String!, $password: String!, $email: String!, $reason_for_creating_account: String! ) {
         register(
             username: $username
             password: $password
@@ -28,10 +28,17 @@ const RegisterForm = (props) => {
         onError(err) {
             document.getElementById("error-msg").innerHTML = "Niepoprawne dane";
         },
+        onCompleted(data) {
+            //there will go what will happen if compleated succesfully
+        },
     });
 
     const handleLoginChange = (event) => {
         setLogin(event.target.value);
+    };
+
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
     };
 
     const handlePassword1Change = (event) => {
@@ -69,6 +76,7 @@ const RegisterForm = (props) => {
             registerUser({
                 variables: {
                     username: login,
+                    email: email,
                     password: password1,
                     email: email,
                     reason_for_creating_account: reasonForCreatingAccount,
@@ -78,6 +86,7 @@ const RegisterForm = (props) => {
     };
 
     return (
+
         <div>
             <div id="error-msg"></div>
             <form data-testid="registerForm" onSubmit={handleSubmit}>

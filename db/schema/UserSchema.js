@@ -23,7 +23,7 @@ export default new mongoose.Schema({
     reason_for_creating_account: {
         type: String,
     },
-    competitions: [
+    competitions_id: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Competition",

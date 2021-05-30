@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export default new mongoose.Schema({
-    competition: {
+    competition_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Competition",
         required: true,
@@ -20,13 +20,12 @@ export default new mongoose.Schema({
     end_stand: { type: Number },
     distance: [
         {
-            _id: {
+            distance_id: {
                 type: mongoose.Schema.Types.ObjectId,
+                ref: "Distance",
                 required: true,
-                unique: true,
             },
             name: { type: String },
-            series_type: { type: Number },
         },
     ],
 });

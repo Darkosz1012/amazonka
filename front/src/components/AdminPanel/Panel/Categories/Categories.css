@@ -1,0 +1,41 @@
+.categories-header {
+    color: #2755b9da;
+    font-weight: bold;
+    padding: 15px;
+    font-size: 24px;
+}
+
+.category-column-div {
+    float: left;
+}
+
+.category-tile-div {
+    margin-top: 30px;
+}
+
+.activeRow {
+    background-color: #2ab1e1;
+    color: white;
+    font-weight: bolder;
+    padding-left: 30px;
+}
+
+@media (max-width: 1299px) {
+    .category-column-div {
+        width: 100%;
+    }
+    .category-tile-div {
+        width: 97%;
+        margin-left: 2%;
+    }
+}
+
+@media (min-width: 1300px) {
+    .category-column-div {
+        width: 50%;
+    }
+    .category-tile-div {
+        width: 90%;
+        margin-left: 5%;
+    }
+}

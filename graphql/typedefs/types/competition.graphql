@@ -1,5 +1,6 @@
 type Competition {
     _id: ID!
+    owner_id: ID!
     owner: User!
 
     name: String!
@@ -7,7 +8,9 @@ type Competition {
     end_date: String
     location: String
 
+    details_id: ID
     details: CompetitionDetails
+    categories_id: ID
     categories: [Category]
 }
 

@@ -1,9 +1,14 @@
 type Mutation {
     login(username: String!, password: String!): Token!
-    register(username: String!, password: String!): Token!
+    register(username: String!, email: String!, password: String!): Token!
+    refresh(refreshToken: String!): Token!
 
-    newCompetition(
-        owner: ID!
+    addCategory(category: inputCategory!): Category!
+    updateCategory(category: inputCategory!): Category!
+    deleteCategory(_id: String!): Category!
+
+    addCompetition(
+        owner_id: ID!
         name: String!
 
         start_date: String
@@ -18,7 +23,8 @@ type Mutation {
         end_date: String
         location: String
         details: inputDetails
+        categories_id: [ID]
     ): Competition
 
-    removeCompetition(_id: ID!): Competition
+    deleteCompetition(_id: ID!): Competition
 }

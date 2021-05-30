@@ -7,12 +7,8 @@ import validator from "validator";
 
 export default {
     login: async (_, { username, password }) => {
-        try {
-            validate_password(password);
-            validate_username(username);
-        } catch (e) {
-            throw new UserInputError("Username or password incorrect.");
-        }
+        validate_password(password);
+        validate_username(username);
 
         const result = await User.findOne({ username })
             .select("+password")

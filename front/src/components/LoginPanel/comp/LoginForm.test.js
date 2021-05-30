@@ -3,23 +3,29 @@ import { MockedProvider } from "@apollo/client/testing";
 import LoginForm from "./LoginForm";
 
 describe("LoginForm", () => {
-    var container;
     beforeEach(() => {
-        container = render(
+        render(
             <MockedProvider mocks={[]} addTypename={false}>
                 <LoginForm />
             </MockedProvider>
-        ).container;
+        );
     });
 
-    it("should have one text input", () => {
-        let textInput = screen.getByRole("textbox");
+    it("should have a textbox input for login or email", () => {
+        let textInput = screen.getByRole("textbox", {
+            name: /login/i,
+        });
         expect(textInput).toBeInTheDocument();
+    });
+
+    it("should have one element with placeholders for password", () => {
+        let passwordInput = screen.getByPlaceholderText(/hasło/i);
+        expect(passwordInput).toBeInTheDocument();
     });
 
     it("should have one button", () => {
         let loginButton = screen.getByRole("button", {
-            name: /zaloguj się/i,
+            name: /zaloguj/i,
         });
         expect(loginButton).toBeInTheDocument();
     });

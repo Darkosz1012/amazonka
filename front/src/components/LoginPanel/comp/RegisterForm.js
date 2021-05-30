@@ -114,7 +114,7 @@ const RegisterForm = (props) => {
                     className="form-control register-input"
                     value={password2}
                     onChange={handlePassword2Change}
-                    autoComplete="on"
+                    autocomplete="new-password"
                 />{" "}
                 <br />
                 <textarea

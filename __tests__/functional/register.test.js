@@ -67,7 +67,6 @@ describe("register users", () => {
         await expectSuccessfulRegistration(registerUserMsg);
     });
 
-    //currently this password is accepted and test fails!
     test("register a user with empty password, should return error", async () => {
         let registerUserEmptyPasswordMsg = createRegisterUserMsg();
         registerUserEmptyPasswordMsg.variables.password = "";

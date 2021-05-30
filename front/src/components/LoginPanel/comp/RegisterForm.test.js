@@ -11,21 +11,35 @@ describe("RegisterForm", () => {
         );
     });
 
-    it("should have three textboxes", () => {
-        let textInputs = screen.getAllByRole("textbox");
-        expect(textInputs).toHaveLength(3);
+    it("should have a textbox input for login", () => {
+        let loginInput = screen.getByRole("textbox", {
+            name: /login/i,
+        });
+        expect(loginInput).toBeInTheDocument();
     });
 
-    it("should have an element with placeholder asking for reason to create an account", () => {
-        let textbox = screen.getByPlaceholderText(
-            "Dlaczego chcesz założyć konto?"
-        );
-        expect(textbox).toBeInTheDocument();
+    it("should have a textbox input for email", () => {
+        let emailInput = screen.getByRole("textbox", {
+            name: /email/i,
+        });
+        expect(emailInput).toBeInTheDocument();
+    });
+
+    it("should have a textbox to ask for reason to create an account", () => {
+        let reasonInput = screen.getByRole("textbox", {
+            name: /dlaczego chcesz założyć/i,
+        });
+        expect(reasonInput).toBeInTheDocument();
+    });
+
+    it("should have two elements with placeholders asking for password", () => {
+        let passwordInputs = screen.getAllByPlaceholderText(/hasło/i);
+        expect(passwordInputs).toHaveLength(2);
     });
 
     it("should have register button", () => {
         let btn = screen.getByRole("button", {
-            name: /zarejestruj się/i,
+            name: /zarejestruj/i,
         });
         expect(btn).toBeInTheDocument();
     });

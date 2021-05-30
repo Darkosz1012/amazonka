@@ -84,28 +84,31 @@ const RegisterForm = (props) => {
                 <input
                     type="text"
                     placeholder="Login"
+                    aria-label="login"
                     className="form-control register-input"
                     value={login}
                     onChange={handleLoginChange}
-                    autoComplete="on"
+                    autoComplete="username"
                 />{" "}
                 <br />
                 <input
                     type="text"
                     placeholder="Email"
+                    aria-label="email"
                     className="form-control register-input"
                     value={email}
                     onChange={handleEmailChange}
-                    autoComplete="on"
+                    autoComplete="email"
                 />{" "}
                 <br />
                 <input
                     type="password"
                     placeholder="Hasło"
+                    aria-label="haslo"
                     className="form-control register-input"
                     value={password1}
                     onChange={handlePassword1Change}
-                    autocomplete="new-password"
+                    autoComplete="new-password"
                 />{" "}
                 <br />
                 <input
@@ -114,16 +117,17 @@ const RegisterForm = (props) => {
                     className="form-control register-input"
                     value={password2}
                     onChange={handlePassword2Change}
-                    autocomplete="new-password"
+                    autoComplete="new-password"
                 />{" "}
                 <br />
                 <textarea
                     placeholder="Dlaczego chcesz założyć konto?"
+                    aria-label="Dlaczego chcesz założyć konto?"
                     className="form-control register-input"
                     rows="5"
                     value={reasonForCreatingAccount}
                     onChange={handleReasonForCreatingAccount}
-                    autoComplete="on"
+                    autoComplete="off"
                 />{" "}
                 <br />
                 <Button

@@ -1,12 +1,14 @@
 import { User } from "$/db/index.js";
 import { UserInputError } from "apollo-server";
 
-import { hash, verify } from "$/auth/auth.js";
+import { authenticateToken, hash, verify } from "$/auth/auth.js";
 import jwt from "jsonwebtoken";
+import validator from "validator";
 
 export default {
     login: async (_, { username, password }) => {
-        verify_login_data(username, password);
+        validate_password(password);
+        validate_username(username);
 
         const result = await User.findOne({ username })
             .select("+password")
@@ -23,8 +25,9 @@ export default {
     },
 
     register: async (_, { username, password, email }) => {
-        verify_login_data(username, password);
-        verify_email(email);
+        validate_username(username);
+        validate_email(email);
+        validate_password(password);
 
         try {
             let result = await User.create({
@@ -39,7 +42,21 @@ export default {
             throw new UserInputError("User already exists.");
         }
     },
+
+    refresh: async (_, { token }) => {
+        let user = authenticateToken(token);
+        return refreshToken(user, token);
+    },
 };
+
+function refreshToken(user, refreshToken) {
+    return {
+        accessToken: createJWT(user, "1m"),
+        refreshToken: refreshToken,
+        user_id: user.user_id,
+        username: user.username,
+    };
+}
 
 function createUserToken(user, username) {
     return {
@@ -61,14 +78,36 @@ function createJWT(user, time) {
     );
 }
 
-function verify_login_data(username, password) {
-    if (username === undefined || password === undefined) {
-        throw new UserInputError("Username or password incorrect.");
+function validate_username(username) {
+    if (isUsernameInvalid(username)) {
+        throw new UserInputError("Invalid username.");
+    }
+
+    function isUsernameInvalid(username) {
+        return (
+            username === undefined ||
+            !validator.isAscii(username) ||
+            username.length > 50
+        );
     }
 }
 
-function verify_email(email) {
-    if (email === undefined) {
-        throw new UserInputError("No email provided.");
+function validate_password(password) {
+    if (isPasswordInvalid(password)) {
+        throw new UserInputError("Invalid password.");
+    }
+
+    function isPasswordInvalid(password) {
+        return password === undefined || !validator.isStrongPassword(password);
+    }
+}
+
+function validate_email(email) {
+    if (isEmailInvalid(email)) {
+        throw new UserInputError("Invalid email.");
+    }
+
+    function isEmailInvalid(email) {
+        return email === undefined || !validator.isEmail(email);
     }
 }

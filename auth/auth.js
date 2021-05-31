@@ -1,8 +1,6 @@
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 
-import * as auth from "./auth.js";
-
 export async function verify(password, hash) {
     return new Promise((resolve, reject) => {
         const [salt, key] = hash.split(":");
@@ -24,8 +22,8 @@ export async function hash(password) {
     });
 }
 
-export function authenticateToken(req) {
-    const token = auth.extractTokenFromHeader(req);
+export function verifyRequest(req) {
+    const token = extractTokenFromHeader(req);
 
     if (token == null) {
         throw {
@@ -33,17 +31,20 @@ export function authenticateToken(req) {
         };
     }
 
-    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-        if (err) {
-            throw {
-                message: "Authentication failed.",
-            };
-        }
-        return user;
-    });
+    return authenticateToken(token);
 }
 
-export function extractTokenFromHeader(req) {
+export function authenticateToken(token) {
+    try {
+        return jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    } catch (err) {
+        throw {
+            message: "Authentication failed.",
+        };
+    }
+}
+
+function extractTokenFromHeader(req) {
     const authHeader = req.headers["authorization"];
     return authHeader && authHeader.split(" ")[1];
 }

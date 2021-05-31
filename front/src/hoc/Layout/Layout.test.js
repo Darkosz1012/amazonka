@@ -1,15 +1,15 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
 import Layout from "./Layout";
+import WithProvider from "./../WithProvider/WithProvider";
 
 describe("Layout", () => {
     it("should render its props children inside", () => {
         render(
-            <Router>
+            <WithProvider>
                 <Layout>
                     <p data-testid="rendered-child-01">inside layout</p>
                 </Layout>
-            </Router>
+            </WithProvider>
         );
 
         const renderedChild = screen.getByTestId("rendered-child-01");
@@ -19,9 +19,9 @@ describe("Layout", () => {
 
     it("should render toolbar and side drawer", () => {
         render(
-            <Router>
+            <WithProvider>
                 <Layout />
-            </Router>
+            </WithProvider>
         );
         const navs = screen.getAllByRole("navigation");
         expect(navs.length).toBe(2);

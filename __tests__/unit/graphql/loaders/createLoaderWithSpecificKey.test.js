@@ -42,20 +42,22 @@ describe("createLoaderWithSpecificKey: dataloader with specific parameter for gr
         loader = createLoaderWithSpecificKey(Competition, "owner_id");
         mockingoose(Competition).toReturn(competition_data, "find");
     });
-    test("Should return array with the correct number of elements.", async () => {
-        const result = await loader.loadMany(["609aa4bde6483525a06b8e5b","609aa4bde6483525a06b8e5z"]);
+
+    test("Should return array with object for every requested id.", async () => {
+        const result = await loader.loadMany([
+            "609aa4bde6483525a06b8e5b",
+            "609aa4bde6483525a06b8e5z",
+        ]);
         expect(result).toHaveLength(2);
     });
+
     test("Should return array with the correct structure of object.", async () => {
-        const data = [
-            competition_data[0],
-            competition_data[1],
-        ];
-        const result = await loader.loadMany(["609aa4bde6483525a06b8e5b"])
-        console.log(result[1])
+        const data = [competition_data[0], competition_data[1]];
+        const result = await loader.loadMany(["609aa4bde6483525a06b8e5b"]);
         expect(transform_by_JSON(result[0])).toMatchObject(data);
     });
-    test("Should return empty array when key when the key is not present in the data.", async () => {
+
+    test("When key is not present in the data, corresponding object should be empty.", async () => {
         const result = await loader.loadMany(["609aa4bde6483525a06b8e5z"]);
         expect(transform_by_JSON(result[0])).toMatchObject([]);
     });

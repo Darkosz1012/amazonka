@@ -32,7 +32,8 @@ describe("createDefaultLoader: standard data loader for graphql.", () => {
         loader = createDefaultLoader(Competition);
         mockingoose(Competition).toReturn(competition_data, "find");
     });
-    test("Should return array with the correct number of elements.", async () => {
+
+    test("Should return array with object for every requested id.", async () => {
         const result = await loader.loadMany([
             "507f191e810c19729de860ea",
             "507f191e810c19729de860ea",
@@ -41,6 +42,7 @@ describe("createDefaultLoader: standard data loader for graphql.", () => {
 
         expect(result).toHaveLength(3);
     });
+
     test("Should return array with the correct structure of object.", async () => {
         const result = await loader.loadMany([
             "507f191e810c19729de860ea",

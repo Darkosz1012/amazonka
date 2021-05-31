@@ -27,4 +27,23 @@ type Mutation {
     ): Competition
 
     deleteCompetition(_id: ID!): Competition
+
+    addParticipant(
+        full_name: String!
+        birth_year: String!
+        license_no: String!
+        gender: String!
+        country: String
+        club: String
+    ): Participant
+
+    updateParticipant(
+        _id: ID!
+        full_name: String
+        birth_year: String
+        license_no: String
+        gender: String
+        country: String
+        club: String
+    ): Participant
 }

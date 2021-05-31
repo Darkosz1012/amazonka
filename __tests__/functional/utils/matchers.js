@@ -11,7 +11,10 @@ function expectAnyErrorMessageToBe(errorMsg, response) {
     return expect(
         response.body.errors.some((err) => err.message === errorMsg)
             ? errorMsg
-            : "None matches!"
+            : "None error message matches! Expected message:\n\n" +
+                  errorMsg +
+                  "\n\nReceived:\n\n" +
+                  JSON.stringify(response.body.errors)
     ).toBe(errorMsg);
 }
 

@@ -1,17 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import { MockedProvider } from "@apollo/client/testing";
 import LoginForm from "./LoginForm";
+import WithProvider from "../../../hoc/WithProvider/WithProvider";
 
 describe("LoginForm", () => {
     beforeEach(() => {
         render(
-            <MockedProvider mocks={[]} addTypename={false}>
+            <WithProvider mocks={[]} addTypename={false}>
                 <LoginForm />
-            </MockedProvider>
+            </WithProvider>
         );
     });
 
-    it("should have a textbox input for login or email", () => {
+    it("should have a textbox input for login", () => {
         let textInput = screen.getByRole("textbox", {
             name: /login/i,
         });

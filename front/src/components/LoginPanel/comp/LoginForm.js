@@ -1,17 +1,26 @@
 import React, { useState } from "react";
-import "./LoginForm.css";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
+import * as actions from "./../../../store/actions/actions";
 import Button from "../../UI/Button/Button";
 import { gql, useMutation } from "@apollo/client";
+import { Fragment } from "react";
+import "./LoginForm.css";
 
 const LOGIN_USER = gql`
     mutation login($username: String!, $password: String!) {
         login(username: $username, password: $password) {
             user_id
+            accessToken
+            refreshToken
         }
     }
 `;
 
 const LoginForm = (props) => {
+    const dispatch = useDispatch();
+    const isAuthenticated = useSelector((state) => state.isAuthenticated);
+
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
 
@@ -19,6 +28,15 @@ const LoginForm = (props) => {
         onError() {
             document.getElementById("error-msg").innerHTML =
                 "Błędny login lub hasło";
+        },
+        onCompleted(data) {
+            dispatch(
+                actions.userLogin(
+                    data.login.accessToken,
+                    data.login.refreshToken,
+                    data.login.user_id
+                )
+            );
         },
     });
 
@@ -41,7 +59,7 @@ const LoginForm = (props) => {
     };
 
     return (
-        <div>
+        <Fragment>
             <div id="error-msg"></div>
             <form data-testid="loginForm" onSubmit={handleSubmit}>
                 <input
@@ -60,7 +78,7 @@ const LoginForm = (props) => {
                     className="form-control login-input"
                     value={password}
                     onChange={handlePasswordChange}
-                    autoComplete="new-password"
+                    autoComplete="current-password"
                 />{" "}
                 <br />
                 <Button
@@ -70,7 +88,8 @@ const LoginForm = (props) => {
                     onClick={handleSubmit}
                 />
             </form>
-        </div>
+            {isAuthenticated ? <Redirect to="/admin/competitions" /> : null}
+        </Fragment>
     );
 };
 

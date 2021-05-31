@@ -4,7 +4,12 @@ import Button from "../../UI/Button/Button";
 import { gql, useMutation } from "@apollo/client";
 
 const REGISTER_USER = gql`
-    mutation register($username: String!, $password: String!, $email: String!, $reason_for_creating_account: String! ) {
+    mutation register(
+        $username: String!
+        $password: String!
+        $email: String!
+        $reason_for_creating_account: String!
+    ) {
         register(
             username: $username
             password: $password
@@ -49,10 +54,6 @@ const RegisterForm = (props) => {
         setPassword2(event.target.value);
     };
 
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    };
-
     const handleReasonForCreatingAccount = (event) => {
         setReasonForCreatingAccount(event.target.value);
     };
@@ -63,7 +64,7 @@ const RegisterForm = (props) => {
             document.getElementById("error-msg").innerHTML = "Podaj login";
         } else if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
             document.getElementById("error-msg").innerHTML = "Błędny email";
-        } else if (password1.length < 6) {
+        } else if (password1.length < 8) {
             document.getElementById("error-msg").innerHTML =
                 "Hasło jest za krótkie";
         } else if (password2 !== password1) {
@@ -76,7 +77,6 @@ const RegisterForm = (props) => {
             registerUser({
                 variables: {
                     username: login,
-                    email: email,
                     password: password1,
                     email: email,
                     reason_for_creating_account: reasonForCreatingAccount,
@@ -86,7 +86,6 @@ const RegisterForm = (props) => {
     };
 
     return (
-
         <div>
             <div id="error-msg"></div>
             <form data-testid="registerForm" onSubmit={handleSubmit}>

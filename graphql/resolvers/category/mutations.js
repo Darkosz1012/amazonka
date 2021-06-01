@@ -10,11 +10,9 @@ export default {
         return result;
     },
     updateCategory: async (parent, args, context, info) => {
-        let result = Category.findOneAndUpdate(
-            { _id: args._id },
-            { $set: args }
-        );
-        return Category.findOne({ _id: args._id });
+        return Category.findOneAndUpdate({ _id: args._id }, args, {
+            new: true,
+        });
     },
     deleteCategory: async (parent, args, context, info) => {
         let result = Category.findOneAndDelete({ _id: args._id });

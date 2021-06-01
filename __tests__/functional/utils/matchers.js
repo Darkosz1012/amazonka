@@ -18,4 +18,18 @@ function expectAnyErrorMessageToBe(errorMsg, response) {
     ).toBe(errorMsg);
 }
 
-export { expectNoErrors, expectAnyError, expectAnyErrorMessageToBe };
+function expectResponseToContain(responseData, variables) {
+    if (Array.isArray(responseData))
+        for (const element of responseData)
+            expectResponseToContain(element, variables);
+    else
+        for (const [key, value] of Object.entries(variables))
+            expect(responseData[key]).toBe(value);
+}
+
+export {
+    expectNoErrors,
+    expectAnyError,
+    expectAnyErrorMessageToBe,
+    expectResponseToContain,
+};

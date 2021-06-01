@@ -9,11 +9,7 @@ import { revertDateFormat } from "../../../revertDateFormat.js";
 function CompetitionDetails(props) {
     const _id = props.match.params.id;
 
-    let desiredCompetition = {};
-    Object.keys(competitionDetaildata).forEach((oneComp) => {
-        if (competitionDetaildata[oneComp].id === parseInt(_id))
-            desiredCompetition = competitionDetaildata[oneComp];
-    });
+    const desiredCompetition = competitionDetaildata.find(comp => comp.id === parseInt(_id));
 
     const name = desiredCompetition["name"];
     const location = desiredCompetition["location"];

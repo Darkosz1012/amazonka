@@ -3,8 +3,8 @@ import Button from "../../UI/Button/Button";
 import { gql, useMutation } from "@apollo/client";
 
 const REGISTER_USER = gql`
-    mutation register($username: String!, $password: String!) {
-        register(username: $username, password: $password) {
+    mutation register($username: String!, $email: String!, $password: String!) {
+        register(username: $username, email: $email, password: $password) {
             user_id
         }
     }
@@ -12,6 +12,7 @@ const REGISTER_USER = gql`
 
 const RegisterForm = (props) => {
     const [login, setLogin] = useState("");
+    const [email, setEmail] = useState("");
     const [password1, setPassword1] = useState("");
     const [password2, setPassword2] = useState("");
 
@@ -19,10 +20,17 @@ const RegisterForm = (props) => {
         onError(err) {
             console.log(err);
         },
+        onCompleted(data) {
+            //there will go what will happen if compleated succesfully
+        },
     });
 
     const handleLoginChange = (event) => {
         setLogin(event.target.value);
+    };
+
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
     };
 
     const handlePassword1Change = (event) => {
@@ -35,11 +43,11 @@ const RegisterForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(login, password1, password2);
         if (password2 === password1) {
             registerUser({
                 variables: {
                     username: login,
+                    email: email,
                     password: password1,
                 },
             });
@@ -54,6 +62,14 @@ const RegisterForm = (props) => {
                 className="form-control"
                 value={login}
                 onChange={handleLoginChange}
+            />{" "}
+            <br />
+            <input
+                type="email"
+                placeholder="Email"
+                className="form-control"
+                value={email}
+                onChange={handleEmailChange}
             />{" "}
             <br />
             <input

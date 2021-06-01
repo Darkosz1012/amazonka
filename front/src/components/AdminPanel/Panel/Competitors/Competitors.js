@@ -7,20 +7,20 @@ import competitors from "./dataCompetitors.json";
 
 const categories = [
     {
-        "id" : 1,
-        "name" : "seniorzy"
+        id: 1,
+        name: "seniorzy",
     },
     {
-        "id" : 2,
-        "name" : "juniorzy"
-    }
-]
+        id: 2,
+        name: "juniorzy",
+    },
+];
 
 const columns = [
     {
         dataField: "id",
         text: "id",
-        hidden: "true"
+        hidden: "true",
     },
     {
         dataField: "surname",
@@ -47,31 +47,34 @@ const columns = [
         dataField: "category",
         text: "Kategoria",
         formatter: () => (
-            <select className="form-control"> 
-                {
-                    Object.keys(categories).map(function(element) {
-                        return <option key={categories[element]['id']}> {categories[element]['name']} </option>
-                    })
-                }
+            <select className="form-control">
+                {Object.keys(categories).map(function (element) {
+                    return (
+                        <option key={categories[element]["id"]}>
+                            {" "}
+                            {categories[element]["name"]}{" "}
+                        </option>
+                    );
+                })}
             </select>
-        )
+        ),
     },
     {
         dataField: "action",
         text: "Akcje",
         formatter: (value, row) => (
-            <Button 
+            <Button
                 type="submit"
-                onClick={() => { deletePlayer(row.id) }}
-                placeholder={"Usuń"} 
+                onClick={() => {
+                    deletePlayer(row.id);
+                }}
+                placeholder={"Usuń"}
             />
-        )
+        ),
     },
 ];
 
-const deletePlayer = (id) => {
-    
-}
+const deletePlayer = (id) => {};
 
 const defaultSorted = [
     {
@@ -87,14 +90,14 @@ const Competitors = () => {
     const [licenceNumber, setLicenceNumber] = useState("");
     const [year, setYear] = useState("");
     const [club, setClub] = useState("");
-    const [chosenCompetitor=false, setChosenCompetitor] = useState("");
+    const [chosenCompetitor = false, setChosenCompetitor] = useState("");
 
     return (
         <div>
-            <p className="panel-detail-header">Zawodnicy </p> 
+            <p className="panel-content-header">Zawodnicy</p>
             <div className="infoDiv">
                 <div className="competitors-column-div">
-                    <div className = "competitors-tile-div">
+                    <div className="competitors-tile-div">
                         <p className="competitors-header"> Nowy zawodnik </p>
                         <form>
                             <input
@@ -102,17 +105,28 @@ const Competitors = () => {
                                 placeholder="Imię"
                                 className="form-control"
                                 value={name}
-                                onChange={(event) => setName(event.target.value)}
+                                onChange={(event) =>
+                                    setName(event.target.value)
+                                }
                             />{" "}
                             <br />
-                            <select 
-                                name="gender" 
-                                id="gender" 
-                                value={gender} 
+                            <select
+                                name="gender"
+                                id="gender"
+                                value={gender}
                                 className="form-control"
-                                onChange={(event) => setGender(event.target.value)}>
-                                <option value="woman" key="woman"> Kobieta </option>
-                                <option value="man" key="man"> Mężczyzna </option>
+                                onChange={(event) =>
+                                    setGender(event.target.value)
+                                }
+                            >
+                                <option value="woman" key="woman">
+                                    {" "}
+                                    Kobieta{" "}
+                                </option>
+                                <option value="man" key="man">
+                                    {" "}
+                                    Mężczyzna{" "}
+                                </option>
                             </select>{" "}
                             <br />
                             <input
@@ -120,7 +134,9 @@ const Competitors = () => {
                                 placeholder="Nazwisko"
                                 className="form-control"
                                 value={surname}
-                                onChange={(event) => setSurname(event.target.value)}
+                                onChange={(event) =>
+                                    setSurname(event.target.value)
+                                }
                             />{" "}
                             <br />
                             <input
@@ -128,17 +144,21 @@ const Competitors = () => {
                                 placeholder="Numer licencji"
                                 className="form-control"
                                 value={licenceNumber}
-                                onChange={(event) => setLicenceNumber(event.target.value)}
+                                onChange={(event) =>
+                                    setLicenceNumber(event.target.value)
+                                }
                             />{" "}
                             <br />
                             <input
                                 type="number"
-                                min = "1920"
-                                max = "2021"
+                                min="1920"
+                                max="2021"
                                 placeholder="Rocznik"
                                 className="form-control"
                                 value={year}
-                                onChange={(event) => setYear(event.target.value)}
+                                onChange={(event) =>
+                                    setYear(event.target.value)
+                                }
                             />{" "}
                             <br />
                             <input
@@ -146,9 +166,11 @@ const Competitors = () => {
                                 placeholder="Klub"
                                 className="form-control"
                                 value={club}
-                                onChange={(event) => setClub(event.target.value)}
+                                onChange={(event) =>
+                                    setClub(event.target.value)
+                                }
                             />{" "}
-                            <br/>
+                            <br />
                             <Button
                                 type="submit"
                                 placeholder="Dodaj zawodnika"
@@ -159,16 +181,78 @@ const Competitors = () => {
                 </div>
                 <div className="competitors-column-div">
                     <div className="competitors-tile-div">
-                        <p className="competitors-header"> Lista zawodników spełniających kryteria </p>
+                        <p className="competitors-header">
+                            {" "}
+                            Lista zawodników spełniających kryteria{" "}
+                        </p>
                         <div className="scrolling">
-                            <table id="competitors-toChoose" className="table table-hover" style={{marginLeft: "4%", width:"90%"}}>
+                            <table
+                                id="competitors-toChoose"
+                                className="table table-hover"
+                                style={{ marginLeft: "4%", width: "90%" }}
+                            >
                                 <tbody>
-                                    { 
-                                        Object.keys(competitors).map(function(element) {
-                                            return <tr className={ chosenCompetitor === competitors[element]['id'] ? "activeRow" : undefined} key={competitors[element]['id']}><td><input type="radio" name="competitorName" value={competitors[element]['id']} onChange={(event) => setChosenCompetitor(event.target.value)}/> 
-                                            {competitors[element]['name']} {competitors[element]['surname']}, {competitors[element]['gender'] === "Kobieta" ? 'K' : 'M'}, {competitors[element]['year']}, {competitors[element]['licenceNumber']} </td></tr>
-                                        })
-                                    }
+                                    {Object.keys(competitors).map(function (
+                                        element
+                                    ) {
+                                        return (
+                                            <tr
+                                                className={
+                                                    chosenCompetitor ===
+                                                    competitors[element]["id"]
+                                                        ? "activeRow"
+                                                        : undefined
+                                                }
+                                                key={competitors[element]["id"]}
+                                            >
+                                                <td>
+                                                    <input
+                                                        type="radio"
+                                                        name="competitorName"
+                                                        value={
+                                                            competitors[
+                                                                element
+                                                            ]["id"]
+                                                        }
+                                                        onChange={(event) =>
+                                                            setChosenCompetitor(
+                                                                event.target
+                                                                    .value
+                                                            )
+                                                        }
+                                                    />
+                                                    {
+                                                        competitors[element][
+                                                            "name"
+                                                        ]
+                                                    }{" "}
+                                                    {
+                                                        competitors[element][
+                                                            "surname"
+                                                        ]
+                                                    }
+                                                    ,{" "}
+                                                    {competitors[element][
+                                                        "gender"
+                                                    ] === "Kobieta"
+                                                        ? "K"
+                                                        : "M"}
+                                                    ,{" "}
+                                                    {
+                                                        competitors[element][
+                                                            "year"
+                                                        ]
+                                                    }
+                                                    ,{" "}
+                                                    {
+                                                        competitors[element][
+                                                            "licenceNumber"
+                                                        ]
+                                                    }{" "}
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
                                 </tbody>
                             </table>
                         </div>
@@ -180,7 +264,7 @@ const Competitors = () => {
                         />
                     </div>
                 </div>
-                <div className = "table-div">
+                <div className="table-div">
                     <BootstrapTable
                         striped
                         bordered
@@ -195,6 +279,6 @@ const Competitors = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Competitors;

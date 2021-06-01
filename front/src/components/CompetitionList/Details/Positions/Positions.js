@@ -5,19 +5,24 @@ import positionsData from "./positionsData.json";
 
 const columns = [
     {
-        datafield: "position",
+        dataField: "id",
+        text: "id",
+        hidden: true,
+    },
+    {
+        dataField: "position",
         text: "Stanowisko",
     },
     {
-        datafield: "order",
+        dataField: "order",
         text: "Kolejność",
     },
     {
-        datafield: "fullname",
+        dataField: "fullname",
         text: "Imię i nazwisko",
     },
     {
-        datafield: "club",
+        dataField: "club",
         text: "Klub",
     },
 ];
@@ -39,7 +44,7 @@ function Positions() {
                     bordered
                     hover
                     id="positionsTable"
-                    keyField="stanowisko"
+                    keyField="id"
                     data={positionsData}
                     columns={columns}
                     defaultSorted={defaultSorted}

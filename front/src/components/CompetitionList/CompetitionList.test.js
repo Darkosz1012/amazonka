@@ -24,11 +24,4 @@ describe("Competition List", () => {
         const columns = screen.getAllByRole("columnheader");
         expect(columns.length).toBe(4);
     });
-
-    test("should link to competition details", () => {
-        const links = screen.getAllByRole("link");
-        for (let link of links) {
-            expect(link.getAttribute("href")).toMatch("competitionsdetails/");
-        }
-    });
 });

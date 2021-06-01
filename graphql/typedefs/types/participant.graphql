@@ -1,6 +1,6 @@
 type Participant {
-    first_name: String!
-    last_name: String!
+    _id: ID!
+    full_name: String!
     birth_year: String!
     license_no: String!
     gender: String!

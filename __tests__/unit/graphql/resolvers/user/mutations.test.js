@@ -45,7 +45,7 @@ describe("login function", () => {
         expect(result.accessToken).not.toBe(result.refreshToken);
     });
 
-    it("should throw if login and password are undefined", async () => {
+    it.skip("should throw if login and password are undefined", async () => {
         const invalid_login = {};
 
         await expect(

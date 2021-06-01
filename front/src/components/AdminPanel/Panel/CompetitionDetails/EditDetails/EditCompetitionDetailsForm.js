@@ -9,11 +9,9 @@ const CompetitionForm = (props) => {
     const params = useParams();
     const _id = params.id;
 
-    let desiredCompetition = {};
-    Object.keys(competitionDetaildata).forEach((oneComp) => {
-        if (competitionDetaildata[oneComp].id === parseInt(_id))
-            desiredCompetition = competitionDetaildata[oneComp];
-    });
+    const desiredCompetition = competitionDetaildata.find(
+        (comp) => comp.id === parseInt(_id)
+    );
 
     const _name = desiredCompetition["name"];
     const _start_date = desiredCompetition["date_start"];

@@ -1,5 +1,5 @@
 import "./CompetitionDetails.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -8,7 +8,9 @@ import { handleEditLinkClick } from "./handleEditLinkClick.js";
 import { revertDateFormat } from "../../../revertDateFormat.js";
 
 function CompetitionDetails(props) {
-    const _id = props.match.params.id;
+    const history = useHistory();
+    const params = useParams();
+    const _id = params.id;
 
     let desiredCompetition = {};
     Object.keys(competitionDetaildata).forEach((oneComp) => {
@@ -20,8 +22,6 @@ function CompetitionDetails(props) {
     const location = desiredCompetition["location"];
     const start_date = desiredCompetition["date_start"];
     const end_date = desiredCompetition["date_end"];
-
-    let history = useHistory();
 
     return (
         <div>

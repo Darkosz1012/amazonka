@@ -71,6 +71,6 @@ describe("Competition details - panel tab content", () => {
 
     test("should call edit link click handler", () => {
         fireEvent.click(screen.getByRole("button", { name: /edytuj/i }));
-        expect(onClickMock).toHaveBeenCalled();
+        expect(onClickMock).toHaveBeenCalledTimes(1);
     });
 });

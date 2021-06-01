@@ -9,6 +9,12 @@ type Distance {
     series_type: Int
 }
 
+type DistanceWithName {
+    distance_id: ID!
+    distance: Distance!
+    name: String
+}
+
 type DistanceWithScore {
     distance_id: ID!
     distance: Distance!

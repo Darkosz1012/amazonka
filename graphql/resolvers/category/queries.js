@@ -8,6 +8,6 @@ export default {
         return await Category.find();
     },
     category: async (parent, args, context, info) => {
-        return Category.findOne(args.id);
+        return Category.findById(args._id);
     },
 };

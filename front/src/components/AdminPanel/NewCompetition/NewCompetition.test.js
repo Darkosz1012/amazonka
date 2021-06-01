@@ -4,7 +4,7 @@ import { MemoryRouter as Router } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
 import NewCompetition from "./NewCompetition";
 import CompetitionForm from "./CompetitionForm";
-import * as handler from "./pushToHistoryEvent.js";
+import * as handler from "./handleSubmit.js";
 
 describe("NewCompetition", () => {
     beforeEach(() => {
@@ -52,7 +52,7 @@ describe("CompetitionForm", () => {
     test("click on 'Dodaj zawody' should submit form", async () => {
         const onSubmitMock = jest.fn();
         const handleSubmit = jest
-            .spyOn(handler, "pushToHistoryEvent")
+            .spyOn(handler, "handleSubmit")
             .mockReturnValue((event) => {
                 event.preventDefault();
                 onSubmitMock(event);

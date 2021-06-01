@@ -2,6 +2,7 @@ import BootstrapTable from "react-bootstrap-table-next";
 import competitionsData from "./competitionsData";
 import { useHistory } from "react-router-dom";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+import { revertDateFormat } from "../revertDateFormat.js";
 import "./CompetitionList.css";
 
 function CompetitionList() {
@@ -42,11 +43,13 @@ function CompetitionList() {
             dataField: "date_start",
             text: "Data rozpoczęcia",
             sort: true,
+            formatter: (value) => <span>{revertDateFormat(value)} </span>,
         },
         {
             dataField: "date_end",
             text: "Data zakończenia",
             sort: true,
+            formatter: (value) => <span>{revertDateFormat(value)} </span>,
         },
     ];
 

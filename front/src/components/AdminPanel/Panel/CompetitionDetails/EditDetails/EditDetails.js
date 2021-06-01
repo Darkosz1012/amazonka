@@ -6,7 +6,7 @@ function EditDetails(props) {
         <>
             <p className="detail-header">Szczegóły zawodów</p>
             <div className="competition-form-div">
-                <EditForm id={props.match.params.id} />
+                <EditForm />
             </div>
         </>
     );

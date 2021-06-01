@@ -7,6 +7,7 @@ class Button extends Component {
             <button
                 className={this.props.className}
                 onClick={this.props.onClick}
+                placeholder={this.props.placeholder}
             >
                 {" "}
                 {this.props.placeholder}{" "}

@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
 import Toolbar from "./Toolbar";
+import WithProvider from "./../../../hoc/WithProvider/WithProvider";
 
 describe("Toolbar", () => {
     beforeEach(() => {
         render(
-            <Router>
+            <WithProvider>
                 <Toolbar />
-            </Router>
+            </WithProvider>
         );
     });
 

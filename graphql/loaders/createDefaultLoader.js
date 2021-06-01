@@ -1,4 +1,3 @@
-
 import DataLoader from "dataloader";
 
 export default function (model){ 
@@ -11,5 +10,5 @@ export default function (model){
         }, {});
 
         return keys.map((id) => dataMap[id]);
-    })
+    });
 }

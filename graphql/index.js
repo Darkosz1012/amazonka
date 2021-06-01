@@ -4,7 +4,9 @@ import schema from "./schema.js";
 const apolloServer = new ApolloServer({
     schema,
     context: ({ req }) => {
-        return req;
+        return {
+            req: req,
+        };
     },
 });
 

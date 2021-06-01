@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./InsertPositionsPanel.css";
 import PositionRow from "./PositionRow/PositionRow";
 import mockData from "./positionsData.json";
-import Button from "./../UI/Button/Button";
+import Button from "./../../../UI/Button/Button";
 
 function InsertPositions() {
     let [boundaries, setBoundaries] = useState({ min: 0, max: 10 });
@@ -34,9 +34,8 @@ function InsertPositions() {
 
     return (
         <div className="InsertPositionsPanel">
+            <p className="panel-content-header">Rozstawienie </p>
             <div className="container">
-                <p id="mainHeader">Rozstawienie</p>
-
                 <form className="InsertPositionsPanelForm">
                     <label forhtml="categories">Wybierz kategorię: </label>
                     <select id="categories" name="categories">

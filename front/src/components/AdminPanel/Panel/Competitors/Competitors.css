@@ -1,5 +1,4 @@
-.table-div
-{
+.table-div {
     float: left;
     margin-top: 50px;
     width: 90%;
@@ -22,7 +21,7 @@
 }
 
 .activeRow {
-    background-color: #2AB1E1;
+    background-color: #2ab1e1;
     color: white;
     font-weight: bolder;
     padding-left: 30px;

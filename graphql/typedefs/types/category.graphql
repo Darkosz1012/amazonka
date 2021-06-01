@@ -7,4 +7,6 @@ type Category {
     start_stand: Int
     end_stand: Int
     distances: [DistanceWithName]
+    scores: [Score]
+    finals: [Finals]
 }

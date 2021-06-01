@@ -14,7 +14,8 @@
 .panelContentDiv {
     flex-grow: 1;
     padding-top: 20px;
-    margin-left: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding-right: 30px;
 }
 

@@ -4,6 +4,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.js";
 import Layout from "./hoc/Layout/Layout";
 import { Route, Switch, Redirect } from "react-router-dom";
 import LoginPanel from "./components/LoginPanel/LoginPanel";
+import LogoutPanel from "./components/LoginPanel/LogoutPanel";
 import CompetitionList from "./components/CompetitionList/CompetitionList";
 import CompetitionDetails from "./components/CompetitionList/Details/CompetitionDetails";
 import Positions from "./components/CompetitionList/Details/Positions/Positions";
@@ -48,6 +49,7 @@ function App() {
                         component={CompetitionDetails}
                     />
                     <Route path="/competitions" component={CompetitionList} />
+                    <Route path="/logout" component={LogoutPanel} />
                     <Route path="/login" component={LoginPanel} />
                     <Redirect to="/" />
                 </Switch>

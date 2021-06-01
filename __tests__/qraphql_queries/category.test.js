@@ -6,12 +6,12 @@ describe("test validity of GraphQL queries and mutations for category", () => {
     beforeAll(() => (tester = new EasyGraphQLTester(schema)));
 
     describe("category query", () => {
-
         test("should pass if _id is specified.", () => {
             const query = `
                 query {
                     category(_id: "60a42ec1778fc8238412570f"){
                         _id
+                        competition_id
                         competition{
                             _id
                         }
@@ -19,7 +19,7 @@ describe("test validity of GraphQL queries and mutations for category", () => {
                         gender
                         start_stand
                         end_stand
-                        distance{
+                        distances{
                             name
                         }
                     }
@@ -28,11 +28,12 @@ describe("test validity of GraphQL queries and mutations for category", () => {
 
             tester.test(true, query);
         });
-        test("should failed if _if isn't specified.", () => {
+        test("should failed if _id isn't specified.", () => {
             const invalid_query = `
                 query {
                     category(){
                         _id
+                        competition_id
                         competition{
                             _id
                         }
@@ -40,7 +41,7 @@ describe("test validity of GraphQL queries and mutations for category", () => {
                         gender
                         start_stand
                         end_stand
-                        distance{
+                        distances{
                             name
                         }
                     }
@@ -50,13 +51,13 @@ describe("test validity of GraphQL queries and mutations for category", () => {
         });
     });
 
-
-    describe("categories query", ()=>{
+    describe("categories query", () => {
         test("should pass without params.", () => {
             const query = `
                 query {
                     categories{
                         _id
+                        competition_id
                         competition{
                             _id
                         }
@@ -64,7 +65,7 @@ describe("test validity of GraphQL queries and mutations for category", () => {
                         gender
                         start_stand
                         end_stand
-                        distance{
+                        distances{
                             name
                         }
                     }
@@ -77,8 +78,9 @@ describe("test validity of GraphQL queries and mutations for category", () => {
         test("should pass with competition id.", () => {
             const query = `
                 query {
-                    categories(competition: "60a42ec1778fc8238412570f"){
+                    categories(competition_id: "60a42ec1778fc8238412570f"){
                         _id
+                        competition_id
                         competition{
                             _id
                         }
@@ -86,7 +88,7 @@ describe("test validity of GraphQL queries and mutations for category", () => {
                         gender
                         start_stand
                         end_stand
-                        distance{
+                        distances{
                             name
                         }
                     }
@@ -95,26 +97,18 @@ describe("test validity of GraphQL queries and mutations for category", () => {
 
             tester.test(true, query);
         });
-    })
+    });
 
     describe("addCategory mutation", () => {
-
-
         test("should pass if all fields are specified.", () => {
             const mutation = `
                 mutation{
                     addCategory(
-                        competition: "609aa4bde6483525a06b8e5b",
+                        competition_id: "609aa4bde6483525a06b8e5b",
                         name: "Junior",
                         gender: "M",
                         start_stand: 1,
-                        end_stand: 10,
-                        distance: [
-                            {
-                                name:"90m",
-                                series_type:6
-                            }
-                        ]
+                        end_stand: 10
                     ){
                         _id
                     }
@@ -127,7 +121,7 @@ describe("test validity of GraphQL queries and mutations for category", () => {
             const mutation = `
                 mutation{
                     addCategory(
-                        competition: "609aa4bde6483525a06b8e5b",
+                        competition_id: "609aa4bde6483525a06b8e5b",
                         name: "Junior",
                         gender: "M"
                     ){
@@ -155,7 +149,7 @@ describe("test validity of GraphQL queries and mutations for category", () => {
             const invalid_mutation = `
                 mutation{
                     addCategory(
-                        competition: "609aa4bde6483525a06b8e5b",
+                        competition_id: "609aa4bde6483525a06b8e5b",
                         gender: "M"
                     ){
                         _id
@@ -168,7 +162,7 @@ describe("test validity of GraphQL queries and mutations for category", () => {
             const invalid_mutation = `
                 mutation{
                     addCategory(
-                        competition: "609aa4bde6483525a06b8e5b",
+                        competition_id: "609aa4bde6483525a06b8e5b",
                         name: "Junior"
                     ){
                         _id
@@ -180,24 +174,15 @@ describe("test validity of GraphQL queries and mutations for category", () => {
     });
 
     describe("updateCategory mutation", () => {
-
-
         test("should pass if all fields are specified.", () => {
             const mutation = `
                 mutation{
                     updateCategory(
                         _id: "609aa4bde6483525a06b8e5b",
-                        competition: "609aa4bde6483525a06b8e5b",
                         name: "Junior",
                         gender: "M",
                         start_stand: 1,
-                        end_stand: 10,
-                        distance: [
-                            {
-                                name:"90m",
-                                series_type:6
-                            }
-                        ]
+                        end_stand: 10
                     ){
                         _id
                     }
@@ -231,8 +216,6 @@ describe("test validity of GraphQL queries and mutations for category", () => {
     });
 
     describe("deleteCategory mutation", () => {
-       
-
         test("should pass if _id is specified", () => {
             const mutation = `
                 mutation{

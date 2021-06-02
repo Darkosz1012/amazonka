@@ -24,7 +24,7 @@ function CompetitionDetails(props) {
     return (
         <div>
             <p className="editLinkText">
-                <span className="panel-detail-header">Szczegóły zawodów</span>
+                <span className="panel-content-header">Szczegóły zawodów</span>
                 <button
                     className="smallEditLinkText"
                     data-testid="editLink"

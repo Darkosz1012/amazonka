@@ -27,9 +27,15 @@ function expectResponseToContain(responseData, variables) {
             expect(responseData[key]).toBe(value);
 }
 
+function expectToBeUnique(array) {
+    let uniqueItems = [...new Set(array)];
+    expect(uniqueItems).toHaveLength(array.length);
+}
+
 export {
     expectNoErrors,
     expectAnyError,
     expectAnyErrorMessageToBe,
     expectResponseToContain,
+    expectToBeUnique,
 };

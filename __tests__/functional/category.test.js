@@ -376,7 +376,7 @@ describe("category", () => {
             expect(categories[1]).toMatchObject(secondCategory);
         });
 
-        it("should return empty array if there aren't any categores in the database", async () => {
+        it("should return empty array if there aren't any categories in the database", async () => {
             const categories = (
                 await expectSuccessfulCategoryOperation(
                     new ChooseCategoriesOperation(),
@@ -415,7 +415,7 @@ describe("category", () => {
             expect(chosenCategory).not.toMatchObject(secondCategory);
         });
 
-        it("should return null if category of given _id (deafult one in this case) doesn't exist", async () => {
+        it("should return null if category of given _id (default one in this case) doesn't exist", async () => {
             const chosenCategory = (
                 await expectSuccessfulCategoryOperation(
                     new ChooseCategoryOperation(),

@@ -8,13 +8,7 @@ import "./index.css";
 import App from "./App";
 import reducer from "./store/reducers/reducer";
 import reportWebVitals from "./reportWebVitals";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { ApolloProvider } from "@apollo/client/react";
-
-const client = new ApolloClient({
-    uri: "http://localhost:3001/graphql",
-    cache: new InMemoryCache(),
-});
+import ApolloProvider from "./hoc/ApolloProvider/ApolloProvider";
 
 //this line is for chrome devtools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -26,7 +20,7 @@ ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
             <React.StrictMode>
-                <ApolloProvider client={client}>
+                <ApolloProvider>
                     <App />
                 </ApolloProvider>
             </React.StrictMode>

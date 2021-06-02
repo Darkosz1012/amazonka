@@ -3,14 +3,32 @@ import { useHistory } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import competitionDetaildata from "../../competitionsData.json";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+
+function prepareDate(date) {
+    let month =
+        date.getMonth() + 1 < 10
+            ? "0" + (date.getMonth() + 1)
+            : date.getMonth() + 1;
+    let str = date.getFullYear() + "-" + month + "-" + date.getDate();
+    return str;
+}
 
 function CompetitionDetails(props) {
     const _id = props.match.params.id;
-    const name = competitionDetaildata[_id - 1]["name"];
-    const location = competitionDetaildata[_id - 1]["location"];
-    const start_date = competitionDetaildata[_id - 1]["date_start"];
-    const end_date = competitionDetaildata[_id - 1]["date_end"];
+
+    const competitionData = useSelector((state) => state.competitionsData).find(
+        (cmp) => cmp._id === _id
+    );
+    let [categoriesList, setCategoriesList] = useState([]);
+
+    const name = competitionData.name;
+    const location = competitionData.location;
+    const start_date = prepareDate(
+        new Date(parseInt(competitionData.start_date))
+    );
+    const end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
 
     let history = useHistory();
 

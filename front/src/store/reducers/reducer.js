@@ -5,6 +5,8 @@ const initialState = {
     accessToken: "",
     refreshToken: "",
     userId: "",
+    competitionsData: [],
+    test: "60aff2db9d916cd1cec8629b",
 };
 
 const updateObject = (oldObject, updatedProperties) => {
@@ -29,6 +31,10 @@ const reducer = (state = initialState, action) => {
                 accessToken: "",
                 refreshToken: "",
                 userId: "",
+            });
+        case actionTypes.GET_COMPETITIONS_DATA:
+            return updateObject(state, {
+                competitionsData: [...action.data],
             });
         default:
             return state;

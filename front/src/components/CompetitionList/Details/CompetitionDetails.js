@@ -1,19 +1,54 @@
 import "./CompetitionDetails.css";
 import { useParams, useHistory } from "react-router-dom";
-import competitionDetaildata from "../competitionsData";
+import { gql, useQuery } from "@apollo/client";
 import Button from "../../UI/Button/Button";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+
+const GET_CATEGORIES = gql`
+    query($competition_id: ID) {
+        categories(competition_id: $competition_id) {
+            _id
+            name
+        }
+    }
+`;
+
+function prepareDate(date) {
+    let month =
+        date.getMonth() + 1 < 10
+            ? "0" + (date.getMonth() + 1)
+            : date.getMonth() + 1;
+    let str = date.getFullYear() + "-" + month + "-" + date.getDate();
+    return str;
+}
 
 function CompetitionDetails(props) {
     const params = useParams();
-    const name = competitionDetaildata[params.id - 1]["name"];
-    const location = competitionDetaildata[params.id - 1]["location"];
-    const start_date = competitionDetaildata[params.id - 1]["date_start"];
-    const end_date = competitionDetaildata[params.id - 1]["date_end"];
-    const description = competitionDetaildata[params.id - 1]["description"];
-    const schedule = competitionDetaildata[params.id - 1]["schedule"];
-    const categories = competitionDetaildata[params.id - 1]["category"].map(
-        (category) => category.category_name
+    const competitionId = params.id;
+    const competitionData = useSelector((state) => state.competitionsData).find(
+        (cmp) => cmp._id === competitionId
     );
+    let [categoriesList, setCategoriesList] = useState([]);
+
+    const { loading, error, data } = useQuery(GET_CATEGORIES, {
+        onError(err) {
+            console.log(err);
+        },
+        onCompleted(data) {
+            setCategoriesList(data.categories);
+        },
+    });
+
+    const name = competitionData.name;
+    const location = competitionData.location;
+    const start_date = prepareDate(
+        new Date(parseInt(competitionData.start_date))
+    );
+    const end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
+    const description = `mamy details id (${competitionData.details_id}), jak będzie api to będzie na jego podstawie pobiarany opis`;
+    const schedule = `harmonogram - pewnie będzie w details id, na razie chyba nie ma api do tego`;
+    const categories = [...competitionData.categories_id]; //też na razie mam tylko id
     const categ_num = Object.keys(categories).length;
 
     let categoriesStr = categories.join(", ");

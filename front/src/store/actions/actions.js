@@ -14,3 +14,10 @@ export const userLogout = () => {
         type: actionTypes.USER_LOGOUT,
     };
 };
+
+export const getCompetitionsData = (data) => {
+    return {
+        type: actionTypes.GET_COMPETITIONS_DATA,
+        data: data,
+    };
+};

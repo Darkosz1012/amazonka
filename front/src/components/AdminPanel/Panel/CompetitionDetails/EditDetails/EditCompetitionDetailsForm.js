@@ -1,26 +1,55 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Button from "../../../../UI/Button/Button";
-import competitionDetaildata from "../../../competitionsData.json";
+import { gql, useMutation } from "@apollo/client";
 
-function revertDateFormat(dateStr) {
-    const arr = dateStr.split("-");
-    const res = arr[2] + "-" + arr[1] + "-" + arr[0];
-    return res;
+const EDIT_COMPETITION = gql`
+    mutation updateCompetition(
+        $_id: ID!
+        $name: String
+        $start_date: String
+        $end_date: String
+        $location: String
+    ) {
+        updateCompetition(
+            _id: $_id
+            name: $name
+            start_date: $start_date
+            end_date: $end_date
+            location: $location
+        ) {
+            _id
+            name
+            start_date
+            end_date
+            location
+        }
+    }
+`;
+
+function prepareDate(date) {
+    let month =
+        date.getMonth() + 1 < 10
+            ? "0" + (date.getMonth() + 1)
+            : date.getMonth() + 1;
+    let str = date.getFullYear() + "-" + month + "-" + date.getDate();
+    return str;
 }
 
 const CompetitionForm = (props) => {
     const history = useHistory();
 
     const _id = props.id;
-    const _name = competitionDetaildata[_id - 1]["name"];
-    const _start_date = revertDateFormat(
-        competitionDetaildata[_id - 1]["date_start"]
+    const competitionData = useSelector((state) => state.competitionsData).find(
+        (cmp) => cmp._id === _id
     );
-    const _end_date = revertDateFormat(
-        competitionDetaildata[_id - 1]["date_end"]
+    const _name = competitionData.name;
+    const _start_date = prepareDate(
+        new Date(parseInt(competitionData.start_date))
     );
-    const _location = competitionDetaildata[_id - 1]["location"];
+    const _end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
+    const _location = competitionData.location;
 
     const [name, setName] = useState(_name);
     const [start_date, setStartDate] = useState(_start_date);
@@ -40,8 +69,29 @@ const CompetitionForm = (props) => {
         setLocation(event.target.value);
     };
 
+    const [editCompetition, { data }] = useMutation(EDIT_COMPETITION, {
+        onError(err) {
+            console.log(err);
+        },
+        onCompleted(data) {
+            //there will go what will happen if compleated succesfully
+            console.log(data);
+        },
+    });
+
     const handleSubmit = (event) => {
         event.preventDefault();
+        let start = new Date(start_date);
+        let end = new Date(end_date);
+        editCompetition({
+            variables: {
+                _id: _id,
+                name: name,
+                start_date: start,
+                end_date: end,
+                location: location,
+            },
+        });
         alert("Zatwierdzono edycję szczegółów");
         history.push("/admin/panel/" + _id + "/details");
     };

@@ -28,6 +28,7 @@ const LoginForm = (props) => {
             console.log(err);
         },
         onCompleted(data) {
+            localStorage.setItem("token", data.login.accessToken);
             dispatch(
                 actions.userLogin(
                     data.login.accessToken,

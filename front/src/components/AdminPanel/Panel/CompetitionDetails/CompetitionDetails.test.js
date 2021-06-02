@@ -6,14 +6,6 @@ import ReactDOM from "react-dom";
 import "@testing-library/jest-dom/extend-expect";
 
 describe("Competition details - panel tab content", () => {
-    const onClickMock = jest.fn();
-    const handleClick = jest
-        .spyOn(handler, "handleEditLinkClick")
-        .mockReturnValue((event) => {
-            event.preventDefault();
-            onClickMock(event);
-        });
-
     const compData = {
         id: 333,
         name: "Puchar małopolski",
@@ -37,26 +29,30 @@ describe("Competition details - panel tab content", () => {
     jest.mock("./../../competitionsData.json", () => [compData]);
 
     const CompetitionDetails = require("./CompetitionDetails.js");
-
-    const competitionDetailsComponent = (
-        <Router initialEntries={["/admin/panel/333/details"]}>
-            <Route
-                path="/admin/panel/:id/details"
-                component={CompetitionDetails.default}
-            />
-        </Router>
-    );
+    var onClickMock;
 
     beforeEach(() => {
+        onClickMock = jest.fn();
+        const handleClick = jest
+            .spyOn(handler, "handleEditLinkClick")
+            .mockReturnValue((event) => {
+                event.preventDefault();
+                onClickMock(event);
+            });
+
+        const competitionDetailsComponent = (
+            <Router initialEntries={["/admin/panel/333/details"]}>
+                <Route
+                    path="/admin/panel/:id/details"
+                    component={CompetitionDetails.default}
+                />
+            </Router>
+        );
+
         render(competitionDetailsComponent);
     });
 
-    test("renders without crashing", () => {
-        const div = document.createElement("div");
-        ReactDOM.render(competitionDetailsComponent, div);
-    });
-
-    test("should render competition details", () => {
+    it("should render competition details", () => {
         expect(screen.getByTestId("name")).toHaveTextContent(compData.name);
         expect(screen.getByTestId("start_date")).toHaveTextContent(
             revertDateFormat(compData.date_start)
@@ -69,8 +65,9 @@ describe("Competition details - panel tab content", () => {
         );
     });
 
-    test("should call edit link click handler", () => {
+    it("should call edit link click handler when 'edytuj' button clicked", async () => {
         fireEvent.click(screen.getByRole("button", { name: /edytuj/i }));
+
         expect(onClickMock).toHaveBeenCalledTimes(1);
     });
 });

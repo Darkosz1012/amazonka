@@ -14,7 +14,7 @@ const REGISTER_USER = gql`
             username: $username
             password: $password
             email: $email
-            reason_for_creating_account: $reasonForCreatingAccount
+            reason_for_creating_account: $reason_for_creating_account
         ) {
             user_id
         }
@@ -30,11 +30,13 @@ const RegisterForm = (props) => {
         useState("");
 
     const [registerUser] = useMutation(REGISTER_USER, {
-        onError(err) {
+        onError() {
             document.getElementById("error-msg").innerHTML = "Niepoprawne dane";
         },
-        onCompleted(data) {
-            //there will go what will happen if compleated succesfully
+        onCompleted() {
+            document.getElementById("error-msg").innerHTML =
+                "Rejestracja zakończona! Możesz się zalogować!";
+            document.getElementById("error-msg").style.color = "green";
         },
     });
 
@@ -59,6 +61,7 @@ const RegisterForm = (props) => {
     };
 
     const handleSubmit = (event) => {
+        document.getElementById("error-msg").style.color = "red";
         event.preventDefault();
         if (!login) {
             document.getElementById("error-msg").innerHTML = "Podaj login";
@@ -74,6 +77,7 @@ const RegisterForm = (props) => {
             document.getElementById("error-msg").innerHTML =
                 "Podaj powód rejestracji";
         } else {
+            console.log(reasonForCreatingAccount);
             registerUser({
                 variables: {
                     username: login,

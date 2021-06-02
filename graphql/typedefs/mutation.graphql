@@ -1,6 +1,11 @@
 type Mutation {
     login(username: String!, password: String!): Token!
-    register(username: String!, email: String!, password: String!): Token!
+    register(
+        username: String!
+        email: String!
+        password: String!
+        reason_for_creating_account: String!
+    ): Token!
     refresh(refreshToken: String!): Token!
 
     addCategory(category: inputCategory!): Category!

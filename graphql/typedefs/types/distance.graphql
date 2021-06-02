@@ -2,7 +2,10 @@ type Distance {
     _id: ID!
 
     competition_id: ID!
+    competition: Competition
+
     category_id: ID!
+    category: Category
 
     order: Int
     name: String

@@ -1,26 +1,22 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Button from "../../../../UI/Button/Button";
 import competitionDetaildata from "../../../competitionsData.json";
-
-function revertDateFormat(dateStr) {
-    const arr = dateStr.split("-");
-    const res = arr[2] + "-" + arr[1] + "-" + arr[0];
-    return res;
-}
+import { handleSubmit } from "./handleSubmit.js";
 
 const CompetitionForm = (props) => {
     const history = useHistory();
+    const params = useParams();
+    const _id = params.id;
 
-    const _id = props.id;
-    const _name = competitionDetaildata[_id - 1]["name"];
-    const _start_date = revertDateFormat(
-        competitionDetaildata[_id - 1]["date_start"]
+    const desiredCompetition = competitionDetaildata.find(
+        (comp) => comp.id === parseInt(_id)
     );
-    const _end_date = revertDateFormat(
-        competitionDetaildata[_id - 1]["date_end"]
-    );
-    const _location = competitionDetaildata[_id - 1]["location"];
+
+    const _name = desiredCompetition["name"];
+    const _start_date = desiredCompetition["date_start"];
+    const _end_date = desiredCompetition["date_end"];
+    const _location = desiredCompetition["location"];
 
     const [name, setName] = useState(_name);
     const [start_date, setStartDate] = useState(_start_date);
@@ -40,15 +36,17 @@ const CompetitionForm = (props) => {
         setLocation(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        alert("Zatwierdzono edycję szczegółów");
-        history.push("/admin/panel/" + _id + "/details");
-    };
-
     return (
         <div>
-            <form onSubmit={handleSubmit} id="editDetailForm">
+            <form
+                onSubmit={handleSubmit(
+                    history,
+                    "/admin/panel/" + _id + "/details",
+                    _id
+                )}
+                id="editDetailForm"
+                data-testid="editDetailFormTestId"
+            >
                 <p id="editFormTitle">Edytuj szczegóły</p>
                 <div className="row">
                     <div className="column">
@@ -83,6 +81,7 @@ const CompetitionForm = (props) => {
                                 required
                                 type="date"
                                 id="start_date"
+                                data-testid="start_date"
                                 placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={start_date}
@@ -105,6 +104,7 @@ const CompetitionForm = (props) => {
                                 required
                                 type="date"
                                 id="end_date"
+                                data-testid="end_date"
                                 placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={end_date}

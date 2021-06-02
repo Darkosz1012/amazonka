@@ -2,16 +2,23 @@ import "./CompetitionDetails.css";
 import { useParams, useHistory } from "react-router-dom";
 import competitionDetaildata from "../competitionsData";
 import Button from "../../UI/Button/Button";
+import { revertDateFormat } from "../../revertDateFormat.js";
 
 function CompetitionDetails(props) {
     const params = useParams();
-    const name = competitionDetaildata[params.id - 1]["name"];
-    const location = competitionDetaildata[params.id - 1]["location"];
-    const start_date = competitionDetaildata[params.id - 1]["date_start"];
-    const end_date = competitionDetaildata[params.id - 1]["date_end"];
-    const description = competitionDetaildata[params.id - 1]["description"];
-    const schedule = competitionDetaildata[params.id - 1]["schedule"];
-    const categories = competitionDetaildata[params.id - 1]["category"].map(
+    const _id = params.id;
+
+    const desiredCompetition = competitionDetaildata.find(
+        (comp) => comp.id === parseInt(_id)
+    );
+
+    const name = desiredCompetition["name"];
+    const location = desiredCompetition["location"];
+    const start_date = desiredCompetition["date_start"];
+    const end_date = desiredCompetition["date_end"];
+    const description = desiredCompetition["description"];
+    const schedule = desiredCompetition["schedule"];
+    const categories = desiredCompetition["category"].map(
         (category) => category.category_name
     );
     const categ_num = Object.keys(categories).length;
@@ -57,10 +64,12 @@ function CompetitionDetails(props) {
                             <b>Lokalizacja:</b> {location}
                         </p>
                         <p className="i">
-                            <b>Data rozpoczęcia:</b> {start_date}
+                            <b>Data rozpoczęcia:</b>{" "}
+                            {revertDateFormat(start_date)}
                         </p>
                         <p className="i">
-                            <b>Data zakończenia:</b> {end_date}
+                            <b>Data zakończenia:</b>{" "}
+                            {revertDateFormat(end_date)}
                         </p>
                         <p className="title_pn">
                             <b>Opis:</b>

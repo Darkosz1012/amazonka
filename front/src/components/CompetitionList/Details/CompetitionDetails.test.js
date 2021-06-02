@@ -5,8 +5,8 @@ import "@testing-library/jest-dom/extend-expect";
 
 describe("Competition Details", () => {
     const compData = {
-        id: 1,
-        name: "Puchar",
+        id: 11111,
+        name: "Pucharr",
         location: "Nowy Sącz",
         date_start: "15-05-2021",
         date_end: "17-05-2021",
@@ -29,7 +29,7 @@ describe("Competition Details", () => {
     const CompetitionDetails = require("./CompetitionDetails.js");
 
     const competitionDetailsComponent = (
-        <Router initialEntries={["/competitionsdetails/1"]}>
+        <Router initialEntries={["/competitionsdetails/11111"]}>
             <Route
                 path="/competitionsdetails/:id"
                 component={CompetitionDetails.default}

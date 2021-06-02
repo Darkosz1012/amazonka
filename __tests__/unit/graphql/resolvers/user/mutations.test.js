@@ -51,7 +51,7 @@ describe("login function", () => {
         await expect(
             mutations.login(undefined, invalid_login)
         ).rejects.toMatchObject({
-            message: "Username or password incorrect.",
+            message: "Invalid password.",
         });
     });
 });

@@ -4,6 +4,7 @@ import {
     expectAnyError,
     expectAnyErrorMessageToBe,
     expectResponseToContain,
+    expectToBeUnique,
 } from "./utils/matchers.js";
 import {
     AddCategoryOperation,
@@ -72,14 +73,14 @@ describe("category", () => {
     }
 
     describe("add category", () => {
-        test("add new category with just obligatory fields passed", async () => {
+        test("add new category with just obligatory fields, should succeed", async () => {
             await expectSuccessfulCategoryOperation(
                 new AddCategoryOperation(),
                 1
             );
         });
 
-        test("add new category with all fields passed", async () => {
+        test("add new category with all fields, , should succeed", async () => {
             await expectSuccessfulCategoryOperation(
                 new AddCategoryOperation({
                     competition_id: "60aff2a49d916cd1cec8629b",
@@ -92,18 +93,17 @@ describe("category", () => {
             );
         });
 
-        test("add new category with competition_id missing, should fail", async () => {
+        test("add new category with competition_id missing, should return an error", async () => {
             await expectUnsuccessfulCategoryOperation(
                 new AddCategoryOperation({
                     competition_id: "",
                     start_stand: 1,
                     end_stand: 10,
-                }),
-                undefined
+                })
             );
         });
 
-        test("add new category with name missing, should fail", async () => {
+        test("add new category with name missing, respone should hint on reason", async () => {
             await expectUnsuccessfulCategoryOperation(
                 new AddCategoryOperation({
                     name: "",
@@ -114,7 +114,7 @@ describe("category", () => {
             );
         });
 
-        test("add new category with gender missing, should fail", async () => {
+        test("add new category with gender missing,  should hint on reason", async () => {
             await expectUnsuccessfulCategoryOperation(
                 new AddCategoryOperation({
                     gender: "",
@@ -125,58 +125,61 @@ describe("category", () => {
             );
         });
 
-        test("add two categories with the same data and one with different data, should assign different _id values to all of them", async () => {
-            const firstCategoryID = (
-                await expectSuccessfulCategoryOperation(
-                    new AddCategoryOperation({
-                        competition_id: "60aff2a49d916cd1cec8629c",
-                        name: "Seniorzy",
-                        gender: "M",
-                        start_stand: 1,
-                        end_stand: 20,
-                    }),
-                    1
-                )
-            ).body.data.addCategory._id;
+        test("add two categories with the same data and one with different data, should assign unique _id's to all three", async () => {
+            var ids = [];
 
-            const secondCategoryID = (
-                await expectSuccessfulCategoryOperation(
-                    new AddCategoryOperation({
-                        competition_id: "60aff2a49d916cd1cec8629c",
-                        name: "Seniorzy",
-                        gender: "M",
-                        start_stand: 1,
-                        end_stand: 20,
-                    }),
-                    1
-                )
-            ).body.data.addCategory._id;
+            ids.push(
+                (
+                    await expectSuccessfulCategoryOperation(
+                        new AddCategoryOperation({
+                            competition_id: "60aff2a49d916cd1cec8629c",
+                            name: "Seniorzy",
+                            gender: "M",
+                            start_stand: 1,
+                            end_stand: 20,
+                        }),
+                        1
+                    )
+                ).body.data.addCategory._id
+            );
 
-            const thirdCategoryID = (
-                await expectSuccessfulCategoryOperation(
-                    new AddCategoryOperation({
-                        competition_id: "60aff2a49d916cd1cec8629b",
-                        name: "Seniorki",
-                        gender: "F",
-                        start_stand: 1,
-                        end_stand: 21,
-                    }),
-                    1
-                )
-            ).body.data.addCategory._id;
+            ids.push(
+                (
+                    await expectSuccessfulCategoryOperation(
+                        new AddCategoryOperation({
+                            competition_id: "60aff2a49d916cd1cec8629c",
+                            name: "Seniorzy",
+                            gender: "M",
+                            start_stand: 1,
+                            end_stand: 20,
+                        }),
+                        1
+                    )
+                ).body.data.addCategory._id
+            );
 
-            expect(firstCategoryID).not.toBeUndefined();
-            expect(secondCategoryID).not.toBeUndefined();
-            expect(thirdCategoryID).not.toBeUndefined();
+            ids.push(
+                (
+                    await expectSuccessfulCategoryOperation(
+                        new AddCategoryOperation({
+                            competition_id: "60aff2a49d916cd1cec8629b",
+                            name: "Seniorki",
+                            gender: "F",
+                            start_stand: 1,
+                            end_stand: 21,
+                        }),
+                        1
+                    )
+                ).body.data.addCategory._id
+            );
 
-            expect(firstCategoryID).not.toBe(secondCategoryID);
-            expect(firstCategoryID).not.toBe(thirdCategoryID);
-            expect(secondCategoryID).not.toBe(thirdCategoryID);
+            expect(ids.every((id) => id != undefined)).toBe(true);
+            expectToBeUnique(ids);
         });
     });
 
     describe("update category", () => {
-        test("update category with all fields passed", async () => {
+        test("update category with all fields, should succeed", async () => {
             const categoryToUpdateID = (
                 await expectSuccessfulCategoryOperation(
                     new AddCategoryOperation({
@@ -202,7 +205,7 @@ describe("category", () => {
             );
         });
 
-        test("update category with none data provided, should pass but not change anything", async () => {
+        test("update category with none data provided, should succeed, but do not change anything", async () => {
             const categoryToUpdate = (
                 await expectSuccessfulCategoryOperation(
                     new AddCategoryOperation(),
@@ -222,7 +225,7 @@ describe("category", () => {
             expect(categoryToUpdate).toMatchObject(updatedCategory);
         });
 
-        test("update category which doesn't exist, should pass and return null", async () => {
+        test("update category which doesn't exist, should succeed, but also no category data", async () => {
             const idleUpdate = (
                 await expectSuccessfulCategoryOperation(
                     new UpdateCategoryOperation({
@@ -244,8 +247,7 @@ describe("category", () => {
                 new UpdateCategoryOperation({
                     _id: "",
                     name: "Seniorki",
-                }),
-                undefined
+                })
             );
         });
     });
@@ -290,47 +292,50 @@ describe("category", () => {
             await expectUnsuccessfulCategoryOperation(
                 new DeleteCategoryOperation({
                     _id: "",
-                }),
-                undefined
+                })
             );
         });
     });
 
     describe("categories query", () => {
         it("should return all created categories", async () => {
-            const firstCategory = (
-                await expectSuccessfulCategoryOperation(
-                    new AddCategoryOperation(),
-                    1
-                )
-            ).body.data.addCategory;
+            var addedCategories = [];
 
-            const secondCategory = (
-                await expectSuccessfulCategoryOperation(
-                    new AddCategoryOperation(),
-                    1
-                )
-            ).body.data.addCategory;
+            addedCategories.push(
+                (
+                    await expectSuccessfulCategoryOperation(
+                        new AddCategoryOperation(),
+                        1
+                    )
+                ).body.data.addCategory
+            );
 
-            const thirdCategory = (
-                await expectSuccessfulCategoryOperation(
-                    new AddCategoryOperation(),
-                    1
-                )
-            ).body.data.addCategory;
+            addedCategories.push(
+                (
+                    await expectSuccessfulCategoryOperation(
+                        new AddCategoryOperation(),
+                        1
+                    )
+                ).body.data.addCategory
+            );
 
-            const categories = (
+            addedCategories.push(
+                (
+                    await expectSuccessfulCategoryOperation(
+                        new AddCategoryOperation(),
+                        1
+                    )
+                ).body.data.addCategory
+            );
+
+            const queriedCategories = (
                 await expectSuccessfulCategoryOperation(
                     new ChooseCategoriesOperation(),
                     0
                 )
             ).body.data.categories;
 
-            expect(categories).toHaveLength(3);
-
-            expect(categories[0]).toMatchObject(firstCategory);
-            expect(categories[1]).toMatchObject(secondCategory);
-            expect(categories[2]).toMatchObject(thirdCategory);
+            expect(addedCategories).toMatchObject(queriedCategories);
         });
 
         it("should return categories matching given competition_id", async () => {
@@ -426,10 +431,9 @@ describe("category", () => {
             expect(chosenCategory).toBe(null);
         });
 
-        it("should fail if _id is not provided", async () => {
+        it("should respond with an error if _id not provided", async () => {
             await expectUnsuccessfulCategoryOperation(
-                new ChooseCategoryOperation({ _id: "" }),
-                undefined
+                new ChooseCategoryOperation({ _id: "" })
             );
         });
     });

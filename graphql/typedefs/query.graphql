@@ -7,6 +7,9 @@ type Query {
     competition(_id: ID!): Competition
     competitions(owner: ID, name: String): [Competition]
 
+    distances(competition_id: ID, category_id: ID): [Distance]
+    distance(_id: ID!): Distance
+
     participant(_id: ID!): Participant
     participants(name: String): [Participant]
 }

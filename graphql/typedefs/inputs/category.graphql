@@ -1,6 +1,0 @@
-
-input inputDistance {
-    _id: ID
-    name: String
-    series_type: Int
-}

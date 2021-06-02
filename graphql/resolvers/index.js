@@ -10,13 +10,17 @@ import {
     participantQueries,
 } from "./participant/index.js";
 import {
-    DistanceWithName
+    DistanceWithName,
+    Distance,
+    distanceMutations,
+    distanceQueries
 } from "./distance/index.js"
 
 const resolvers = {
     Query: {
         ...competitionQueries,
         ...categoryQueries,
+        ...distanceQueries,
         ...participantQueries,
     },
     Mutation: {
@@ -24,12 +28,14 @@ const resolvers = {
         ...competitionMutations,
         ...categoryMutations,
         ...participantMutations,
+        ...distanceMutations,
     },
     Competition: {
         ...competition,
     },
     Category,
-    DistanceWithName
+    DistanceWithName,
+    Distance
 };
 
 export default resolvers;

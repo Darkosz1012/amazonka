@@ -42,6 +42,7 @@
     padding-left: 8px;
     font-size: 10px;
     color: rgb(192, 188, 174);
+    border: none;
 }
 
 .smallEditLinkText:hover,

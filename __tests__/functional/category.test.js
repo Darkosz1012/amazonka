@@ -80,7 +80,7 @@ describe("category", () => {
             );
         });
 
-        test("add new category with all fields, , should succeed", async () => {
+        test("add new category with all fields, should succeed", async () => {
             await expectSuccessfulCategoryOperation(
                 new AddCategoryOperation({
                     competition_id: "60aff2a49d916cd1cec8629b",
@@ -114,7 +114,7 @@ describe("category", () => {
             );
         });
 
-        test("add new category with gender missing,  should hint on reason", async () => {
+        test("add new category with gender missing, should hint on reason", async () => {
             await expectUnsuccessfulCategoryOperation(
                 new AddCategoryOperation({
                     gender: "",
@@ -225,7 +225,7 @@ describe("category", () => {
             expect(categoryToUpdate).toMatchObject(updatedCategory);
         });
 
-        test("update category which doesn't exist, should succeed, but also no category data", async () => {
+        test("update category which doesn't exist, should succeed, but do not return category data", async () => {
             const idleUpdate = (
                 await expectSuccessfulCategoryOperation(
                     new UpdateCategoryOperation({

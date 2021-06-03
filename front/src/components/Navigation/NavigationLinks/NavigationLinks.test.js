@@ -1,15 +1,15 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
 import NavigationLinks from "./NavigationLinks";
+import WithProvider from "./../../../hoc/WithProvider/WithProvider";
 
 describe("Navigation Links", () => {
     let navigationList;
 
     beforeEach(() => {
         render(
-            <Router>
+            <WithProvider>
                 <NavigationLinks />
-            </Router>
+            </WithProvider>
         );
 
         navigationList = screen.getByRole("list");
@@ -19,9 +19,9 @@ describe("Navigation Links", () => {
         expect(navigationList).toBeInTheDocument();
     });
 
-    it("should render 5 list elements", () => {
+    it("should render 4 list elements", () => {
         const listElements = screen.getAllByRole("listitem");
-        expect(listElements).toHaveLength(5);
+        expect(listElements).toHaveLength(4);
 
         for (let el of listElements) {
             expect(el).toBeInTheDocument();

@@ -10,8 +10,8 @@ process.env.ACCESS_TOKEN_SECRET = "secret";
 
 describe("login function", () => {
     beforeAll(async () => {
-        const password = await hash("pass");
-        const _user_data = {
+        const password = await hash("Passw0rd!");
+        const _userData = {
             _id: "507f191e810c19729de860ea",
             username: "user",
             password: password,
@@ -19,7 +19,7 @@ describe("login function", () => {
             email: "aaa@aaa.com",
         };
 
-        mockingoose(User).toReturn(_user_data, "findOne");
+        mockingoose(User).toReturn(_userData, "findOne");
     });
 
     afterAll(() => {
@@ -27,10 +27,10 @@ describe("login function", () => {
         mockingoose.resetAll();
     });
 
-    test("should login if login data is valid", async () => {
+    it("should login if login data is valid", async () => {
         const valid_login = {
             username: "user",
-            password: "pass",
+            password: "Passw0rd!",
         };
 
         const result = await mutations.login(undefined, valid_login);
@@ -45,73 +45,149 @@ describe("login function", () => {
         expect(result.accessToken).not.toBe(result.refreshToken);
     });
 
-    test("should throw if login and password are undefined", async () => {
+    it.skip("should throw if login and password are undefined", async () => {
         const invalid_login = {};
 
         await expect(
             mutations.login(undefined, invalid_login)
         ).rejects.toMatchObject({
-            message: "Username or password incorrect.",
+            message: "Invalid password.",
         });
     });
 });
 
 describe("register function", () => {
-    test("should register user if data is valid", async () => {
+    function createUserData() {
+        return {
+            username: "user",
+            password: "Passw0rd!",
+            email: "email@provider.com",
+        };
+    }
+
+    it("should register user if data is valid", async () => {
         mockingoose(User).toReturn((query) => query, "save");
 
-        let result = await mutations.register(undefined, {
-            username: "new_user",
-            password: "pass",
-            email: "email@provider.com",
-        });
+        let result = await mutations.register(undefined, createUserData());
 
-        expect(result.username).toBe("new_user");
+        expect(result.username).toBe("user");
         expect(result.accessToken).not.toBeUndefined();
         expect(result.refreshToken).not.toBeUndefined();
         expect(result.user_id).not.toBeUndefined();
     });
 
-    test("should throw if user already exists", async () => {
+    it("should throw if user already exists", async () => {
         mockingoose(User).toReturn(
             new Error("MongoError: E11000 duplicate key error collection"),
             "save"
         );
 
-        try {
-            await mutations.register(undefined, {
-                username: "old_user",
-                password: "pass",
-                email: "email@provider.com",
-            });
-        } catch (e) {
-            expect(e.message).toBe("User already exists.");
-        }
+        await expect(
+            mutations.register(undefined, createUserData())
+        ).rejects.toThrow("User already exists.");
     });
 
-    test("should throw if email is undefined", async () => {
-        try {
-            await mutations.register(undefined, {
-                username: "old_user",
-                password: "pass",
-            });
-        } catch (e) {
-            expect(e.message).toBe("No email provided.");
-        }
+    describe("email validation", () => {
+        it("should throw if email is undefined", async () => {
+            let userData = createUserData();
+            userData.email = undefined;
+
+            await expect(
+                mutations.register(undefined, userData)
+            ).rejects.toThrow("Invalid email.");
+        });
+
+        it("should throw if email is empty", async () => {
+            let userData = createUserData();
+            userData.email = "";
+
+            await expect(
+                mutations.register(undefined, userData)
+            ).rejects.toThrow("Invalid email.");
+        });
+
+        it("should throw if email is invalid", async () => {
+            let userData = createUserData();
+            userData.email = "aaa@aaa";
+
+            await expect(
+                mutations.register(undefined, userData)
+            ).rejects.toThrow("Invalid email.");
+
+            userData.email = "aaa.provider.com";
+
+            await expect(
+                mutations.register(undefined, userData)
+            ).rejects.toThrow("Invalid email.");
+        });
     });
 
-    test("should throw if login or password are undefined", async () => {
-        try {
-            await mutations.register(undefined, { username: "user" });
-        } catch (e) {
-            expect(e.message).toBe("Username or password incorrect.");
-        }
+    describe("username validation", () => {
+        it("should throw if username is undefined", async () => {
+            let userData = createUserData();
+            userData.username = undefined;
 
-        try {
-            await mutations.register(undefined, { password: "user" });
-        } catch (e) {
-            expect(e.message).toBe("Username or password incorrect.");
-        }
+            await expect(
+                mutations.register(undefined, userData)
+            ).rejects.toThrow("Invalid username.");
+        });
+
+        it("should throw if username is empty", async () => {
+            let userData = createUserData();
+            userData.username = "";
+
+            await expect(
+                mutations.register(undefined, userData)
+            ).rejects.toThrow("Invalid username.");
+        });
+
+        it("should throw if username is not ascii", async () => {
+            let userData = createUserData();
+            userData.username = "🦝";
+
+            await expect(
+                mutations.register(undefined, userData)
+            ).rejects.toThrow("Invalid username.");
+        });
+    });
+
+    describe("password validation", () => {
+        it("should throw if password is undefined", async () => {
+            let userData = createUserData();
+            userData.password = undefined;
+
+            await expect(
+                mutations.register(undefined, userData)
+            ).rejects.toThrow("Invalid password.");
+        });
+
+        it("should throw if password is empty", async () => {
+            let userData = createUserData();
+            userData.password = "";
+
+            await expect(
+                mutations.register(undefined, userData)
+            ).rejects.toThrow("Invalid password.");
+        });
+
+        it("should throw if password is too weak", async () => {
+            let userData = createUserData();
+
+            let weakPasswords = {
+                lessThan8Characters: "P4ss!wd",
+                noLowerCase: "P4SS!WORD",
+                noUppercase: "p4ss!word",
+                noSymbols: "P4ssword",
+                noNumbers: "Password",
+            };
+
+            for (const key of Object.keys(weakPasswords)) {
+                userData.password = weakPasswords[key];
+                await expect(
+                    mutations.register(undefined, userData)
+                ).rejects.toThrow("Invalid password.");
+            }
+        });
     });
 
     afterAll(() => {
@@ -135,7 +211,7 @@ describe("refresh mutation", () => {
         { expiresIn: "10m" }
     );
 
-    test("should return new token if token passed in context is valid", async () => {
+    it("should return new token if token passed in context is valid", async () => {
         let result = await mutations.refresh(undefined, {
             token: refreshToken,
         });

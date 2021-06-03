@@ -18,7 +18,6 @@ function Menu(props) {
             <MenuLink link={"/admin/panel/" + _id + "/positions"}>
                 Rozstawienie
             </MenuLink>
-            <MenuLink link={"/admin/panel/" + _id + "/teams"}>Zespoły</MenuLink>
             <MenuLink link={"/admin/panel/" + _id + "/qualificationscores"}>
                 Wyniki kwalifikacji
             </MenuLink>

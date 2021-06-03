@@ -18,3 +18,22 @@
     text-shadow: 0px 0px 15px #fff;
     box-shadow: 0px 0px 25px #d6c189;
 }
+
+.scoreChooseBtn {
+    border: 1px solid rgb(37, 93, 156);
+    color: rgb(61, 126, 201);
+    margin-top: 3%;
+    margin-left: 5%;
+    width: 42.5%;
+    height: 65px;
+}
+
+.scoreChooseBtn:hover {
+    background-color: rgba(93, 154, 223, 0.829);
+    color: white;
+}
+
+.codeBtn {
+    margin-left: auto;
+    margin-right: auto;
+}

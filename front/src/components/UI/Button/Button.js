@@ -8,6 +8,7 @@ class Button extends Component {
                 className={this.props.className}
                 onClick={this.props.onClick}
                 placeholder={this.props.placeholder}
+                id={this.props.placeholder}
             >
                 {" "}
                 {this.props.placeholder}{" "}

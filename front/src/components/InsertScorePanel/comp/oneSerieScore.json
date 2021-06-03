@@ -1,0 +1,29 @@
+[
+    {
+        "category_name": "seniorzy",
+        "distance": "90m",
+        "series_num": 3,
+        "participants": [
+            {
+                "stand": 1,
+                "order": "A",
+                "full_name": "Dariusz Biela"
+            },
+            {
+                "stand": 1,
+                "order": "B",
+                "full_name": "Michał Żoczek"
+            },
+            {
+                "stand": 1,
+                "order": "C",
+                "full_name": "Przemysław Skrobot"
+            },
+            {
+                "stand": 1,
+                "order": "D",
+                "full_name": "Maciej Pieczonka"
+            }
+        ]
+    }
+]

@@ -77,7 +77,6 @@ const RegisterForm = (props) => {
             document.getElementById("error-msg").innerHTML =
                 "Podaj powód rejestracji";
         } else {
-            console.log(reasonForCreatingAccount);
             registerUser({
                 variables: {
                     username: login,

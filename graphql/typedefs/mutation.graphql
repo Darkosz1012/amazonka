@@ -80,10 +80,10 @@ type Mutation {
     updateScore(_id: ID!, stand: Int, order: String): Score
     deleteScore(_id: ID!): Score
     updateSeries(
-        participant_id: ID!
-        distance_id: ID!
-        series_no: Int!
-        score: Int!
+        _id: ID!
+        score: Int
+        Xs: Int
+        tens: Int
         arrows: [String]
     ): Series
     saveScoresFromSeries(

@@ -28,6 +28,8 @@ export default new mongoose.Schema({
         required: true,
     },
     score: { type: Number },
+    Xs: Number,
+    tens: Number,
     arrows: [
         {
             type: String,

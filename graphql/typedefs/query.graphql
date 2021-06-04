@@ -16,5 +16,5 @@ type Query {
     score(participant_id: ID!, category_id: ID!): Score
     scores(category_id: ID!): [Score]
     series(category_id: ID, distance_id: ID, participant_id: ID): [Series]
-    singleSeries(participant_id: ID!, distance_id: ID!): Series
+    singleSeries(participant_id: ID!, distance_id: ID!, series_no: Int!): Series
 }

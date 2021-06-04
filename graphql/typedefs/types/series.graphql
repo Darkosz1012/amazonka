@@ -1,4 +1,6 @@
 type Series {
+    _id: ID!
+
     participant_id: ID!
     participant: Participant!
     category_id: ID!
@@ -7,6 +9,8 @@ type Series {
 
     series_no: Int!
     was_counted: Boolean!
-    score: Int!
+    score: Int
+    Xs: Int
+    tens: Int
     arrows: [String]
 }

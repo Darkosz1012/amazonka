@@ -30,17 +30,26 @@ export default {
     updateSeries: async (_, args, context) => {
         verifyRequest(context.req);
 
-        return Series.findOneAndUpdate(
-            {
-                participant_id: args.participant_id,
-                distance_id: args.distance_id,
-                series_no: args.series_no,
-            },
-            args,
-            {
-                new: true,
+        if (args.arrows !== undefined) {
+            args.score = 0;
+            args.Xs = 0;
+            args.tens = 0;
+            for (let arrow of args.arrows) {
+                if (arrow === "X") {
+                    args.score += 10;
+                    args.Xs++;
+                } else if (arrow === "10") {
+                    args.score += parseInt(arrow);
+                    args.tens++;
+                } else {
+                    args.score += parseInt(arrow);
+                }
             }
-        );
+        }
+
+        return Series.findByIdAndUpdate(args._id, args, {
+            new: true,
+        });
     },
 
     saveScoresFromSeries: async (_, args, context) => {

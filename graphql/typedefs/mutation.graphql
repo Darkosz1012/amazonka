@@ -7,8 +7,7 @@ type Mutation {
         reason_for_creating_account: String!
     ): Token!
     refresh(refreshToken: String!): Token!
-    
-    
+
     addCompetition(
         owner_id: ID!
         name: String!
@@ -26,9 +25,8 @@ type Mutation {
         details: inputDetails
         categories_id: [ID]
     ): Competition
-    
-    deleteCompetition(_id: ID!): Competition
 
+    deleteCompetition(_id: ID!): Competition
 
     addCategory(
         competition_id: ID!
@@ -48,8 +46,6 @@ type Mutation {
 
     deleteCategory(_id: String!): Category
 
-
-
     addDistance(
         competition_id: ID!
         category_id: ID!
@@ -64,7 +60,6 @@ type Mutation {
         series_type: Int
     ): Distance
     deleteDistance(_id: ID!): Distance
-
 
     addParticipant(
         full_name: String!

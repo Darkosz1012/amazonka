@@ -53,6 +53,13 @@ export default class AppRunner {
         return st_request(this.app);
     }
 
+    async execute(operation) {
+        return await this.request()
+            .post("/graphql")
+            .send(operation.createMsg())
+            .expect(200);
+    }
+
     async getDocumentsCount(collection) {
         return await this.db.collection(collection).countDocuments();
     }

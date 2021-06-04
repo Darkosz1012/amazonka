@@ -55,7 +55,7 @@ const RegisterForm = (props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form data-testid="registerForm" onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="Login"

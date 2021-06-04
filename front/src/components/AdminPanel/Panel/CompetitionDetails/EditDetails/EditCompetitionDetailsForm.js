@@ -36,9 +36,9 @@ function prepareDate(date) {
     let str = date.getFullYear() + "-" + month + "-" + date.getDate();
     return str;
 }
-
 const CompetitionForm = (props) => {
     const history = useHistory();
+    const params = useParams();
 
     const _id = props.id;
     const competitionData = useSelector((state) => state.competitionsData).find(
@@ -50,6 +50,7 @@ const CompetitionForm = (props) => {
     );
     const _end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
     const _location = competitionData.location;
+
 
     const [name, setName] = useState(_name);
     const [start_date, setStartDate] = useState(_start_date);
@@ -96,9 +97,18 @@ const CompetitionForm = (props) => {
         history.push("/admin/panel/" + _id + "/details");
     };
 
+
     return (
         <div>
-            <form onSubmit={handleSubmit} id="editDetailForm">
+            <form
+                onSubmit={handleSubmit(
+                    history,
+                    "/admin/panel/" + _id + "/details",
+                    _id
+                )}
+                id="editDetailForm"
+                data-testid="editDetailFormTestId"
+            >
                 <p id="editFormTitle">Edytuj szczegóły</p>
                 <div className="row">
                     <div className="column">
@@ -133,6 +143,7 @@ const CompetitionForm = (props) => {
                                 required
                                 type="date"
                                 id="start_date"
+                                data-testid="start_date"
                                 placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={start_date}
@@ -155,6 +166,7 @@ const CompetitionForm = (props) => {
                                 required
                                 type="date"
                                 id="end_date"
+                                data-testid="end_date"
                                 placeholder="dd.mm.rrrr"
                                 className="form-control"
                                 value={end_date}

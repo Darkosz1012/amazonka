@@ -29,6 +29,9 @@ const ADD_COMPETITION = gql`
     }
 `;
 
+
+
+
 const CompetitionForm = (props) => {
     const history = useHistory();
     const userId = useSelector((state) => state.userId);
@@ -79,6 +82,7 @@ const CompetitionForm = (props) => {
     };
 
     return (
+
         <form data-testid="newCompetitionFormTestId" onSubmit={handleSubmit}>
             <div className="row">
                 <div className="column">

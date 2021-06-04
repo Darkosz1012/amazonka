@@ -104,6 +104,7 @@ function createNewScore(args) {
         ...args,
         distances: [],
         pre_elimination_score: 0,
+        access_code: generateCode(),
     });
 }
 
@@ -170,4 +171,8 @@ async function updateScoreFromSeries(score, distance_id, series_no) {
         score.distances[distance_idx].score += series.score;
         series.was_counted = true;
     }
+}
+
+function generateCode() {
+    return crypto.randomBytes(5).toString("hex");
 }

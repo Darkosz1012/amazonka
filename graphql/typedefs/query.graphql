@@ -9,4 +9,7 @@ type Query {
 
     participant(_id: ID!): Participant
     participants(name: String): [Participant]
+
+    final(_id: ID!): Finals
+    finals(competition_id: ID, category_id: ID, participant_id: ID): [Finals]
 }

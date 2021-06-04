@@ -20,12 +20,13 @@ class Operation {
     }
 }
 
+// Register
 export class RegisterUserOperation extends Operation {
     constructor(newVariables) {
         super(
             "register",
-            `mutation register($username: String!, $password: String!, $email: String!) {
-				register(username: $username, password: $password, email: $email) {
+            `mutation register($username: String!, $password: String!, $email: String!, $reason_for_creating_account: String!) {
+				register(username: $username, password: $password, email: $email, reason_for_creating_account: $reason_for_creating_account) {
 					accessToken,
 					refreshToken,
 					user_id,
@@ -36,12 +37,14 @@ export class RegisterUserOperation extends Operation {
                 username: "test_user",
                 email: "grzesiekkasprzak@google.com",
                 password: "Passw0rd!",
+                reason_for_creating_account: "Why not",
             },
             newVariables
         );
     }
 }
 
+// Login
 export class LoginUserOperation extends Operation {
     constructor(newVariables) {
         super(
@@ -63,6 +66,7 @@ export class LoginUserOperation extends Operation {
     }
 }
 
+// Category
 export class AddCategoryOperation extends Operation {
     constructor(newVariables) {
         super(
@@ -191,6 +195,142 @@ export class ChooseCategoriesOperation extends Operation {
                     distances{
                         name
                     }
+                }
+            }`,
+            {},
+            newVariables
+        );
+    }
+}
+
+// Competition
+export class AddCompetitionOperation extends Operation {
+    constructor(newVariables) {
+        super(
+            "addCompetition",
+            `mutation addCompetition($owner_id: ID!, $name: String!, $start_date: String, $end_date: String, $location: String) {
+                addCompetition(owner_id: $owner_id, name: $name, start_date: $start_date, end_date: $end_date, location: $location) {
+                    _id
+                    owner_id
+                    name
+                    start_date
+                    end_date
+                    location
+                    details_id
+                    details {
+                        description
+                        timetable
+                    }
+                    categories_id
+                }
+            }`,
+            {
+                owner_id: "60aff2a49d916cd1cec8629c",
+                name: "Test competition",
+            },
+            newVariables
+        );
+    }
+}
+
+export class UpdateCompetitionOperation extends Operation {
+    constructor(newVariables) {
+        super(
+            "updateCompetition",
+            `mutation updateCompetition($_id: ID!, $name: String, $start_date: String, $end_date: String, $location: String, $details: inputDetails, $categories_id: [ID]) {
+                updateCompetition(_id: $_id, name: $name, start_date: $start_date, end_date: $end_date, location: $location, details: $details, categories_id: $categories_id) {
+                    _id
+                    owner_id
+                    name
+                    start_date
+                    end_date
+                    location
+                    details_id
+                    details {
+                        description
+                        timetable
+                    }
+                    categories_id
+                }
+            }`,
+            {},
+            newVariables
+        );
+    }
+}
+
+export class DeleteCompetitionOperation extends Operation {
+    constructor(newVariables) {
+        super(
+            "deleteCompetition",
+            `mutation deleteCompetition($_id: ID!) {
+                deleteCompetition(_id: $_id) {
+                    _id
+                    owner_id
+                    name
+                    start_date
+                    end_date
+                    location
+                    details_id
+                    details {
+                        description
+                        timetable
+                    }
+                    categories_id
+                }
+            }`,
+            {},
+            newVariables
+        );
+    }
+}
+
+export class ChooseCompetitionOperation extends Operation {
+    constructor(newVariables) {
+        super(
+            "competition",
+            `query competition($_id: ID!) {
+                competition(_id: $_id) {
+                    _id
+                    owner_id
+                    name
+                    start_date
+                    end_date
+                    location
+                    details_id
+                    details {
+                        description
+                        timetable
+                    }
+                    categories_id
+                }
+            }`,
+            {
+                _id: "60aff2a49d916cd1cec8629a",
+            },
+            newVariables
+        );
+    }
+}
+
+export class ChooseCompetitionsOperation extends Operation {
+    constructor(newVariables) {
+        super(
+            "competitions",
+            `query competitions($owner_id: ID, $name: String) {
+                competitions(owner_id: $owner_id, name: $name) {
+                    _id
+                    owner_id
+                    name
+                    start_date
+                    end_date
+                    location
+                    details_id
+                    details {
+                        description
+                        timetable
+                    }
+                    categories_id
                 }
             }`,
             {},

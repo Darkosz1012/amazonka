@@ -140,19 +140,34 @@ async function createAllSeries(participant_id, category_id, distances) {
             was_counted: false,
             score: 0,
             arrows: [],
+            pre_elimination_score: 0,
         });
     }
 }
 
 async function updateScoreFromSeries(score, distance_id) {
+    zeroScore();
+
     let allSeries = await Series.find({
         distance_id,
         participant_id: score.participant_id,
     });
 
-    zeroScore();
-
     for (let series of allSeries) {
+        countSeries(series);
+    }
+
+    countPreEliminationScore();
+
+    function zeroScore() {
+        for (let i = 0; i < score.distances.length; i++) {
+            if (score.distances[i].distance_id.toString() === distance_id) {
+                score.distances[i].score = 0;
+            }
+        }
+    }
+
+    function countSeries(series) {
         for (
             let distance_idx = 0;
             distance_idx < score.distances.length;
@@ -162,21 +177,21 @@ async function updateScoreFromSeries(score, distance_id) {
                 score.distances[distance_idx].distance_id.toString() ===
                 distance_id
             ) {
-                countSeries(distance_idx, series);
+                addSeriesToScore(distance_idx, series);
             }
+        }
+
+        function addSeriesToScore(distance_idx, series) {
+            score.distances[distance_idx].score += series.score;
+            series.was_counted = true;
         }
     }
 
-    function zeroScore() {
-        for (let i = 0; i < score.distances.length; i++) {
-            if (score.distances[i].distance_id.toString() === distance_id) {
-                score.distances[i].score = 0;
-            }
+    function countPreEliminationScore() {
+        score.pre_eliminations_score = 0;
+        for (let distance of score.distances) {
+            score.pre_eliminations_score += distance.score;
         }
-    }
-    function countSeries(distance_idx, series) {
-        score.distances[distance_idx].score += series.score;
-        series.was_counted = true;
     }
 }
 

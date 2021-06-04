@@ -82,10 +82,9 @@ function InsertScorePanel() {
                     <div className="scoreScroll">
                         {Object.keys(scoreData).map(function (element) {
                             shootAmount = scoreData[element]["series_num"];
-                            shoots = [];
-                            for (let i = 1; i <= shootAmount; i++) {
-                                shoots.push(i);
-                            }
+                            shoots = Array(shootAmount).fill().map(
+                                (element, index) => index + 1
+                            );
                             if (Object.keys(myArray).length === 0) {
                                 scoreData[element]["participants"].forEach(
                                     (part) => {

@@ -42,7 +42,7 @@ function InsertScorePanel() {
 
     const handleSubmit = () => {
         const emptyFields = Object.values(myArray).filter(f=> f=== '-').length;
-        if (emptyFields > 0) {
+        if (emptyFields) {
             document.getElementById("info-msg").style.color = "red";
             document.getElementById("info-msg").innerHTML =
                 "Uzupełnij wszystkie wyniki!";

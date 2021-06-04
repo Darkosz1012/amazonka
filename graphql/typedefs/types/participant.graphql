@@ -7,3 +7,12 @@ type Participant {
     country: String
     club: String
 }
+
+type ParticipantWithScore {
+    participant_id: ID!
+    participant: Participant!
+
+    full_name: String!
+    placement: Int!
+    score: Int!
+}

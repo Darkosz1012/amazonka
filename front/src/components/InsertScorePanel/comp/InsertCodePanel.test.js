@@ -6,14 +6,14 @@ describe("InsertCodePanel", () => {
         render(<InsertCodePanel />);
     });
 
-    it("should have one input field", () => {
+    it("should have input field named 'code'", () => {
         let inputFields = screen.getByRole("textbox", {
             name: /code/i,
         });
         expect(inputFields).toBeInTheDocument();
     });
 
-    it("should have one button", () => {
+    it("should have button named 'zatwierdź'", () => {
         let button = screen.getByRole("button", {
             name: /zatwierdź/i,
         });

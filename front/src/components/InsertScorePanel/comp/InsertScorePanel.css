@@ -13,22 +13,22 @@
 
 .insertScore-points-column {
     float: left;
-    width: 30%;
-    margin: 2%;
+    width: 37%;
+    margin: 1%;
     min-height: 200px;
     padding-bottom: 10px;
 }
 
 .scoreScroll {
     overflow: auto;
-    max-height: 420px;
+    max-height: 300px;
 }
 
 .insertScore-results-column {
-    min-height: 450px;
+    min-height: 460px;
     float: left;
-    width: 62%;
-    margin: 2%;
+    width: 59%;
+    margin: 1%;
 }
 
 .player-score-div {
@@ -66,26 +66,26 @@
     font-weight: bold;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 767px) {
     .player-score-div {
         width: 90%;
         margin-left: 5%;
     }
     .fields {
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 8%;
+        margin-right: 8%;
     }
 }
 
-@media (min-width: 770px) and (max-width: 989px) {
+@media (min-width: 767px) and (max-width: 1000px) {
     .player-score-div {
-        width: 45%;
+        width: 47%;
     }
 }
 
-@media (min-width: 990px) {
+@media (min-width: 1000px) {
     .player-score-div {
-        width: 45%;
+        width: 44%;
     }
     .fields {
         margin-left: 8%;

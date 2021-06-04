@@ -8,7 +8,6 @@ function Score() {
 
     return (
         <div className="insertScore">
-            {/* {isCodeAccepted ? <InsertCodePanel /> : <InsertScorePanel /> } */}
             {isCodeAccepted ? <InsertScorePanel /> : <InsertCodePanel />}
         </div>
     );

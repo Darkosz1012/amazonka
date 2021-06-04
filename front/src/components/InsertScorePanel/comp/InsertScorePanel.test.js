@@ -7,9 +7,11 @@ describe("InsertScorePanel", () => {
         render(<InsertScorePanel />);
     });
 
-    it("should have 13 buttons", () => {
-        let allButtons = screen.getAllByRole("button");
-        expect(allButtons).toHaveLength(13);
+    it("should have button named 'zapisz'", () => {
+        let saveButton = screen.getByRole("button", {
+            name: /zapisz/i,
+        });
+        expect(saveButton).toBeInTheDocument();
     });
 
     it("should have 12 buttons with points having proper placeholder", () => {

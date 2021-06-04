@@ -1,8 +1,10 @@
 type Mutation {
+    #Login
     login(username: String!, password: String!): Token!
     register(username: String!, email: String!, password: String!): Token!
     refresh(refreshToken: String!): Token!
 
+    #Competition
     addCompetition(
         owner_id: ID!
         name: String!
@@ -10,7 +12,6 @@ type Mutation {
         end_date: String
         location: String
     ): Competition
-
     updateCompetition(
         _id: ID!
         name: String
@@ -20,9 +21,9 @@ type Mutation {
         details: inputDetails
         categories_id: [ID]
     ): Competition
-
     deleteCompetition(_id: ID!): Competition
 
+    #Category
     addCategory(
         competition_id: ID!
         name: String!
@@ -30,7 +31,6 @@ type Mutation {
         start_stand: Int
         end_stand: Int
     ): Category
-
     updateCategory(
         _id: ID!
         name: String
@@ -38,9 +38,9 @@ type Mutation {
         start_stand: Int
         end_stand: Int
     ): Category
-
     deleteCategory(_id: String!): Category
 
+    #Distance
     addDistance(
         competition_id: ID!
         category_id: ID!
@@ -56,6 +56,7 @@ type Mutation {
     ): Distance
     deleteDistance(_id: ID!): Distance
 
+    #Participant
     addParticipant(
         full_name: String!
         birth_year: String!
@@ -64,7 +65,6 @@ type Mutation {
         country: String
         club: String
     ): Participant
-
     updateParticipant(
         _id: ID!
         full_name: String
@@ -75,11 +75,21 @@ type Mutation {
         club: String
     ): Participant
 
-    addScore(
+    #Score
+    addScore(participant_id: ID!, competition_id: ID!, category_id: ID!): Score
+    updateScore(_id: ID!, stand: Int, order: String): Score
+    deleteScore(_id: ID!): Score
+    updateSeries(
         participant_id: ID!
-        competition_id: ID!
-        category_id: ID!
-
         distance_id: ID!
-    ): Score
+        series_no: Int!
+        score: Int!
+        arrows: [String]
+    ): Series
+    saveScoresFromSeries(
+        category_id: ID!
+        distance_id: ID!
+        series_no: ID!
+    ): [Score]
+    generatePlacements(category_id: ID!): [Score]
 }

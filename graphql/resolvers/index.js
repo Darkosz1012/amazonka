@@ -19,7 +19,7 @@ import {
     distanceMutations,
     distanceQueries,
 } from "./distance/index.js";
-import { scoreMutations } from "./score/index.js";
+import { score, scoreMutations, scoreQueries } from "./score/index.js";
 
 const resolvers = {
     Query: {
@@ -27,6 +27,7 @@ const resolvers = {
         ...categoryQueries,
         ...distanceQueries,
         ...participantQueries,
+        ...scoreQueries,
     },
     Mutation: {
         ...userMutations,
@@ -38,6 +39,9 @@ const resolvers = {
     },
     Competition: {
         ...competition,
+    },
+    Score: {
+        ...score,
     },
     Category,
     DistanceWithName,

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import { Series } from "../index.js";
 
-export default new mongoose.Schema({
+const schema = new mongoose.Schema({
     participant_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Participant",
@@ -31,4 +32,29 @@ export default new mongoose.Schema({
             score: { type: Number },
         },
     ],
+    access_code: String,
 });
+
+schema.post("findOneAndDelete", async function (score) {
+    await removeSeries(score);
+});
+
+schema.post("deleteOne", async function (score) {
+    await removeSeries(score);
+});
+
+schema.pre("deleteMany", async function () {
+    let scores = await this.find();
+    for (let score of scores) {
+        await removeSeries(score);
+    }
+});
+
+export default schema;
+
+async function removeSeries(score) {
+    await Series.deleteMany({
+        participant_id: score.participant_id,
+        category_id: score.category_id,
+    });
+}

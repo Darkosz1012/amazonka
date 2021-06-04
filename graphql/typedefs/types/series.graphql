@@ -1,9 +1,8 @@
 type Series {
     participant_id: ID!
     participant: Participant!
-    competition_id: ID!
-    competition: Competition!
-
+    category_id: ID!
+    category: Category!
     distance_id: ID!
 
     series_no: Int!

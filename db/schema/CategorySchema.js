@@ -23,7 +23,6 @@ export default new mongoose.Schema({
             distance_id: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Distance",
-                required: true,
             },
             name: { type: String },
         },

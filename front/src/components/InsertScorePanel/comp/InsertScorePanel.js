@@ -41,12 +41,7 @@ function InsertScorePanel() {
     };
 
     const handleSubmit = () => {
-        var emptyFields = 0;
-        Object.keys(myArray).forEach((id) => {
-            if (myArray[id] === "-") {
-                emptyFields += 1;
-            }
-        });
+        const emptyFields = Object.values(myArray).filter(f=> f=== '-').length;
         if (emptyFields > 0) {
             document.getElementById("info-msg").style.color = "red";
             document.getElementById("info-msg").innerHTML =

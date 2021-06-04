@@ -7,15 +7,11 @@ type Mutation {
         reason_for_creating_account: String!
     ): Token!
     refresh(refreshToken: String!): Token!
-
-    addCategory(category: inputCategory!): Category!
-    updateCategory(category: inputCategory!): Category!
-    deleteCategory(_id: String!): Category!
-
+    
+    
     addCompetition(
         owner_id: ID!
         name: String!
-
         start_date: String
         end_date: String
         location: String
@@ -30,6 +26,62 @@ type Mutation {
         details: inputDetails
         categories_id: [ID]
     ): Competition
-
+    
     deleteCompetition(_id: ID!): Competition
+
+
+    addCategory(
+        competition_id: ID!
+        name: String!
+        gender: String!
+        start_stand: Int
+        end_stand: Int
+    ): Category
+
+    updateCategory(
+        _id: ID!
+        name: String
+        gender: String
+        start_stand: Int
+        end_stand: Int
+    ): Category
+
+    deleteCategory(_id: String!): Category
+
+
+
+    addDistance(
+        competition_id: ID!
+        category_id: ID!
+        name: String!
+        order: Int
+        series_type: Int!
+    ): Distance
+    updateDistance(
+        _id: ID!
+        name: String
+        order: Int
+        series_type: Int
+    ): Distance
+    deleteDistance(_id: ID!): Distance
+
+
+    addParticipant(
+        full_name: String!
+        birth_year: String!
+        license_no: String!
+        gender: String!
+        country: String
+        club: String
+    ): Participant
+
+    updateParticipant(
+        _id: ID!
+        full_name: String
+        birth_year: String
+        license_no: String
+        gender: String
+        country: String
+        club: String
+    ): Participant
 }

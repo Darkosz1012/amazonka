@@ -16,12 +16,7 @@ export default new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "Participant",
         },
-        first_name: {
-            type: String,
-        },
-        last_name: {
-            type: String,
-        },
+        full_name: String,
         placement: {
             type: Number,
         },
@@ -34,12 +29,7 @@ export default new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "Participant",
         },
-        first_name: {
-            type: String,
-        },
-        last_name: {
-            type: String,
-        },
+        full_name: String,
         placement: {
             type: Number,
         },

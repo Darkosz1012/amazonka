@@ -4,31 +4,13 @@ import {
     expectAnyError,
     expectAnyErrorMessageToBe,
 } from "./utils/matchers.js";
+import { RegisterUserOperation } from "./utils/operations.js";
 
 const collectionsEmptiedOnCleanup = ["users"];
 let SUT = new AppRunner(collectionsEmptiedOnCleanup);
 
-const registerQuery = `mutation registerUser($username: String!, $password: String!, $email: String!) {
-							register(username: $username, password: $password, email: $email) {
-								user_id
-								username
-							}
-						}`;
-
-function createRegisterUserMsg() {
-    return {
-        query: registerQuery,
-        operationName: "registerUser",
-        variables: {
-            username: "test_user",
-            email: "grzesiekkasprzak@google.com",
-            password: "qwerty",
-        },
-    };
-}
-
 describe("register users", () => {
-    const registerUserMsg = createRegisterUserMsg();
+    const registerUserMsg = new RegisterUserOperation().createMsg();
 
     beforeAll(async () => {
         await SUT.start();
@@ -46,80 +28,69 @@ describe("register users", () => {
         await SUT.stop();
     });
 
-    async function expectSuccessfulRegistration(request) {
+    async function expectSuccessfulRegistration(operation) {
         const userCount = await SUT.getDocumentsCount("users");
 
-        var response = await SUT.request()
-            .post("/graphql")
-            .send(request)
-            .expect(200);
+        const response = await SUT.execute(operation);
 
         expectNoErrors(response);
         expect(response.body.data.register.username).toBe(
-            request.variables.username
+            operation.variables.username
         );
         expect(await SUT.getDocumentsCount("users")).toBe(userCount + 1);
 
         return response;
     }
 
+    async function expectUnsuccessfulRegistration(operation, errorMsg) {
+        const userCount = await SUT.getDocumentsCount("users");
+
+        const response = await SUT.execute(operation);
+
+        if (errorMsg == undefined) expectAnyError(response);
+        else expectAnyErrorMessageToBe(errorMsg, response);
+
+        expect(await SUT.getDocumentsCount("users")).toBe(userCount);
+
+        return response;
+    }
+
     test("register a user, should respond with registered username and add user to database", async () => {
-        await expectSuccessfulRegistration(registerUserMsg);
+        await expectSuccessfulRegistration(new RegisterUserOperation());
     });
 
-    //currently this password is accepted and test fails!
-    test.skip("register a user with empty password, should return error", async () => {
-        let registerUserEmptyPasswordMsg = createRegisterUserMsg();
-        registerUserEmptyPasswordMsg.variables.password = "";
-
-        const response = await SUT.request()
-            .post("/graphql")
-            .send(registerUserEmptyPasswordMsg)
-            .expect(200);
-
-        expectAnyError(response);
-        expect(await SUT.getDocumentsCount("users")).toBe(1);
+    test("register a user with empty password, should return error", async () => {
+        await expectUnsuccessfulRegistration(
+            new RegisterUserOperation({ password: "" })
+        );
     });
 
     test("register two users with different emails, but the same usernames, should return error", async () => {
-        await expectSuccessfulRegistration(registerUserMsg);
+        await expectSuccessfulRegistration(new RegisterUserOperation());
 
-        let registerUserDifferentEmailMsg = createRegisterUserMsg();
-        registerUserDifferentEmailMsg.variables.email += "123";
-
-        const response = await SUT.request()
-            .post("/graphql")
-            .send(registerUserDifferentEmailMsg)
-            .expect(200);
-
-        expectAnyErrorMessageToBe("User already exists.", response);
-        expect(await SUT.getDocumentsCount("users")).toBe(1);
+        await expectUnsuccessfulRegistration(
+            new RegisterUserOperation({ email: "kasprzak@google.com" }),
+            "User already exists."
+        );
     });
 
     test("register two users with different usernames, but the same emails, should return error", async () => {
-        await expectSuccessfulRegistration(registerUserMsg);
+        await expectSuccessfulRegistration(new RegisterUserOperation());
 
-        let registerUserDifferentUsernameMsg = createRegisterUserMsg();
-        registerUserDifferentUsernameMsg.variables.username += "123";
-
-        const response = await SUT.request()
-            .post("/graphql")
-            .send(registerUserDifferentUsernameMsg)
-            .expect(200);
-
-        expectAnyErrorMessageToBe("User already exists.", response);
-        expect(await SUT.getDocumentsCount("users")).toBe(1);
+        await expectUnsuccessfulRegistration(
+            new RegisterUserOperation({ username: "test_user123" }),
+            "User already exists."
+        );
     });
 
     test("register two unique users successfully", async () => {
-        await expectSuccessfulRegistration(registerUserMsg);
-
-        let registerUserDifferentUsernameAndEmailMsg = createRegisterUserMsg();
-        registerUserDifferentUsernameAndEmailMsg.variables.username += "123";
-        registerUserDifferentUsernameAndEmailMsg.variables.email += "123";
+        await expectSuccessfulRegistration(new RegisterUserOperation());
 
         await expectSuccessfulRegistration(
-            registerUserDifferentUsernameAndEmailMsg
+            new RegisterUserOperation({
+                username: "test_user123",
+                email: "kasprzak@google.com",
+            })
         );
     });
 });

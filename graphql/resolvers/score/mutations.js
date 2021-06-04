@@ -153,7 +153,6 @@ async function updateScoreFromSeries(score, distance_id, series_no) {
         if (
             score.distances[distance_idx].distance_id.toString() === distance_id
         ) {
-            console.log("count");
             countSeries(distance_idx, series);
         }
     }

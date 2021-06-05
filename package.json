@@ -8,14 +8,15 @@
         "test-unit": "jest --testPathPattern='/__tests__/unit/.*'",
         "test-graph": "jest --testPathPattern='/__tests__/qraphql_queries/.*'",
         "test-func": "jest --runInBand --testPathPattern='/__tests__/functional/.*'",
-        "test": "npm run test-unit && npm run test-graph && npm run test-func",
-        "test-front": "cd front && npm test",
-        "test-all": "npm run test && npm run test-front",
+        "test": "npm run test-unit & npm run test-graph & npm run test-func",
+        "test-front": "(cd front && npm test)",
+        "test-all": "start npm run test-front && npm run test",
         "start:dev": "npx nodemon server.js",
         "start": "node server",
         "prepare": "npx husky install",
         "pre-commit": "pretty-quick --staged",
-        "postinstall": "cd front && npm install && cd .. && npx basetag link"
+        "install-front": "(cd front && npm install)",
+        "postinstall": "start npm run install-front & npx basetag link"
     },
     "jest": {
         "transform": {

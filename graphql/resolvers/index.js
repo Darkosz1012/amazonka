@@ -14,13 +14,19 @@ import {
     participantQueries,
     ParticipantWithScore,
 } from "./participant/index.js";
-import { DistanceWithName } from "./distance/index.js";
+import {
+    DistanceWithName,
+    Distance,
+    distanceMutations,
+    distanceQueries
+} from "./distance/index.js"
 import { finalsMutations, finalsQueries, Finals } from "./finals/index.js";
 
 const resolvers = {
     Query: {
         ...competitionQueries,
         ...categoryQueries,
+        ...distanceQueries,
         ...participantQueries,
         ...finalsQueries,
     },
@@ -29,6 +35,7 @@ const resolvers = {
         ...competitionMutations,
         ...categoryMutations,
         ...participantMutations,
+        ...distanceMutations,
         ...finalsMutations,
     },
     Competition: {
@@ -36,6 +43,7 @@ const resolvers = {
     },
     Category,
     DistanceWithName,
+    Distance
     ParticipantWithScore,
     Finals,
 };

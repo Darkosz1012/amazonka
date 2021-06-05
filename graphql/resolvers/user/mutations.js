@@ -24,7 +24,10 @@ export default {
         }
     },
 
-    register: async (_, { username, password, email }) => {
+    register: async (
+        _,
+        { username, password, email, reason_for_creating_account }
+    ) => {
         validate_username(username);
         validate_email(email);
         validate_password(password);
@@ -34,6 +37,7 @@ export default {
                 username,
                 password: await hash(password),
                 email,
+                reason_for_creating_account,
                 verified: false,
             });
 

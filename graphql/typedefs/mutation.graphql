@@ -46,6 +46,21 @@ type Mutation {
 
     deleteCategory(_id: String!): Category
 
+    addDistance(
+        competition_id: ID!
+        category_id: ID!
+        name: String!
+        order: Int
+        series_type: Int!
+    ): Distance
+    updateDistance(
+        _id: ID!
+        name: String
+        order: Int
+        series_type: Int
+    ): Distance
+    deleteDistance(_id: ID!): Distance
+
     addParticipant(
         full_name: String!
         birth_year: String!

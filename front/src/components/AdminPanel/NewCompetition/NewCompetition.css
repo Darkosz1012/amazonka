@@ -1,5 +1,5 @@
 .competition-form-div {
-    width: 400px;
+    width: 480px;
     margin: 60px auto;
     padding: 20px 20px;
     border-radius: 20px;
@@ -17,6 +17,7 @@ form {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    margin: 0px !important;
 }
 
 .column {
@@ -32,11 +33,37 @@ form {
 
 .input-column {
     height: 50px;
+    width: 220px;
+}
+
+@media (max-width: 999px) {
+    .competition-form-div {
+        margin: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .competition-form-div {
+        width: 400px;
+        padding: 10px 20px 10px 20px;
+    }
+    .label-column {
+        width: 130px;
+    }
+    .input-column {
+        width: 170px;
+    }
 }
 
 @media (max-width: 450px) {
     .competition-form-div {
-        width: 360px;
-        padding: 10px 20px 10px 20px;
+        width: 310px;
+        padding: 2px 5px 2px 5px;
+    }
+    .label-column {
+        width: 100px;
+    }
+    .input-column {
+        width: 140px;
     }
 }

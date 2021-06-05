@@ -6,10 +6,9 @@ export default {
     },
 
     participants: async (_, args) => {
-        let regex = new RegExp(args.name);
-
-        return Participant.find({
-            full_name: { $regex: regex, $options: "i" },
+        Object.keys(args).forEach((key) => {
+            args[key] = { $regex: new RegExp(args[key]), $options: "i" };
         });
+        return Participant.find(args);
     },
 };

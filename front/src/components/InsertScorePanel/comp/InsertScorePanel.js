@@ -21,7 +21,7 @@ const points = {
 var shootCount = 0;
 var shoots;
 
-function InsertScorePanel() {
+function InsertScorePanel(props) {
     var [myArray, updateMyArray] = useState([]);
     var [activeInput, setActiveInput] = useState("");
 
@@ -61,7 +61,7 @@ function InsertScorePanel() {
             <p id="mainHeader">
                 {" "}
                 Kategoria: {scoreData[0]["category_name"]}, Odległość:{" "}
-                {scoreData[0]["distance"]}, Seria: 2{" "}
+                {scoreData[0]["distance"]}, Seria: {props.serialNumber}{" "}
             </p>
             <div id="info-msg"></div>
             <div className="container">

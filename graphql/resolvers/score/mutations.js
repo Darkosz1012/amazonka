@@ -21,7 +21,7 @@ export default {
                 category_id: args.category_id,
             });
 
-            throw new Error("Couldn't add user.");
+            throw new Error("Couldn't add score.");
         }
         return score;
     },

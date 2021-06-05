@@ -14,7 +14,7 @@ function HomePage() {
         <div className="HomePage">
             <header className="HomePage__header">
                 <h1>
-                    Witajcie na stronie orgazniatora zawodów łuczniczych
+                    Witajcie na stronie organizatora zawodów łuczniczych
                     Amazonka!
                 </h1>
             </header>
@@ -22,14 +22,14 @@ function HomePage() {
                 <h2>Czym jest Amazonka?</h2>
                 <p>
                     Jest to odpowiedź na brak komunikacji między zawodnikiem a
-                    organizatorem oraz słabą automatyzacji zawodów łuczniczych w
+                    organizatorem oraz słabą automatyzację zawodów łuczniczych w
                     naszym kraju. Dzięki Amazonce dostajesz możliwość
                     komunikowania zawodnikom podstawowych informacji o zawodach
                     takich jak harmonogram, rozstawienie oraz wyniki bez żadnych
                     pośredników i natychmiast po jednym kliknięciu. Dodatkowo
                     zapewniamy automatyzację w podstawowych czynnościach
                     organizacyjnych, które zawsze wyglądają tak samo np.
-                    sumowanie wyników rozpisywanie eliminacji.
+                    sumowanie wyników, czy rozpisywanie eliminacji.
                 </p>
                 <h2>Co zyskujesz dzięki naszej aplikacji?</h2>
                 <p class="HomePage__container">
@@ -43,7 +43,7 @@ function HomePage() {
                         </h3>
                         <p className="HomePage__card-content">
                             Na naszej witrynie możesz wpisywać pojedyncze
-                            strzały lub wynik serii, a nasz system wyliczy
+                            strzały lub wynik serii, a system wyliczy
                             wyniki całościowe oraz ustawi ranking na ich
                             podstawie.
                         </p>
@@ -73,7 +73,7 @@ function HomePage() {
                         <p className="HomePage__card-content">
                             Po wpisaniu każdej serii w naszym systemie, gdy
                             klikniesz "podlicz wyniki", udostępniasz najnowszy
-                            ranking wszystkim osobą, które wejdą na tą stronę.
+                            ranking wszystkim osobom, które wejdą na tę stronę.
                         </p>
                     </div>
                     <div class="HomePage__card">
@@ -86,7 +86,7 @@ function HomePage() {
                         </h3>
                         <p className="HomePage__card-content">
                             Wystarczy, że wpiszesz zawodników do naszego systemu
-                            i przydzielisz im kategorie, a nasz system
+                            i przydzielisz im kategorie, a system
                             wygeneruje rozstawienie za ciebie.
                         </p>
                     </div>
@@ -99,7 +99,7 @@ function HomePage() {
                             Automatyczne przetwarzanie eliminacji
                         </h3>
                         <p className="HomePage__card-content">
-                            Na podstawie wyników kwalifikacji, nasz system
+                            Na podstawie wyników kwalifikacji system
                             potrafi wygenerować drabinki eliminacyjne.
                         </p>
                     </div>

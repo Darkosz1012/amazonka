@@ -38,7 +38,6 @@ function prepareDate(date) {
 }
 const CompetitionForm = (props) => {
     const history = useHistory();
-    const params = useParams();
 
     const _id = props.id;
     const competitionData = useSelector((state) => state.competitionsData).find(
@@ -50,7 +49,6 @@ const CompetitionForm = (props) => {
     );
     const _end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
     const _location = competitionData.location;
-
 
     const [name, setName] = useState(_name);
     const [start_date, setStartDate] = useState(_start_date);
@@ -96,7 +94,6 @@ const CompetitionForm = (props) => {
         alert("Zatwierdzono edycję szczegółów");
         history.push("/admin/panel/" + _id + "/details");
     };
-
 
     return (
         <div>

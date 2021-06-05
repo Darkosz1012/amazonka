@@ -11,7 +11,14 @@ type Query {
     distance(_id: ID!): Distance
 
     participant(_id: ID!): Participant
-    participants(name: String): [Participant]
+    participants(
+        full_name: String
+        birth_year: String
+        license_no: String
+        gender: String
+        country: String
+        club: String
+    ): [Participant]
 
     score(participant_id: ID!, category_id: ID!): Score
     scores(category_id: ID!): [Score]

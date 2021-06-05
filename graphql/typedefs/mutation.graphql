@@ -1,7 +1,11 @@
 type Mutation {
-    #Login
     login(username: String!, password: String!): Token!
-    register(username: String!, email: String!, password: String!): Token!
+    register(
+        username: String!
+        email: String!
+        password: String!
+        reason_for_creating_account: String!
+    ): Token!
     refresh(refreshToken: String!): Token!
 
     #Competition
@@ -47,12 +51,14 @@ type Mutation {
         name: String!
         order: Int
         series_type: Int!
+        number_of_arrows: Int!
     ): Distance
     updateDistance(
         _id: ID!
         name: String
         order: Int
         series_type: Int
+        number_of_arrows: Int
     ): Distance
     deleteDistance(_id: ID!): Distance
 

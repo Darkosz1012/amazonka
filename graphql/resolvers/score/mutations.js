@@ -1,5 +1,6 @@
 import { Category, Distance, Score, Series } from "$/db/index.js";
 import { verifyRequest } from "$/auth/auth.js";
+import crypto from "crypto";
 
 export default {
     addScore: async (_, args, context) => {
@@ -35,21 +36,26 @@ export default {
             args.Xs = 0;
             args.tens = 0;
             for (let arrow of args.arrows) {
-                if (arrow === "X") {
-                    args.score += 10;
-                    args.Xs++;
-                } else if (arrow === "10") {
-                    args.score += parseInt(arrow);
-                    args.tens++;
-                } else {
-                    args.score += parseInt(arrow);
-                }
+                countArrow(arrow);
             }
         }
 
         return Series.findByIdAndUpdate(args._id, args, {
             new: true,
         });
+
+        function countArrow(arrow) {
+            if (arrow === "X") {
+                args.score += 10;
+                args.Xs++;
+            } else if (arrow === "10") {
+                args.score += 10;
+                args.tens++;
+            } else if (arrow === "M") {
+            } else {
+                args.score += parseInt(arrow);
+            }
+        }
     },
 
     saveScoresFromSeries: async (_, args, context) => {
@@ -146,7 +152,7 @@ async function createAllSeries(participant_id, category_id, distances) {
 }
 
 async function updateScoreFromSeries(score, distance_id) {
-    zeroScore();
+    clearScore();
 
     let allSeries = await Series.find({
         distance_id,
@@ -157,37 +163,28 @@ async function updateScoreFromSeries(score, distance_id) {
         countSeries(series);
     }
 
-    countPreEliminationScore();
+    sumPreEliminationScore();
 
-    function zeroScore() {
-        for (let i = 0; i < score.distances.length; i++) {
-            if (score.distances[i].distance_id.toString() === distance_id) {
-                score.distances[i].score = 0;
-            }
+    function clearScore() {
+        for (let distance of score.distances) {
+            distance.score = 0;
         }
     }
 
     function countSeries(series) {
-        for (
-            let distance_idx = 0;
-            distance_idx < score.distances.length;
-            distance_idx++
-        ) {
-            if (
-                score.distances[distance_idx].distance_id.toString() ===
-                distance_id
-            ) {
-                addSeriesToScore(distance_idx, series);
+        for (let distance of score.distances) {
+            if (distance.distance_id.toString() === distance_id) {
+                addSeriesToScore(distance, series);
             }
         }
 
-        function addSeriesToScore(distance_idx, series) {
-            score.distances[distance_idx].score += series.score;
+        function addSeriesToScore(distance, series) {
+            distance.score += series.score;
             series.was_counted = true;
         }
     }
 
-    function countPreEliminationScore() {
+    function sumPreEliminationScore() {
         score.pre_eliminations_score = 0;
         for (let distance of score.distances) {
             score.pre_eliminations_score += distance.score;

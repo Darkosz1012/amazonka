@@ -52,12 +52,14 @@ type Mutation {
         name: String!
         order: Int
         series_type: Int!
+        number_of_arrows: Int!
     ): Distance
     updateDistance(
         _id: ID!
         name: String
         order: Int
         series_type: Int
+        number_of_arrows: Int
     ): Distance
     deleteDistance(_id: ID!): Distance
 

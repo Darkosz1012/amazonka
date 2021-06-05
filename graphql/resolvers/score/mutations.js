@@ -13,7 +13,17 @@ export default {
 
         await createAllSeries(args.participant_id, args.category_id, distances);
 
-        return await score.save();
+        try {
+            await score.save();
+        } catch (err) {
+            Series.deleteMany({
+                participant_id: args.participant_id,
+                category_id: args.category_id,
+            });
+
+            throw new Error("Couldn't add user.");
+        }
+        return score;
     },
 
     updateScore: async (_, args, context) => {

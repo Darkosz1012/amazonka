@@ -32,7 +32,10 @@ const schema = new mongoose.Schema({
             score: { type: Number },
         },
     ],
-    access_code: String,
+    access_code: {
+        type: String,
+        unique: true,
+    },
 });
 
 schema.post("findOneAndDelete", async function (score) {

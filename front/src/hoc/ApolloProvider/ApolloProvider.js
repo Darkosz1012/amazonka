@@ -24,7 +24,7 @@ const WithProvider = ({ children }) => {
         operation.setContext({
             headers: {
                 authorization:
-                    "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjI2Mjg4NzcsImV4cCI6MTYyMjcxNTI3N30.psFXQVYPOIRrL53HbUXKWNOpifqNFwUSyi8WSh5N5ZQ",
+                    "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjI4ODY1NzUsImV4cCI6MTYzMDA4NjU3NX0.2Zfvg91QFxg2tPJDhA-0033MAEbCwdewJFXOaFnsbPM",
             },
         });
 

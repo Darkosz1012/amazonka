@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import * as actions from "./../../store/actions/actions";
 
 const GET_USER_COMPETITIONS = gql`
-    query competitions($owner: ID) {
-        competitions(owner: $owner) {
+    query competitions($owner_id: ID) {
+        competitions(owner_id: $owner_id) {
             _id
             owner_id
             name

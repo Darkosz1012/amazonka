@@ -26,8 +26,9 @@ const RegisterForm = (props) => {
     const [email, setEmail] = useState("");
     const [password1, setPassword1] = useState("");
     const [password2, setPassword2] = useState("");
-    const [reasonForCreatingAccount, setReasonForCreatingAccount] =
-        useState("");
+    const [reasonForCreatingAccount, setReasonForCreatingAccount] = useState(
+        ""
+    );
 
     const [registerUser] = useMutation(REGISTER_USER, {
         onError() {

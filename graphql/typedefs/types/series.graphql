@@ -1,13 +1,16 @@
 type Series {
+    _id: ID!
+
     participant_id: ID!
     participant: Participant!
-    competition_id: ID!
-    competition: Competition!
-
+    category_id: ID!
+    category: Category!
     distance_id: ID!
 
     series_no: Int!
     was_counted: Boolean!
-    score: Int!
+    score: Int
+    Xs: Int
+    tens: Int
     arrows: [String]
 }

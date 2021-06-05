@@ -1,10 +1,25 @@
 import "./CompetitionDetails.css";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { gql, useQuery } from "@apollo/client";
+import { useEffect, useState } from "react";
+
+const GET_COMPETITION_DATA = gql`
+    query competition($_id: ID!) {
+        competition(_id: $_id) {
+            _id
+            owner_id
+            name
+            start_date
+            end_date
+            location
+            details_id
+            categories_id
+        }
+    }
+`;
 
 function prepareDate(date) {
     let month =
@@ -18,9 +33,29 @@ function prepareDate(date) {
 function CompetitionDetails(props) {
     const _id = props.match.params.id;
 
-    const competitionData = useSelector((state) => state.competitionsData).find(
-        (cmp) => cmp._id === _id
-    );
+    const { loading, error, data } = useQuery(GET_COMPETITION_DATA, {
+        variables: { _id },
+    });
+
+    let [competitionData, setCompetitionData] = useState([]);
+
+    useEffect(() => {
+        const onError = (error) => {
+            console.log(error);
+        };
+        const onCompleted = (data) => {
+            setCompetitionData({ ...data.competition });
+        };
+
+        if (onCompleted || onError) {
+            if (onCompleted && !loading && !error) {
+                onCompleted(data);
+            } else if (onError && !loading && error) {
+                onError(error);
+            }
+        }
+    }, [loading, data, error]);
+
     let [categoriesList, setCategoriesList] = useState([]);
 
     const name = competitionData.name;

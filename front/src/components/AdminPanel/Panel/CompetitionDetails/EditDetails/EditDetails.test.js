@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, within } from "@testing-library/react";
-import reactRedux from "react-redux";
 import { Route, MemoryRouter as Router } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
 import * as handler from "./handleSubmit.js";

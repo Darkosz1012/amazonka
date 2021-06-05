@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import Button from "../../UI/Button/Button";
 import { pushToHistoryEvent } from "./pushToHistoryEvent.js";
 import { gql, useMutation } from "@apollo/client";
-import { useSelector } from "react-redux";
 
 const ADD_COMPETITION = gql`
     mutation addCompetition(
@@ -29,12 +28,9 @@ const ADD_COMPETITION = gql`
     }
 `;
 
-
-
-
 const CompetitionForm = (props) => {
     const history = useHistory();
-    const userId = useSelector((state) => state.userId);
+    const userId = localStorage.getItem("userId") || null;
 
     const [name, setName] = useState("");
     const [start_date, setStartDate] = useState("");
@@ -61,6 +57,9 @@ const CompetitionForm = (props) => {
         onCompleted(data) {
             //there will go what will happen if compleated succesfully
             console.log(data);
+            history.push(
+                "/admin/panel/" + data.addCompetition._id + "/details"
+            );
         },
     });
 
@@ -78,11 +77,9 @@ const CompetitionForm = (props) => {
             },
         });
         alert("Zatwierdzono edycję szczegółów");
-        pushToHistoryEvent(history, "/admin/competitions");
     };
 
     return (
-
         <form data-testid="newCompetitionFormTestId" onSubmit={handleSubmit}>
             <div className="row">
                 <div className="column">

@@ -5,8 +5,6 @@ import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import { revertDateFormat } from "../revertDateFormat.js";
 import "./CompetitionList.css";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import * as actions from "./../../store/actions/actions";
 
 const GET_COMPETITIONS = gql`
     query competitions {
@@ -34,7 +32,6 @@ function prepareDate(date) {
 
 function CompetitionList() {
     let history = useHistory();
-    const dispatch = useDispatch();
 
     function handleClick(ID) {
         history.push("competitionsdetails/" + ID);
@@ -48,7 +45,6 @@ function CompetitionList() {
         },
         onCompleted(data) {
             setShowComp(prepareData(data));
-            dispatch(actions.getCompetitionsData(data.competitions));
         },
     });
 

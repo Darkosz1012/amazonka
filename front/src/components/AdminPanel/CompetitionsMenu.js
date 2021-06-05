@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import "./CompetitionsMenu.css";
 import Button from "../UI/Button/Button";
-import { useDispatch, useSelector } from "react-redux";
-import * as actions from "./../../store/actions/actions";
 
 const GET_USER_COMPETITIONS = gql`
     query competitions($owner_id: ID) {
@@ -34,9 +32,8 @@ function prepareDate(date) {
 
 function CompetitionsMenu() {
     let history = useHistory();
-    const dispatch = useDispatch();
     //chwilowe - powinno być state.userId, ale na razie jedyne zawody z bazy się pobierają pod tym konkretnym id
-    let userId = useSelector((state) => state.test);
+    let userId = localStorage.getItem("userId") || null;
 
     function handleClickCompetitionLink(ID) {
         history.push("/admin/panel/" + ID + "/details");
@@ -69,9 +66,13 @@ function CompetitionsMenu() {
         return finalData;
     };
 
-    const { loading, error, data } = useQuery(GET_USER_COMPETITIONS, {
+    const { loading, error, data, refetch } = useQuery(GET_USER_COMPETITIONS, {
         variables: { userId },
     });
+
+    useEffect(() => {
+        refetch();
+    }, []);
 
     useEffect(() => {
         const onError = (error) => {
@@ -79,7 +80,6 @@ function CompetitionsMenu() {
         };
         const onCompleted = (data) => {
             setCompDetails([...prepareData(data)]);
-            dispatch(actions.getCompetitionsData(data.competitions));
         };
 
         if (onCompleted || onError) {

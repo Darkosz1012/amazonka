@@ -1,8 +1,22 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../../../UI/Button/Button";
-import { gql, useMutation } from "@apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
+
+const GET_COMPETITION_DATA = gql`
+    query competition($_id: ID!) {
+        competition(_id: $_id) {
+            _id
+            owner_id
+            name
+            start_date
+            end_date
+            location
+            details_id
+            categories_id
+        }
+    }
+`;
 
 const EDIT_COMPETITION = gql`
     mutation updateCompetition(
@@ -38,22 +52,40 @@ function prepareDate(date) {
 }
 const CompetitionForm = (props) => {
     const history = useHistory();
+    const _id = props._id;
 
-    const _id = props.id;
-    const competitionData = useSelector((state) => state.competitionsData).find(
-        (cmp) => cmp._id === _id
-    );
-    const _name = competitionData.name;
-    const _start_date = prepareDate(
-        new Date(parseInt(competitionData.start_date))
-    );
-    const _end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
-    const _location = competitionData.location;
+    const { loading, error, data } = useQuery(GET_COMPETITION_DATA, {
+        variables: { _id },
+    });
 
-    const [name, setName] = useState(_name);
-    const [start_date, setStartDate] = useState(_start_date);
-    const [end_date, setEndDate] = useState(_end_date);
-    const [location, setLocation] = useState(_location);
+    useEffect(() => {
+        const onError = (error) => {
+            console.log(error);
+        };
+        const onCompleted = (data) => {
+            setName(data.competition.name);
+            setStartDate(
+                prepareDate(new Date(parseInt(data.competition.start_date)))
+            );
+            setEndDate(
+                prepareDate(new Date(parseInt(data.competition.end_date)))
+            );
+            setLocation(data.competition.location);
+        };
+
+        if (onCompleted || onError) {
+            if (onCompleted && !loading && !error) {
+                onCompleted(data);
+            } else if (onError && !loading && error) {
+                onError(error);
+            }
+        }
+    }, [loading, data, error]);
+
+    const [name, setName] = useState("");
+    const [start_date, setStartDate] = useState("");
+    const [end_date, setEndDate] = useState("");
+    const [location, setLocation] = useState("");
 
     const handleNameChange = (event) => {
         setName(event.target.value);
@@ -68,14 +100,11 @@ const CompetitionForm = (props) => {
         setLocation(event.target.value);
     };
 
-    const [editCompetition, { data }] = useMutation(EDIT_COMPETITION, {
+    const [editCompetition, { newData }] = useMutation(EDIT_COMPETITION, {
         onError(err) {
             console.log(err);
         },
-        onCompleted(data) {
-            //there will go what will happen if compleated succesfully
-            console.log(data);
-        },
+        onCompleted(newData) {},
     });
 
     const handleSubmit = (event) => {
@@ -98,11 +127,7 @@ const CompetitionForm = (props) => {
     return (
         <div>
             <form
-                onSubmit={handleSubmit(
-                    history,
-                    "/admin/panel/" + _id + "/details",
-                    _id
-                )}
+                onSubmit={handleSubmit}
                 id="editDetailForm"
                 data-testid="editDetailFormTestId"
             >

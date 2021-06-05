@@ -2,14 +2,28 @@ import "./CompetitionDetails.css";
 import { useParams, useHistory } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
 import Button from "../../UI/Button/Button";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const GET_CATEGORIES = gql`
     query($competition_id: ID) {
         categories(competition_id: $competition_id) {
             _id
             name
+        }
+    }
+`;
+
+const GET_COMPETITION_DATA = gql`
+    query competition($_id: ID!) {
+        competition(_id: $_id) {
+            _id
+            owner_id
+            name
+            start_date
+            end_date
+            location
+            details_id
+            categories_id
         }
     }
 `;
@@ -25,17 +39,39 @@ function prepareDate(date) {
 
 function CompetitionDetails(props) {
     const params = useParams();
-    const competitionId = params.id;
-    const competitionData = useSelector((state) => state.competitionsData).find(
-        (cmp) => cmp._id === competitionId
-    );
+    const _id = params.id;
+
+    const { loading, error, data } = useQuery(GET_COMPETITION_DATA, {
+        variables: { _id },
+    });
+
+    let [competitionData, setCompetitionData] = useState([]);
+
+    useEffect(() => {
+        const onError = (error) => {
+            console.log(error);
+        };
+        const onCompleted = (data) => {
+            setCompetitionData({ ...data.competition });
+        };
+
+        if (onCompleted || onError) {
+            if (onCompleted && !loading && !error) {
+                onCompleted(data);
+            } else if (onError && !loading && error) {
+                onError(error);
+            }
+        }
+    }, [loading, data, error]);
+
     let [categoriesList, setCategoriesList] = useState([]);
 
-    const { loading, error, data } = useQuery(GET_CATEGORIES, {
+    const { loadingCat, errorCat, dataCat } = useQuery(GET_CATEGORIES, {
         onError(err) {
             console.log(err);
         },
         onCompleted(data) {
+            console.log(data);
             setCategoriesList(data.categories);
         },
     });
@@ -48,7 +84,9 @@ function CompetitionDetails(props) {
     const end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
     const description = `mamy details id (${competitionData.details_id}), jak będzie api to będzie na jego podstawie pobiarany opis`;
     const schedule = `harmonogram - pewnie będzie w details id, na razie chyba nie ma api do tego`;
-    const categories = [...competitionData.categories_id]; //też na razie mam tylko id
+    const categories = competitionData.categories_id
+        ? [...competitionData.categories_id]
+        : []; //też na razie mam tylko id
     const categ_num = Object.keys(categories).length;
 
     let categoriesStr = categories.join(", ");

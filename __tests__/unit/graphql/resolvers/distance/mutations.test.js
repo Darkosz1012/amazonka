@@ -53,7 +53,7 @@ describe("Test mutation resolvers for distance", () => {
         test("should return created document.",async ()=>{
             let result = transform_by_JSON(await mutations.addDistance(null,Distance_data,null,null));
             
-            expect(result) .toMatchObject(Distance_data);
+            expect(result).toMatchObject(Distance_data);
         });
 
         test.skip("should called update of Category.",async ()=>{
@@ -67,7 +67,7 @@ describe("Test mutation resolvers for distance", () => {
         test("should return updated document.",async ()=>{
             let result = transform_by_JSON(await mutations.updateDistance(null,Distance_data,null,null));
             
-            expect(result) .toMatchObject(Distance_data);
+            expect(result).toMatchObject(Distance_data);
         });
     });
 
@@ -75,7 +75,7 @@ describe("Test mutation resolvers for distance", () => {
         test("should return deleted document.",async ()=>{
             let result = transform_by_JSON(await mutations.deleteDistance(null,Distance_data,null,null));
             
-            expect(result) .toMatchObject(Distance_data);
+            expect(result).toMatchObject(Distance_data);
         });
     });
   

@@ -40,9 +40,7 @@ function CompetitionDetails(props) {
     let [competitionData, setCompetitionData] = useState([]);
 
     useEffect(() => {
-        const onError = (error) => {
-            console.log(error);
-        };
+        const onError = (error) => {};
         const onCompleted = (data) => {
             setCompetitionData({ ...data.competition });
         };

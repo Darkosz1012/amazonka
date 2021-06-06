@@ -1,0 +1,1690 @@
+[
+    {
+        "_id": 1,
+        "name": "Puchar łucznika sądeczyzny",
+        "location": "Nowy Sącz",
+        "date_start": "15-05-2021",
+        "date_end": "17-05-2021",
+        "category": [
+            {
+                "_id": 1,
+                "name": "juniorzy",
+                "gender": "M",
+                "distances": [
+                    {
+                        "_id": 1,
+                        "name": "10m",
+                        "series_type": 6,
+                        "series": [
+                            {
+                                "_id": 1,
+                                "series_no": 1,
+                                "participants": [
+                                    {
+                                        "_id": 1,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Jan Kowalski",
+                                        "scores": {
+                                            "score": "20",
+                                            "Xs": "0",
+                                            "tens": "1",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "10",
+                                                "4",
+                                                "0",
+                                                "6"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 2,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Artur Żak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 3,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Jakub Migacz",
+                                        "scores": {
+                                            "score": "33",
+                                            "Xs": "0",
+                                            "tens": "1",
+                                            "arrows": [
+                                                "8",
+                                                "0",
+                                                "10",
+                                                "7",
+                                                "3",
+                                                "5"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 4,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Karol Stafiński",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 2,
+                                "series_no": 2,
+                                "participants": [
+                                    {
+                                        "_id": 1,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Jan Kowalski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 2,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Artur Żak",
+                                        "scores": {
+                                            "score": "8",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": []
+                                        }
+                                    },
+                                    {
+                                        "_id": 3,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Jakub Migacz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 4,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Karol Stafiński",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 3,
+                                "series_no": 3,
+                                "participants": [
+                                    {
+                                        "_id": 1,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Jan Kowalski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 2,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Artur Żak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 3,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Jakub Migacz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 4,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Karol Stafiński",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "_id": 2,
+                        "name": "20m",
+                        "series_type": 3,
+                        "series": [
+                            {
+                                "_id": 1,
+                                "series_no": 1,
+                                "participants": [
+                                    {
+                                        "_id": 1,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Jan Kowalski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 2,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Artur Żak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 3,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Jakub Migacz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 4,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Karol Stafiński",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 2,
+                                "series_no": 2,
+                                "participants": [
+                                    {
+                                        "_id": 1,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Jan Kowalski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 2,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Artur Żak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 3,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Jakub Migacz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 4,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Karol Stafiński",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "_id": 2,
+                "name": "18-25",
+                "gender": "F",
+                "distances": [
+                    {
+                        "_id": 1,
+                        "name": "30m",
+                        "series_type": 3,
+                        "series": [
+                            {
+                                "_id": 1,
+                                "series_no": 1,
+                                "participants": [
+                                    {
+                                        "_id": 5,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Anna Kowalska",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 6,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Katarzyna Żak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 7,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Karolina Migacz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 8,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Aleksandra Stańczyk",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 2,
+                                "series_no": 2,
+                                "participants": [
+                                    {
+                                        "_id": 5,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Anna Kowalska",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 6,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Katarzyna Żak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 7,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Karolina Migacz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 8,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Aleksandra Stańczyk",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 3,
+                                "series_no": 3,
+                                "participants": [
+                                    {
+                                        "_id": 5,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Anna Kowalska",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 6,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Katarzyna Żak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 7,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Karolina Migacz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 8,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Aleksandra Stańczyk",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "_id": 2,
+                        "name": "40m",
+                        "series_type": 3,
+                        "series": [
+                            {
+                                "_id": 1,
+                                "series_no": 1,
+                                "participants": [
+                                    {
+                                        "_id": 5,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Wiola Kowalska",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 6,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Weronika Żak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 7,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Alicja Migacz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 8,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Julia Wróbel",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 2,
+                                "series_no": 2,
+                                "participants": [
+                                    {
+                                        "_id": 5,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Wiola Kowalska",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 6,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Weronika Żak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 7,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Alicja Migacz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    },
+                                    {
+                                        "_id": 8,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Julia Wróbel",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": ["0", "0", "0"]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "_id": 3,
+                "name": "30-40",
+                "gender": "M",
+                "distances": [
+                    {
+                        "_id": 1,
+                        "name": "50m",
+                        "series_type": 6,
+                        "series": [
+                            {
+                                "_id": 1,
+                                "series_no": 1,
+                                "participants": [
+                                    {
+                                        "_id": 9,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Przemysław Nowak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 10,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Michał Król",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "stand": 2,
+                                        "_id": 11,
+                                        "order": "A",
+                                        "full_name": "Wojciech Zyga",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 12,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Mateusz Ziobro",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 2,
+                                "series_no": 2,
+                                "participants": [
+                                    {
+                                        "_id": 9,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Przemysław Nowak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 10,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Michał Król",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 11,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Wojciech Zyga",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 12,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Mateusz Ziobro",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 3,
+                                "series_no": 3,
+                                "participants": [
+                                    {
+                                        "_id": 9,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Przemysław Nowak",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 10,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Michał Król",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 11,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Wojciech Zyga",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 12,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Mateusz Ziobro",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "_id": 2,
+                        "name": "60m",
+                        "series_type": 6,
+                        "series": [
+                            {
+                                "_id": 1,
+                                "series_no": 1,
+                                "participants": [
+                                    {
+                                        "_id": 13,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Antoni Kraszewski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 14,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Michał Rola",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 15,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Witold Więcek",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 16,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Rafał Kowalski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 2,
+                                "series_no": 2,
+                                "participants": [
+                                    {
+                                        "_id": 13,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Antoni Kraszewski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 14,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Michał Rola",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 15,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Witold Więcek",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 16,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Rafał Kowalski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_id": 3,
+                                "series_no": 3,
+                                "participants": [
+                                    {
+                                        "_id": 13,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Antoni Kraszewski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 14,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Michał Rola",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 15,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Witold Więcek",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 16,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Rafał Kowalski",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "_id": 4,
+                "name": "seniorzy",
+                "gender": "M",
+                "distances": [
+                    {
+                        "_id": 1,
+                        "name": "70m",
+                        "series_type": 6,
+                        "series": [
+                            {
+                                "series_no": 1,
+                                "participants": [
+                                    {
+                                        "_id": 17,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Antoni Zawada",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 18,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Michał Borek",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 19,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Witold Apanasewicz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 30,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Rafał Żytkowicz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "series_no": 2,
+                                "participants": [
+                                    {
+                                        "_id": 17,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Antoni Zawada",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 18,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Michał Borek",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 19,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Witold Apanasewicz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 20,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Rafał Żytkowicz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "series_no": 3,
+                                "participants": [
+                                    {
+                                        "_id": 17,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Antoni Zawada",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 18,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Michał Borek",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 19,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Witold Apanasewicz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 20,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Rafał Żytkowicz",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "_id": 2,
+                        "name": "80m",
+                        "series_type": 6,
+                        "series": [
+                            {
+                                "series_no": 1,
+                                "participants": [
+                                    {
+                                        "_id": 21,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Arkadiusz Noga",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 22,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Marian Wójt",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 23,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Kacper Ziątek",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 24,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Bartłomiej Loska",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "series_no": 2,
+                                "participants": [
+                                    {
+                                        "_id": 21,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Arkadiusz Noga",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 22,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Marian Wójt",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 23,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Kacper Ziątek",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 24,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Bartłomiej Loska",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "series_no": 3,
+                                "participants": [
+                                    {
+                                        "_id": 21,
+                                        "stand": 1,
+                                        "order": "A",
+                                        "full_name": "Arkadiusz Noga",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 22,
+                                        "stand": 1,
+                                        "order": "B",
+                                        "full_name": "Marian Wójt",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 23,
+                                        "stand": 2,
+                                        "order": "A",
+                                        "full_name": "Kacper Ziątek",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id": 24,
+                                        "stand": 2,
+                                        "order": "B",
+                                        "full_name": "Bartłomiej Loska",
+                                        "scores": {
+                                            "score": "0",
+                                            "Xs": "0",
+                                            "tens": "0",
+                                            "arrows": [
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

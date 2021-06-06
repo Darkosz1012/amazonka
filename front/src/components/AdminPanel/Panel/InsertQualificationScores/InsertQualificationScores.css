@@ -1,0 +1,186 @@
+.insertQualificationScoresHeader {
+    color: #eb1532da;
+    font-weight: 800;
+    font-size: 17.5px;
+    padding-left: 19px !important;
+}
+
+.participantFullName {
+    color: #2755b9da;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.smallInput {
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #bbcbdd;
+    margin: 3px !important;
+    font-weight: 500;
+}
+
+.biggerInput {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 2px solid #bbcbdd;
+    color: #2755b9da;
+}
+
+.smallInput:hover,
+.biggerInput:hover {
+    box-shadow: 0 0 5px #6392b1da;
+}
+
+.smallInput:focus,
+.biggerInput:focus {
+    outline: none;
+    background-color: rgb(246, 250, 251);
+    box-shadow: 0 0 5px #6392b1da;
+}
+
+#alignToLeft {
+    text-align: left;
+    align-self: center !important;
+}
+
+.custom-column {
+    padding: 0px !important;
+}
+
+.alignToCenter,
+.insertQualificationScoresHeader,
+.biggerInput,
+.custom-column {
+    text-align: center;
+    align-self: center !important;
+    justify-content: center;
+    align-items: center;
+    justify-content: center !important;
+}
+
+#filtersContainer {
+    padding: 20px 0px 20px 0px;
+}
+
+.filtersDiv {
+    display: block !important;
+}
+
+.participantRow {
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #92b9c5;
+}
+
+#insertScoresAdminForm {
+    margin: 0px;
+}
+
+.submitScoresButton {
+    width: 150px;
+}
+
+#submitScoresButtonDiv {
+    text-align: center;
+    padding-bottom: 8px;
+    opacity: 1;
+}
+
+#scoresSavedInfoMessage {
+    font-size: 16px;
+    margin: 20px 0px 10px 0px;
+    color: #eb1532da;
+    font-weight: 800;
+    opacity: 0;
+}
+
+@media (min-width: 1450px) {
+    #insertQualificationScoresMainConteiner {
+        margin-left: calc((100% - 1000px) / 2);
+        margin-right: calc((100% - 1000px) / 2);
+        width: 1000px !important;
+    }
+}
+
+@media (max-width: 1450px) {
+    .position,
+    .participantFullName,
+    .smallInput,
+    .biggerInput {
+        font-size: 16.5px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .position,
+    .participantFullName,
+    .smallInput,
+    .biggerInput {
+        font-size: 15.5px;
+    }
+}
+
+@media (max-width: 800px) {
+    .position,
+    .participantFullName,
+    .smallInput,
+    .biggerInput {
+        font-size: 13px;
+    }
+    .smallInput {
+        width: 30px;
+        height: 25px;
+    }
+    .biggerInput {
+        width: 35px;
+        height: 30px;
+    }
+    .position,
+    .participantFullName,
+    .smallInput,
+    .biggerInput {
+        font-size: 13px;
+    }
+    .insertQualificationScoresHeader {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 650px) {
+    .insertQualificationScoresHeader {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 480px) {
+    #formSelect {
+        min-width: 110px;
+    }
+}
+
+@media (max-width: 479px) {
+    .insertQualificationScoresHeader {
+        font-size: 13px;
+    }
+    #insertQualificationScoresHeaderRow {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .insertQualificationScoresHeader {
+        font-size: 11px;
+    }
+    #formSelect {
+        min-width: 84px;
+        padding-left: 0px;
+        font-size: 11px;
+    }
+    .position,
+    .participantFullName,
+    .smallInput,
+    .biggerInput {
+        font-size: 11px;
+    }
+}

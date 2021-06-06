@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import * as actions from "./../../../store/actions/actions";
 import Button from "../../UI/Button/Button";
 import { gql, useMutation } from "@apollo/client";
 import { Fragment } from "react";
@@ -18,8 +16,7 @@ const LOGIN_USER = gql`
 `;
 
 const LoginForm = (props) => {
-    const dispatch = useDispatch();
-    const isAuthenticated = useSelector((state) => state.isAuthenticated);
+    let isAuthenticated = false;
 
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
@@ -30,13 +27,10 @@ const LoginForm = (props) => {
                 "Błędny login lub hasło";
         },
         onCompleted(data) {
-            dispatch(
-                actions.userLogin(
-                    data.login.accessToken,
-                    data.login.refreshToken,
-                    data.login.user_id
-                )
-            );
+            localStorage.setItem("accessToken", data.login.accessToken);
+            localStorage.setItem("refreshToken", data.login.refreshToken);
+            localStorage.setItem("userId", data.login.user_id);
+            isAuthenticated = true;
         },
     });
 

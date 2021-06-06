@@ -34,7 +34,7 @@ describe("test validity of GraphQL queries and mutations for competitions", () =
     describe("competitions query", () => {
         const query_with_params = `
             {
-                competitions(owner: "60acb8ca0b48060d107039d1", name: "comp"){
+                competitions(owner_id: "60acb8ca0b48060d107039d1", name: "comp"){
                     _id
                 }
             }

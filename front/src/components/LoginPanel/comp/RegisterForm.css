@@ -1,0 +1,10 @@
+.register-input {
+    min-width: 200px;
+    margin-left: -30px;
+}
+
+#error-msg {
+    font-size: 15px;
+    color: red;
+    font-weight: bold;
+}

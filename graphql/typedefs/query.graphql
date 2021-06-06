@@ -5,8 +5,23 @@ type Query {
     category(_id: String!): Category
 
     competition(_id: ID!): Competition
-    competitions(owner: ID, name: String): [Competition]
+    competitions(owner_id: ID, name: String): [Competition]
+
+    distances(competition_id: ID, category_id: ID): [Distance]
+    distance(_id: ID!): Distance
 
     participant(_id: ID!): Participant
-    participants(name: String): [Participant]
+    participants(
+        full_name: String
+        birth_year: String
+        license_no: String
+        gender: String
+        country: String
+        club: String
+    ): [Participant]
+
+    score(participant_id: ID!, category_id: ID!): Score
+    scores(category_id: ID!): [Score]
+    series(category_id: ID, distance_id: ID, participant_id: ID): [Series]
+    singleSeries(participant_id: ID!, distance_id: ID!, series_no: Int!): Series
 }

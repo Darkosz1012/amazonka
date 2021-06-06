@@ -6,6 +6,9 @@
     "dependencies": {
         "@apollo/client": "^3.3.15",
         "@apollo/react-components": "^4.0.0-beta.2",
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@fortawesome/free-solid-svg-icons": "^5.15.3",
+        "@fortawesome/react-fontawesome": "^0.1.14",
         "@testing-library/jest-dom": "^5.11.10",
         "axios": "^0.21.1",
         "bootstrap": "^4.6.0",

@@ -1,9 +1,14 @@
 type Mutation {
     login(username: String!, password: String!): Token!
-    register(username: String!, email: String!, password: String!): Token!
+    register(
+        username: String!
+        email: String!
+        password: String!
+        reason_for_creating_account: String!
+    ): Token!
     refresh(refreshToken: String!): Token!
-    
-    
+
+    #Competition
     addCompetition(
         owner_id: ID!
         name: String!
@@ -11,7 +16,6 @@ type Mutation {
         end_date: String
         location: String
     ): Competition
-
     updateCompetition(
         _id: ID!
         name: String
@@ -21,10 +25,9 @@ type Mutation {
         details: inputDetails
         categories_id: [ID]
     ): Competition
-    
     deleteCompetition(_id: ID!): Competition
 
-
+    #Category
     addCategory(
         competition_id: ID!
         name: String!
@@ -32,7 +35,6 @@ type Mutation {
         start_stand: Int
         end_stand: Int
     ): Category
-
     updateCategory(
         _id: ID!
         name: String
@@ -40,10 +42,27 @@ type Mutation {
         start_stand: Int
         end_stand: Int
     ): Category
-
     deleteCategory(_id: String!): Category
 
+    #Distance
+    addDistance(
+        competition_id: ID!
+        category_id: ID!
+        name: String!
+        order: Int
+        series_type: Int!
+        number_of_arrows: Int!
+    ): Distance
+    updateDistance(
+        _id: ID!
+        name: String
+        order: Int
+        series_type: Int
+        number_of_arrows: Int
+    ): Distance
+    deleteDistance(_id: ID!): Distance
 
+    #Participant
     addParticipant(
         full_name: String!
         birth_year: String!
@@ -52,7 +71,6 @@ type Mutation {
         country: String
         club: String
     ): Participant
-
     updateParticipant(
         _id: ID!
         full_name: String
@@ -62,4 +80,18 @@ type Mutation {
         country: String
         club: String
     ): Participant
+
+    #Score
+    addScore(participant_id: ID!, competition_id: ID!, category_id: ID!): Score
+    updateScore(_id: ID!, stand: Int, order: String): Score
+    deleteScore(_id: ID!): Score
+    updateSeries(
+        _id: ID!
+        score: Int
+        Xs: Int
+        tens: Int
+        arrows: [String]
+    ): Series
+    saveScoresFromSeries(category_id: ID!, distance_id: ID!): [Score]
+    generatePlacements(category_id: ID!): [Score]
 }

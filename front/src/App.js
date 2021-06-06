@@ -14,6 +14,7 @@ import AdminCompetitionsMenu from "./components/AdminPanel/CompetitionsMenu";
 import AdminNewCompetition from "../src/components/AdminPanel/NewCompetition/NewCompetition";
 import AdminPanel from "./components/AdminPanel/Panel/Panel";
 import Score from "./components/InsertScorePanel/Score";
+import HomePage from "./components/HomePage/HomePage";
 
 function App() {
     return (
@@ -53,6 +54,7 @@ function App() {
                     <Route path="/score" component={Score} />
                     <Route path="/logout" component={LogoutPanel} />
                     <Route path="/login" component={LoginPanel} />
+                    <Route path="/" component={HomePage} />
                     <Redirect to="/" />
                 </Switch>
             </Layout>

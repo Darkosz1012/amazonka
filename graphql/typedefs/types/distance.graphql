@@ -2,17 +2,21 @@ type Distance {
     _id: ID!
 
     competition_id: ID!
+    competition: Competition
+
     category_id: ID!
+    category: Category
 
     order: Int
-    name: String
-    series_type: Int
+    name: String!
+    series_type: Int!
+    number_of_arrows: Int!
 }
 
 type DistanceWithName {
     distance_id: ID!
     distance: Distance!
-    name: String
+    name: String!
 }
 
 type DistanceWithScore {

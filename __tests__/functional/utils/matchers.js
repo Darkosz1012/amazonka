@@ -11,8 +11,31 @@ function expectAnyErrorMessageToBe(errorMsg, response) {
     return expect(
         response.body.errors.some((err) => err.message === errorMsg)
             ? errorMsg
-            : "None matches!"
+            : "None error message matches! Expected message:\n\n" +
+                  errorMsg +
+                  "\n\nReceived:\n\n" +
+                  JSON.stringify(response.body.errors)
     ).toBe(errorMsg);
 }
 
-export { expectNoErrors, expectAnyError, expectAnyErrorMessageToBe };
+function expectResponseToContain(responseData, variables) {
+    if (Array.isArray(responseData))
+        for (const element of responseData)
+            expectResponseToContain(element, variables);
+    else
+        for (const [key, value] of Object.entries(variables))
+            expect(responseData[key]).toStrictEqual(value);
+}
+
+function expectToBeUnique(array) {
+    let uniqueItems = [...new Set(array)];
+    expect(uniqueItems).toHaveLength(array.length);
+}
+
+export {
+    expectNoErrors,
+    expectAnyError,
+    expectAnyErrorMessageToBe,
+    expectResponseToContain,
+    expectToBeUnique,
+};

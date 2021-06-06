@@ -6,9 +6,10 @@ export default new mongoose.Schema({
         ref: "Participant",
         required: true,
     },
-    competition_id: {
+
+    category_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Competition",
+        ref: "Category",
         required: true,
     },
 
@@ -18,12 +19,17 @@ export default new mongoose.Schema({
         required: true,
     },
 
-    series_no: { type: Number },
+    series_no: {
+        type: Number,
+        required: true,
+    },
     was_counted: {
         type: Boolean,
         required: true,
     },
     score: { type: Number },
+    Xs: Number,
+    tens: Number,
     arrows: [
         {
             type: String,

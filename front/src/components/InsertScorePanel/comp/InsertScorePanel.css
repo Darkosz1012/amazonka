@@ -1,0 +1,94 @@
+.container {
+    padding: 20px 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0.78;
+    justify-content: center;
+}
+
+.insertScore {
+    font-family: "Raleway", sans-serif;
+    color: #8a7c58;
+}
+
+.insertScore-points-column {
+    float: left;
+    width: 37%;
+    margin: 1%;
+    min-height: 200px;
+    padding-bottom: 10px;
+}
+
+.scoreScroll {
+    overflow: auto;
+    max-height: 300px;
+}
+
+.insertScore-results-column {
+    min-height: 460px;
+    float: left;
+    width: 59%;
+    margin: 1%;
+}
+
+.player-score-div {
+    float: left;
+    margin-left: 3%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.fields {
+    text-align: center;
+}
+
+.pointInput {
+    margin: 5px;
+    margin-top: 0;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.btn-div {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+#info-msg {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 769px) {
+    .player-score-div {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .fields {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1000px) {
+    .player-score-div {
+        width: 47%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .player-score-div {
+        width: 44%;
+    }
+    .fields {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+}

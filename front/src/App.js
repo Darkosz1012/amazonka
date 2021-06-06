@@ -13,6 +13,7 @@ import EliminationsBrackets from "./components/EliminationsBrackets/Eliminations
 import AdminCompetitionsMenu from "./components/AdminPanel/CompetitionsMenu";
 import AdminNewCompetition from "../src/components/AdminPanel/NewCompetition/NewCompetition";
 import AdminPanel from "./components/AdminPanel/Panel/Panel";
+import HomePage from "./components/HomePage/HomePage";
 
 function App() {
     return (
@@ -51,6 +52,7 @@ function App() {
                     <Route path="/competitions" component={CompetitionList} />
                     <Route path="/logout" component={LogoutPanel} />
                     <Route path="/login" component={LoginPanel} />
+                    <Route path="/" component={HomePage} />
                     <Redirect to="/" />
                 </Switch>
             </Layout>

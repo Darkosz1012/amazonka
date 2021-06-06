@@ -1,26 +1,92 @@
 import "./CompetitionDetails.css";
 import { useParams, useHistory } from "react-router-dom";
-import competitionDetaildata from "../competitionsData";
+import { gql, useQuery } from "@apollo/client";
 import Button from "../../UI/Button/Button";
-import { revertDateFormat } from "../../revertDateFormat.js";
+import { useEffect, useState } from "react";
+
+const GET_CATEGORIES = gql`
+    query($competition_id: ID) {
+        categories(competition_id: $competition_id) {
+            _id
+            name
+        }
+    }
+`;
+
+const GET_COMPETITION_DATA = gql`
+    query competition($_id: ID!) {
+        competition(_id: $_id) {
+            _id
+            owner_id
+            name
+            start_date
+            end_date
+            location
+            details_id
+            categories_id
+        }
+    }
+`;
+
+function prepareDate(date) {
+    let month =
+        date.getMonth() + 1 < 10
+            ? "0" + (date.getMonth() + 1)
+            : date.getMonth() + 1;
+    let str = date.getFullYear() + "-" + month + "-" + date.getDate();
+    return str;
+}
 
 function CompetitionDetails(props) {
     const params = useParams();
     const _id = params.id;
 
-    const desiredCompetition = competitionDetaildata.find(
-        (comp) => comp.id === parseInt(_id)
-    );
+    const { loading, error, data } = useQuery(GET_COMPETITION_DATA, {
+        variables: { _id },
+    });
 
-    const name = desiredCompetition["name"];
-    const location = desiredCompetition["location"];
-    const start_date = desiredCompetition["date_start"];
-    const end_date = desiredCompetition["date_end"];
-    const description = desiredCompetition["description"];
-    const schedule = desiredCompetition["schedule"];
-    const categories = desiredCompetition["category"].map(
-        (category) => category.category_name
+    let [competitionData, setCompetitionData] = useState([]);
+
+    useEffect(() => {
+        const onError = (error) => {
+            console.log(error);
+        };
+        const onCompleted = (data) => {
+            setCompetitionData({ ...data.competition });
+        };
+
+        if (onCompleted || onError) {
+            if (onCompleted && !loading && !error) {
+                onCompleted(data);
+            } else if (onError && !loading && error) {
+                onError(error);
+            }
+        }
+    }, [loading, data, error]);
+
+    let [categoriesList, setCategoriesList] = useState([]);
+
+    const { loadingCat, errorCat, dataCat } = useQuery(GET_CATEGORIES, {
+        onError(err) {
+            console.log(err);
+        },
+        onCompleted(data) {
+            console.log(data);
+            setCategoriesList(data.categories);
+        },
+    });
+
+    const name = competitionData.name;
+    const location = competitionData.location;
+    const start_date = prepareDate(
+        new Date(parseInt(competitionData.start_date))
     );
+    const end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
+    const description = `mamy details id (${competitionData.details_id}), jak będzie api to będzie na jego podstawie pobiarany opis`;
+    const schedule = `harmonogram - pewnie będzie w details id, na razie chyba nie ma api do tego`;
+    const categories = competitionData.categories_id
+        ? [...competitionData.categories_id]
+        : []; //też na razie mam tylko id
     const categ_num = Object.keys(categories).length;
 
     let categoriesStr = categories.join(", ");
@@ -64,12 +130,10 @@ function CompetitionDetails(props) {
                             <b>Lokalizacja:</b> {location}
                         </p>
                         <p className="i">
-                            <b>Data rozpoczęcia:</b>{" "}
-                            {revertDateFormat(start_date)}
+                            <b>Data rozpoczęcia:</b> {start_date}
                         </p>
                         <p className="i">
-                            <b>Data zakończenia:</b>{" "}
-                            {revertDateFormat(end_date)}
+                            <b>Data zakończenia:</b> {end_date}
                         </p>
                         <p className="title_pn">
                             <b>Opis:</b>

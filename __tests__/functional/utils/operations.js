@@ -338,3 +338,95 @@ export class ChooseCompetitionsOperation extends Operation {
         );
     }
 }
+
+// Participant
+export class AddParticipantOperation extends Operation {
+    constructor(newVariables) {
+        super(
+            "addParticipant",
+            `mutation addParticipant($full_name: String!, $birth_year: String!, $license_no: String!, $gender: String!, $country: String, $club: String) {
+                addParticipant(full_name: $full_name, birth_year: $birth_year, license_no: $license_no, gender: $gender, country: $country, club: $club) {
+                    _id
+                   full_name
+                   birth_year
+                   license_no
+                   gender
+                   country
+                   club
+                }
+            }`,
+            {
+                full_name: "Jan Kowalski",
+                birth_year: "1995",
+                license_no: "2414921840",
+                gender: "M",
+            },
+            newVariables
+        );
+    }
+}
+
+export class UpdateParticipantOperation extends Operation {
+    constructor(newVariables) {
+        super(
+            "updateParticipant",
+            `mutation updateParticipant($_id: ID!, $full_name: String, $birth_year: String, $license_no: String, $gender: String, $country: String, $club: String) {
+                updateParticipant(_id: $_id, full_name: $full_name, birth_year: $birth_year, license_no: $license_no, gender: $gender, country: $country, club: $club) {
+                    _id
+                   full_name
+                   birth_year
+                   license_no
+                   gender
+                   country
+                   club
+                }
+            }`,
+            {},
+            newVariables
+        );
+    }
+}
+
+export class ChooseParticipantOperation extends Operation {
+    constructor(newVariables) {
+        super(
+            "participant",
+            `query participant($_id: ID!) {
+                participant(_id: $_id) {
+                    _id
+                    full_name
+                    birth_year
+                    license_no
+                    gender
+                    country
+                    club
+                }
+            }`,
+            {
+                _id: "60aff2a49d916cd1cec8629a",
+            },
+            newVariables
+        );
+    }
+}
+
+export class ChooseParticipantsOperation extends Operation {
+    constructor(newVariables) {
+        super(
+            "participants",
+            `query participants($full_name: String, $birth_year: String, $license_no: String, $gender: String, $country: String, $club: String) {
+                participants(full_name: $full_name, birth_year: $birth_year, license_no: $license_no, gender: $gender, country: $country, club: $club) {
+                    _id
+                    full_name
+                    birth_year
+                    license_no
+                    gender
+                    country
+                    club
+                }
+            }`,
+            {},
+            newVariables
+        );
+    }
+}

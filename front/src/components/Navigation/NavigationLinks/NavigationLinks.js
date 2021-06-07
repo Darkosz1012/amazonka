@@ -1,11 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import "./NavigationLinks.css";
 import NavigationLink from "./NavigationLink/NavigationLink";
 import { Fragment } from "react";
 
 const NavigationLinks = (props) => {
-    const isAuthenticated = useSelector((state) => state.isAuthenticated);
+    const isAuthenticated = localStorage.getItem("userId") ? true : false;
 
     const linksForLoggedUser = () => {
         return (

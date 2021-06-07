@@ -1,5 +1,9 @@
 import { userMutations } from "./user/index.js";
-import { categoryMutations, categoryQueries, Category} from "./category/index.js";
+import {
+    categoryMutations,
+    categoryQueries,
+    Category,
+} from "./category/index.js";
 import {
     competitionMutations,
     competitionQueries,
@@ -13,8 +17,9 @@ import {
     DistanceWithName,
     Distance,
     distanceMutations,
-    distanceQueries
-} from "./distance/index.js"
+    distanceQueries,
+} from "./distance/index.js";
+import { score, scoreMutations, scoreQueries } from "./score/index.js";
 
 const resolvers = {
     Query: {
@@ -22,6 +27,7 @@ const resolvers = {
         ...categoryQueries,
         ...distanceQueries,
         ...participantQueries,
+        ...scoreQueries,
     },
     Mutation: {
         ...userMutations,
@@ -29,13 +35,17 @@ const resolvers = {
         ...categoryMutations,
         ...participantMutations,
         ...distanceMutations,
+        ...scoreMutations,
     },
     Competition: {
         ...competition,
     },
+    Score: {
+        ...score,
+    },
     Category,
     DistanceWithName,
-    Distance
+    Distance,
 };
 
 export default resolvers;

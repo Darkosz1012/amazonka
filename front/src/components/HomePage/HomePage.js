@@ -32,8 +32,8 @@ function HomePage() {
                     sumowanie wyników, czy rozpisywanie eliminacji.
                 </p>
                 <h2>Co zyskujesz dzięki naszej aplikacji?</h2>
-                <p class="HomePage__container">
-                    <div class="HomePage__card">
+                <div className="HomePage__container">
+                    <div className="HomePage__card">
                         <FontAwesomeIcon
                             className="HomePage__card-icon"
                             icon={faCogs}
@@ -48,7 +48,7 @@ function HomePage() {
                             podstawie.
                         </p>
                     </div>
-                    <div class="HomePage__card">
+                    <div className="HomePage__card">
                         <FontAwesomeIcon
                             className="HomePage__card-icon"
                             icon={faDownload}
@@ -62,7 +62,7 @@ function HomePage() {
                             przejmować się zbieraniem metryczek podczas zawodów.
                         </p>
                     </div>
-                    <div class="HomePage__card">
+                    <div className="HomePage__card">
                         <FontAwesomeIcon
                             className="HomePage__card-icon"
                             icon={faHistory}
@@ -76,7 +76,7 @@ function HomePage() {
                             ranking wszystkim osobom, które wejdą na tę stronę.
                         </p>
                     </div>
-                    <div class="HomePage__card">
+                    <div className="HomePage__card">
                         <FontAwesomeIcon
                             className="HomePage__card-icon"
                             icon={faListOl}
@@ -90,7 +90,7 @@ function HomePage() {
                             wygeneruje rozstawienie za ciebie.
                         </p>
                     </div>
-                    <div class="HomePage__card">
+                    <div className="HomePage__card">
                         <FontAwesomeIcon
                             className="HomePage__card-icon"
                             icon={faMagic}
@@ -103,7 +103,7 @@ function HomePage() {
                             potrafi wygenerować drabinki eliminacyjne.
                         </p>
                     </div>
-                    <div class="HomePage__card">
+                    <div className="HomePage__card">
                         <FontAwesomeIcon
                             className="HomePage__card-icon"
                             icon={faThumbsUp}
@@ -118,7 +118,7 @@ function HomePage() {
                             rzeczy.
                         </p>
                     </div>
-                </p>
+                </div>
             </div>
         </div>
     );

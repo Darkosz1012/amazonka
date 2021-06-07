@@ -16,4 +16,7 @@ export default {
     singleSeries: async (_, args) => {
         return Series.findOne(args);
     },
+    singleSeriesByID: async (_, args) => {
+        return Series.findOne(args);
+    },
 };

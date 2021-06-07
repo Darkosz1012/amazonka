@@ -24,20 +24,39 @@
     width: 40px;
     height: 40px;
     text-align: center;
+}
+
+.unblockedInput {
     border: 2px solid #bbcbdd;
     color: #2755b9da;
 }
 
-.smallInput:hover,
-.biggerInput:hover {
+.unblockedInput:hover,
+.unblockedInput:hover {
     box-shadow: 0 0 5px #6392b1da;
 }
 
-.smallInput:focus,
-.biggerInput:focus {
+.unblockedInput:focus,
+.unblockedInput:focus {
     outline: none;
     background-color: rgb(246, 250, 251);
     box-shadow: 0 0 5px #6392b1da;
+}
+
+.blockedInput {
+    border: 2px solid lightgrey;
+    color: lightgrey;
+}
+
+.blockedInput:hover,
+.blockedInput:hover {
+    box-shadow: 0 0 5px none;
+}
+
+.blockedInput:focus,
+.blockedInput:focus {
+    outline: none;
+    box-shadow: 0 0 5px none;
 }
 
 #alignToLeft {

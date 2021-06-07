@@ -200,13 +200,26 @@ function InsertQualificationScores(props) {
         updateGetAllCurrentScores();
     };
 
+    let toggleCSSClasses = (
+        elementsArray,
+        classNameToRemove,
+        classNameToAdd
+    ) => {
+        for (const element of elementsArray) {
+            element.classList.remove(classNameToRemove);
+            element.classList.add(classNameToAdd);
+        }
+    };
+
+    let setDisabledState = (elementsArray, disableState) => {
+        for (const element of elementsArray) element.disabled = disableState;
+    };
+
     let blockAndCleanArrowsInputs = (id) => {
         for (var i = 1; i <= seriesType; i++) {
             var inputEl = document.getElementById(`i${i}-${id}`);
-            inputEl.disabled = true;
-            inputEl.style.borderColor = "lightgrey";
-            inputEl.style.color = "lightgrey";
-            inputEl.style.boxShadow = "none";
+            setDisabledState([inputEl], true);
+            toggleCSSClasses([inputEl], "unblockedInput", "blockedInput");
             inputEl.value = "";
         }
     };
@@ -214,33 +227,18 @@ function InsertQualificationScores(props) {
     let unblockAllInputs = (id) => {
         for (var i = 1; i <= seriesType; i++) {
             var inputEl = document.getElementById(`i${i}-${id}`);
-            inputEl.disabled = false;
-            inputEl.style.borderColor = "#bbcbdd";
-            inputEl.style.color = "#2755b9da";
-            inputEl.style.boxShadow = "none";
+            setDisabledState([inputEl], false);
+            toggleCSSClasses([inputEl], "blockedInput", "unblockedInput");
         }
 
         var sumInput = document.getElementById("sum-" + id);
         var countXInput = document.getElementById("countX-" + id);
         var count10Input = document.getElementById("count10-" + id);
-        sumInput.disabled = false;
-        sumInput.style.borderColor = "#bbcbdd";
-        sumInput.style.color = "#2755b9da";
-        countXInput.disabled = false;
-        countXInput.style.borderColor = "#bbcbdd";
-        countXInput.style.color = "#2755b9da";
-        count10Input.disabled = false;
-        count10Input.style.borderColor = "#bbcbdd";
-        count10Input.style.color = "#2755b9da";
-
-        $(`[id*='-${id}']`).hover(
-            function () {
-                $(this).css({ "box-shadow": "0 0 5px #6392b1da" });
-            },
-
-            function () {
-                $(this).css({ "box-shadow": "none" });
-            }
+        setDisabledState([sumInput, countXInput, count10Input], false);
+        toggleCSSClasses(
+            [sumInput, countXInput, count10Input],
+            "blockedInput",
+            "unblockedInput"
         );
     };
 
@@ -248,18 +246,13 @@ function InsertQualificationScores(props) {
         var sumInput = document.getElementById("sum-" + id);
         var countXInput = document.getElementById("countX-" + id);
         var count10Input = document.getElementById("count10-" + id);
-        sumInput.disabled = true;
-        sumInput.style.borderColor = "lightgrey";
-        sumInput.style.color = "lightgrey";
-        sumInput.style.boxShadow = "none";
-        countXInput.disabled = true;
-        countXInput.style.borderColor = "lightgrey";
-        countXInput.style.color = "lightgrey";
-        countXInput.style.boxShadow = "none";
-        count10Input.disabled = true;
-        count10Input.style.borderColor = "lightgrey";
-        count10Input.style.color = "lightgrey";
-        count10Input.style.boxShadow = "none";
+
+        setDisabledState([sumInput, countXInput, count10Input], true);
+        toggleCSSClasses(
+            [sumInput, countXInput, count10Input],
+            "unblockedInput",
+            "blockedInput"
+        );
     };
 
     let isValidScoreInput = (event) => {
@@ -311,14 +304,8 @@ function InsertQualificationScores(props) {
         let input = event.target.value;
         blockAndCleanArrowsInputs(id.split("-")[1]);
         if (input.length > 1) document.getElementById(id).value = "";
-        if (
-            !/\D/.test(input) &
-            (parseInt(input) >= 0) &
-            (parseInt(input) <= 6)
-        ) {
-        } else {
+        if (/\D/.test(input) || parseInt(input) < 0 || parseInt(input) > 6)
             document.getElementById(id).value = "";
-        }
     };
 
     function arrowInputs(competitorId) {
@@ -328,7 +315,7 @@ function InsertQualificationScores(props) {
                     {[1, 2, 3].map((i) => (
                         <input
                             type="text"
-                            className="smallInput "
+                            className="smallInput unblockedInput"
                             key={"i" + i + "-" + competitorId}
                             id={"i" + i + "-" + competitorId}
                             onChange={isValidScoreInput}
@@ -343,7 +330,7 @@ function InsertQualificationScores(props) {
                     {[4, 5, 6].map((i) => (
                         <input
                             type="text"
-                            className="smallInput"
+                            className="smallInput unblockedInput"
                             key={"i" + i + "-" + competitorId}
                             id={"i" + i + "-" + competitorId}
                             onChange={isValidScoreInput}
@@ -363,60 +350,58 @@ function InsertQualificationScores(props) {
             );
     }
 
-    let checkSendedScores = () => {
+    let checkSentScores = () => {
         let inputsCheck = true;
-        for (var i = 0; i < currentParticipantsScores.length; i++) {
+        for (const currentParticipantsScore of currentParticipantsScores) {
             if (
-                !document.getElementById(
-                    "sum-" + currentParticipantsScores[i]._id
-                ).disabled &
-                !document.getElementById(
-                    "i1-" + currentParticipantsScores[i]._id
-                ).disabled
+                !document.getElementById("sum-" + currentParticipantsScore._id)
+                    .disabled &
+                !document.getElementById("i1-" + currentParticipantsScore._id)
+                    .disabled
             ) {
-                var t = 0;
+                var countEmpty = 0;
                 for (var t = 0; t < seriesType; t++) {
-                    if (currentParticipantsScores[i].arrows[t] === "") t++;
+                    if (currentParticipantsScore.arrows[t] === "") countEmpty++;
                 }
-                if (t < seriesType) inputsCheck = false;
+                if ((countEmpty > 0) & (countEmpty !== seriesType))
+                    inputsCheck = false;
                 if (
-                    currentParticipantsScores[i].score === "" ||
-                    currentParticipantsScores[i].Xs === "" ||
-                    currentParticipantsScores[i].tens === ""
+                    currentParticipantsScore.score === "" ||
+                    currentParticipantsScore.Xs === "" ||
+                    currentParticipantsScore.tens === ""
                 ) {
                     inputsCheck = false;
                 }
             } else if (
-                document.getElementById(
-                    "sum-" + currentParticipantsScores[i]._id
-                ).disabled
+                document.getElementById("sum-" + currentParticipantsScore._id)
+                    .disabled
             ) {
                 for (t = 0; t < seriesType; t++) {
-                    if (currentParticipantsScores[i].arrows[t] === "")
+                    if (currentParticipantsScore.arrows[t] === "")
                         inputsCheck = false;
                 }
             } else if (
-                currentParticipantsScores[i].score === "" ||
-                currentParticipantsScores[i].Xs === "" ||
-                currentParticipantsScores[i].tens === ""
+                currentParticipantsScore.score === "" ||
+                currentParticipantsScore.Xs === "" ||
+                currentParticipantsScore.tens === ""
             ) {
                 inputsCheck = false;
             }
         }
-        console.log(inputsCheck);
+
         return inputsCheck;
     };
 
     function handleSubmitScores() {
         if (currentParticipantsScores.length > 0) {
-            if (checkSendedScores() === true) {
+            if (checkSentScores() === true) {
                 scores = currentParticipantsScores;
-                for (var i = 0; i < currentParticipantsScores.length; i++) {
+                for (const score of scores) {
                     var c = 0;
                     for (var j = 0; j < seriesType; j++) {
-                        if (scores[i].arrows[j] === "") c++;
+                        if (score.arrows[j] === "") c++;
                     }
-                    if (c === seriesType) scores[i].arrows = [];
+                    if (c === seriesType) score.arrows = [];
                 }
                 setCurrentParticipantsScores(scores);
                 setInfoMessage("Dane zostały zapisane");
@@ -600,7 +585,7 @@ function InsertQualificationScores(props) {
                                 <input
                                     type="text"
                                     id={"sum-" + competitor._id}
-                                    className="biggerInput"
+                                    className="biggerInput unblockedInput"
                                     onChange={isValidSumInput}
                                 ></input>
                             </Col>
@@ -614,7 +599,7 @@ function InsertQualificationScores(props) {
                                 <input
                                     type="text"
                                     id={"countX-" + competitor._id}
-                                    className="biggerInput"
+                                    className="biggerInput unblockedInput"
                                     onChange={isValidX_10Input}
                                 />
                             </Col>
@@ -628,7 +613,7 @@ function InsertQualificationScores(props) {
                                 <input
                                     type="text"
                                     id={"count10-" + competitor._id}
-                                    className="biggerInput"
+                                    className="biggerInput unblockedInput"
                                     onChange={isValidX_10Input}
                                 />
                             </Col>

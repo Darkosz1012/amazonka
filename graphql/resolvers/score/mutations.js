@@ -142,7 +142,7 @@ function addDistancesToScore(distances, score) {
 async function createAllSeries(participant_id, category_id, distances) {
     for (let d of distances) {
         let distance = await Distance.findById(d.distance_id);
-        for (let i = 0; i < distance.series_type; i++) {
+        for (let i = 0; i < distance.number_of_series; i++) {
             await createSeries(distance._id, i);
         }
     }
@@ -177,7 +177,9 @@ async function updateScoreFromSeries(score, distance_id) {
 
     function clearScore() {
         for (let distance of score.distances) {
-            distance.score = 0;
+            if (distance.distance_id === distance_id) {
+                distance.score = 0;
+            }
         }
     }
 

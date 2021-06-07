@@ -6,8 +6,8 @@ type Finals {
     category_id: ID!
     category: Category!
 
-    participant_score1: ParticipantWithScore!
-    participant_score2: ParticipantWithScore!
+    participant1: ParticipantWithScore!
+    participant2: ParticipantWithScore!
 
     round: Int!
 }

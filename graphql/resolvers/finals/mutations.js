@@ -15,16 +15,27 @@ export default {
 
         let finals = [];
 
-        await createFinalsForFirstRound(first_round, finals, scores);
+        await createFinalsForFirstRound(
+            first_round,
+            finals,
+            scores,
+            competition_id,
+            category_id
+        );
 
-        await createFinalsForNextRounds(first_round, finals);
+        await createFinalsForNextRounds(
+            first_round,
+            finals,
+            competition_id,
+            category_id
+        );
 
         return await Finals.find({ category_id });
     },
 
     updateFinals: async (parent, args, context, info) => {
         let { _id, score1, score2 } = args;
-        let result = Finals.findOneAndUpdate(
+        let result = await Finals.findOneAndUpdate(
             { _id: _id },
             {
                 $set: {
@@ -35,7 +46,7 @@ export default {
         );
 
         let palacement = result.participant1.placement;
-        if (score1 >= 6 && score2 >= 6) {
+        if (score1 >= 6 || score2 >= 6) {
             let participant = {};
             if (score1 >= 6) {
                 participant = result.participant1;
@@ -55,7 +66,7 @@ export default {
                 };
             }
 
-            await Finals.updateOne(
+            await await Finals.updateOne(
                 {
                     category_id: result.category_id,
                     round: result.round / 2,
@@ -69,15 +80,23 @@ export default {
     },
 
     deleteAllFinals: async (parent, args, context, info) => {
-        return await Finals.deleteMany({ category_id: args.category_id });
+        await Finals.deleteMany({ category_id: args.category_id });
+        return true;
     },
 };
 
-async function createFinalsForFirstRound(first_round, finals, scores) {
+async function createFinalsForFirstRound(
+    first_round,
+    finals,
+    scores,
+    competition_id,
+    category_id
+) {
+    finals.push([]);
     for (let i = 0; i < first_round; i++) {
         let participant1 = createParticipant(scores, i);
 
-        let opponent_index = round * 2 - i - 1;
+        let opponent_index = first_round * 2 - i - 1;
         let participant2 = createParticipant(scores, opponent_index);
 
         finals[0].push({
@@ -85,23 +104,29 @@ async function createFinalsForFirstRound(first_round, finals, scores) {
             category_id,
             participant1,
             participant2,
-            round,
+            round: first_round,
         });
     }
     await Finals.create(finals[0]);
 }
 
-async function createFinalsForNextRounds(first_round, finals) {
+async function createFinalsForNextRounds(
+    first_round,
+    finals,
+    competition_id,
+    category_id
+) {
     for (
         let round = first_round / 2, iter = 0;
         round >= 1;
         round /= 2, iter++
     ) {
+        finals.push([]);
         for (let i = 0; i < round; i++) {
             let prev1 = finals[iter][i];
             let participant1 = createParticipantFromPrevFinals(prev1, i);
 
-            let prev2 = finals[iter][round - i - 1];
+            let prev2 = finals[iter][round * 2 - i - 1];
             let opponent_index = round * 2 - i - 1;
             let participant2 = createParticipantFromPrevFinals(
                 prev2,

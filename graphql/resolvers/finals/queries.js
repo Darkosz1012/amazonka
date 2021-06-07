@@ -18,6 +18,6 @@ export default {
         return await Finals.find();
     },
     final: async (parent, args, context, info) => {
-        return Finals.findOne(args._id);
+        return Finals.findOne(args);
     },
 };

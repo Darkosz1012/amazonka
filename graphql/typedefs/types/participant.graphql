@@ -9,8 +9,8 @@ type Participant {
 }
 
 type ParticipantWithScore {
-    participant_id: ID!
-    participant: Participant!
+    participant_id: ID
+    participant: Participant
 
     full_name: String!
     placement: Int!

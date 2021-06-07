@@ -95,7 +95,11 @@ type Mutation {
     saveScoresFromSeries(category_id: ID!, distance_id: ID!): [Score]
     generatePlacements(category_id: ID!): [Score]
 
-    generateFinals(category_id: ID!, first_round: Int!): [Finals]
+    generateFinals(
+        competition_id: ID!
+        category_id: ID!
+        first_round: Int!
+    ): [Finals]
 
     updateFinals(_id: ID!, score1: Int!, score2: Int!): Finals
 

@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import CompetitionDetails from "./CompetitionDetails/CompetitionDetails";
 import Categories from "./Categories/Categories";
 import Competitors from "./Competitors/Competitors";
-import QualificationScores from "./QualificationScores/QualificationScores";
+import InsertQualificationScores from "./InsertQualificationScores/InsertQualificationScores";
 import InsertPositionsPanel from "./InsertPositionsPanel/InsertPositionsPanel";
 import InsertResultsPanel from "./InsertResultsPanel/InsertResultsPanel";
 import EditCompetitionDetails from "./CompetitionDetails/EditDetails/EditDetails";
@@ -22,7 +22,7 @@ const Panel = (props) => (
                 />
                 <Route
                     path="/admin/panel/:id/qualificationscores"
-                    component={QualificationScores}
+                    component={InsertQualificationScores}
                 />
                 <Route
                     path="/admin/panel/:id/positions"

@@ -51,14 +51,14 @@ type Mutation {
         name: String!
         order: Int
         series_type: Int!
-        number_of_arrows: Int!
+        number_of_series: Int!
     ): Distance
     updateDistance(
         _id: ID!
         name: String
         order: Int
         series_type: Int
-        number_of_arrows: Int
+        number_of_series: Int
     ): Distance
     deleteDistance(_id: ID!): Distance
 

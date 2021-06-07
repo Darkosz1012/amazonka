@@ -13,6 +13,6 @@ export default new mongoose.Schema({
     },
     order: { type: Number },
     name: { type: String },
-    number_of_arrows: { type: Number },
+    number_of_series: { type: Number },
     series_type: { type: Number },
 });

@@ -10,7 +10,7 @@ type Distance {
     order: Int
     name: String!
     series_type: Int!
-    number_of_arrows: Int!
+    number_of_series: Int!
 }
 
 type DistanceWithName {

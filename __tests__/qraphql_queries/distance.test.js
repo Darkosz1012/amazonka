@@ -22,7 +22,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         order
                         name
                         series_type
-                        number_of_arrows
+                        number_of_series
                     }
                 }
             `;
@@ -45,7 +45,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         order
                         name
                         series_type
-                        number_of_arrows
+                        number_of_series
                     }
                 }
             `;
@@ -70,7 +70,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         order
                         name
                         series_type
-                        number_of_arrows
+                        number_of_series
                     }
                 }
             `;
@@ -94,7 +94,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         order
                         name
                         series_type
-                        number_of_arrows
+                        number_of_series
                     }
                 }
             `;
@@ -117,7 +117,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         order
                         name
                         series_type
-                        number_of_arrows
+                        number_of_series
                     }
                 }
             `;
@@ -136,7 +136,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         name: "90m",
                         order: 1,
                         series_type: 6,
-                        number_of_arrows: 6
+                        number_of_series: 6
                     ){
                         _id
                     }
@@ -153,7 +153,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         category_id:"609aa4bde6483525a06b8e5b",
                         name: "90m",
                         series_type: 6,
-                        number_of_arrows: 6
+                        number_of_series: 6
                     ){
                         _id
                     }
@@ -169,7 +169,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         category_id:"609aa4bde6483525a06b8e5b",
                         name: "90m",
                         series_type: 6,
-                        number_of_arrows: 6
+                        number_of_series: 6
                     ){
                         _id
                     }
@@ -185,7 +185,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         competition_id: "609aa4bde6483525a06b8e5b",
                         name: "90m",
                         series_type: 6,
-                        number_of_arrows: 6
+                        number_of_series: 6
                     ){
                         _id
                     }
@@ -201,7 +201,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                     competition_id: "609aa4bde6483525a06b8e5b",
                     category_id:"609aa4bde6483525a06b8e5b",
                     series_type: 6,
-                    number_of_arrows: 6
+                    number_of_series: 6
                 ){
                     _id
                 }
@@ -216,7 +216,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                     competition_id: "609aa4bde6483525a06b8e5b",
                     category_id:"609aa4bde6483525a06b8e5b",
                     name: "90m",
-                    number_of_arrows: 6
+                    number_of_series: 6
                 ){
                     _id
                 }
@@ -224,7 +224,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
             `;
             tester.test(false, invalid_mutation);
         });
-        test("should fail if number_of_arrows is not specified", () => {
+        test("should fail if number_of_series is not specified", () => {
             const invalid_mutation = `
             mutation{
                 addDistance(
@@ -250,7 +250,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         name: "90m",
                         order: 1,
                         series_type: 6,
-                        number_of_arrows: 6
+                        number_of_series: 6
                     ){
                         _id
                     }
@@ -266,7 +266,7 @@ describe("test validity of GraphQL queries and mutations for distance", () => {
                         name: "90m",
                         order: 1,
                         series_type: 6,
-                        number_of_arrows: 6
+                        number_of_series: 6
                     ){
                         _id
                     }

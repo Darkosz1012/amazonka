@@ -1,6 +1,7 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import CompetitionList from "./CompetitionList";
 import "@testing-library/jest-dom/extend-expect";
+import WithProvider from "../../hoc/WithProvider/WithProvider.js";
 
 describe("Competition List", () => {
     afterEach(() => {
@@ -8,7 +9,11 @@ describe("Competition List", () => {
     });
 
     beforeEach(() => {
-        render(<CompetitionList />);
+        render(
+            <WithProvider>
+                <CompetitionList />
+            </WithProvider>
+        );
     });
 
     test("should render header", () => {

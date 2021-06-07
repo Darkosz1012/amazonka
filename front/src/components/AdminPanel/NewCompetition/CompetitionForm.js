@@ -1,10 +1,36 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../UI/Button/Button";
-import { handleSubmit } from "./handleSubmit.js";
+import { pushToHistoryEvent } from "./pushToHistoryEvent.js";
+import { gql, useMutation } from "@apollo/client";
+
+const ADD_COMPETITION = gql`
+    mutation addCompetition(
+        $owner_id: ID!
+        $name: String!
+        $start_date: String
+        $end_date: String
+        $location: String
+    ) {
+        addCompetition(
+            owner_id: $owner_id
+            name: $name
+            start_date: $start_date
+            end_date: $end_date
+            location: $location
+        ) {
+            _id
+            name
+            start_date
+            end_date
+            location
+        }
+    }
+`;
 
 const CompetitionForm = (props) => {
     const history = useHistory();
+    const userId = localStorage.getItem("userId") || null;
 
     const [name, setName] = useState("");
     const [start_date, setStartDate] = useState("");
@@ -24,11 +50,37 @@ const CompetitionForm = (props) => {
         setLocation(event.target.value);
     };
 
+    const [addCompetition, { data }] = useMutation(ADD_COMPETITION, {
+        onError(err) {
+            console.log(err);
+        },
+        onCompleted(data) {
+            //there will go what will happen if compleated succesfully
+            console.log(data);
+            history.push(
+                "/admin/panel/" + data.addCompetition._id + "/details"
+            );
+        },
+    });
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        let start = new Date(start_date);
+        let end = new Date(end_date);
+        addCompetition({
+            variables: {
+                owner_id: userId,
+                name: name,
+                start_date: start,
+                end_date: end,
+                location: location,
+            },
+        });
+        alert("Zatwierdzono edycję szczegółów");
+    };
+
     return (
-        <form
-            data-testid="newCompetitionFormTestId"
-            onSubmit={handleSubmit(history, "/admin/competitions")}
-        >
+        <form data-testid="newCompetitionFormTestId" onSubmit={handleSubmit}>
             <div className="row">
                 <div className="column">
                     <div className="label-column">

@@ -60,6 +60,14 @@ export default class AppRunner {
             .expect(200);
     }
 
+    async executeWithHeaders(operation, headers) {
+        return await this.request()
+            .post("/graphql")
+            .set(...headers)
+            .send(operation.createMsg())
+            .expect(200);
+    }
+
     async getDocumentsCount(collection) {
         return await this.db.collection(collection).countDocuments();
     }

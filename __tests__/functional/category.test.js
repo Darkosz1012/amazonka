@@ -103,7 +103,7 @@ describe("category", () => {
             );
         });
 
-        test("add new category with name missing, respone should hint on reason", async () => {
+        test("add new category with name missing, response should hint on reason", async () => {
             await expectUnsuccessfulCategoryOperation(
                 new AddCategoryOperation({
                     name: "",

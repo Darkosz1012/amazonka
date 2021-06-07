@@ -18,8 +18,9 @@ import {
     DistanceWithName,
     Distance,
     distanceMutations,
-    distanceQueries
-} from "./distance/index.js"
+    distanceQueries,
+} from "./distance/index.js";
+import { score, scoreMutations, scoreQueries } from "./score/index.js";
 import { finalsMutations, finalsQueries, Finals } from "./finals/index.js";
 
 const resolvers = {
@@ -28,6 +29,7 @@ const resolvers = {
         ...categoryQueries,
         ...distanceQueries,
         ...participantQueries,
+        ...scoreQueries,
         ...finalsQueries,
     },
     Mutation: {
@@ -36,14 +38,18 @@ const resolvers = {
         ...categoryMutations,
         ...participantMutations,
         ...distanceMutations,
+        ...scoreMutations,
         ...finalsMutations,
     },
     Competition: {
         ...competition,
     },
+    Score: {
+        ...score,
+    },
     Category,
     DistanceWithName,
-    Distance
+    Distance,
     ParticipantWithScore,
     Finals,
 };

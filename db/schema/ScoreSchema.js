@@ -15,7 +15,6 @@ const schema = new mongoose.Schema({
     category_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Category",
-        required: true,
     },
     stand: { type: Number },
     order: { type: String },

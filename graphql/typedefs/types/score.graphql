@@ -7,8 +7,8 @@ type Score {
     competition_id: ID!
     competition: Competition!
 
-    category_id: ID!
-    category: Category!
+    category_id: ID
+    category: Category
 
     stand: Int
     order: String

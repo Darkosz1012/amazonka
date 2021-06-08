@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { gql, useQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
+import { Fragment } from "react";
 
 const GET_COMPETITION_DATA = gql`
     query competition($_id: ID!) {
@@ -16,6 +17,10 @@ const GET_COMPETITION_DATA = gql`
             end_date
             location
             details_id
+            details {
+                description
+                timetable
+            }
             categories_id
         }
     }
@@ -64,6 +69,23 @@ function CompetitionDetails(props) {
     const end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
 
     let history = useHistory();
+    let details = null;
+    if (competitionData.details) {
+        const description = competitionData.details.description;
+        const timetable = competitionData.details.timetable;
+        details = (
+            <Fragment>
+                <Row xs={2} md={2} lg={3} xl={4}>
+                    <Col className="left">Opis:</Col>
+                    <Col className="right">{description}</Col>
+                </Row>
+                <Row xs={2} md={2} lg={3} xl={4}>
+                    <Col className="left">Harmonogram:</Col>
+                    <Col className="right">{timetable}</Col>
+                </Row>
+            </Fragment>
+        );
+    }
 
     function handleClick(ID) {
         history.push("/admin/panel/" + ID + "/details/edit");
@@ -105,6 +127,7 @@ function CompetitionDetails(props) {
                         <Col className="left">Lokalizacja:</Col>
                         <Col className="right">{location}</Col>
                     </Row>
+                    {details}
                 </div>
             </Container>
         </div>

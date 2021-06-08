@@ -57,7 +57,8 @@ function prepareDate(date) {
         date.getMonth() + 1 < 10
             ? "0" + (date.getMonth() + 1)
             : date.getMonth() + 1;
-    let str = date.getFullYear() + "-" + month + "-" + date.getDate();
+    let day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+    let str = date.getFullYear() + "-" + month + "-" + day;
     return str;
 }
 const CompetitionForm = (props) => {

@@ -128,8 +128,8 @@ const Categories = () => {
     const [numberOfSeries, setNumberOfSeries] = useState("");
     const [seriesType, setSeriesType] = useState(3);
     const [distances, setDistances] = useState([]);
-    const [chosenCategory = false, setChosenCategory] = useState("");
-    const [chosenDistance = false, setChosenDistance] = useState("");
+    const [chosenCategory, setChosenCategory] = useState(null);
+    const [chosenDistance, setChosenDistance] = useState(null);
     const [addCategoryInfoMessage, setAddCategoryInfoMessage] =
         useState("info");
     const [deleteCategoryInfoMessage, setDeleteCategoryInfoMessage] =
@@ -323,7 +323,7 @@ const Categories = () => {
                 _id: chosenCategory,
             },
         });
-        setChosenCategory(false);
+        setChosenCategory(null);
     };
 
     const handleAddDistanceSubmit = (event) => {

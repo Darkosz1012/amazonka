@@ -101,14 +101,17 @@ function clearRadioButtons(radioName) {
 }
 
 function showTextAndFadeOut(elementId) {
-    document.getElementById(elementId).style.opacity = "1";
-    setTimeout(function () {
-        $("#" + elementId).fadeTo(800, 0);
-    }, 500);
+    if (document.getElementById(elementId)) {
+        document.getElementById(elementId).style.opacity = "1";
+        setTimeout(function () {
+            $("#" + elementId).fadeTo(800, 0);
+        }, 500);
+    }
 }
 
 function setTextColor(elementId, color) {
-    document.getElementById(elementId).style.color = color;
+    if (document.getElementById(elementId))
+        document.getElementById(elementId).style.color = color;
 }
 
 const redColor = "#eb1532da";
@@ -127,18 +130,14 @@ const Categories = () => {
     const [distances, setDistances] = useState([]);
     const [chosenCategory = false, setChosenCategory] = useState("");
     const [chosenDistance = false, setChosenDistance] = useState("");
-    const [addCategoryInfoMessage, setAddCategoryInfoMessage] = useState(
-        "info"
-    );
-    const [deleteCategoryInfoMessage, setDeleteCategoryInfoMessage] = useState(
-        "info"
-    );
-    const [addDistanceInfoMessage, setAddDistanceInfoMessage] = useState(
-        "info"
-    );
-    const [deleteDistanceInfoMessage, setDeleteDistanceInfoMessage] = useState(
-        "info"
-    );
+    const [addCategoryInfoMessage, setAddCategoryInfoMessage] =
+        useState("info");
+    const [deleteCategoryInfoMessage, setDeleteCategoryInfoMessage] =
+        useState("info");
+    const [addDistanceInfoMessage, setAddDistanceInfoMessage] =
+        useState("info");
+    const [deleteDistanceInfoMessage, setDeleteDistanceInfoMessage] =
+        useState("info");
 
     const [addCategory, { category_data }] = useMutation(ADD_CATEGORY, {
         onError(err) {

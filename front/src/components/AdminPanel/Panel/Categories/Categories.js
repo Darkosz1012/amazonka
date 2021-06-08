@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "./Categories.css";
 import $ from "jquery";
 import Button from "../../../UI/Button/Button";
-import { gql, useMutation, useQuery, fetchMore } from "@apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
 
 const ADD_CATEGORY = gql`
     mutation addCategory(
@@ -116,7 +116,7 @@ const Categories = () => {
     const [categories, setCategories] = useState([]);
     const [distanceName, setDistanceName] = useState("");
     const [numberOfSeries, setNumberOfSeries] = useState("");
-    const [seriesType, setSeriesType] = useState("");
+    const [seriesType, setSeriesType] = useState(3);
     const [distances, setDistances] = useState([]);
     const [chosenCategory = false, setChosenCategory] = useState("");
     const [chosenDistance = false, setChosenDistance] = useState("");
@@ -130,12 +130,6 @@ const Categories = () => {
         useState("info");
 
     const [addCategory, { category_data }] = useMutation(ADD_CATEGORY, {
-        refetchQueries: [
-            {
-                query: GET_CATEGORIES,
-                variables: { competition_id: _compId },
-            },
-        ],
         onError(err) {
             console.log(err);
             setAddCategoryInfoMessage("Błąd przetwarzania..");
@@ -145,17 +139,17 @@ const Categories = () => {
             setAddCategoryInfoMessage("Kategoria została dodana!");
             showTextAndFadeOut("addCategoryInfo");
         },
+        refetchQueries: [
+            {
+                query: GET_CATEGORIES,
+                variables: { competition_id: _compId },
+            },
+        ],
     });
 
     const [deleteCategory, { delete_category_data }] = useMutation(
         DELETE_CATEGORY,
         {
-            refetchQueries: [
-                {
-                    query: GET_CATEGORIES,
-                    variables: { competition_id: _compId },
-                },
-            ],
             onError(err) {
                 console.log(err);
                 setDeleteCategoryInfoMessage("Błąd przetwarzania..");
@@ -165,6 +159,14 @@ const Categories = () => {
                 setDeleteCategoryInfoMessage("Kategoria została usunięta!");
                 showTextAndFadeOut("deleteCategoryInfo");
             },
+            refetchQueries: [
+                {
+                    query: GET_CATEGORIES,
+                    variables: {
+                        competition_id: _compId,
+                    },
+                },
+            ],
         }
     );
 
@@ -192,15 +194,6 @@ const Categories = () => {
     const [deleteDistance, { delete_distance_data }] = useMutation(
         DELETE_DISTANCE,
         {
-            refetchQueries: [
-                {
-                    query: GET_DISTANCES,
-                    variables: {
-                        competition_id: _compId,
-                        category_id: chosenCategory,
-                    },
-                },
-            ],
             onError(err) {
                 console.log(err);
                 setDeleteDistanceInfoMessage("Błąd przetwarzania..");
@@ -210,6 +203,15 @@ const Categories = () => {
                 setDeleteDistanceInfoMessage("Odległość została usunięta!");
                 showTextAndFadeOut("deleteDistanceInfo");
             },
+            refetchQueries: [
+                {
+                    query: GET_DISTANCES,
+                    variables: {
+                        competition_id: _compId,
+                        category_id: chosenCategory,
+                    },
+                },
+            ],
         }
     );
 
@@ -241,7 +243,7 @@ const Categories = () => {
         error: categories_error,
         data: categories_data,
     } = useQuery(GET_CATEGORIES, {
-        variables: { _compId },
+        variables: { competition_id: _compId },
     });
 
     const {
@@ -249,7 +251,7 @@ const Categories = () => {
         error: distances_error,
         data: distances_data,
     } = useQuery(GET_DISTANCES, {
-        variables: { _compId, chosenCategory },
+        variables: { competition_id: _compId, category_id: chosenCategory },
     });
 
     useEffect(() => {
@@ -267,7 +269,7 @@ const Categories = () => {
                 onError(categories_error);
             }
         }
-    }, [categories_loading, categories_data, categories_error]);
+    }, [categories_loading, categories_error, categories_data]);
 
     useEffect(() => {
         const onError = (error) => {
@@ -307,6 +309,7 @@ const Categories = () => {
                 _id: chosenCategory,
             },
         });
+        setChosenCategory(false);
     };
 
     const handleAddDistanceSubmit = (event) => {
@@ -499,16 +502,22 @@ const Categories = () => {
                                     }}
                                 />{" "}
                                 <br />
-                                <input
-                                    required
-                                    type="text"
-                                    placeholder="Typ serii"
-                                    className="form-control"
+                                <select
+                                    name="seriesType"
+                                    id="seriesType"
                                     value={seriesType}
+                                    className="form-control"
                                     onChange={(event) =>
                                         setSeriesType(event.target.value)
                                     }
-                                />{" "}
+                                >
+                                    <option value={3} key={3}>
+                                        3-strzałowe
+                                    </option>
+                                    <option value={6} key={6}>
+                                        6-strzałowe
+                                    </option>
+                                </select>{" "}
                                 <br />
                                 <Button
                                     type="submit"

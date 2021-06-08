@@ -43,9 +43,8 @@ function HomePage() {
                         </h3>
                         <p className="HomePage__card-content">
                             Na naszej witrynie możesz wpisywać pojedyncze
-                            strzały lub wynik serii, a system wyliczy
-                            wyniki całościowe oraz ustawi ranking na ich
-                            podstawie.
+                            strzały lub wynik serii, a system wyliczy wyniki
+                            całościowe oraz ustawi ranking na ich podstawie.
                         </p>
                     </div>
                     <div className="HomePage__card">
@@ -86,8 +85,8 @@ function HomePage() {
                         </h3>
                         <p className="HomePage__card-content">
                             Wystarczy, że wpiszesz zawodników do naszego systemu
-                            i przydzielisz im kategorie, a system
-                            wygeneruje rozstawienie za ciebie.
+                            i przydzielisz im kategorie, a system wygeneruje
+                            rozstawienie za ciebie.
                         </p>
                     </div>
                     <div className="HomePage__card">
@@ -99,8 +98,8 @@ function HomePage() {
                             Automatyczne przetwarzanie eliminacji
                         </h3>
                         <p className="HomePage__card-content">
-                            Na podstawie wyników kwalifikacji system
-                            potrafi wygenerować drabinki eliminacyjne.
+                            Na podstawie wyników kwalifikacji system potrafi
+                            wygenerować drabinki eliminacyjne.
                         </p>
                     </div>
                     <div className="HomePage__card">

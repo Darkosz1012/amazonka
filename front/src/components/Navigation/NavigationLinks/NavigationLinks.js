@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NavigationLinks.css";
 import NavigationLink from "./NavigationLink/NavigationLink";
 import { Fragment } from "react";
+import { useSelector } from "react-redux";
 
 const NavigationLinks = (props) => {
-    const isAuthenticated = localStorage.getItem("userId") ? true : false;
+    const isAuth = useSelector((state) => state.isAuth);
 
     const linksForLoggedUser = () => {
         return (
@@ -28,7 +29,7 @@ const NavigationLinks = (props) => {
             </NavigationLink>
             <NavigationLink link="/competitions">Lista zawodów</NavigationLink>
             <NavigationLink link="/score">Wprowadź wyniki</NavigationLink>
-            {isAuthenticated ? linksForLoggedUser() : linksForUnknownUser()}
+            {isAuth ? linksForLoggedUser() : linksForUnknownUser()}
         </ul>
     );
 };

@@ -4,6 +4,7 @@ import Button from "../../UI/Button/Button";
 import { gql, useMutation } from "@apollo/client";
 import { Fragment } from "react";
 import "./LoginForm.css";
+import { useDispatch } from "react-redux";
 
 const LOGIN_USER = gql`
     mutation login($username: String!, $password: String!) {
@@ -16,10 +17,10 @@ const LOGIN_USER = gql`
 `;
 
 const LoginForm = (props) => {
-    let isAuthenticated = false;
-
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
+    const dispatch = useDispatch();
 
     const [loginUser] = useMutation(LOGIN_USER, {
         onError() {
@@ -30,7 +31,8 @@ const LoginForm = (props) => {
             localStorage.setItem("accessToken", data.login.accessToken);
             localStorage.setItem("refreshToken", data.login.refreshToken);
             localStorage.setItem("userId", data.login.user_id);
-            isAuthenticated = true;
+            dispatch({ type: "LOGIN" });
+            setIsAuthenticated(true);
         },
     });
 

@@ -13,6 +13,10 @@ const GET_COMPETITION_DATA = gql`
             end_date
             location
             details_id
+            details {
+                description
+                timetable
+            }
             categories_id
         }
     }
@@ -25,6 +29,7 @@ const EDIT_COMPETITION = gql`
         $start_date: String
         $end_date: String
         $location: String
+        $details: inputDetails
     ) {
         updateCompetition(
             _id: $_id
@@ -32,12 +37,17 @@ const EDIT_COMPETITION = gql`
             start_date: $start_date
             end_date: $end_date
             location: $location
+            details: $details
         ) {
             _id
             name
             start_date
             end_date
             location
+            details {
+                description
+                timetable
+            }
         }
     }
 `;
@@ -47,7 +57,8 @@ function prepareDate(date) {
         date.getMonth() + 1 < 10
             ? "0" + (date.getMonth() + 1)
             : date.getMonth() + 1;
-    let str = date.getFullYear() + "-" + month + "-" + date.getDate();
+    let day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+    let str = date.getFullYear() + "-" + month + "-" + day;
     return str;
 }
 const CompetitionForm = (props) => {
@@ -71,6 +82,8 @@ const CompetitionForm = (props) => {
                 prepareDate(new Date(parseInt(data.competition.end_date)))
             );
             setLocation(data.competition.location);
+            setDescription(data.competition.details.description);
+            setTimetable(data.competition.details.timetable);
         };
 
         if (onCompleted || onError) {
@@ -86,6 +99,8 @@ const CompetitionForm = (props) => {
     const [start_date, setStartDate] = useState("");
     const [end_date, setEndDate] = useState("");
     const [location, setLocation] = useState("");
+    const [description, setDescription] = useState("");
+    const [timetable, setTimetable] = useState("");
 
     const handleNameChange = (event) => {
         setName(event.target.value);
@@ -98,6 +113,12 @@ const CompetitionForm = (props) => {
     };
     const handleLocationChange = (event) => {
         setLocation(event.target.value);
+    };
+    const handleDescriptionChange = (event) => {
+        setDescription(event.target.value);
+    };
+    const handleTimetableChange = (event) => {
+        setTimetable(event.target.value);
     };
 
     const [editCompetition, { newData }] = useMutation(EDIT_COMPETITION, {
@@ -118,6 +139,10 @@ const CompetitionForm = (props) => {
                 start_date: start,
                 end_date: end,
                 location: location,
+                details: {
+                    description: description,
+                    timetable: timetable,
+                },
             },
         });
         alert("Zatwierdzono edycję szczegółów");
@@ -214,6 +239,44 @@ const CompetitionForm = (props) => {
                                 className="form-control"
                                 value={location}
                                 onChange={handleLocationChange}
+                            />{" "}
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="column">
+                        <div className="label-column">
+                            <label htmlFor="location">Opis:</label>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <div className="input-column">
+                            <input
+                                required
+                                type="text"
+                                id="location"
+                                className="form-control"
+                                value={description}
+                                onChange={handleDescriptionChange}
+                            />{" "}
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="column">
+                        <div className="label-column">
+                            <label htmlFor="location">Harmonogram:</label>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <div className="input-column">
+                            <input
+                                required
+                                type="text"
+                                id="location"
+                                className="form-control"
+                                value={timetable}
+                                onChange={handleTimetableChange}
                             />{" "}
                         </div>
                     </div>

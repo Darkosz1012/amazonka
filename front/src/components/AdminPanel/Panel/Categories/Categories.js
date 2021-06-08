@@ -107,6 +107,13 @@ function showTextAndFadeOut(elementId) {
     }, 500);
 }
 
+function setTextColor(elementId, color) {
+    document.getElementById(elementId).style.color = color;
+}
+
+const redColor = "#eb1532da";
+const greenColor = "#3ea834da";
+
 const Categories = () => {
     const params = useParams();
     const _compId = params.id;
@@ -131,12 +138,13 @@ const Categories = () => {
 
     const [addCategory, { category_data }] = useMutation(ADD_CATEGORY, {
         onError(err) {
-            console.log(err);
             setAddCategoryInfoMessage("Błąd przetwarzania..");
+            setTextColor("addCategoryInfo", redColor);
             showTextAndFadeOut("addCategoryInfo");
         },
         onCompleted(data) {
             setAddCategoryInfoMessage("Kategoria została dodana!");
+            setTextColor("addCategoryInfo", greenColor);
             showTextAndFadeOut("addCategoryInfo");
         },
         refetchQueries: [
@@ -151,13 +159,14 @@ const Categories = () => {
         DELETE_CATEGORY,
         {
             onError(err) {
-                console.log(err);
                 setDeleteCategoryInfoMessage("Błąd przetwarzania..");
+                setTextColor("deleteCategoryInfo", redColor);
                 showTextAndFadeOut("deleteCategoryInfo");
             },
             onCompleted(data) {
                 setDeleteCategoryInfoMessage("Kategoria została usunięta!");
                 showTextAndFadeOut("deleteCategoryInfo");
+                setTextColor("deleteCategoryInfo", greenColor);
             },
             refetchQueries: [
                 {
@@ -181,12 +190,13 @@ const Categories = () => {
             },
         ],
         onError(err) {
-            console.log(err);
             setAddDistanceInfoMessage("Błąd przetwarzania..");
+            setTextColor("addDistanceInfo", redColor);
             showTextAndFadeOut("addDistanceInfo");
         },
         onCompleted(data) {
             setAddDistanceInfoMessage("Odległość została dodana!");
+            setTextColor("addDistanceInfo", greenColor);
             showTextAndFadeOut("addDistanceInfo");
         },
     });
@@ -195,12 +205,13 @@ const Categories = () => {
         DELETE_DISTANCE,
         {
             onError(err) {
-                console.log(err);
                 setDeleteDistanceInfoMessage("Błąd przetwarzania..");
+                setTextColor("deleteDistanceInfo", redColor);
                 showTextAndFadeOut("deleteDistanceInfo");
             },
             onCompleted(data) {
                 setDeleteDistanceInfoMessage("Odległość została usunięta!");
+                setTextColor("deleteDistanceInfo", greenColor);
                 showTextAndFadeOut("deleteDistanceInfo");
             },
             refetchQueries: [
@@ -215,7 +226,7 @@ const Categories = () => {
         }
     );
 
-    const preparecategories = (data) => {
+    const prepareCategories = (data) => {
         let finalData = data.categories.map((item) => {
             return {
                 id: item._id,
@@ -226,7 +237,7 @@ const Categories = () => {
         return finalData;
     };
 
-    const preparedistances = (data) => {
+    const prepareDistances = (data) => {
         let finalData = data.distances.map((item) => {
             return {
                 id: item._id,
@@ -259,7 +270,7 @@ const Categories = () => {
             console.log(error);
         };
         const onCompleted = (data) => {
-            setCategories([...preparecategories(data)]);
+            setCategories([...prepareCategories(data)]);
         };
 
         if (onCompleted || onError) {
@@ -276,7 +287,7 @@ const Categories = () => {
             console.log(error);
         };
         const onCompleted = (data) => {
-            setDistances([...preparedistances(data)]);
+            setDistances([...prepareDistances(data)]);
         };
 
         if (onCompleted || onError) {
@@ -586,7 +597,7 @@ const Categories = () => {
                                                             "number_of_series"
                                                         ]
                                                     }{" "}
-                                                    serie/-i,{" "}
+                                                    serie/-ii,{" "}
                                                     {
                                                         distances[element][
                                                             "series_type"

@@ -33,6 +33,13 @@
     width: 90%;
 }
 
+#info-msg {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 @media (max-width: 1299px) {
     .competitors-column-div {
         width: 100%;

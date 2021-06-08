@@ -6,6 +6,9 @@
     "dependencies": {
         "@apollo/client": "^3.3.15",
         "@apollo/react-components": "^4.0.0-beta.2",
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@fortawesome/free-solid-svg-icons": "^5.15.3",
+        "@fortawesome/react-fontawesome": "^0.1.14",
         "@testing-library/jest-dom": "^5.11.10",
         "axios": "^0.21.1",
         "bootstrap": "^4.6.0",
@@ -20,6 +23,8 @@
         "react-router": "^5.2.0",
         "react-router-dom": "^5.2.0",
         "react-scripts": "4.0.3",
+        "react-select": "^4.3.1",
+        "react-select-async-paginate": "^0.5.3",
         "redux-thunk": "^2.3.0",
         "web-vitals": "^1.1.1"
     },

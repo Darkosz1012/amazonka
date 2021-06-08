@@ -24,7 +24,7 @@ function expectResponseToContain(responseData, variables) {
             expectResponseToContain(element, variables);
     else
         for (const [key, value] of Object.entries(variables))
-            expect(responseData[key]).toBe(value);
+            expect(responseData[key]).toStrictEqual(value);
 }
 
 function expectToBeUnique(array) {

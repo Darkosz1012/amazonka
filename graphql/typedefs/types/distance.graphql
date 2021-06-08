@@ -8,14 +8,15 @@ type Distance {
     category: Category
 
     order: Int
-    name: String
-    series_type: Int
+    name: String!
+    series_type: Int!
+    number_of_series: Int!
 }
 
 type DistanceWithName {
     distance_id: ID!
     distance: Distance!
-    name: String
+    name: String!
 }
 
 type DistanceWithScore {

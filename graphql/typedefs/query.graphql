@@ -11,5 +11,20 @@ type Query {
     distance(_id: ID!): Distance
 
     participant(_id: ID!): Participant
-    participants(name: String): [Participant]
+    participants(
+        full_name: String
+        birth_year: String
+        license_no: String
+        gender: String
+        country: String
+        club: String
+    ): [Participant]
+
+    score(_id: ID!): Score
+    scores(competition_id: ID, category_id: ID, participant_id: ID): [Score]
+    series(category_id: ID, distance_id: ID, participant_id: ID): [Series]
+    singleSeries(participant_id: ID!, distance_id: ID!, series_no: Int!): Series
+    singleSeriesByID(_id: ID!): Series
+    final(_id: ID!): Finals
+    finals(competition_id: ID, category_id: ID, participant_id: ID): [Finals]
 }

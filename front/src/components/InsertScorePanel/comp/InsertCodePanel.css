@@ -1,0 +1,19 @@
+.code-text {
+    font-size: 22px;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    color: #8a7c58;
+}
+
+.insert-code-panel {
+    width: 50%;
+    min-height: 400px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.code-btn {
+    margin-top: 50px;
+    text-align: center;
+}

@@ -7,13 +7,14 @@ type Score {
     competition_id: ID!
     competition: Competition!
 
-    category_id: ID!
-    category: Category!
+    category_id: ID
+    category: Category
 
     stand: Int
     order: String
     pre_eliminations_score: Int
     finals_initial_placement: Int
+    access_code: String!
 
     distances: [DistanceWithScore]
 }

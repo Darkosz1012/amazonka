@@ -16,16 +16,15 @@ export default {
     },
     deleteCategory: async (parent, args, context, info) => {
         let result = await Category.findOneAndDelete({ _id: args._id });
-        console.log(result._id);
-        console.log(
+        if(result!=null){
             await Competition.updateOne(
                 { _id: result.competition_id },
                 { $pull: { categories_id: result._id } }
             )
-        );
-        await Distance.deleteMany({ category_id: args._id });
-        await Score.deleteMany({ category_id: args._id });
-        await Finals.deleteMany({ category_id: args._id });
+            await Distance.deleteMany({ category_id: args._id });
+            await Score.deleteMany({ category_id: args._id });
+            await Finals.deleteMany({ category_id: args._id });
+        }
         return result;
     },
 };

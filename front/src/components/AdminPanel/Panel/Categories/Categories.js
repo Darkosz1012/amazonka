@@ -125,20 +125,16 @@ const Categories = () => {
     const [numberOfSeries, setNumberOfSeries] = useState("");
     const [seriesType, setSeriesType] = useState(3);
     const [distances, setDistances] = useState([]);
-    const [chosenCategory = false, setChosenCategory] = useState("");
-    const [chosenDistance = false, setChosenDistance] = useState("");
-    const [addCategoryInfoMessage, setAddCategoryInfoMessage] = useState(
-        "info"
-    );
-    const [deleteCategoryInfoMessage, setDeleteCategoryInfoMessage] = useState(
-        "info"
-    );
-    const [addDistanceInfoMessage, setAddDistanceInfoMessage] = useState(
-        "info"
-    );
-    const [deleteDistanceInfoMessage, setDeleteDistanceInfoMessage] = useState(
-        "info"
-    );
+    const [chosenCategory, setChosenCategory] = useState(null);
+    const [chosenDistance, setChosenDistance] = useState(null);
+    const [addCategoryInfoMessage, setAddCategoryInfoMessage] =
+        useState("info");
+    const [deleteCategoryInfoMessage, setDeleteCategoryInfoMessage] =
+        useState("info");
+    const [addDistanceInfoMessage, setAddDistanceInfoMessage] =
+        useState("info");
+    const [deleteDistanceInfoMessage, setDeleteDistanceInfoMessage] =
+        useState("info");
 
     const [addCategory, { category_data }] = useMutation(ADD_CATEGORY, {
         onError(err) {
@@ -324,7 +320,7 @@ const Categories = () => {
                 _id: chosenCategory,
             },
         });
-        setChosenCategory(false);
+        setChosenCategory(null);
     };
 
     const handleAddDistanceSubmit = (event) => {

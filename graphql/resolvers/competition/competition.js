@@ -14,6 +14,6 @@ export default {
 
     categories: async (parent) => {
         const loader = new DataLoader(Category);
-        return await loader.load(parent.categories_id);
+        return await loader.loadMany(parent.categories_id);
     },
 };

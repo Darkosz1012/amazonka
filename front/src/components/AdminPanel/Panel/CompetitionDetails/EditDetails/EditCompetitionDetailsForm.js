@@ -82,6 +82,8 @@ const CompetitionForm = (props) => {
                 prepareDate(new Date(parseInt(data.competition.end_date)))
             );
             setLocation(data.competition.location);
+            setDescription(data.competition.details.description);
+            setTimetable(data.competition.details.timetable);
         };
 
         if (onCompleted || onError) {

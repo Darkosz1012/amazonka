@@ -6,6 +6,10 @@ type Series {
     category_id: ID!
     category: Category!
     distance_id: ID!
+    distance: Distance
+
+    score_id: ID
+    score_object: Score
 
     series_no: Int!
     was_counted: Boolean!

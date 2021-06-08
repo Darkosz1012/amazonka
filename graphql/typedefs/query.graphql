@@ -22,9 +22,12 @@ type Query {
 
     score(_id: ID!): Score
     scores(competition_id: ID, category_id: ID, participant_id: ID): [Score]
+
     series(category_id: ID, distance_id: ID, participant_id: ID): [Series]
+    seriesByNO(distance_id: ID!, series_no: Int!): [Series]
     singleSeries(participant_id: ID!, distance_id: ID!, series_no: Int!): Series
     singleSeriesByID(_id: ID!): Series
+
     final(_id: ID!): Finals
     finals(competition_id: ID, category_id: ID, participant_id: ID): [Finals]
 }

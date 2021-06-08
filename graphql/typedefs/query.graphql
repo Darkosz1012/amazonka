@@ -25,4 +25,6 @@ type Query {
     series(category_id: ID, distance_id: ID, participant_id: ID): [Series]
     singleSeries(participant_id: ID!, distance_id: ID!, series_no: Int!): Series
     singleSeriesByID(_id: ID!): Series
+    final(_id: ID!): Finals
+    finals(competition_id: ID, category_id: ID, participant_id: ID): [Finals]
 }

@@ -6,18 +6,8 @@ type Finals {
     category_id: ID!
     category: Category!
 
-    participant_score1: ParticipantScore!
-    participant_score2: ParticipantScore!
+    participant1: ParticipantWithScore!
+    participant2: ParticipantWithScore!
 
     round: Int!
-}
-
-type ParticipantScore {
-    participant_id: ID!
-    participant: Participant!
-
-    name: String!
-
-    placement: Int!
-    score: Int!
 }

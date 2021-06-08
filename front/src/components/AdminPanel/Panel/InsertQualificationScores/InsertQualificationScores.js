@@ -16,7 +16,7 @@ function InsertQualificationScores(props) {
     const _compId = params.id;
 
     const desiredCompetition = competitionDetaildata.find(
-        (comp) => comp._id === parseInt(_compId)
+        (comp) => comp._id === _compId
     );
 
     const categories = { ...desiredCompetition }["category"].map(
@@ -157,11 +157,10 @@ function InsertQualificationScores(props) {
     let updateGetAllCurrentScores = () => {
         for (var i = 0; i < filteredParticipants.length; i++) {
             for (var t = 0; t < seriesType; t++)
-                currentParticipantsScores[i].arrows[
-                    t
-                ] = document.getElementById(
-                    `i${t + 1}-${currentParticipantsScores[i]._id}`
-                ).value;
+                currentParticipantsScores[i].arrows[t] =
+                    document.getElementById(
+                        `i${t + 1}-${currentParticipantsScores[i]._id}`
+                    ).value;
             currentParticipantsScores[i].score = document.getElementById(
                 `sum-${currentParticipantsScores[i]._id}`
             ).value;

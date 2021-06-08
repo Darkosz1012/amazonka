@@ -80,6 +80,8 @@ export default {
             await score.save();
         }
 
+        await calculateFinalsPlacement(args.category_id);
+
         return scores;
     },
 
@@ -177,9 +179,8 @@ async function updateScoreFromSeries(score, distance_id) {
 
     function clearScore() {
         for (let distance of score.distances) {
-            if (distance.distance_id === distance_id) {
+            if (distance.distance_id.toString() === distance_id)
                 distance.score = 0;
-            }
         }
     }
 
@@ -201,6 +202,24 @@ async function updateScoreFromSeries(score, distance_id) {
         for (let distance of score.distances) {
             score.pre_eliminations_score += distance.score;
         }
+    }
+}
+
+async function calculateFinalsPlacement(category_id) {
+    let scores = await Score.find({ category_id });
+    scores.sort((score1, score2) => {
+        if (score1.score === score2.score) {
+            if (score1.Xs + score1.tens === score2.Xs + score2.tens) {
+                return score1.Xs > score2.Xs;
+            }
+            return score1.Xs + score1.tens === score2.Xs + score2.tens;
+        }
+        return score1.score > score2.score;
+    });
+
+    for (let i = 0; i < scores.length; i++) {
+        scores[i].finals_initial_placement = i + 1;
+        scores[i].save();
     }
 }
 

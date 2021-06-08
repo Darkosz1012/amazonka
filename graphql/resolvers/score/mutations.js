@@ -11,10 +11,14 @@ export default {
         let distances = await getDistancesFromCategory(args.category_id);
         addDistancesToScore(distances, score);
 
-        await createAllSeries(args.participant_id, args.category_id, distances);
-
         try {
-            await score.save();
+            let { _id } = await score.save();
+            await createAllSeries(
+                _id,
+                args.participant_id,
+                args.category_id,
+                distances
+            );
         } catch (err) {
             Series.deleteMany({
                 participant_id: args.participant_id,
@@ -36,53 +40,6 @@ export default {
         verifyRequest(context.req);
 
         return Score.findOneAndDelete(args);
-    },
-
-    updateSeries: async (_, args, context) => {
-        verifyRequest(context.req);
-
-        if (args.arrows !== undefined) {
-            args.score = 0;
-            args.Xs = 0;
-            args.tens = 0;
-            for (let arrow of args.arrows) {
-                countArrow(arrow);
-            }
-        }
-
-        return Series.findByIdAndUpdate(args._id, args, {
-            new: true,
-        });
-
-        function countArrow(arrow) {
-            if (arrow === "X") {
-                args.score += 10;
-                args.Xs++;
-            } else if (arrow === "10") {
-                args.score += 10;
-                args.tens++;
-            } else if (arrow === "M") {
-            } else {
-                args.score += parseInt(arrow);
-            }
-        }
-    },
-
-    saveScoresFromSeries: async (_, args, context) => {
-        verifyRequest(context.req);
-
-        let scores = await Score.find({
-            category_id: args.category_id,
-        });
-
-        for (let score of scores) {
-            await updateScoreFromSeries(score, args.distance_id);
-            await score.save();
-        }
-
-        await calculateFinalsPlacement(args.category_id);
-
-        return scores;
     },
 
     generatePlacements: async (_, args, context) => {
@@ -141,16 +98,22 @@ function addDistancesToScore(distances, score) {
     }
 }
 
-async function createAllSeries(participant_id, category_id, distances) {
+async function createAllSeries(
+    score_id,
+    participant_id,
+    category_id,
+    distances
+) {
     for (let d of distances) {
         let distance = await Distance.findById(d.distance_id);
         for (let i = 0; i < distance.number_of_series; i++) {
-            await createSeries(distance._id, i);
+            await createSeries(score_id, distance._id, i);
         }
     }
 
-    async function createSeries(distance_id, series_no) {
+    async function createSeries(score_id, distance_id, series_no) {
         await Series.create({
+            score_id,
             participant_id,
             category_id,
             distance_id,

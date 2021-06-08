@@ -10,15 +10,18 @@ export default {
         return result;
     },
     updateCategory: async (parent, args, context, info) => {
-        return Category.findOneAndUpdate({ _id: args._id }, args, {
+        return await Category.findOneAndUpdate({ _id: args._id }, args, {
             new: true,
         });
     },
     deleteCategory: async (parent, args, context, info) => {
-        let result = Category.findOneAndDelete({ _id: args._id });
-        await Competition.updateOne(
-            { _id: result.competition_id },
-            { $pull: { categories_id: result._id } }
+        let result = await Category.findOneAndDelete({ _id: args._id });
+        console.log(result._id);
+        console.log(
+            await Competition.updateOne(
+                { _id: result.competition_id },
+                { $pull: { categories_id: result._id } }
+            )
         );
         await Distance.deleteMany({ category_id: args._id });
         await Score.deleteMany({ category_id: args._id });

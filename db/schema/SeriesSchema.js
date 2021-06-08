@@ -18,6 +18,10 @@ export default new mongoose.Schema({
         ref: "Distance",
         required: true,
     },
+    score_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Score",
+    },
 
     series_no: {
         type: Number,

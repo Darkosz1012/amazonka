@@ -16,7 +16,7 @@ function InsertQualificationScores(props) {
     const _compId = params.id;
 
     const desiredCompetition = competitionDetaildata.find(
-        (comp) => comp._id === parseInt(_compId)
+        (comp) => comp._id === _compId
     );
 
     const categories = { ...desiredCompetition }["category"].map(

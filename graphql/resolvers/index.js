@@ -20,8 +20,9 @@ import {
     distanceMutations,
     distanceQueries,
 } from "./distance/index.js";
-import { score, scoreMutations, scoreQueries } from "./score/index.js";
+import { Score, scoreMutations, scoreQueries } from "./score/index.js";
 import { finalsMutations, finalsQueries, Finals } from "./finals/index.js";
+import { Series, seriesMutations, seriesQueries } from "./series/index.js";
 
 const resolvers = {
     Query: {
@@ -31,6 +32,7 @@ const resolvers = {
         ...participantQueries,
         ...scoreQueries,
         ...finalsQueries,
+        ...seriesQueries,
     },
     Mutation: {
         ...userMutations,
@@ -40,18 +42,18 @@ const resolvers = {
         ...distanceMutations,
         ...scoreMutations,
         ...finalsMutations,
+        ...seriesMutations,
     },
     Competition: {
         ...competition,
     },
-    Score: {
-        ...score,
-    },
+    Score,
     Category,
     DistanceWithName,
     Distance,
     ParticipantWithScore,
     Finals,
+    Series,
 };
 
 export default resolvers;

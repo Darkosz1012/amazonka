@@ -8,15 +8,4 @@ export default {
     scores: async (_, args) => {
         return Score.find(args);
     },
-
-    series: async (_, args) => {
-        return Series.find(args);
-    },
-
-    singleSeries: async (_, args) => {
-        return Series.findOne(args);
-    },
-    singleSeriesByID: async (_, args) => {
-        return Series.findOne(args);
-    },
 };

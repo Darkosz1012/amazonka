@@ -92,7 +92,7 @@ type Mutation {
         tens: Int
         arrows: [String]
     ): Series
-    saveScoresFromSeries(category_id: ID!, distance_id: ID!): [Score]
+    saveScoresFromSeries(category_id: ID!): [Score]
     generatePlacements(category_id: ID!): [Score]
 
     generateFinals(

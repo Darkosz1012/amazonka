@@ -163,38 +163,31 @@ async function createAllSeries(participant_id, category_id, distances) {
     }
 }
 
-async function updateScoreFromSeries(score, distance_id) {
+async function updateScoreFromSeries(score) {
     clearScore();
 
-    let allSeries = await Series.find({
-        distance_id,
-        participant_id: score.participant_id,
-    });
+    for (let distance of score.distances) {
+        let allSeries = await Series.find({
+            distance_id: distance.distance_id,
+            participant_id: score.participant_id,
+        });
 
-    for (let series of allSeries) {
-        countSeries(series);
+        for (let series of allSeries) {
+            countSeries(distance, series);
+        }
     }
 
     sumPreEliminationScore();
 
     function clearScore() {
         for (let distance of score.distances) {
-            if (distance.distance_id.toString() === distance_id)
-                distance.score = 0;
+            distance.score = 0;
         }
     }
 
-    function countSeries(series) {
-        for (let distance of score.distances) {
-            if (distance.distance_id.toString() === distance_id) {
-                addSeriesToScore(distance, series);
-            }
-        }
-
-        function addSeriesToScore(distance, series) {
-            distance.score += series.score;
-            series.was_counted = true;
-        }
+    function countSeries(distance, series) {
+        distance.score += series.score;
+        series.was_counted = true;
     }
 
     function sumPreEliminationScore() {

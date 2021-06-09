@@ -399,8 +399,6 @@ const Competitors = (props) => {
 
     const chooseParticipant = () => {
         var canAdd = true;
-        console.log(competitorsData);
-        console.log(prevCompetitor);
         competitorsData.forEach((comp) => {
             if (
                 comp["participant_id"] === chosenCompetitor ||

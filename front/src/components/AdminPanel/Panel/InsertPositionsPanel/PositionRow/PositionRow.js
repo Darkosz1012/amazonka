@@ -16,6 +16,7 @@ const PositionRow = (props) => {
         }
         setOrder(ord);
     };
+    console.log(props);
 
     return (
         <tr>
@@ -31,7 +32,7 @@ const PositionRow = (props) => {
                     min={props.min}
                     max={props.max}
                     value={position}
-                    placeholder="1"
+                    placeholder={props.stand}
                     onChange={handlePositionChange}
                 />
             </td>
@@ -40,11 +41,11 @@ const PositionRow = (props) => {
                     type="text"
                     maxLength="1"
                     value={order}
-                    placeholder="A"
+                    placeholder={props.stand}
                     onChange={handleOrderChange}
                 />
             </td>
-            <td>{props.code}</td>
+            <td>{props.access_code}</td>
         </tr>
     );
 };

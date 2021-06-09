@@ -19,19 +19,37 @@ const GENERATE_PLACEMENTS = gql`
         generatePlacements(category_id: $category_id) {
             _id
             participant_id
+            participant {
+                _id
+                full_name
+                birth_year
+                license_no
+                gender
+                club
+            }
+            stand
+            order
+            access_code
         }
     }
 `;
 
-const GET_COMPETITORS_DATA = gql`
-    query participant($_id: ID!) {
-        participant(_id: $_id) {
+const GET_SCORES = gql`
+    query scores($category_id: ID!) {
+        scores(category_id: $category_id) {
             _id
-            full_name
-            birth_year
-            license_no
-            gender
-            club
+            participant_id
+            participant {
+                _id
+                full_name
+                birth_year
+                license_no
+                gender
+                club
+            }
+            stand
+            order
+            access_code
         }
     }
 `;
@@ -45,10 +63,14 @@ function InsertPositions(props) {
     const params = useParams();
     const competitionID = params.id;
 
-    const [boundaries, setBoundaries] = useState({ min: 0, max: 10 });
+    const [boundaries, setBoundaries] = useState({ min: 1, max: 10 });
     const [category, setCategory] = useState("");
     const [categories, setCategories] = useState([]);
     const [competitors, setCompetitors] = useState([]);
+
+    const { fetchMore: showScores } = useQuery(GET_SCORES, {
+        variables: { category_id: category },
+    });
 
     const {
         loading: catLoading,
@@ -70,10 +92,6 @@ function InsertPositions(props) {
         variables: { category_id: category },
     });
 
-    const { fetchMore: getCompData } = useQuery(GET_COMPETITORS_DATA, {
-        variables: { _id: "60bdfadd2f0faf321ccb7de7" },
-    });
-
     const handleGenerateClick = () => {
         if (category !== "") {
             var partList = [];
@@ -83,31 +101,28 @@ function InsertPositions(props) {
                 },
             });
             catInPromise.then((compData) => {
+                console.log(compData);
                 compData.data.generatePlacements.forEach((data) => {
-                    const compDataInPromise = getCompData({
-                        variables: {
-                            _id: data.participant_id,
-                        },
-                    });
-                    compDataInPromise.then((cat) => {
-                        const [partName, partSurname] =
-                            cat.data.participant.full_name.split(" ");
-                        const partYear = cat.data.participant.birth_year;
-                        const partGender =
-                            cat.data.participant.gender === "F" ? "K" : "M";
-                        var part = {
-                            _id: cat.data.participant._id,
-                            participant_id: cat.data.participant._id,
-                            name: partName,
-                            surname: partSurname,
-                            year: partYear,
-                            gender: partGender,
-                            licenceNumber: cat.data.participant.license_no,
-                            club: cat.data.participant.club,
-                        };
-                        partList.push(part);
-                        setCompetitors(() => [...partList]);
-                    });
+                    const [partName, partSurname] =
+                        data.participant.full_name.split(" ");
+                    const partYear = data.participant.birth_year;
+                    const partGender =
+                        data.participant.gender === "F" ? "K" : "M";
+                    var part = {
+                        _id: data.participant._id,
+                        participant_id: data.participant._id,
+                        name: partName,
+                        surname: partSurname,
+                        year: partYear,
+                        gender: partGender,
+                        licenceNumber: data.participant.license_no,
+                        club: data.participant.club,
+                        stand: data.stand,
+                        order: data.order,
+                        access_code: data.access_code,
+                    };
+                    partList.push(part);
+                    setCompetitors(() => [...partList]);
                 });
             });
         } else {
@@ -128,9 +143,43 @@ function InsertPositions(props) {
 
     const setSelectCat = (name) => {
         document.getElementById("info-msg").innerHTML = "";
+        setCompetitors(() => []);
+        if (name === "") {
+            setCategory("");
+        }
         categories.filter((cat) => {
             if (cat.name === name) {
                 setCategory(cat._id);
+                var partList = [];
+                var catInPromise = showScores({
+                    variables: {
+                        category_id: cat._id,
+                    },
+                });
+                catInPromise.then((compData) => {
+                    compData.data.scores.forEach((data) => {
+                        const [partName, partSurname] =
+                            data.participant.full_name.split(" ");
+                        const partYear = data.participant.birth_year;
+                        const partGender =
+                            data.participant.gender === "F" ? "K" : "M";
+                        var part = {
+                            _id: data._id,
+                            participant_id: data.participant._id,
+                            name: partName,
+                            surname: partSurname,
+                            year: partYear,
+                            gender: partGender,
+                            licenceNumber: data.participant.license_no,
+                            club: data.participant.club,
+                            stand: data.stand,
+                            order: data.order,
+                            access_code: data.access_code,
+                        };
+                        partList.push(part);
+                        setCompetitors(() => [...partList]);
+                    });
+                });
             }
             return "";
         });
@@ -167,7 +216,7 @@ function InsertPositions(props) {
                         name="categories"
                         onChange={(event) => setSelectCat(event.target.value)}
                     >
-                        <option></option>
+                        <option key="">{""}</option>
                         {Object.keys(categories).map(function (element) {
                             return (
                                 <option key={categories[element]["_id"]}>
@@ -187,6 +236,7 @@ function InsertPositions(props) {
                         do:{" "}
                         <input
                             type="number"
+                            max="100"
                             value={boundaries.max}
                             onChange={handleMaxChange}
                         />
@@ -201,6 +251,7 @@ function InsertPositions(props) {
                         }}
                     />
                 </div>
+
                 <table className="table table-bordered table-hover">
                     <thead>
                         <tr>

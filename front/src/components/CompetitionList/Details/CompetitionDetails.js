@@ -23,15 +23,15 @@ const GET_COMPETITION_DATA = gql`
             end_date
             location
             details_id
-            details{
+            details {
                 description
                 timetable
             }
             categories_id
-            categories{
+            categories {
                 _id
                 name
-                finals{
+                finals {
                     _id
                 }
             }
@@ -97,11 +97,10 @@ function CompetitionDetails(props) {
     const schedule = competitionData.details?.timetable ?? "";
     const categories = competitionData.categories;
     const categ_num = categories?.length;
-    console.log(categories)
 
-    var category_names = categories?.map(function(item) {
+    var category_names = categories?.map(function (item) {
         return item?.name ?? "";
-      });
+    });
     let categoriesStr = category_names?.join(", ");
 
     let catButtonsNumber = 1;
@@ -117,18 +116,27 @@ function CompetitionDetails(props) {
     function createButtonsList(subpath) {
         let list = [];
         for (let i = 0; i < categ_num; i++) {
-            if(subpath!=="elimination" || categories[i]?.finals?.length>0)
-            list.push(
-                <Button
-                    className="category-btn"
-                    id="params.id"
-                    key={subpath + catButtonsNumber++}
-                    placeholder={categories[i]?.name}
-                    onClick={() =>
-                        handleClick(params.id, categories[i]._id, subpath)
-                    }
-                />
-            );
+            if (categories[i] !== null) {
+                if (
+                    subpath !== "elimination" ||
+                    categories[i]?.finals?.length > 0
+                )
+                    list.push(
+                        <Button
+                            className="category-btn"
+                            id="params.id"
+                            key={subpath + catButtonsNumber++}
+                            placeholder={categories[i]?.name}
+                            onClick={() =>
+                                handleClick(
+                                    params.id,
+                                    categories[i]._id,
+                                    subpath
+                                )
+                            }
+                        />
+                    );
+            }
         }
         catButtonsNumber = 0;
         return list;

@@ -37,6 +37,7 @@ const GET_SERIES = gql`
             _id
             series_no
             participant_id
+            score_id
             score
             Xs
             tens
@@ -50,6 +51,17 @@ const GET_PARTICIPANTS = gql`
         participants {
             _id
             full_name
+        }
+    }
+`;
+
+const GET_SCORES_STAND_ORDER = gql`
+    query scores($competition_id: ID, $category_id: ID) {
+        scores(competition_id: $competition_id, category_id: $category_id) {
+            _id
+            participant_id
+            stand
+            order
         }
     }
 `;
@@ -91,6 +103,7 @@ function InsertQualificationScores(props) {
     const [seriesUnique, setSeriesUnique] = useState([]);
     const [seriesData, setSeriesData] = useState([]);
     const [paticipantsData, setPaticipantsData] = useState([]);
+    const [scoresStandOrderData, setScoresStandOrderData] = useState([]);
 
     const [currentScores, setCurrentScores] = useState([]);
 
@@ -135,6 +148,7 @@ function InsertQualificationScores(props) {
                 id: item._id,
                 series_no: item.series_no,
                 participant_id: item.participant_id,
+                score_id: item.score_id,
                 score: item.score,
                 Xs: item.Xs,
                 tens: item.tens,
@@ -149,6 +163,18 @@ function InsertQualificationScores(props) {
             return {
                 id: item._id,
                 full_name: item.full_name,
+            };
+        });
+        return finalData;
+    };
+
+    const prepareScoreStandOrder = (data) => {
+        let finalData = data.scores.map((item) => {
+            return {
+                id: item._id,
+                participant_id: item.participant_id,
+                stand: item.stand,
+                order: item.order,
             };
         });
         return finalData;
@@ -211,6 +237,17 @@ function InsertQualificationScores(props) {
         data: participants_data,
     } = useQuery(GET_PARTICIPANTS, {
         variables: {},
+    });
+
+    const {
+        loading: scores_stand_order_loading,
+        error: scores_stand_order_error,
+        data: scores_stand_order_data,
+    } = useQuery(GET_SCORES_STAND_ORDER, {
+        variables: {
+            competition_id: _compId,
+            category_id: selectedCategory,
+        },
     });
 
     useEffect(() => {
@@ -281,6 +318,35 @@ function InsertQualificationScores(props) {
             }
         }
     }, [participants_loading, participants_data, participants_error]);
+
+    useEffect(() => {
+        const onError = (error) => {
+            console.log(error);
+        };
+        const onCompleted = (data) => {
+            setScoresStandOrderData([...prepareScoreStandOrder(data)]);
+        };
+
+        if (onCompleted || onError) {
+            if (
+                onCompleted &&
+                !scores_stand_order_loading &&
+                !scores_stand_order_error
+            ) {
+                onCompleted(scores_stand_order_data);
+            } else if (
+                onError &&
+                !scores_stand_order_loading &&
+                scores_stand_order_error
+            ) {
+                onError(scores_stand_order_error);
+            }
+        }
+    }, [
+        scores_stand_order_loading,
+        scores_stand_order_data,
+        participants_error,
+    ]);
 
     const [updateSeries, { series_all_data }] = useMutation(UPDATE_SERIES, {
         onError(err) {
@@ -683,6 +749,16 @@ function InsertQualificationScores(props) {
         return result;
     };
 
+    const getOrderAndStand = (ID) => {
+        let result = "";
+        for (const element of scoresStandOrderData) {
+            if (element.participant_id === ID) {
+                result = ` ${element.stand}${element.order}`;
+            }
+        }
+        return result;
+    };
+
     return (
         <div className="all">
             <p className="panel-content-header">Wyniki kwalifikacji</p>
@@ -848,7 +924,11 @@ function InsertQualificationScores(props) {
                                 id="alignToLeft"
                                 className="position"
                             >
-                                <Row>1A</Row>
+                                <Row>
+                                    {getOrderAndStand(
+                                        competitor.participant_id
+                                    )}
+                                </Row>
                                 <Row>
                                     <span className="participantFullName">
                                         {getFullName(competitor.participant_id)}

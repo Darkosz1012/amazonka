@@ -134,6 +134,7 @@ const Competitors = (props) => {
     const [searchedCompetitors, setSearchedCompetitors] = useState([]);
     const [competitorsData, setCompetitorsData] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [prevCompetitor = false, setPrevCompetitor] = useState("");
 
     const columns = [
         {
@@ -204,8 +205,8 @@ const Competitors = (props) => {
     ];
 
     const updateCategory = (id, value) => {
-        console.log(id);
-        console.log(value);
+        //console.log(id);
+        //console.log(value);
     };
 
     const onUpdateList = (scoreID) => {
@@ -398,8 +399,13 @@ const Competitors = (props) => {
 
     const chooseParticipant = () => {
         var canAdd = true;
+        console.log(competitorsData);
+        console.log(prevCompetitor);
         competitorsData.forEach((comp) => {
-            if (comp["participant_id"] === chosenCompetitor) {
+            if (
+                comp["participant_id"] === chosenCompetitor ||
+                chosenCompetitor === prevCompetitor
+            ) {
                 canAdd = false;
             }
         });
@@ -412,6 +418,7 @@ const Competitors = (props) => {
                         category_id: categories[0]["_id"],
                     },
                 });
+                setPrevCompetitor(chosenCompetitor);
             } else {
                 alert(
                     "Brak kategorii przypisanych do tych zawodów!\nPrzed wyborem zawodnika dodaj przynajmniej jedną kategorię."

@@ -45,7 +45,7 @@ function InsertPositions(props) {
     const params = useParams();
     const competitionID = params.id;
 
-    let [boundaries, setBoundaries] = useState({ min: 0, max: 10 });
+    const [boundaries, setBoundaries] = useState({ min: 0, max: 10 });
     const [category, setCategory] = useState("");
     const [categories, setCategories] = useState([]);
     const [competitors, setCompetitors] = useState([]);
@@ -90,7 +90,6 @@ function InsertPositions(props) {
                         },
                     });
                     compDataInPromise.then((cat) => {
-                        console.log(cat.data.participant._id);
                         const [partName, partSurname] =
                             cat.data.participant.full_name.split(" ");
                         const partYear = cat.data.participant.birth_year;
@@ -107,7 +106,6 @@ function InsertPositions(props) {
                             club: cat.data.participant.club,
                         };
                         partList.push(part);
-                        console.log(partList);
                         setCompetitors(() => [...partList]);
                     });
                 });
@@ -171,7 +169,6 @@ function InsertPositions(props) {
                     >
                         <option></option>
                         {Object.keys(categories).map(function (element) {
-                            console.log(categories[element]);
                             return (
                                 <option key={categories[element]["_id"]}>
                                     {" "}

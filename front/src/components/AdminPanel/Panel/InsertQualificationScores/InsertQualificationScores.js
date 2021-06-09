@@ -9,6 +9,7 @@ import Button from "../../../UI/Button/Button";
 import "./InsertQualificationScores.css";
 import $ from "jquery";
 import { gql, useMutation, useQuery } from "@apollo/client";
+import { doc } from "prettier";
 
 const GET_CATEGORIES = gql`
     query categories($competition_id: ID) {
@@ -495,17 +496,20 @@ function InsertQualificationScores(props) {
     };
 
     function showTextAndFadeOut(elementId) {
-        document.getElementById(elementId).style.opacity = "1";
-        setTimeout(function () {
-            $("#" + elementId).fadeTo(800, 0);
-        }, 500);
+        if (document.getElementById(elementId)) {
+            document.getElementById(elementId).style.opacity = "1";
+            setTimeout(function () {
+                $("#" + elementId).fadeTo(800, 0);
+            }, 500);
+        }
     }
 
     const redColor = "#eb1532da";
     const greenColor = "#3ea834da";
 
     function setTextColor(elementId, color) {
-        document.getElementById(elementId).style.color = color;
+        if (document.getElementById(elementId))
+            document.getElementById(elementId).style.color = color;
     }
 
     let setDisabledState = (elementsArray, disableState) => {

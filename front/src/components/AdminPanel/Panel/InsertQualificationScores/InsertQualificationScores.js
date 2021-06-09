@@ -99,6 +99,7 @@ function InsertQualificationScores(props) {
     const [selectedSeries, setSelectedSeries] = useState(null);
 
     const [seriesType, setSeriesType] = useState(null);
+    const [checkSuccess, setCheckSuccess] = useState(false);
     const [infoMessage, setInfoMessage] = useState("info");
     const [infoSaveFromSeriesMessage, setInfoSaveFromSeriesMessage] =
         useState("info");
@@ -283,11 +284,13 @@ function InsertQualificationScores(props) {
 
     const [updateSeries, { series_all_data }] = useMutation(UPDATE_SERIES, {
         onError(err) {
+            setCheckSuccess(false);
             setInfoMessage("Błąd przetwarzania..");
             setTextColor("scoresSavedInfoMessage", redColor);
             showTextAndFadeOut("scoresSavedInfoMessage");
         },
         onCompleted(data) {
+            setCheckSuccess(true);
             setInfoMessage("Dane zostały zapisane");
             setTextColor("scoresSavedInfoMessage", greenColor);
             showTextAndFadeOut("scoresSavedInfoMessage");
@@ -366,22 +369,24 @@ function InsertQualificationScores(props) {
     };
 
     let updateGetAllCurrentScores = () => {
-        scores = [];
-        scores = [...currentScores];
+        scores = JSON.parse(JSON.stringify(currentScores));
         for (var i = 0; i < scores.length; i++) {
             for (var t = 0; t < seriesType; t++)
                 scores[i].arrows[t] = document.getElementById(
                     `i${t + 1}-${scores[i].participant_id}`
                 ).value;
-            currentScores[i].score = document.getElementById(
+            let sum = document.getElementById(
                 `sum-${currentScores[i].participant_id}`
             ).value;
-            currentScores[i].Xs = document.getElementById(
-                `countX-${currentScores[i].participant_id}`
+            let sumX = document.getElementById(
+                `countX-${scores[i].participant_id}`
             ).value;
-            currentScores[i].tens = document.getElementById(
-                `count10-${currentScores[i].participant_id}`
+            let sum10 = document.getElementById(
+                `count10-${scores[i].participant_id}`
             ).value;
+            scores[i].score = sum === "" ? "" : parseInt(sum);
+            scores[i].Xs = sumX === "" ? "" : parseInt(sumX);
+            scores[i].tens = sum10 === "" ? "" : parseInt(sum10);
         }
         setCurrentScores(scores);
     };
@@ -409,7 +414,7 @@ function InsertQualificationScores(props) {
         document.getElementById(`sum-${id}`).value = sumNumbers;
         document.getElementById(`countX-${id}`).value = sumX;
         document.getElementById(`count10-${id}`).value = sum10;
-        //updateGetAllCurrentScores();
+        updateGetAllCurrentScores();
     };
 
     let toggleCSSClasses = (
@@ -486,7 +491,7 @@ function InsertQualificationScores(props) {
         let input = event.target.value;
         let p_id = id.split("-")[1];
         let in_no = id.split("-")[0][1];
-        scores = [...currentScores];
+        scores = JSON.parse(JSON.stringify(currentScores));
 
         if (
             !/\D/.test(input) &
@@ -501,13 +506,13 @@ function InsertQualificationScores(props) {
                 return item.participant_id === p_id;
             });
             var inputIndex = parseInt(in_no) - 1;
-            //scores[index].arrows[inputIndex] = input;
+            scores[index].arrows[inputIndex] = input;
         } else {
             document.getElementById(id).value = "";
         }
         setCurrentScores(scores);
         blockSumXs10sInputs(id.split("-")[1]);
-        //updateGetAllCurrentScores();
+        updateGetAllCurrentScores();
     };
 
     let isValidSumInput = (event) => {
@@ -526,7 +531,7 @@ function InsertQualificationScores(props) {
         } else {
             document.getElementById(id).value = "";
         }
-        //updateGetAllCurrentScores();
+        updateGetAllCurrentScores();
     };
 
     let isValidX_10Input = (event) => {

@@ -31,6 +31,9 @@ const GET_COMPETITION_DATA = gql`
             categories{
                 _id
                 name
+                finals{
+                    _id
+                }
             }
         }
     }
@@ -114,6 +117,7 @@ function CompetitionDetails(props) {
     function createButtonsList(subpath) {
         let list = [];
         for (let i = 0; i < categ_num; i++) {
+            if(subpath!=="elimination" || categories[i]?.finals?.length>0)
             list.push(
                 <Button
                     className="category-btn"

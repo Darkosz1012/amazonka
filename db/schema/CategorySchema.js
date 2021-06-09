@@ -16,8 +16,8 @@ export default new mongoose.Schema({
         enum: ["M", "F"],
         required: true,
     },
-    start_stand: { type: Number },
-    end_stand: { type: Number },
+    start_stand: { type: Number, default:1 },
+    end_stand: { type: Number, default:10 },
     distances: [
         {
             distance_id: {

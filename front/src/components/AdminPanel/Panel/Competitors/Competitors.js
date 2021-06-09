@@ -350,7 +350,7 @@ const Competitors = (props) => {
     });
 
     const { fetchMore: getCompData } = useQuery(GET_COMPETITORS_DATA, {
-        variables: { _id: "60bdfadd2f0faf321ccb7de7" },
+        variables: { _id: "" },
     });
 
     const [addNewParticipant, { loading: addLoading, error: addError }] =

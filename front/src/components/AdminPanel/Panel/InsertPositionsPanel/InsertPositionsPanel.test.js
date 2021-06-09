@@ -1,14 +1,19 @@
 import { render, screen, within } from "@testing-library/react";
 import InsertPositionsPanel from "./InsertPositionsPanel";
+import WithProvider from "./../../../../hoc/WithProvider/WithProvider";
 
 describe("InsertPositionsPanel", () => {
     beforeEach(() => {
-        render(<InsertPositionsPanel />);
+        render(
+            <WithProvider>
+                <InsertPositionsPanel />
+            </WithProvider>
+        );
     });
 
-    it("should have a button", () => {
-        let btn = screen.getByRole("button");
-        expect(btn).toBeInTheDocument();
+    it("should have two buttons", () => {
+        let btn = screen.getAllByRole("button");
+        expect(btn).toHaveLength(2);
     });
 
     describe("table with participants", () => {

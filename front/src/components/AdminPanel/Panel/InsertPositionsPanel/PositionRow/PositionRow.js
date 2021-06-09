@@ -23,7 +23,7 @@ const PositionRow = (props) => {
             <td>{props.surname}</td>
             <td>{props.year}</td>
             <td>{props.gender}</td>
-            <td>{props.licence}</td>
+            <td>{props.licenceNumber}</td>
             <td>{props.club}</td>
             <td>
                 <input

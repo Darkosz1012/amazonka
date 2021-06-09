@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.categoryButtonDiv {
+    text-align: center;
+}
+
 .InsertPositionsPanel table td input {
     position: absolute;
     display: block;

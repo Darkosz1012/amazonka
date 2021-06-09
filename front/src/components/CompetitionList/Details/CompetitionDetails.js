@@ -4,14 +4,14 @@ import { gql, useQuery } from "@apollo/client";
 import Button from "../../UI/Button/Button";
 import { useEffect, useState } from "react";
 
-const GET_CATEGORIES = gql`
-    query($competition_id: ID) {
-        categories(competition_id: $competition_id) {
-            _id
-            name
-        }
-    }
-`;
+// const GET_CATEGORIES = gql`
+//     query($competition_id: ID) {
+//         categories(competition_id: $competition_id) {
+//             _id
+//             name
+//         }
+//     }
+// `;
 
 const GET_COMPETITION_DATA = gql`
     query competition($_id: ID!) {
@@ -23,7 +23,15 @@ const GET_COMPETITION_DATA = gql`
             end_date
             location
             details_id
+            details{
+                description
+                timetable
+            }
             categories_id
+            categories{
+                _id
+                name
+            }
         }
     }
 `;
@@ -64,17 +72,17 @@ function CompetitionDetails(props) {
         }
     }, [loading, data, error]);
 
-    let [categoriesList, setCategoriesList] = useState([]);
+    // let [categoriesList, setCategoriesList] = useState([]);
 
-    const { loadingCat, errorCat, dataCat } = useQuery(GET_CATEGORIES, {
-        onError(err) {
-            console.log(err);
-        },
-        onCompleted(data) {
-            console.log(data);
-            setCategoriesList(data.categories);
-        },
-    });
+    // const { loadingCat, errorCat, dataCat } = useQuery(GET_CATEGORIES, {
+    //     onError(err) {
+    //         console.log(err);
+    //     },
+    //     onCompleted(data) {
+    //         console.log(data);
+    //         setCategoriesList(data.categories);
+    //     },
+    // });
 
     const name = competitionData.name;
     const location = competitionData.location;
@@ -82,14 +90,16 @@ function CompetitionDetails(props) {
         new Date(parseInt(competitionData.start_date))
     );
     const end_date = prepareDate(new Date(parseInt(competitionData.end_date)));
-    const description = `mamy details id (${competitionData.details_id}), jak będzie api to będzie na jego podstawie pobiarany opis`;
-    const schedule = `harmonogram - pewnie będzie w details id, na razie chyba nie ma api do tego`;
-    const categories = competitionData.categories_id
-        ? [...competitionData.categories_id]
-        : []; //też na razie mam tylko id
-    const categ_num = Object.keys(categories).length;
+    const description = competitionData.details?.description ?? "";
+    const schedule = competitionData.details?.timetable ?? "";
+    const categories = competitionData.categories;
+    const categ_num = categories?.length;
+    console.log(categories)
 
-    let categoriesStr = categories.join(", ");
+    var category_names = categories?.map(function(item) {
+        return item?.name ?? "";
+      });
+    let categoriesStr = category_names?.join(", ");
 
     let catButtonsNumber = 1;
 
@@ -109,9 +119,9 @@ function CompetitionDetails(props) {
                     className="category-btn"
                     id="params.id"
                     key={subpath + catButtonsNumber++}
-                    placeholder={categories[i]}
+                    placeholder={categories[i]?.name}
                     onClick={() =>
-                        handleClick(params.id, categories[i], subpath)
+                        handleClick(params.id, categories[i]._id, subpath)
                     }
                 />
             );

@@ -6,9 +6,9 @@ describe("InsertPositionsPanel", () => {
         render(<InsertPositionsPanel />);
     });
 
-    it("should have a button", () => {
-        let btn = screen.getByRole("button");
-        expect(btn).toBeInTheDocument();
+    it("should have two buttons", () => {
+        let btn = screen.getAllByRole("button");
+        expect(btn).toHaveLength(2);
     });
 
     describe("table with participants", () => {

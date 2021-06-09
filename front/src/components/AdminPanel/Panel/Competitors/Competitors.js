@@ -20,6 +20,7 @@ const GET_SCORES = gql`
         scores(category_id: $category_id) {
             _id
             participant_id
+            category_id
         }
     }
 `;
@@ -73,6 +74,14 @@ const ADD_PARTICIPANT = gql`
             gender: $gender
             club: $club
         ) {
+            _id
+        }
+    }
+`;
+
+const UPDATE_SCORE_CATEGORY = gql`
+    mutation updateScore($_id: ID!, $category_id: ID!) {
+        updateScore(_id: $_id, category_id: $category_id) {
             _id
         }
     }
@@ -135,7 +144,8 @@ const Competitors = (props) => {
     const [competitorsData, setCompetitorsData] = useState([]);
     const [categories, setCategories] = useState([]);
     const [prevCompetitor = false, setPrevCompetitor] = useState("");
-
+    const [updateScore, { loading: updateLoading, error: updateError }] =
+        useMutation(UPDATE_SCORE_CATEGORY);
     const columns = [
         {
             dataField: "id",
@@ -166,28 +176,40 @@ const Competitors = (props) => {
         {
             dataField: "category",
             text: "Kategoria",
-            formatter: (value, row) => (
-                <div id="selectCat">
-                    <select
-                        name="categoriesOptions"
-                        id="gender"
-                        className="form-control"
-                        onChange={(event) =>
-                            updateCategory(row._id, event.target.value)
-                        }
-                    >
-                        <option></option>
-                        {Object.keys(categories).map(function (element) {
-                            return (
-                                <option key={categories[element]["_id"]}>
-                                    {" "}
-                                    {categories[element]["name"]}{" "}
-                                </option>
-                            );
-                        })}
-                    </select>
-                </div>
-            ),
+            formatter: (value, row) => {
+                console.log(row);
+                return (
+                    <div id="selectCat">
+                        <select
+                            name="categoriesOptions"
+                            id="gender"
+                            className="form-control"
+                            onChange={(event) =>
+                                updateCategory(row._id, event.target.value)
+                            }
+                        >
+                            <option></option>
+                            {Object.keys(categories).map((element) => {
+                                var selected =
+                                    categories[element]["_id"] ==
+                                    row.category_id
+                                        ? true
+                                        : false;
+                                return (
+                                    <option
+                                        key={categories[element]["_id"]}
+                                        value={categories[element]["_id"]}
+                                        selected={selected}
+                                    >
+                                        {" "}
+                                        {categories[element]["name"]}{" "}
+                                    </option>
+                                );
+                            })}
+                        </select>
+                    </div>
+                );
+            },
         },
         {
             dataField: "action",
@@ -205,8 +227,15 @@ const Competitors = (props) => {
     ];
 
     const updateCategory = (id, value) => {
-        //console.log(id);
-        //console.log(value);
+        console.log(id);
+        console.log(value);
+
+        updateScore({
+            variables: {
+                _id: id,
+                category_id: value,
+            },
+        });
     };
 
     const onUpdateList = (scoreID) => {
@@ -324,6 +353,7 @@ const Competitors = (props) => {
                                         : "M";
                                 var part = {
                                     _id: sc["_id"],
+                                    category_id: sc["category_id"],
                                     participant_id:
                                         compData.data.participant._id,
                                     name: partName,

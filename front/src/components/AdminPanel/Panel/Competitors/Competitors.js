@@ -105,7 +105,7 @@ const DELETE_SCORE = gql`
 const defaultSorted = [
     {
         dataField: "surname",
-        order: "esc",
+        order: "asc",
     },
 ];
 
@@ -404,13 +404,19 @@ const Competitors = (props) => {
             }
         });
         if (canAdd) {
-            chooseOneParticipant({
-                variables: {
-                    participant_id: chosenCompetitor,
-                    competition_id: competitionID,
-                    category_id: categories[0]["_id"],
-                },
-            });
+            if (categories.length) {
+                chooseOneParticipant({
+                    variables: {
+                        participant_id: chosenCompetitor,
+                        competition_id: competitionID,
+                        category_id: categories[0]["_id"],
+                    },
+                });
+            } else {
+                alert(
+                    "Brak kategorii przypisanych do tych zawodów!\nPrzed wyborem zawodnika dodaj przynajmniej jedną kategorię."
+                );
+            }
         } else {
             onError("Użytkownik bierze już udział w tych zawodach!");
         }

@@ -1,176 +1,389 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Select from "react-select";
-import { AsyncPaginate } from "react-select-async-paginate";
 import Button from "../../../UI/Button/Button";
 import "./InsertQualificationScores.css";
 import $ from "jquery";
-import competitionDetaildata from "./competitionsData.json";
+import { gql, useMutation, useQuery } from "@apollo/client";
+
+const GET_CATEGORIES = gql`
+    query categories($competition_id: ID) {
+        categories(competition_id: $competition_id) {
+            _id
+            name
+            gender
+        }
+    }
+`;
+
+const GET_DISTANCES = gql`
+    query distances($competition_id: ID, $category_id: ID) {
+        distances(competition_id: $competition_id, category_id: $category_id) {
+            _id
+            name
+            series_type
+            number_of_series
+        }
+    }
+`;
+
+const GET_SERIES = gql`
+    query series($category_id: ID, $distance_id: ID) {
+        series(category_id: $category_id, distance_id: $distance_id) {
+            _id
+            series_no
+            participant_id
+            score
+            Xs
+            tens
+            arrows
+        }
+    }
+`;
+
+const GET_PARTICIPANTS = gql`
+    query participants {
+        participants {
+            _id
+            full_name
+        }
+    }
+`;
+
+const UPDATE_SERIES = gql`
+    mutation updateSeries(
+        $_id: ID!
+        $score: Int
+        $Xs: Int
+        $tens: Int
+        $arrows: [String]
+    ) {
+        updateSeries(
+            _id: $_id
+            score: $score
+            Xs: $Xs
+            tens: $tens
+            arrows: $arrows
+        ) {
+            _id
+        }
+    }
+`;
+
+const SAVE_SCORES_FROM__CATEGORY = gql`
+    mutation saveScoresFromSeries($category_id: ID!) {
+        saveScoresFromSeries(category_id: $category_id) {
+            _id
+        }
+    }
+`;
 
 function InsertQualificationScores(props) {
     const params = useParams();
     const _compId = params.id;
 
-    const desiredCompetition = competitionDetaildata.find(
-        (comp) => comp._id === _compId
-    );
+    const [categories, setCategories] = useState([]);
+    const [distances, setDistances] = useState([]);
+    const [seriesUnique, setSeriesUnique] = useState([]);
+    const [seriesData, setSeriesData] = useState([]);
+    const [paticipantsData, setPaticipantsData] = useState([]);
 
-    const categories = { ...desiredCompetition }["category"].map(
-        (category) =>
-            "(" + (category.gender === "F" ? "k" : "m") + ") " + category.name
-    );
-    let distances = [];
-    let series = [];
-    let participants = [];
-    let scores = [];
-    let series_type;
+    const [currentScores, setCurrentScores] = useState([]);
 
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedDistance, setSelectedDistance] = useState(null);
     const [selectedSeries, setSelectedSeries] = useState(null);
+
     const [seriesType, setSeriesType] = useState(null);
-    const [filteredParticipants, setFilteredParticipants] = useState([]);
-    const [currentParticipantsScores, setCurrentParticipantsScores] = useState(
-        []
-    );
     const [infoMessage, setInfoMessage] = useState("info");
+    const [infoSaveFromSeriesMessage, setInfoSaveFromSeriesMessage] =
+        useState("info");
+
+    let scores;
+
+    const prepareCategories = (data) => {
+        let finalData = data.categories.map((item) => {
+            return {
+                id: item._id,
+                name: item.name,
+                gender: item.gender,
+            };
+        });
+        return finalData;
+    };
+
+    const prepareDistances = (data) => {
+        let finalData = data.distances.map((item) => {
+            return {
+                id: item._id,
+                name: item.name,
+                series_type: item.series_type,
+                number_of_series: item.number_of_series,
+            };
+        });
+        return finalData;
+    };
+
+    const prepareSeries = (data) => {
+        let finalData = data.series.map((item) => {
+            return {
+                id: item._id,
+                series_no: item.series_no,
+                participant_id: item.participant_id,
+                score: item.score,
+                Xs: item.Xs,
+                tens: item.tens,
+                arrows: item.arrows,
+            };
+        });
+        return finalData;
+    };
+
+    const prepareParticipants = (data) => {
+        let finalData = data.participants.map((item) => {
+            return {
+                id: item._id,
+                full_name: item.full_name,
+            };
+        });
+        return finalData;
+    };
+
+    const prepareUniqueSeries = (data) => {
+        let seriesNo = data.series.map((item) => {
+            return {
+                id: item._id,
+                series_no: item.series_no,
+            };
+        });
+
+        let seriesUniqueNo = [];
+        let numbersAll = [];
+
+        for (const element of seriesNo) {
+            if (numbersAll.indexOf(element.series_no) === -1) {
+                numbersAll.push(element.series_no);
+                seriesUniqueNo.push({
+                    id: element.id,
+                    series_no: element.series_no,
+                });
+            }
+        }
+
+        return seriesUniqueNo;
+    };
+
+    const {
+        loading: categories_loading,
+        error: categories_error,
+        data: categories_data,
+    } = useQuery(GET_CATEGORIES, {
+        variables: { competition_id: _compId },
+    });
+
+    const {
+        loading: distances_loading,
+        error: distances_error,
+        data: distances_data,
+    } = useQuery(GET_DISTANCES, {
+        variables: { competition_id: _compId, category_id: selectedCategory },
+    });
+
+    const {
+        loading: series_loading,
+        error: series_error,
+        data: series_data,
+    } = useQuery(GET_SERIES, {
+        variables: {
+            category_id: selectedCategory,
+            distance_id: selectedDistance,
+        },
+    });
+
+    const {
+        loading: participants_loading,
+        error: participants_error,
+        data: participants_data,
+    } = useQuery(GET_PARTICIPANTS, {
+        variables: {},
+    });
+
+    useEffect(() => {
+        const onError = (error) => {
+            console.log(error);
+        };
+        const onCompleted = (data) => {
+            setCategories([...prepareCategories(data)]);
+        };
+
+        if (onCompleted || onError) {
+            if (onCompleted && !categories_loading && !categories_error) {
+                onCompleted(categories_data);
+            } else if (onError && !categories_loading && categories_error) {
+                onError(categories_error);
+            }
+        }
+    }, [categories_loading, categories_data, categories_error]);
+
+    useEffect(() => {
+        const onError = (error) => {
+            console.log(error);
+        };
+        const onCompleted = (data) => {
+            setDistances([...prepareDistances(data)]);
+        };
+
+        if (onCompleted || onError) {
+            if (onCompleted && !distances_loading && !distances_error) {
+                onCompleted(distances_data);
+            } else if (onError && !distances_loading && distances_error) {
+                onError(distances_error);
+            }
+        }
+    }, [distances_loading, distances_data, distances_error]);
+
+    useEffect(() => {
+        const onError = (error) => {
+            console.log(error);
+        };
+        const onCompleted = (data) => {
+            setSeriesUnique([...prepareUniqueSeries(data)]);
+            setSeriesData([...prepareSeries(data)]);
+        };
+
+        if (onCompleted || onError) {
+            if (onCompleted && !series_loading && !series_error) {
+                onCompleted(series_data);
+            } else if (onError && !series_loading && series_error) {
+                onError(series_error);
+            }
+        }
+    }, [series_loading, series_data, series_error]);
+
+    useEffect(() => {
+        const onError = (error) => {
+            console.log(error);
+        };
+        const onCompleted = (data) => {
+            setPaticipantsData([...prepareParticipants(data)]);
+        };
+
+        if (onCompleted || onError) {
+            if (onCompleted && !participants_loading && !participants_error) {
+                onCompleted(participants_data);
+            } else if (onError && !participants_loading && participants_error) {
+                onError(participants_error);
+            }
+        }
+    }, [participants_loading, participants_data, participants_error]);
+
+    const [updateSeries, { series_all_data }] = useMutation(UPDATE_SERIES, {
+        onError(err) {
+            setInfoMessage("Błąd przetwarzania..");
+            setTextColor("scoresSavedInfoMessage", redColor);
+            showTextAndFadeOut("scoresSavedInfoMessage");
+        },
+        onCompleted(data) {
+            setInfoMessage("Dane zostały zapisane");
+            setTextColor("scoresSavedInfoMessage", greenColor);
+            showTextAndFadeOut("scoresSavedInfoMessage");
+        },
+    });
+
+    const [saveScoresFromSeries, { category_all_scores }] = useMutation(
+        SAVE_SCORES_FROM__CATEGORY,
+        {
+            onError(err) {
+                setInfoSaveFromSeriesMessage("Błąd przetwarzania..");
+                setTextColor("saveScoresFromSerieInfoMessage", redColor);
+                showTextAndFadeOut("saveScoresFromSerieInfoMessage");
+            },
+            onCompleted(data) {
+                setInfoSaveFromSeriesMessage("Punkty zostały przeliczone");
+                setTextColor("saveScoresFromSerieInfoMessage", greenColor);
+                showTextAndFadeOut("saveScoresFromSerieInfoMessage");
+            },
+        }
+    );
 
     const handleCategorySelectChange = (selected) => {
         setSelectedSeries(null);
         setSelectedDistance(null);
-        setSelectedCategory(selected);
-
-        distances = { ...desiredCompetition }["category"]
-            .filter((category) => category.name === selected.split(") ")[1])[0]
-            ["distances"].map((dist) => dist.name);
-
-        participants = [];
-
-        setFilteredParticipants(participants);
-        setCurrentParticipantsScores([]);
+        setSelectedCategory(selected.id);
+        setCurrentScores([]);
     };
 
     const handleDistanceSelectChange = (selected) => {
         setSelectedSeries(null);
-        setSelectedDistance(selected);
-        series_type = { ...desiredCompetition }["category"]
-            .filter(
-                (category) => category.name === selectedCategory.split(") ")[1]
-            )[0]
-            ["distances"].filter((distance) => distance.name === selected)[0][
-            "series_type"
-        ];
-        setSeriesType(series_type);
-
-        series = { ...desiredCompetition }["category"]
-            .filter(
-                (category) => category.name === selectedCategory.split(") ")[1]
-            )[0]
-            ["distances"].filter((distance) => distance.name === selected)[0]
-            ["series"].map((s) => s.series_no);
-        participants = [];
-        setFilteredParticipants(participants);
-        setCurrentParticipantsScores([]);
+        setSelectedDistance(selected.id);
+        setSeriesType(selected.series_type);
+        setCurrentScores([]);
     };
 
     const handleSeriesSelectChange = (selected) => {
-        setFilteredParticipants([]);
-        setCurrentParticipantsScores([]);
-        participants = { ...desiredCompetition }["category"]
-            .filter(
-                (category) => category.name === selectedCategory.split(") ")[1]
-            )[0]
-            ["distances"].filter(
-                (distance) => distance.name === selectedDistance
-            )[0]
-            ["series"].filter((series) => series.series_no === selected)[0][
-            "participants"
-        ];
-        setFilteredParticipants(participants);
+        setSelectedSeries(selected.id);
+        const filteredSeriesData = seriesData
+            .filter((item) => item.series_no === selected.series_no)
+            .map((el) => el);
+        setSeriesUnique(filteredSeriesData);
+        setSeriesData(filteredSeriesData);
+        setCurrentScores(filteredSeriesData);
 
-        scores = participants.map((participant) => {
-            return {
-                _id: participant._id,
-                score: participant.scores.score,
-                Xs: participant.scores.Xs,
-                tens: participant.scores.tens,
-                arrows: participant.scores.arrows,
-            };
-        });
-
-        setCurrentParticipantsScores(scores);
+        scores = filteredSeriesData;
 
         setTimeout(function () {
-            for (var i = 0; i < participants.length; i++) {
+            for (var i = 0; i < scores.length; i++) {
                 if (scores[i].arrows.length === 0) {
                     for (var t = 0; t < seriesType; t++)
                         document.getElementById(
-                            `i${t + 1}-${scores[i]._id}`
+                            `i${t + 1}-${scores[i].participant_id}`
                         ).value = "";
                 } else {
                     for (t = 0; t < seriesType; t++)
                         document.getElementById(
-                            `i${t + 1}-${scores[i]._id}`
+                            `i${t + 1}-${scores[i].participant_id}`
                         ).value = scores[i].arrows[t];
                 }
-                document.getElementById(`sum-${scores[i]._id}`).value =
-                    scores[i].score;
-                document.getElementById(`countX-${scores[i]._id}`).value =
-                    scores[i].Xs;
-                document.getElementById(`count10-${scores[i]._id}`).value =
-                    scores[i].tens;
 
-                unblockAllInputs(scores[i]._id);
+                document.getElementById(
+                    `sum-${scores[i].participant_id}`
+                ).value = scores[i].score;
+                document.getElementById(
+                    `countX-${scores[i].participant_id}`
+                ).value = scores[i].Xs;
+                document.getElementById(
+                    `count10-${scores[i].participant_id}`
+                ).value = scores[i].tens;
+
+                unblockAllInputs(scores[i].participant_id);
             }
-        }, 2);
-    };
-
-    const loadDistanceOptions = async () => {
-        distances = { ...desiredCompetition }["category"]
-            .filter(
-                (category) => category.name === selectedCategory.split(") ")[1]
-            )[0]
-            ["distances"].map((dist) => dist.name);
-        return {
-            options: distances,
-        };
-    };
-
-    const loadSeriesOptions = async () => {
-        series = { ...desiredCompetition }["category"]
-            .filter(
-                (category) => category.name === selectedCategory.split(") ")[1]
-            )[0]
-            ["distances"].filter(
-                (distance) => distance.name === selectedDistance
-            )[0]
-            ["series"].map((s) => s.series_no);
-        return {
-            options: series,
-        };
+        }, 100);
+        setCurrentScores(scores);
     };
 
     let updateGetAllCurrentScores = () => {
-        for (var i = 0; i < filteredParticipants.length; i++) {
+        scores = [];
+        scores = [...currentScores];
+        for (var i = 0; i < scores.length; i++) {
             for (var t = 0; t < seriesType; t++)
-                currentParticipantsScores[i].arrows[t] =
-                    document.getElementById(
-                        `i${t + 1}-${currentParticipantsScores[i]._id}`
-                    ).value;
-            currentParticipantsScores[i].score = document.getElementById(
-                `sum-${currentParticipantsScores[i]._id}`
+                scores[i].arrows[t] = document.getElementById(
+                    `i${t + 1}-${scores[i].participant_id}`
+                ).value;
+            currentScores[i].score = document.getElementById(
+                `sum-${currentScores[i].participant_id}`
             ).value;
-            currentParticipantsScores[i].Xs = document.getElementById(
-                `countX-${currentParticipantsScores[i]._id}`
+            currentScores[i].Xs = document.getElementById(
+                `countX-${currentScores[i].participant_id}`
             ).value;
-            currentParticipantsScores[i].tens = document.getElementById(
-                `count10-${currentParticipantsScores[i]._id}`
+            currentScores[i].tens = document.getElementById(
+                `count10-${currentScores[i].participant_id}`
             ).value;
         }
+        setCurrentScores(scores);
     };
 
     let updateSumX10 = (id) => {
@@ -196,7 +409,7 @@ function InsertQualificationScores(props) {
         document.getElementById(`sum-${id}`).value = sumNumbers;
         document.getElementById(`countX-${id}`).value = sumX;
         document.getElementById(`count10-${id}`).value = sum10;
-        updateGetAllCurrentScores();
+        //updateGetAllCurrentScores();
     };
 
     let toggleCSSClasses = (
@@ -209,6 +422,20 @@ function InsertQualificationScores(props) {
             element.classList.add(classNameToAdd);
         }
     };
+
+    function showTextAndFadeOut(elementId) {
+        document.getElementById(elementId).style.opacity = "1";
+        setTimeout(function () {
+            $("#" + elementId).fadeTo(800, 0);
+        }, 500);
+    }
+
+    const redColor = "#eb1532da";
+    const greenColor = "#3ea834da";
+
+    function setTextColor(elementId, color) {
+        document.getElementById(elementId).style.color = color;
+    }
 
     let setDisabledState = (elementsArray, disableState) => {
         for (const element of elementsArray) element.disabled = disableState;
@@ -257,6 +484,9 @@ function InsertQualificationScores(props) {
     let isValidScoreInput = (event) => {
         const id = event.target.id;
         let input = event.target.value;
+        let p_id = id.split("-")[1];
+        let in_no = id.split("-")[0][1];
+        scores = [...currentScores];
 
         if (
             !/\D/.test(input) &
@@ -266,17 +496,18 @@ function InsertQualificationScores(props) {
                     (input.length === 2) & (parseInt(input) === 10)) ||
             (input.length === 1) & (input === "x" || input === "X")
         ) {
-            updateSumX10(id.split("-")[1]);
-            var index = currentParticipantsScores.findIndex(function (item, i) {
-                return item._id === parseInt(id.split("-")[1]);
+            updateSumX10(p_id);
+            var index = scores.findIndex(function (item, i) {
+                return item.participant_id === p_id;
             });
-            var inputIndex = parseInt(id.split("-")[0][1]) - 1;
-            currentParticipantsScores[index].arrows[inputIndex] = input;
+            var inputIndex = parseInt(in_no) - 1;
+            //scores[index].arrows[inputIndex] = input;
         } else {
             document.getElementById(id).value = "";
         }
+        setCurrentScores(scores);
         blockSumXs10sInputs(id.split("-")[1]);
-        updateGetAllCurrentScores();
+        //updateGetAllCurrentScores();
     };
 
     let isValidSumInput = (event) => {
@@ -295,7 +526,7 @@ function InsertQualificationScores(props) {
         } else {
             document.getElementById(id).value = "";
         }
-        updateGetAllCurrentScores();
+        //updateGetAllCurrentScores();
     };
 
     let isValidX_10Input = (event) => {
@@ -351,12 +582,14 @@ function InsertQualificationScores(props) {
 
     let checkSentScores = () => {
         let inputsCheck = true;
-        for (const currentParticipantsScore of currentParticipantsScores) {
+        for (const currentParticipantsScore of currentScores) {
             if (
-                !document.getElementById("sum-" + currentParticipantsScore._id)
-                    .disabled &
-                !document.getElementById("i1-" + currentParticipantsScore._id)
-                    .disabled
+                !document.getElementById(
+                    "sum-" + currentParticipantsScore.participant_id
+                ).disabled &
+                !document.getElementById(
+                    "i1-" + currentParticipantsScore.participant_id
+                ).disabled
             ) {
                 var countEmpty = 0;
                 for (var t = 0; t < seriesType; t++) {
@@ -372,8 +605,9 @@ function InsertQualificationScores(props) {
                     inputsCheck = false;
                 }
             } else if (
-                document.getElementById("sum-" + currentParticipantsScore._id)
-                    .disabled
+                document.getElementById(
+                    "sum-" + currentParticipantsScore.participant_id
+                ).disabled
             ) {
                 for (t = 0; t < seriesType; t++) {
                     if (currentParticipantsScore.arrows[t] === "")
@@ -387,14 +621,13 @@ function InsertQualificationScores(props) {
                 inputsCheck = false;
             }
         }
-
         return inputsCheck;
     };
 
     function handleSubmitScores() {
-        if (currentParticipantsScores.length > 0) {
+        if (currentScores.length > 0) {
             if (checkSentScores() === true) {
-                scores = currentParticipantsScores;
+                scores = currentScores;
                 for (const score of scores) {
                     var c = 0;
                     for (var j = 0; j < seriesType; j++) {
@@ -402,17 +635,48 @@ function InsertQualificationScores(props) {
                     }
                     if (c === seriesType) score.arrows = [];
                 }
-                setCurrentParticipantsScores(scores);
-                setInfoMessage("Dane zostały zapisane");
-            } else setInfoMessage("Nie wszystkie punkty zostały wypełnione!");
+                setCurrentScores(scores);
 
-            document.getElementById("scoresSavedInfoMessage").style.opacity =
-                "1";
-            setTimeout(function () {
-                $("#scoresSavedInfoMessage").fadeTo(800, 0);
-            }, 500);
+                for (const score of scores) {
+                    updateSeries({
+                        variables: {
+                            _id: score.id,
+                            score: score.score,
+                            Xs: score.Xs,
+                            tens: score.tens,
+                            arrows: score.arrows,
+                        },
+                    });
+                }
+            } else {
+                setInfoMessage("Nie wszystkie punkty zostały wypełnione!");
+                setTextColor("scoresSavedInfoMessage", redColor);
+                showTextAndFadeOut("scoresSavedInfoMessage");
+            }
         }
     }
+
+    function handleSubmitSaveFromSeries() {
+        if (selectedCategory !== null) {
+            saveScoresFromSeries({
+                variables: {
+                    category_id: selectedCategory,
+                },
+            });
+        } else {
+            setInfoSaveFromSeriesMessage("Wybierz najpier kategorię!");
+            setTextColor("saveScoresFromSerieInfoMessage", redColor);
+            showTextAndFadeOut("saveScoresFromSerieInfoMessage");
+        }
+    }
+
+    const getFullName = (ID) => {
+        let result = "";
+        for (const element of paticipantsData) {
+            if (element.id === ID) result = element.full_name;
+        }
+        return result;
+    };
 
     return (
         <div className="all">
@@ -434,51 +698,75 @@ function InsertQualificationScores(props) {
                                 isSearchable={true}
                                 placeholder="Kategoria"
                                 value={categories.filter(function (option) {
-                                    return option === selectedCategory;
+                                    return option.id === selectedCategory;
                                 })}
                                 onChange={handleCategorySelectChange}
                                 options={categories}
-                                getOptionLabel={(option) => option.toString()}
-                                getOptionValue={(option) => option.toString()}
+                                getOptionLabel={(option) =>
+                                    option.name +
+                                    " (" +
+                                    (option.gender === "F" ? "k" : "m") +
+                                    ")"
+                                }
+                                getOptionValue={(option) => option.id}
                             />
                         </Col>
                         <Col>
-                            <AsyncPaginate
-                                key={selectedCategory}
+                            <Select
+                                required
                                 menuPortalTarget={document.body}
                                 menuPosition={"fixed"}
-                                isSearchable={false}
+                                name="distance"
                                 id="formSelect"
+                                isSearchable={false}
                                 placeholder="Odległość"
                                 value={distances.filter(function (option) {
-                                    return option === selectedDistance;
+                                    return option.id === selectedDistance;
                                 })}
-                                loadOptions={loadDistanceOptions}
-                                getOptionLabel={(option) => option.toString()}
-                                getOptionValue={(option) => option.toString()}
                                 onChange={handleDistanceSelectChange}
+                                options={distances}
+                                getOptionLabel={(option) =>
+                                    option.name +
+                                    " (" +
+                                    option.series_type +
+                                    "-strzał.)"
+                                }
+                                getOptionValue={(option) => option.id}
                             />
                         </Col>
                         <Col>
-                            <AsyncPaginate
-                                key={selectedDistance}
+                            <Select
+                                required
                                 menuPortalTarget={document.body}
                                 menuPosition={"fixed"}
-                                isSearchable={false}
+                                name="distance"
                                 id="formSelect"
+                                isSearchable={false}
                                 placeholder="Seria"
-                                value={series.filter(function (option) {
-                                    return option === selectedSeries;
+                                value={seriesUnique.filter(function (option) {
+                                    return option.id === selectedSeries;
                                 })}
-                                loadOptions={loadSeriesOptions}
-                                getOptionLabel={(option) => option.toString()}
-                                getOptionValue={(option) => option.toString()}
                                 onChange={handleSeriesSelectChange}
+                                options={seriesUnique}
+                                getOptionLabel={(option) => option.series_no}
+                                getOptionValue={(option) => option.id}
                             />
                         </Col>
                     </Row>
                 </div>
             </Container>
+            <div id="saveScoresFromSeriesButtonDiv">
+                <span id="saveScoresFromSerieInfoMessage">
+                    {infoSaveFromSeriesMessage}{" "}
+                </span>
+                <Button
+                    disabled="true"
+                    className="btn btn-info btn-lg custom-button-1 submitSaveScoresFromSerieButton"
+                    type="submit"
+                    placeholder="Przekaż wyniki kategorii do eliminacji"
+                    onClick={handleSubmitSaveFromSeries}
+                />
+            </div>
             <Container
                 fluid
                 className="infoContainer"
@@ -541,10 +829,10 @@ function InsertQualificationScores(props) {
                     className="insertScoresAdminForm"
                     id="insertScoresAdminForm"
                 >
-                    {filteredParticipants.map((competitor) => (
+                    {currentScores.map((competitor) => (
                         <Row
                             className="participantRow"
-                            key={competitor._id}
+                            key={competitor.participant_id}
                             id="scoresCard"
                         >
                             <Col
@@ -555,13 +843,10 @@ function InsertQualificationScores(props) {
                                 id="alignToLeft"
                                 className="position"
                             >
-                                <Row>
-                                    {competitor.stand}
-                                    {competitor.order}
-                                </Row>
+                                <Row>1A</Row>
                                 <Row>
                                     <span className="participantFullName">
-                                        {competitor.full_name}
+                                        {getFullName(competitor.participant_id)}
                                     </span>
                                 </Row>{" "}
                             </Col>
@@ -572,7 +857,7 @@ function InsertQualificationScores(props) {
                                 xl={5}
                                 className="alignToCenter"
                             >
-                                {arrowInputs(competitor._id)}
+                                {arrowInputs(competitor.participant_id)}
                             </Col>
                             <Col
                                 xs={1}
@@ -583,7 +868,7 @@ function InsertQualificationScores(props) {
                             >
                                 <input
                                     type="text"
-                                    id={"sum-" + competitor._id}
+                                    id={"sum-" + competitor.participant_id}
                                     className="biggerInput unblockedInput"
                                     onChange={isValidSumInput}
                                 ></input>
@@ -597,7 +882,7 @@ function InsertQualificationScores(props) {
                             >
                                 <input
                                     type="text"
-                                    id={"countX-" + competitor._id}
+                                    id={"countX-" + competitor.participant_id}
                                     className="biggerInput unblockedInput"
                                     onChange={isValidX_10Input}
                                 />
@@ -611,7 +896,7 @@ function InsertQualificationScores(props) {
                             >
                                 <input
                                     type="text"
-                                    id={"count10-" + competitor._id}
+                                    id={"count10-" + competitor.participant_id}
                                     className="biggerInput unblockedInput"
                                     onChange={isValidX_10Input}
                                 />

@@ -102,16 +102,32 @@
     width: 150px;
 }
 
+.submitSaveScoresFromSerieButton {
+    max-width: 250px;
+    font-size: 12px !important;
+}
+
 #submitScoresButtonDiv {
     text-align: center;
     padding-bottom: 8px;
     opacity: 1;
 }
 
+#saveScoresFromSeriesButtonDiv {
+    text-align: right;
+    margin-top: 15px;
+}
+
 #scoresSavedInfoMessage {
     font-size: 16px;
     margin: 20px 0px 10px 0px;
-    color: #eb1532da;
+    font-weight: 800;
+    opacity: 0;
+}
+
+#saveScoresFromSerieInfoMessage {
+    font-size: 12px;
+    padding-right: 10px;
     font-weight: 800;
     opacity: 0;
 }

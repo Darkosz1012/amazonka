@@ -735,7 +735,7 @@ function InsertQualificationScores(props) {
                 },
             });
         } else {
-            setInfoSaveFromSeriesMessage("Wybierz najpier kategorię!");
+            setInfoSaveFromSeriesMessage("Wybierz najpierw kategorię!");
             setTextColor("saveScoresFromSerieInfoMessage", redColor);
             showTextAndFadeOut("saveScoresFromSerieInfoMessage");
         }

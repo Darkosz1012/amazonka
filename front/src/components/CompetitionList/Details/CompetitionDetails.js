@@ -101,7 +101,14 @@ function CompetitionDetails(props) {
     var category_names = categories?.map(function (item) {
         return item?.name ?? "";
     });
-    let categoriesStr = category_names?.join(", ");
+
+    let categoriesStr = category_names
+        ? category_names
+              .filter(function (cat) {
+                  return cat !== "";
+              })
+              .join(", ")
+        : "";
 
     let catButtonsNumber = 1;
 

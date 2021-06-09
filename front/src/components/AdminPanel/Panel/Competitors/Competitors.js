@@ -583,7 +583,7 @@ const Competitors = (props) => {
                                                                         .value
                                                                 )
                                                             }
-                                                        />
+                                                        />{" "}
                                                         {
                                                             searchedCompetitors[
                                                                 element

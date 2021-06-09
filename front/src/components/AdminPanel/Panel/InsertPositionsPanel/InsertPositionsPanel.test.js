@@ -1,9 +1,14 @@
 import { render, screen, within } from "@testing-library/react";
 import InsertPositionsPanel from "./InsertPositionsPanel";
+import WithProvider from "./../../../../hoc/WithProvider/WithProvider";
 
 describe("InsertPositionsPanel", () => {
     beforeEach(() => {
-        render(<InsertPositionsPanel />);
+        render(
+            <WithProvider>
+                <InsertPositionsPanel />
+            </WithProvider>
+        );
     });
 
     it("should have two buttons", () => {

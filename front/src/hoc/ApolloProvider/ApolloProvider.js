@@ -5,12 +5,17 @@ import {
     InMemoryCache,
     concat,
 } from "@apollo/client";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducer from "./../../reducer";
 import { ApolloProvider } from "@apollo/client/react";
 
 const WithProvider = ({ children }) => {
     const httpLink = new HttpLink({
         uri: "http://localhost:3001/graphql",
     });
+
+    const store = createStore(reducer);
 
     const authMiddleware = new ApolloLink((operation, forward) => {
         // add the authorization to the headers
@@ -36,7 +41,11 @@ const WithProvider = ({ children }) => {
         cache: new InMemoryCache(),
     });
 
-    return <ApolloProvider client={client}>{children}</ApolloProvider>;
+    return (
+        <ApolloProvider client={client}>
+            <Provider store={store}>{children}</Provider>
+        </ApolloProvider>
+    );
 };
 
 export default WithProvider;

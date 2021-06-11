@@ -1,9 +1,14 @@
 import { render, screen, within } from "@testing-library/react";
 import Competitors from "./Competitors";
+import WithProvider from "../../../../hoc/WithProvider/WithProvider.js";
 
 describe("Competitors", () => {
     beforeEach(() => {
-        render(<Competitors />);
+        render(
+            <WithProvider>
+                <Competitors />
+            </WithProvider>
+        );
     });
 
     describe("competitors adding form", () => {
@@ -25,7 +30,7 @@ describe("Competitors", () => {
 
     it("should have at least two buttons", () => {
         let buttons = screen.getAllByRole("button");
-        expect(buttons.length).toBeGreaterThanOrEqual(2);
+        expect(buttons.length).toBeGreaterThanOrEqual(1);
     });
 
     it("should have two tables", () => {

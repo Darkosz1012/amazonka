@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-import * as actions from "./../../store/actions/actions";
 import { Redirect } from "react-router-dom";
 
 const LogoutPanel = (props) => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("userId");
+
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(actions.userLogout());
-    });
+    dispatch({ type: "LOGOUT" });
 
     return <Redirect to="/" />;
 };

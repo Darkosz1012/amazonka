@@ -83,7 +83,7 @@ type Mutation {
 
     #Score
     addScore(participant_id: ID!, competition_id: ID!, category_id: ID!): Score
-    updateScore(_id: ID!, stand: Int, order: String): Score
+    updateScore(_id: ID!, stand: Int, order: String, category_id: ID): Score
     deleteScore(_id: ID!): Score
     updateSeries(
         _id: ID!

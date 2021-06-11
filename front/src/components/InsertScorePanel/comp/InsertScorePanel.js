@@ -42,8 +42,9 @@ function InsertScorePanel(props) {
     };
 
     const handleSubmit = () => {
-        const emptyFields = Object.values(myArray).filter((f) => f === "-")
-            .length;
+        const emptyFields = Object.values(myArray).filter(
+            (f) => f === "-"
+        ).length;
         if (emptyFields) {
             document.getElementById("info-msg").style.color = "red";
             document.getElementById("info-msg").innerHTML =

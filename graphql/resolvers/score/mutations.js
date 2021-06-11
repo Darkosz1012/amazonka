@@ -125,60 +125,6 @@ async function createAllSeries(
         });
     }
 }
-
-async function updateScoreFromSeries(score) {
-    clearScore();
-
-    for (let distance of score.distances) {
-        let allSeries = await Series.find({
-            distance_id: distance.distance_id,
-            participant_id: score.participant_id,
-        });
-
-        for (let series of allSeries) {
-            countSeries(distance, series);
-        }
-    }
-
-    sumPreEliminationScore();
-
-    function clearScore() {
-        for (let distance of score.distances) {
-            distance.score = 0;
-        }
-    }
-
-    function countSeries(distance, series) {
-        distance.score += series.score;
-        series.was_counted = true;
-    }
-
-    function sumPreEliminationScore() {
-        score.pre_eliminations_score = 0;
-        for (let distance of score.distances) {
-            score.pre_eliminations_score += distance.score;
-        }
-    }
-}
-
-async function calculateFinalsPlacement(category_id) {
-    let scores = await Score.find({ category_id });
-    scores.sort((score1, score2) => {
-        if (score1.score === score2.score) {
-            if (score1.Xs + score1.tens === score2.Xs + score2.tens) {
-                return score1.Xs > score2.Xs;
-            }
-            return score1.Xs + score1.tens === score2.Xs + score2.tens;
-        }
-        return score1.score > score2.score;
-    });
-
-    for (let i = 0; i < scores.length; i++) {
-        scores[i].finals_initial_placement = i + 1;
-        scores[i].save();
-    }
-}
-
 function generateCode() {
     return crypto.randomBytes(5).toString("hex");
 }

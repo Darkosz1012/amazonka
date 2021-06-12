@@ -3,3 +3,5 @@ node_modules
 .idea
 
 .env
+
+__tests__/perf/*results.json

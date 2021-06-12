@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config({ path: "./test.env" });
+dotenv.config({ path: "./perf.env" });
 import { generate } from "./db/generator/index.js";
 
 (async function () {

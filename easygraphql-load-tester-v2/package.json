@@ -1,0 +1,105 @@
+{
+    "_args": [
+        [
+            "easygraphql-load-tester@2.0.5",
+            "F:\\Studia\\IO\\amazonka"
+        ]
+    ],
+    "_from": "easygraphql-load-tester@2.0.5",
+    "_id": "easygraphql-load-tester@2.0.5",
+    "_inBundle": false,
+    "_integrity": "sha512-B0EugDrTuVTDMjAmhbjjmhsnBPu/SVLCHlZdWXY8YBQhdX/eJ5OBzqqmaK3ovRGVU3YI4OtFrXojK+LwDI2uYQ==",
+    "_location": "/easygraphql-load-tester",
+    "_phantomChildren": {},
+    "_requested": {
+        "type": "version",
+        "registry": true,
+        "raw": "easygraphql-load-tester@2.0.5",
+        "name": "easygraphql-load-tester",
+        "escapedName": "easygraphql-load-tester",
+        "rawSpec": "2.0.5",
+        "saveSpec": null,
+        "fetchSpec": "2.0.5"
+    },
+    "_requiredBy": [
+        "/"
+    ],
+    "_resolved": "https://registry.npmjs.org/easygraphql-load-tester/-/easygraphql-load-tester-2.0.5.tgz",
+    "_spec": "2.0.5",
+    "_where": "F:\\Studia\\IO\\amazonka",
+    "author": {
+        "name": "EasyGraphQL",
+        "url": "https://github.com/EasyGraphQL"
+    },
+    "bugs": {
+        "url": "https://github.com/EasyGraphQL/easygraphql-load-tester"
+    },
+    "dependencies": {
+        "easygraphql-parser": "^0.0.13",
+        "lodash.flatten": "^4.4.0",
+        "lodash.isobject": "^3.0.2"
+    },
+    "description": "Create GraphQL queries to use with test loaders.",
+    "devDependencies": {
+        "@types/lodash.flatten": "^4.4.6",
+        "@types/lodash.isobject": "^3.0.6",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.12.14",
+        "@typescript-eslint/eslint-plugin": "^2.9.0",
+        "@typescript-eslint/parser": "^2.9.0",
+        "chai": "^4.1.2",
+        "coveralls": "^3.0.2",
+        "eslint": "^6.7.1",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-plugin-node": "^10.0.0",
+        "graphql": "^14.5.8",
+        "husky": "^3.0.5",
+        "mocha": "^6.2.0",
+        "nyc": "^14.1.1",
+        "prettier": "^1.19.1",
+        "ts-node": "^8.5.4",
+        "typescript": "^3.7.2"
+    },
+    "files": [
+        "lib/**/*"
+    ],
+    "homepage": "https://github.com/EasyGraphQL/easygraphql-load-tester",
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run prettier:format && git add .",
+            "pre-push": "npm run test"
+        }
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "name": "easygraphql-load-tester",
+    "nyc": {
+        "extension": [
+            ".ts"
+        ],
+        "exclude": [
+            "**/*.d.ts",
+            "examples/**",
+            "test/**",
+            ".**"
+        ],
+        "all": true
+    },
+    "peerDependencies": {
+        "graphql": "^0.13.0 || ^14.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EasyGraphQL/easygraphql-load-tester.git"
+    },
+    "scripts": {
+        "build": "tsc",
+        "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+        "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,graphql}'",
+        "prettier:check": "prettier --write './{src,test}/**/*.{ts,js,graphql}'",
+        "prettier:format": "prettier --write './{src,test}/**/*.{ts,js,graphql}'",
+        "test": "nyc --check-coverage --lines 90 mocha -r ts-node/register 'test/**/*.spec.{ts,js}' --exit"
+    },
+    "types": "lib/index.d.ts",
+    "version": "2.0.5"
+}

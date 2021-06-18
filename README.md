@@ -12,14 +12,47 @@ Project was developed during Software Engineering classes at [AGH University Of 
 
 ## Table of Contents
   * [Functionalities](#functionalities)
+    * [Homepage](#homepage)
+    * [Competition view](#competition-view)
   * [Team](#team)
   * [Stack](#stack)
   * [Launch](#launch)
   * [Testing](#testing)
+    * [Backend unit tests](#backend-unit-tests)
+    * [Backend GraphQL tests](#backend-graphql-tests)
+    * [Backend functional tests](#backend-functional-tests)
+    * [Backend performance tests](#backend-performance-tests)
+    * [Frontend unit tests](#frontend-unit-tests)
+    * [Frontend functional tests](#frontend-functional-tests)
   * [Project status](#project-status)
 
 ## Functionalities
+  * User can view
+    * upcoming competitions
+    * qualification results
+    * schedule and tournament info
+  * Organizer can also
+    * register and login
+    * modify
+      * competitions
+      * competition details
+      * categories and distances
+      * participants
+      * target assignments
+      * competitors scores
+  * System will
+    * generate target assignments
+    * collect and compute scores
+    * choose winners
+    * help in searching for competitors using historical data
 
+### Homepage
+
+![image](https://user-images.githubusercontent.com/44038381/122610987-d867ba80-d080-11eb-842e-237eaac2a623.png)
+
+### Competition view
+
+![image](https://user-images.githubusercontent.com/44038381/122611177-2b417200-d081-11eb-9fe6-e41f5efe7715.png)
 
 ## Team
   * [Dariusz Biela](https://github.com/Darkosz1012) - Team Leader, Backend Architect
@@ -51,6 +84,7 @@ Project was developed during Software Engineering classes at [AGH University Of 
     * MongoDB Memory Server
     * Mockingoose
     * Supertest
+    * Selenium
     * Easy GraphQL Load Tester
     * k6
 
@@ -98,7 +132,40 @@ Execution:
 ![image](https://user-images.githubusercontent.com/44038381/122453970-18f50480-cfab-11eb-8fe2-9bba49b2a15d.png)
 
 ### Backend performance tests
+For now performance tests are conducted on dummy database generated with generate_test_database.js (create perf.env like .env beforehand). Easy-graphql-load-tester generates queries for k6 runner, which needs to be installed on your machine separately and can be configured with number of virtual users, test duration and more. Results are presented in command line and dumped to .json files. Queries may be auto-generated from GraphQL schema or custom.
+
+Execution:
+  * start performance testing environment:
+    * `npm run start-perf-env`
+  * run tests in other terminal:
+    * `npm run test-perf`
+
+![image](https://user-images.githubusercontent.com/44038381/122602801-b61b7000-d073-11eb-8f1d-e361b3847746.png)
+
 ### Frontend unit tests
+Unit tests for React components use React Testing Library and Jest for preparing state, executing actions, events and asserting their results.
+
+Execution:
+  * `npm run test-front`
+
 ### Frontend functional tests
+Selenium-based suites of tests for frontend: logging in and out, adding competitions, navigating admin panel etc. It requires Selenium browser plugin and importing test files into it.
+
+Execution:
+
+![image](https://user-images.githubusercontent.com/44038381/122602896-d814f280-d073-11eb-983d-0400056a8f09.png)
 
 ## Project status
+MVP is completed, although application is far from being finished. Project was handed for assignment on course's completion and graded positively, but requires more work and hopefully will be developed further.
+
+Completed features are listed in [Functionalities](#functionalities) section.
+
+Features in development:
+  * generation and management of eliminations
+  * inputting qualification scores by competitors verified with unique access codes
+  * personal archer stats
+
+Features planned:
+  * generation of result cards for printing
+  * preparing tournament summary
+  * support for teams and mixed teams

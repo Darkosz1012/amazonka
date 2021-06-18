@@ -1,0 +1,2300 @@
+{
+  "id": "7d5fa8a8-11b6-4f43-a3cc-6bf53a83f59e",
+  "version": "2.0",
+  "name": "FrontendFunctionalTests",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "7e72ed84-b4b2-4006-9489-9c2e1819c908",
+    "name": "RegisterAttemptTest",
+    "commands": [{
+      "id": "ed861987-b00c-4034-8e06-96acc58dcef1",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2894e906-cd9f-4f75-ba29-fb4fd6177c2b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1848x1016",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a72eab40-365a-4354-9726-7f1b16427135",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zaloguj się",
+      "targets": [
+        ["linkText=Zaloguj się", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zaloguj się')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe9da23a-c5f2-4ca4-babc-a72d947027cc",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zarejestruj się!",
+      "targets": [
+        ["id=Zarejestruj się!", "id"],
+        ["css=#Zarejestruj\\ si\\119\\!", "css:finder"],
+        ["xpath=//button[@id='Zarejestruj się!']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zarejestruj się!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b3c5e08-ebf2-4d67-8047-f653a7bc56b5",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='JanKowalski']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "JanKowalski"
+    }, {
+      "id": "08caebba-23fd-4e3a-9e48-c4ce73d5f813",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='kowalski@email.com']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "kowalski@email.com"
+    }, {
+      "id": "6b1fe124-47bb-4de9-9507-d44a8243894f",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(5)",
+      "targets": [
+        ["css=.form-control:nth-child(5)", "css:finder"],
+        ["xpath=//input[@value='Qwerty1234!']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Qwerty1234!"
+    }, {
+      "id": "0d05bb92-a6ea-4628-aece-5bfa50e24ade",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(7)",
+      "targets": [
+        ["css=.form-control:nth-child(7)", "css:finder"],
+        ["xpath=(//input[@value='Qwerty1234!'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "Qwerty1234!"
+    }, {
+      "id": "e716c528-171c-4b62-8a9d-d3f5dfceba66",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(9)",
+      "targets": [
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Lubię łucznictwo"
+    }, {
+      "id": "fffbb38e-3c51-4966-a5d9-95fc241cd3cc",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zarejestruj się",
+      "targets": [
+        ["id=Zarejestruj się", "id"],
+        ["css=#Zarejestruj\\ si\\119", "css:finder"],
+        ["xpath=//button[@id='Zarejestruj się']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zarejestruj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35e05705-6316-4474-8dde-82e84cd63ab2",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=error-msg",
+      "targets": [
+        ["id=error-msg", "id"],
+        ["css=#error-msg", "css:finder"],
+        ["xpath=//div[@id='error-msg']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": "Niepoprawne dane"
+    }]
+  }, {
+    "id": "c17be57f-aded-4191-adb0-1c422149f118",
+    "name": "LoginLogoutTest",
+    "commands": [{
+      "id": "45db690f-0fb1-4f49-a28a-b67624200e64",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e86452be-715e-498d-becf-0bab7332276b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1848x1016",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c6029a90-e7fa-483a-aea4-d0f6b288d6a7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zaloguj się",
+      "targets": [
+        ["linkText=Zaloguj się", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zaloguj się')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "815d0c81-8fa1-4113-92cf-6e7d8ed94edf",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='JanKowalski']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "JanKowalski"
+    }, {
+      "id": "b31bb76d-d43c-408e-ac0c-aa639f9be1f9",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='Qwerty1234!']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty1234!"
+    }, {
+      "id": "f5a52892-4de1-4f43-b4b4-370f73e9152d",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zaloguj się",
+      "targets": [
+        ["id=Zaloguj się", "id"],
+        ["css=#Zaloguj\\ si\\119", "css:finder"],
+        ["xpath=//button[@id='Zaloguj się']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "308e184c-c4a0-429b-89b5-b51bc06d15c1",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=mainHeader",
+      "targets": [
+        ["id=mainHeader", "id"],
+        ["css=#mainHeader", "css:finder"],
+        ["xpath=//p[@id='mainHeader']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Lista organizowanych przez Ciebie zawodów')]", "xpath:innerText"]
+      ],
+      "value": "Lista organizowanych przez Ciebie zawodów"
+    }, {
+      "id": "8454ad01-178f-4188-b3fc-d961d15e4315",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Wyloguj",
+      "targets": [
+        ["linkText=Wyloguj", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyloguj')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyloguj')]", "xpath:innerText"]
+      ],
+      "value": "Wyloguj"
+    }, {
+      "id": "46d6e940-2732-4301-919b-592d5a7f6d1c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wyloguj",
+      "targets": [
+        ["linkText=Wyloguj", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyloguj')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyloguj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2b419e7-a92e-4e92-b84e-b23da801aa85",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div/header/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Witajcie na stronie organizatora zawodów łuczniczych Amazonka!')]", "xpath:innerText"]
+      ],
+      "value": "Witajcie na stronie organizatora zawodów łuczniczych Amazonka!"
+    }]
+  }, {
+    "id": "7c9c2187-0e4b-431f-8f60-f3e9e9d33fec",
+    "name": "AddCompetitionTest",
+    "commands": [{
+      "id": "71b505a4-db18-41a9-98fe-9cef32dc1cb3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "187abc55-f392-426e-967f-cb3908653d4f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1848x1016",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "816db0b1-c6a7-4efa-9aff-fb148349fee1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zaloguj się",
+      "targets": [
+        ["linkText=Zaloguj się", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zaloguj się')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "425d7909-dc51-4ee9-a5cb-4f5a16991400",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='JanKowalski']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "JanKowalski"
+    }, {
+      "id": "26e41773-5cb1-479f-b55e-01e7d830f6f7",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='Qwerty1234!']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty1234!"
+    }, {
+      "id": "53c85638-d3b6-472c-b567-5cb1045a7551",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zaloguj się",
+      "targets": [
+        ["id=Zaloguj się", "id"],
+        ["css=#Zaloguj\\ si\\119", "css:finder"],
+        ["xpath=//button[@id='Zaloguj się']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "135818bb-22c5-4743-bb92-89adffa56850",
+      "comment": "",
+      "command": "click",
+      "target": "id=Dodaj nowe zawody",
+      "targets": [
+        ["id=Dodaj nowe zawody", "id"],
+        ["css=#Dodaj\\ nowe\\ zawody", "css:finder"],
+        ["xpath=//button[@id='Dodaj nowe zawody']", "xpath:attributes"],
+        ["xpath=//div[@id='adminMenuContainer']/div[2]/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj nowe zawody')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1cff0dba-7edb-4af0-ae71-a98e83ba21c5",
+      "comment": "",
+      "command": "type",
+      "target": "id=compname",
+      "targets": [
+        ["id=compname", "id"],
+        ["css=#compname", "css:finder"],
+        ["xpath=//input[@id='compname']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Zawody Łucznicze Kraków"
+    }, {
+      "id": "b8a91c37-ae0c-48bb-ae79-c1b018160715",
+      "comment": "",
+      "command": "type",
+      "target": "id=start_date",
+      "targets": [
+        ["id=start_date", "id"],
+        ["css=#start_date", "css:finder"],
+        ["xpath=//input[@id='start_date']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/form/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2021-06-10"
+    }, {
+      "id": "cdb05a60-25c2-432f-baa4-02396dc7cf85",
+      "comment": "",
+      "command": "type",
+      "target": "id=end_date",
+      "targets": [
+        ["id=end_date", "id"],
+        ["css=#end_date", "css:finder"],
+        ["xpath=//input[@id='end_date']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/form/div[3]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2021-06-18"
+    }, {
+      "id": "c9919b5c-403a-4b18-a70f-04577aa1518f",
+      "comment": "",
+      "command": "type",
+      "target": "id=location",
+      "targets": [
+        ["id=location", "id"],
+        ["css=#location", "css:finder"],
+        ["xpath=//input[@id='location']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/form/div[4]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Kraków"
+    }, {
+      "id": "71aea96d-7ed7-453b-a523-b98047d992c9",
+      "comment": "",
+      "command": "click",
+      "target": "id=Dodaj zawody",
+      "targets": [
+        ["id=Dodaj zawody", "id"],
+        ["css=#Dodaj\\ zawody", "css:finder"],
+        ["xpath=//button[@id='Dodaj zawody']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/form/div[5]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj zawody')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b43d748-79f8-43de-8191-9ee282118f0a",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Zatwierdzono edycję szczegółów",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "afd3b288-6d34-482c-93f8-e490bacb6174",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Moje zawody",
+      "targets": [
+        ["linkText=Moje zawody", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Moje zawody')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/competitions')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Moje zawody')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b75d521-6e6b-44ee-8642-fd52a1a01edc",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(18) .linkText",
+      "targets": [
+        ["css=tr:nth-child(18) .linkText", "css:finder"],
+        ["xpath=//table[@id='competitionsTable']/tbody/tr[18]/td/div/span", "xpath:idRelative"],
+        ["xpath=//tr[18]/td/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Zawody Łucznicze Kraków')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3a6953c-6f34-4864-994d-784d8a8ccee2",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//div[@id='name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": "Zawody Łucznicze Kraków"
+    }, {
+      "id": "a036418f-ec37-45d2-9fa3-0c2ebb130f56",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#restDetailsDiv > .row:nth-child(1) > .right",
+      "targets": [
+        ["css=#restDetailsDiv > .row:nth-child(1) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "2021-06-10"
+    }, {
+      "id": "5476ab83-76ca-494d-b33e-39e64b936dfd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(2) > .right",
+      "targets": [
+        ["css=.row:nth-child(2) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": "2021-06-18"
+    }, {
+      "id": "41b58f8c-194f-43f6-9805-41dcd7487ada",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(3) > .right",
+      "targets": [
+        ["css=.row:nth-child(3) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]", "xpath:position"]
+      ],
+      "value": "Kraków"
+    }, {
+      "id": "80140b12-10b0-4cdf-a1f5-0e3a7b6a6aad",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(4) > .right",
+      "targets": [
+        ["css=.row:nth-child(4) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div[4]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]", "xpath:position"]
+      ],
+      "value": "No description"
+    }, {
+      "id": "7b10537c-f11b-4391-8426-edd79678a079",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(5) > .right",
+      "targets": [
+        ["css=.row:nth-child(5) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div[5]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]", "xpath:position"]
+      ],
+      "value": "No timetable"
+    }, {
+      "id": "66cbcf34-d6ba-43ea-b5d2-8a2fccc889ea",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wyloguj",
+      "targets": [
+        ["linkText=Wyloguj", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyloguj')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyloguj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8363d32b-8555-4f5f-813b-9f1a339c0b6a",
+    "name": "CategoryPanelTest",
+    "commands": [{
+      "id": "daad6305-fa57-47eb-b411-4263610574d9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48b19552-c923-450d-ae67-44a02863dfe7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x773",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b613219-3bc8-451c-a048-4094204619f2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zaloguj się",
+      "targets": [
+        ["linkText=Zaloguj się", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zaloguj się')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "98d4e9f5-0e44-45b3-9e0a-3a38f256120b",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='JanKowalski']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "JanKowalski"
+    }, {
+      "id": "7e4b91a2-f06f-4d32-a1cd-3d7f24fa41fb",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='Qwerty1234!']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty1234!"
+    }, {
+      "id": "f4668368-51e1-4bcb-aedf-48aa499b25c2",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zaloguj się",
+      "targets": [
+        ["id=Zaloguj się", "id"],
+        ["css=#Zaloguj\\ si\\119", "css:finder"],
+        ["xpath=//button[@id='Zaloguj się']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a2e64f79-149f-4eb3-9b49-7d80a54f71fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(18) .linkText",
+      "targets": [
+        ["css=tr:nth-child(18) .linkText", "css:finder"],
+        ["xpath=//table[@id='competitionsTable']/tbody/tr[18]/td/div/span", "xpath:idRelative"],
+        ["xpath=//tr[18]/td/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Zawody Łucznicze Kraków')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1736ab75-31b0-44dc-8d63-f22a9dc21c1c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Kategorie",
+      "targets": [
+        ["linkText=Kategorie", "linkText"],
+        ["css=.MenuLink:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Kategorie')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/panel/60bfe3a717424569fb7fcde8/categories')]", "xpath:href"],
+        ["xpath=//div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Kategorie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1adb64a8-2002-42b2-968a-f28104d32b5c",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Seniorzy']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Seniorzy"
+    }, {
+      "id": "c0eec13c-3ae3-4569-b1c1-97d8d3660ff1",
+      "comment": "",
+      "command": "select",
+      "target": "id=gender",
+      "targets": [],
+      "value": "label=Mężczyźni"
+    }, {
+      "id": "9583410d-2465-4c74-a5d8-7403514b153c",
+      "comment": "",
+      "command": "click",
+      "target": "id=Dodaj kategorię",
+      "targets": [
+        ["id=Dodaj kategorię", "id"],
+        ["css=#Dodaj\\ kategori\\119", "css:finder"],
+        ["xpath=//button[@id='Dodaj kategorię']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj kategorię')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ed53071-8162-42da-a878-ca80b7512899",
+      "comment": "",
+      "command": "click",
+      "target": "name=catName",
+      "targets": [
+        ["name=catName", "name"],
+        ["css=td > input", "css:finder"],
+        ["xpath=//input[@name='catName']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div[2]/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5952949-5bbd-4d57-b748-d0e9e33730ac",
+      "comment": "",
+      "command": "type",
+      "target": "css=.category-column-div:nth-child(2) .form-control:nth-child(1)",
+      "targets": [
+        ["css=.category-column-div:nth-child(2) .form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='60 m']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div[2]/div/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "60 m"
+    }, {
+      "id": "ec42ebb8-4d02-4db5-81a6-19305a81cc57",
+      "comment": "",
+      "command": "type",
+      "target": "css=.category-column-div:nth-child(2) .form-control:nth-child(3)",
+      "targets": [
+        ["css=.category-column-div:nth-child(2) .form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div[2]/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "c9058f29-176c-4569-9c32-e9d3345afcb7",
+      "comment": "",
+      "command": "select",
+      "target": "id=seriesType",
+      "targets": [],
+      "value": "label=6-strzałowe"
+    }, {
+      "id": "9ead6fc8-df54-4297-8ba3-10752458c255",
+      "comment": "",
+      "command": "click",
+      "target": "id=Dodaj odległość",
+      "targets": [
+        ["id=Dodaj odległość", "id"],
+        ["css=#Dodaj\\ odleg\\142o\\15B\\107", "css:finder"],
+        ["xpath=//button[@id='Dodaj odległość']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj odległość')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ae0389d-6289-4223-93ac-ba169f5b216a",
+      "comment": "",
+      "command": "click",
+      "target": "name=distName",
+      "targets": [
+        ["name=distName", "name"],
+        ["css=.category-column-div:nth-child(2) .table input", "css:finder"],
+        ["xpath=//input[@name='distName']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div[2]/div[2]/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/table/tbody/tr/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a4da09c-e92c-4df8-a88b-6e14d2602bc2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.category-column-div:nth-child(2) b",
+      "targets": [
+        ["css=.category-column-div:nth-child(2) b", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div[2]/div[2]/table/tbody/tr/td/b", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/table/tbody/tr/td/b", "xpath:position"],
+        ["xpath=//b[contains(.,'60 m')]", "xpath:innerText"]
+      ],
+      "value": "60 m"
+    }, {
+      "id": "94a64ac3-e6e5-4b82-af7d-8af3e64c4b94",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.category-column-div:nth-child(1) b",
+      "targets": [
+        ["css=.category-column-div:nth-child(1) b", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div[2]/table/tbody/tr/td/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Seniorzy')]", "xpath:innerText"]
+      ],
+      "value": "Seniorzy"
+    }, {
+      "id": "f8768ba3-4b32-4ab1-b07b-6f118bf7ec53",
+      "comment": "",
+      "command": "click",
+      "target": "id=Usuń odległość",
+      "targets": [
+        ["id=Usuń odległość", "id"],
+        ["css=#Usu\\144\\ odleg\\142o\\15B\\107", "css:finder"],
+        ["xpath=//button[@id='Usuń odległość']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Usuń odległość')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b876863c-07aa-4484-bb50-469b143ff95f",
+      "comment": "",
+      "command": "click",
+      "target": "id=Usuń kategorię",
+      "targets": [
+        ["id=Usuń kategorię", "id"],
+        ["css=#Usu\\144\\ kategori\\119", "css:finder"],
+        ["xpath=//button[@id='Usuń kategorię']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Usuń kategorię')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9495a5d8-0671-4df0-bdc0-4114d017fe1c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wyloguj",
+      "targets": [
+        ["linkText=Wyloguj", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyloguj')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyloguj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d7f892f0-b168-493e-b672-31841ac729a0",
+    "name": "CompetitorsPanelTest",
+    "commands": [{
+      "id": "d9d477f3-ce42-41c8-a9e9-09934c3b1763",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b90bfe6b-a558-42e4-ac35-42c03332961b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x773",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b87d7667-c5d4-478f-a213-f7f245d8b635",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zaloguj się",
+      "targets": [
+        ["linkText=Zaloguj się", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zaloguj się')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1f0d3ad-36fc-4f17-9c94-ed1d2320a8ae",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='JanKowalski']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "JanKowalski"
+    }, {
+      "id": "a36ea1b7-1c50-4673-b0bf-5ff474a4b2d2",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='Qwerty1234!']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty1234!"
+    }, {
+      "id": "9af3ba1f-2a57-48a4-908f-324fbffe5850",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zaloguj się",
+      "targets": [
+        ["id=Zaloguj się", "id"],
+        ["css=#Zaloguj\\ si\\119", "css:finder"],
+        ["xpath=//button[@id='Zaloguj się']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7d000df-dfdd-4b73-9fa6-b87662bb37b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(18) .linkText",
+      "targets": [
+        ["css=tr:nth-child(18) .linkText", "css:finder"],
+        ["xpath=//table[@id='competitionsTable']/tbody/tr[18]/td/div/span", "xpath:idRelative"],
+        ["xpath=//tr[18]/td/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Zawody Łucznicze Kraków')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfef2e1d-2950-4b42-b859-c11738f0e348",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zawodnicy",
+      "targets": [
+        ["linkText=Zawodnicy", "linkText"],
+        ["css=.MenuLink:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zawodnicy')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/panel/60bff61717424569fb7fce37/competitors')]", "xpath:href"],
+        ["xpath=//div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zawodnicy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4d36ed1-2bd2-4110-afb1-5b0cb6ae8199",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Jan']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div[2]/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Jan"
+    }, {
+      "id": "3c287bcd-c7fe-4015-9ae7-deae93822e5a",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='Kowalski']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div[2]/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Kowalski"
+    }, {
+      "id": "12638460-da6c-4ac7-b2b4-81e55e0083fd",
+      "comment": "",
+      "command": "select",
+      "target": "id=gender",
+      "targets": [],
+      "value": "label=Mężczyzna"
+    }, {
+      "id": "3acfeeeb-7a5a-4a47-ac31-fcdcc5e533f9",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(7)",
+      "targets": [
+        ["css=.form-control:nth-child(7)", "css:finder"],
+        ["xpath=//input[@value='4421241']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div[2]/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "4421241"
+    }, {
+      "id": "4667e909-8d0f-4635-8d7e-8d0abc9a30a9",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(9)",
+      "targets": [
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div[2]/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "1995"
+    }, {
+      "id": "00c35f0a-e972-4b81-8d8f-1734e3658b42",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(11)",
+      "targets": [
+        ["css=.form-control:nth-child(11)", "css:finder"],
+        ["xpath=//input[@value='Kraków']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div[2]/div/div/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Kraków"
+    }, {
+      "id": "0c8e671b-43cb-49c9-8ad9-1b56381f5a07",
+      "comment": "",
+      "command": "click",
+      "target": "name=competitorName",
+      "targets": [
+        ["name=competitorName", "name"],
+        ["css=td > input", "css:finder"],
+        ["xpath=//input[@name='competitorName']", "xpath:attributes"],
+        ["xpath=//table[@id='competitors-toChoose']/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "913653d1-9386-49be-bb32-57c1ad29dace",
+      "comment": "",
+      "command": "click",
+      "target": "id=Wybierz zawodnika",
+      "targets": [
+        ["id=Wybierz zawodnika", "id"],
+        ["css=#Wybierz\\ zawodnika", "css:finder"],
+        ["xpath=//button[@id='Wybierz zawodnika']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div[2]/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Wybierz zawodnika')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "48b263fc-73e6-4579-9f3b-6d5d26420a7c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wyloguj",
+      "targets": [
+        ["linkText=Wyloguj", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyloguj')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyloguj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4ec94054-1eed-40be-8361-9d9f49dee608",
+    "name": "PositionsPanelTest",
+    "commands": [{
+      "id": "9207a77c-e5e6-45c6-ad8b-d1b886d55b7e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e78c2175-7f42-4206-a478-4d0eae28c36b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x773",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bad91b7e-ee59-4f53-beb0-5b385e74a768",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zaloguj się",
+      "targets": [
+        ["linkText=Zaloguj się", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zaloguj się')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "97eac2ca-5e89-4a44-ae0c-ac00deef2787",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='JanKowalski']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "JanKowalski"
+    }, {
+      "id": "13461aab-18e9-4f4d-a095-bb9a468dbe6c",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='Qwerty1234!']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty1234!"
+    }, {
+      "id": "a3bd33a5-3aed-40e0-9f63-a412343af1cc",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zaloguj się",
+      "targets": [
+        ["id=Zaloguj się", "id"],
+        ["css=#Zaloguj\\ si\\119", "css:finder"],
+        ["xpath=//button[@id='Zaloguj się']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9d0ae28-a9f7-47bd-af50-357b2f778c16",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(18) .linkText",
+      "targets": [
+        ["css=tr:nth-child(18) .linkText", "css:finder"],
+        ["xpath=//table[@id='competitionsTable']/tbody/tr[18]/td/div/span", "xpath:idRelative"],
+        ["xpath=//tr[18]/td/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Zawody Łucznicze Kraków')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "774d97d6-d4d8-4713-ab36-995bfaf6eaf7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Kategorie",
+      "targets": [
+        ["linkText=Kategorie", "linkText"],
+        ["css=.MenuLink:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Kategorie')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/panel/60bff61717424569fb7fce37/categories')]", "xpath:href"],
+        ["xpath=//div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Kategorie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b8715f7-7ba4-4cf4-8045-162d501ed0d5",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Juniorzy']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Juniorzy"
+    }, {
+      "id": "4db6ee58-591d-43c5-b666-70ffd20e8cac",
+      "comment": "",
+      "command": "click",
+      "target": "id=Dodaj kategorię",
+      "targets": [
+        ["id=Dodaj kategorię", "id"],
+        ["css=#Dodaj\\ kategori\\119", "css:finder"],
+        ["xpath=//button[@id='Dodaj kategorię']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj kategorię')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fc9bbdf-f3da-4635-8890-b3cf1034395b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zawodnicy",
+      "targets": [
+        ["linkText=Zawodnicy", "linkText"],
+        ["css=.MenuLink:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zawodnicy')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/panel/60bff61717424569fb7fce37/competitors')]", "xpath:href"],
+        ["xpath=//div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zawodnicy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ac289f8-a01b-4073-9c12-8d4868c06a35",
+      "comment": "",
+      "command": "click",
+      "target": "name=competitorName",
+      "targets": [
+        ["name=competitorName", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='competitorName']", "xpath:attributes"],
+        ["xpath=//table[@id='competitors-toChoose']/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "05abded1-0711-40ba-a4c8-102f012560c9",
+      "comment": "",
+      "command": "click",
+      "target": "id=Wybierz zawodnika",
+      "targets": [
+        ["id=Wybierz zawodnika", "id"],
+        ["css=#Wybierz\\ zawodnika", "css:finder"],
+        ["xpath=//button[@id='Wybierz zawodnika']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div[2]/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Wybierz zawodnika')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5a41d33-71b7-4b9e-8dc0-01fc98184fa1",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=(//input[@name='competitorName'])[2]", "xpath:attributes"],
+        ["xpath=//table[@id='competitors-toChoose']/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "553b348e-d75b-4e20-97e8-246026de3634",
+      "comment": "",
+      "command": "click",
+      "target": "id=Wybierz zawodnika",
+      "targets": [
+        ["id=Wybierz zawodnika", "id"],
+        ["css=#Wybierz\\ zawodnika", "css:finder"],
+        ["xpath=//button[@id='Wybierz zawodnika']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div[2]/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Wybierz zawodnika')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f08404f9-4c35-4508-8785-f4cfe8dc549f",
+      "comment": "",
+      "command": "select",
+      "target": "name=categoriesOptions",
+      "targets": [],
+      "value": "label=Juniorzy"
+    }, {
+      "id": "0008909d-b7cc-40fb-876e-75701819e13b",
+      "comment": "",
+      "command": "select",
+      "target": "css=tr:nth-child(2) #gender",
+      "targets": [],
+      "value": "label=Juniorzy"
+    }, {
+      "id": "7e507aee-df88-4a6b-881e-7629b7f92c8c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rozstawienie",
+      "targets": [
+        ["linkText=Rozstawienie", "linkText"],
+        ["css=.MenuLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rozstawienie')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/panel/60bff61717424569fb7fce37/positions')]", "xpath:href"],
+        ["xpath=//div/ul/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rozstawienie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ca28486-aa2c-48d1-af13-6d7f74a794c6",
+      "comment": "",
+      "command": "select",
+      "target": "id=categories",
+      "targets": [],
+      "value": "label=Juniorzy"
+    }, {
+      "id": "7d8bfaea-b2b1-4776-9d74-109a87f6092d",
+      "comment": "",
+      "command": "click",
+      "target": "id=categories",
+      "targets": [
+        ["id=categories", "id"],
+        ["name=categories", "name"],
+        ["css=#categories", "css:finder"],
+        ["xpath=//select[@id='categories']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/form/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Juniorzy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "acf6633d-fe10-4972-81c1-5c81e4d6f6af",
+      "comment": "",
+      "command": "click",
+      "target": "id=Generuj rozstawienie",
+      "targets": [
+        ["id=Generuj rozstawienie", "id"],
+        ["css=#Generuj\\ rozstawienie", "css:finder"],
+        ["xpath=//button[@id='Generuj rozstawienie']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Generuj rozstawienie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bdc9b9b0-9308-4e05-b5e5-c2b3bfd49eac",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zatwierdź",
+      "targets": [
+        ["id=Zatwierdź", "id"],
+        ["css=#Zatwierd\\17A", "css:finder"],
+        ["xpath=//button[@id='Zatwierdź']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/button", "xpath:idRelative"],
+        ["xpath=//main/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zatwierdź')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b93ccf1-ff31-4629-8c30-8a8c6caba895",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Kategorie",
+      "targets": [
+        ["linkText=Kategorie", "linkText"],
+        ["css=.MenuLink:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Kategorie')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/panel/60bff61717424569fb7fce37/categories')]", "xpath:href"],
+        ["xpath=//div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Kategorie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "525720a2-55f6-4dd0-aac3-bc07b674f1ac",
+      "comment": "",
+      "command": "click",
+      "target": "name=catName",
+      "targets": [
+        ["name=catName", "name"],
+        ["css=td > input", "css:finder"],
+        ["xpath=//input[@name='catName']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div[2]/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "66dbf2f0-a36c-4faf-8fd1-93f891aa1165",
+      "comment": "",
+      "command": "click",
+      "target": "id=Usuń kategorię",
+      "targets": [
+        ["id=Usuń kategorię", "id"],
+        ["css=#Usu\\144\\ kategori\\119", "css:finder"],
+        ["xpath=//button[@id='Usuń kategorię']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Usuń kategorię')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54ca3f36-cded-4614-8cea-c850f44d8a15",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wyloguj",
+      "targets": [
+        ["linkText=Wyloguj", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyloguj')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyloguj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4004409f-efa2-4ad3-ae32-c1e18afaab83",
+    "name": "QualificationsPanelTest",
+    "commands": [{
+      "id": "324ca5cc-7334-4565-a271-5e8c7b71b23c",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cb7974e2-2366-48c3-8040-baf70c9e3844",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x773",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cbf816a0-8ae4-4856-8dd5-086c5378390f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zaloguj się",
+      "targets": [
+        ["linkText=Zaloguj się", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zaloguj się')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b396a41-c52a-445e-b094-5a8839c5957e",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='JanKowalski']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "JanKowalski"
+    }, {
+      "id": "0bc4ca7b-490e-4db5-8c61-81e4583d4f92",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='Qwerty1234!']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty1234!"
+    }, {
+      "id": "9d69dfe2-b055-49da-95bf-076698ae6b51",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zaloguj się",
+      "targets": [
+        ["id=Zaloguj się", "id"],
+        ["css=#Zaloguj\\ si\\119", "css:finder"],
+        ["xpath=//button[@id='Zaloguj się']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ba7dc2c-2088-4fcc-9360-f94470e57d52",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(13) .linkText",
+      "targets": [
+        ["css=tr:nth-child(13) .linkText", "css:finder"],
+        ["xpath=//table[@id='competitionsTable']/tbody/tr[13]/td/div/span", "xpath:idRelative"],
+        ["xpath=//tr[13]/td/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'LXXXV Mistrzostwa Polski Seniorów')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb4f7dd7-310d-4a5b-a25a-e883d6daf31f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wyniki kwalifikacji",
+      "targets": [
+        ["linkText=Wyniki kwalifikacji", "linkText"],
+        ["css=.MenuLink:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyniki kwalifikacji')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/main/div/div/div/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/panel/60be0f5e9166b25024d23fde/qualificationscores')]", "xpath:href"],
+        ["xpath=//div/ul/li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyniki kwalifikacji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5856a089-a048-4685-9ad0-a35b8e4af3a5",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='formSelect']/div/div",
+      "targets": [
+        ["css=.css-1pahdxg-control > .css-g1d714-ValueContainer", "css:finder"],
+        ["xpath=//div[@id='formSelect']/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a85d373f-b56e-4239-a22d-ccaba8e72755",
+      "comment": "",
+      "command": "click",
+      "target": "id=react-select-3-option-0",
+      "targets": [
+        ["id=react-select-3-option-0", "id"],
+        ["css=#react-select-3-option-0", "css:finder"],
+        ["xpath=//div[@id='react-select-3-option-0']", "xpath:attributes"],
+        ["xpath=//body/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "15286070-b957-4b6f-874c-b13c24a0205c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//div[@id='formSelect']/div/div)[3]",
+      "targets": [
+        ["css=.css-1pahdxg-control > .css-g1d714-ValueContainer", "css:finder"],
+        ["xpath=(//div[@id='formSelect']/div/div)[3]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "580e7504-944f-4f15-8f02-733457994fbc",
+      "comment": "",
+      "command": "click",
+      "target": "id=react-select-5-option-0",
+      "targets": [
+        ["id=react-select-5-option-0", "id"],
+        ["css=#react-select-5-option-0", "css:finder"],
+        ["xpath=//div[@id='react-select-5-option-0']", "xpath:attributes"],
+        ["xpath=//body/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c5e7cb1-5bd9-46c0-bcad-45415751b9cd",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//div[@id='formSelect']/div/div/div)[6]",
+      "targets": [
+        ["css=.css-1pahdxg-control .css-1wa3eu0-placeholder", "css:finder"],
+        ["xpath=(//div[@id='formSelect']/div/div/div)[6]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "07067b1f-9a78-47e7-bb54-642a49e35dc6",
+      "comment": "",
+      "command": "click",
+      "target": "id=react-select-7-option-1",
+      "targets": [
+        ["id=react-select-7-option-1", "id"],
+        ["css=#react-select-7-option-1", "css:finder"],
+        ["xpath=//div[@id='react-select-7-option-1']", "xpath:attributes"],
+        ["xpath=//body/div[2]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "611af1a3-59ed-4e13-8cf0-36b0bd0dc2b8",
+      "comment": "",
+      "command": "type",
+      "target": "id=i1-60bdfbf22f0faf321ccb7dea",
+      "targets": [
+        ["id=i1-60bdfbf22f0faf321ccb7dea", "id"],
+        ["css=#i1-60bdfbf22f0faf321ccb7dea", "css:finder"],
+        ["xpath=//input[@id='i1-60bdfbf22f0faf321ccb7dea']", "xpath:attributes"],
+        ["xpath=//div[@id='scoresCard']/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "8ceaf4f2-fed9-4b3b-9a28-33488dc8fa5f",
+      "comment": "",
+      "command": "type",
+      "target": "id=i2-60bdfbf22f0faf321ccb7dea",
+      "targets": [
+        ["id=i2-60bdfbf22f0faf321ccb7dea", "id"],
+        ["css=#i2-60bdfbf22f0faf321ccb7dea", "css:finder"],
+        ["xpath=//input[@id='i2-60bdfbf22f0faf321ccb7dea']", "xpath:attributes"],
+        ["xpath=//div[@id='scoresCard']/div[2]/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "8efe80a8-8c72-4ed4-9f05-4a949701d326",
+      "comment": "",
+      "command": "type",
+      "target": "id=i3-60bdfbf22f0faf321ccb7dea",
+      "targets": [
+        ["id=i3-60bdfbf22f0faf321ccb7dea", "id"],
+        ["css=#i3-60bdfbf22f0faf321ccb7dea", "css:finder"],
+        ["xpath=//input[@id='i3-60bdfbf22f0faf321ccb7dea']", "xpath:attributes"],
+        ["xpath=//div[@id='scoresCard']/div[2]/div/div/div/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "fa243760-c942-420e-9e3f-a48ab7181b82",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=sum-60bdfbf22f0faf321ccb7dea",
+      "targets": [
+        ["id=sum-60bdfbf22f0faf321ccb7dea", "id"],
+        ["css=#sum-60bdfbf22f0faf321ccb7dea", "css:finder"],
+        ["xpath=//input[@id='sum-60bdfbf22f0faf321ccb7dea']", "xpath:attributes"],
+        ["xpath=//div[@id='scoresCard']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "6"
+    }, {
+      "id": "ce94cac3-041b-4603-beeb-d29f806f451b",
+      "comment": "",
+      "command": "type",
+      "target": "id=i1-60bffc1a14daf90099598e30",
+      "targets": [
+        ["id=i1-60bffc1a14daf90099598e30", "id"],
+        ["css=#i1-60bffc1a14daf90099598e30", "css:finder"],
+        ["xpath=//input[@id='i1-60bffc1a14daf90099598e30']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[2]/div/div/div/input)[4]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "10"
+    }, {
+      "id": "31eb5d54-3a41-42b9-aaff-10f8eb2bd38d",
+      "comment": "",
+      "command": "type",
+      "target": "id=i2-60bffc1a14daf90099598e30",
+      "targets": [
+        ["id=i2-60bffc1a14daf90099598e30", "id"],
+        ["css=#i2-60bffc1a14daf90099598e30", "css:finder"],
+        ["xpath=//input[@id='i2-60bffc1a14daf90099598e30']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[2]/div/div/div/input[2])[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/input[2]", "xpath:position"]
+      ],
+      "value": "10"
+    }, {
+      "id": "f55b2b10-aea9-4335-ac7e-a8142c132ab7",
+      "comment": "",
+      "command": "type",
+      "target": "id=i3-60bffc1a14daf90099598e30",
+      "targets": [
+        ["id=i3-60bffc1a14daf90099598e30", "id"],
+        ["css=#i3-60bffc1a14daf90099598e30", "css:finder"],
+        ["xpath=//input[@id='i3-60bffc1a14daf90099598e30']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[2]/div/div/div/input[3])[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/input[3]", "xpath:position"]
+      ],
+      "value": "10"
+    }, {
+      "id": "2123e827-9df5-44a2-8f3a-005d3db5a85e",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=sum-60bffc1a14daf90099598e30",
+      "targets": [
+        ["id=sum-60bffc1a14daf90099598e30", "id"],
+        ["css=#sum-60bffc1a14daf90099598e30", "css:finder"],
+        ["xpath=//input[@id='sum-60bffc1a14daf90099598e30']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[3]/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/input", "xpath:position"]
+      ],
+      "value": "30"
+    }, {
+      "id": "11ffd76a-b21b-4a05-b12a-69c7a98f02e6",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=count10-60bffc1a14daf90099598e30",
+      "targets": [
+        ["id=count10-60bffc1a14daf90099598e30", "id"],
+        ["css=#count10-60bffc1a14daf90099598e30", "css:finder"],
+        ["xpath=//input[@id='count10-60bffc1a14daf90099598e30']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[5]/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[5]/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "4af1858f-5b21-4737-b608-30805e85bf8c",
+      "comment": "",
+      "command": "type",
+      "target": "id=i1-60bdfb2a2f0faf321ccb7de9",
+      "targets": [
+        ["id=i1-60bdfb2a2f0faf321ccb7de9", "id"],
+        ["css=#i1-60bdfb2a2f0faf321ccb7de9", "css:finder"],
+        ["xpath=//input[@id='i1-60bdfb2a2f0faf321ccb7de9']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[2]/div/div/div/input)[7]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "4260aa3a-f9f7-40b8-b902-cbc07de531bf",
+      "comment": "",
+      "command": "type",
+      "target": "id=i2-60bdfb2a2f0faf321ccb7de9",
+      "targets": [
+        ["id=i2-60bdfb2a2f0faf321ccb7de9", "id"],
+        ["css=#i2-60bdfb2a2f0faf321ccb7de9", "css:finder"],
+        ["xpath=//input[@id='i2-60bdfb2a2f0faf321ccb7de9']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[2]/div/div/div/input[2])[3]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/div/input[2]", "xpath:position"]
+      ],
+      "value": "4"
+    }, {
+      "id": "ec5a1e67-4b1d-4d20-8999-c2856b4b417a",
+      "comment": "",
+      "command": "type",
+      "target": "id=i3-60bdfb2a2f0faf321ccb7de9",
+      "targets": [
+        ["id=i3-60bdfb2a2f0faf321ccb7de9", "id"],
+        ["css=#i3-60bdfb2a2f0faf321ccb7de9", "css:finder"],
+        ["xpath=//input[@id='i3-60bdfb2a2f0faf321ccb7de9']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[2]/div/div/div/input[3])[3]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/div/input[3]", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "91d22296-32e9-45ec-a64b-8148f638000a",
+      "comment": "",
+      "command": "type",
+      "target": "id=i1-60bdfc082f0faf321ccb7deb",
+      "targets": [
+        ["id=i1-60bdfc082f0faf321ccb7deb", "id"],
+        ["css=#i1-60bdfc082f0faf321ccb7deb", "css:finder"],
+        ["xpath=//input[@id='i1-60bdfc082f0faf321ccb7deb']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[2]/div/div/div/input)[10]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "39f64f90-a7b2-4edc-b4ca-36f21f39562b",
+      "comment": "",
+      "command": "type",
+      "target": "id=i2-60bdfc082f0faf321ccb7deb",
+      "targets": [
+        ["id=i2-60bdfc082f0faf321ccb7deb", "id"],
+        ["css=#i2-60bdfc082f0faf321ccb7deb", "css:finder"],
+        ["xpath=//input[@id='i2-60bdfc082f0faf321ccb7deb']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[2]/div/div/div/input[2])[4]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div/div/div/input[2]", "xpath:position"]
+      ],
+      "value": "4"
+    }, {
+      "id": "a5632d9a-5871-46dd-9b26-ca6f7382720e",
+      "comment": "",
+      "command": "type",
+      "target": "id=i3-60bdfc082f0faf321ccb7deb",
+      "targets": [
+        ["id=i3-60bdfc082f0faf321ccb7deb", "id"],
+        ["css=#i3-60bdfc082f0faf321ccb7deb", "css:finder"],
+        ["xpath=//input[@id='i3-60bdfc082f0faf321ccb7deb']", "xpath:attributes"],
+        ["xpath=(//div[@id='scoresCard']/div[2]/div/div/div/input[3])[4]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div/div/div/input[3]", "xpath:position"]
+      ],
+      "value": "7"
+    }, {
+      "id": "7f12461f-42ca-4f90-968c-3a5b596ea9d9",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zapisz",
+      "targets": [
+        ["id=Zapisz", "id"],
+        ["css=#Zapisz", "css:finder"],
+        ["xpath=//button[@id='Zapisz']", "xpath:attributes"],
+        ["xpath=//div[@id='submitScoresButtonDiv']/button", "xpath:idRelative"],
+        ["xpath=//div[5]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zapisz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "37b137a6-c416-42a3-bcea-09020c2a5358",
+      "comment": "",
+      "command": "click",
+      "target": "id=Przekaż wyniki kategorii do eliminacji",
+      "targets": [
+        ["id=Przekaż wyniki kategorii do eliminacji", "id"],
+        ["css=#Przeka\\17C\\ wyniki\\ kategorii\\ do\\ eliminacji", "css:finder"],
+        ["xpath=//button[@id='Przekaż wyniki kategorii do eliminacji']", "xpath:attributes"],
+        ["xpath=//div[@id='saveScoresFromSeriesButtonDiv']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Przekaż wyniki kategorii do eliminacji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9382143a-eadf-41c2-ad97-fb64afb4a4d9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wyloguj",
+      "targets": [
+        ["linkText=Wyloguj", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyloguj')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyloguj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "cc73d1e1-67b5-4e4a-afc7-74998a468d94",
+    "name": "CompetitionDetailsPanelTest",
+    "commands": [{
+      "id": "1179414c-2777-4b30-a57a-8f07a72825b7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9861e4f-2b97-48ff-8cd5-6518b3690993",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x773",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "54ac5097-a00d-4fc9-a6fe-bfa86875cedf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zaloguj się",
+      "targets": [
+        ["linkText=Zaloguj się", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zaloguj się')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c96435fd-83b6-420d-8bb3-715dd13d466d",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='JanKowalski']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "JanKowalski"
+    }, {
+      "id": "cd23d91a-39bb-4b87-baf9-2ff5a7cd618a",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='Qwerty1234!']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty1234!"
+    }, {
+      "id": "185286c1-8ebe-4cc3-9c2b-ef3b1e96d471",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zaloguj się",
+      "targets": [
+        ["id=Zaloguj się", "id"],
+        ["css=#Zaloguj\\ si\\119", "css:finder"],
+        ["xpath=//button[@id='Zaloguj się']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zaloguj się')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46ae6c9c-c75e-421c-ae51-439216e8c018",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(18) .linkText",
+      "targets": [
+        ["css=tr:nth-child(18) .linkText", "css:finder"],
+        ["xpath=//table[@id='competitionsTable']/tbody/tr[18]/td/div/span", "xpath:idRelative"],
+        ["xpath=//tr[18]/td/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Zawody Łucznicze Kraków')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5fc5d186-2388-4aae-b13d-2b58b5b13919",
+      "comment": "",
+      "command": "click",
+      "target": "css=.smallEditLinkText",
+      "targets": [
+        ["css=.smallEditLinkText", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/p/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'edytuj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "97ed022f-a922-4782-a316-d25d3f272eee",
+      "comment": "",
+      "command": "type",
+      "target": "id=compname",
+      "targets": [
+        ["id=compname", "id"],
+        ["css=#compname", "css:finder"],
+        ["xpath=//input[@id='compname']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Zawody Łucznicze Warszawa"
+    }, {
+      "id": "24869749-0bd5-46ec-8a21-f426999666b0",
+      "comment": "",
+      "command": "type",
+      "target": "id=start_date",
+      "targets": [
+        ["id=start_date", "id"],
+        ["css=#start_date", "css:finder"],
+        ["xpath=//input[@id='start_date']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2021-06-11"
+    }, {
+      "id": "eed4e313-d29d-49e6-91d5-9b0f976fd507",
+      "comment": "",
+      "command": "type",
+      "target": "id=end_date",
+      "targets": [
+        ["id=end_date", "id"],
+        ["css=#end_date", "css:finder"],
+        ["xpath=//input[@id='end_date']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[3]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2021-06-19"
+    }, {
+      "id": "5dd0e560-c57e-40fb-9ee5-aeb832f5c611",
+      "comment": "",
+      "command": "type",
+      "target": "id=location",
+      "targets": [
+        ["id=location", "id"],
+        ["css=.row:nth-child(5) #location", "css:finder"],
+        ["xpath=//input[@id='location']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[4]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Warszawa"
+    }, {
+      "id": "ad9fa857-8da8-4cae-aab7-832a4503ee90",
+      "comment": "",
+      "command": "type",
+      "target": "css=.row:nth-child(6) #location",
+      "targets": [
+        ["css=.row:nth-child(6) #location", "css:finder"],
+        ["xpath=(//input[@id='location'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[5]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Zawody łucznicze"
+    }, {
+      "id": "25f1a66d-8d65-4ea4-9bf0-457016d2420e",
+      "comment": "",
+      "command": "type",
+      "target": "css=.row:nth-child(7) #location",
+      "targets": [
+        ["css=.row:nth-child(7) #location", "css:finder"],
+        ["xpath=(//input[@id='location'])[3]", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[6]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Brak"
+    }, {
+      "id": "f1694d25-f227-47de-b9bc-a5923665c3d2",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zatwierdź zmiany",
+      "targets": [
+        ["id=Zatwierdź zmiany", "id"],
+        ["css=#Zatwierd\\17A\\ zmiany", "css:finder"],
+        ["xpath=//button[@id='Zatwierdź zmiany']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[7]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zatwierdź zmiany')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a09215b6-db84-4759-9001-2db90b30f982",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Zatwierdzono edycję szczegółów",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16e04300-8350-4ae5-87d2-e2883ea0f945",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//div[@id='name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": "Zawody Łucznicze Warszawa"
+    }, {
+      "id": "40fb181b-41b0-426d-9fd7-a546d3a5ac00",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#restDetailsDiv > .row:nth-child(1) > .right",
+      "targets": [
+        ["css=#restDetailsDiv > .row:nth-child(1) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "2021-06-11"
+    }, {
+      "id": "2dfdde4e-882e-4ff6-aa58-6643dfa23a0d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(2) > .right",
+      "targets": [
+        ["css=.row:nth-child(2) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": "2021-06-19"
+    }, {
+      "id": "d1ae19bc-8446-4348-ae67-775a63d70760",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(3) > .right",
+      "targets": [
+        ["css=.row:nth-child(3) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]", "xpath:position"]
+      ],
+      "value": "Warszawa"
+    }, {
+      "id": "a438e26d-0bbe-4bf3-8ac4-205ece516762",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(4) > .right",
+      "targets": [
+        ["css=.row:nth-child(4) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div[4]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]", "xpath:position"]
+      ],
+      "value": "Zawody łucznicze"
+    }, {
+      "id": "78d5284f-f5d7-4f3c-a845-9d810e533096",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(5) > .right",
+      "targets": [
+        ["css=.row:nth-child(5) > .right", "css:finder"],
+        ["xpath=//div[@id='restDetailsDiv']/div[5]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]", "xpath:position"]
+      ],
+      "value": "Brak"
+    }, {
+      "id": "fde782e8-af9c-4bdc-9c31-643846d6e2e6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.smallEditLinkText",
+      "targets": [
+        ["css=.smallEditLinkText", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div/div/div[2]/main/div/p/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'edytuj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fb2874b-6a1f-43df-8339-cac242c51562",
+      "comment": "",
+      "command": "type",
+      "target": "id=compname",
+      "targets": [
+        ["id=compname", "id"],
+        ["css=#compname", "css:finder"],
+        ["xpath=//input[@id='compname']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Zawody Łucznicze Kraków"
+    }, {
+      "id": "118504a7-16fe-4c21-9bea-39ffbbba0e3d",
+      "comment": "",
+      "command": "type",
+      "target": "id=start_date",
+      "targets": [
+        ["id=start_date", "id"],
+        ["css=#start_date", "css:finder"],
+        ["xpath=//input[@id='start_date']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2021-06-10"
+    }, {
+      "id": "6cd8ba92-beaf-4210-8c17-8cad61b69fd4",
+      "comment": "",
+      "command": "type",
+      "target": "id=end_date",
+      "targets": [
+        ["id=end_date", "id"],
+        ["css=#end_date", "css:finder"],
+        ["xpath=//input[@id='end_date']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[3]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2021-06-18"
+    }, {
+      "id": "07749d86-619d-4957-89a6-29cf1afc79f2",
+      "comment": "",
+      "command": "type",
+      "target": "id=location",
+      "targets": [
+        ["id=location", "id"],
+        ["css=.row:nth-child(5) #location", "css:finder"],
+        ["xpath=//input[@id='location']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[4]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Kraków"
+    }, {
+      "id": "85d80d22-f43a-4889-b1ce-338482360d5e",
+      "comment": "",
+      "command": "type",
+      "target": "css=.row:nth-child(6) #location",
+      "targets": [
+        ["css=.row:nth-child(6) #location", "css:finder"],
+        ["xpath=(//input[@id='location'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[5]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "No description"
+    }, {
+      "id": "74f883bb-3793-4ee7-acea-58c12405e0fa",
+      "comment": "",
+      "command": "type",
+      "target": "css=.row:nth-child(7) #location",
+      "targets": [
+        ["css=.row:nth-child(7) #location", "css:finder"],
+        ["xpath=(//input[@id='location'])[3]", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[6]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "No timetable"
+    }, {
+      "id": "f5e75b9f-3676-456d-945b-a18fa5ae0770",
+      "comment": "",
+      "command": "click",
+      "target": "id=Zatwierdź zmiany",
+      "targets": [
+        ["id=Zatwierdź zmiany", "id"],
+        ["css=#Zatwierd\\17A\\ zmiany", "css:finder"],
+        ["xpath=//button[@id='Zatwierdź zmiany']", "xpath:attributes"],
+        ["xpath=//form[@id='editDetailForm']/div[7]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zatwierdź zmiany')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2feb1096-02dc-4a94-929d-14cc9351fbf2",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Zatwierdzono edycję szczegółów",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "24babc8b-b442-4a3d-bfb0-7cbc8c2b7982",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wyloguj",
+      "targets": [
+        ["linkText=Wyloguj", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyloguj')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyloguj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "93263b48-b263-4349-9523-338ab2a59185",
+    "name": "CompetitionOverwiewTest",
+    "commands": [{
+      "id": "c56a29dc-c3eb-42c8-ba4c-e90c61708cb7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f633052-3218-4b58-97ea-74d72a58d727",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1848x1016",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de721403-f05f-420c-9d83-412507352216",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lista zawodów",
+      "targets": [
+        ["linkText=Lista zawodów", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Lista zawodów')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/competitions')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Lista zawodów')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "257801f8-d5fb-489e-b887-ee4d95ef16c3",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(18) .linkText",
+      "targets": [
+        ["css=tr:nth-child(17) .linkText", "css:finder"],
+        ["xpath=//table[@id='competitionsTable']/tbody/tr[17]/td/div/span", "xpath:idRelative"],
+        ["xpath=//tr[17]/td/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Krakowski turniej łuczniczy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef26ebc8-8624-420d-bc69-a0a035f2569e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.insideDetailDiv > .title_p:nth-child(1)",
+      "targets": [
+        ["css=.insideDetailDiv > .title_p:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='competitionsDetailLeftDiv']/div/div/p", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Lokalizacja: Kraków')]", "xpath:innerText"]
+      ],
+      "value": "Lokalizacja: Kraków"
+    }, {
+      "id": "bbaae8db-f276-44f8-8a35-54cb97a6aab4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.i:nth-child(2)",
+      "targets": [
+        ["css=.i:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='competitionsDetailLeftDiv']/div/div/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Data rozpoczęcia: 2021-06-18')]", "xpath:innerText"]
+      ],
+      "value": "Data rozpoczęcia: 2021-06-18"
+    }, {
+      "id": "f5d30276-a998-4666-9da6-4cfff796b4f4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.i:nth-child(3)",
+      "targets": [
+        ["css=.i:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='competitionsDetailLeftDiv']/div/div/p[3]", "xpath:idRelative"],
+        ["xpath=//p[3]", "xpath:position"],
+        ["xpath=//p[contains(.,'Data zakończenia: 2021-06-20')]", "xpath:innerText"]
+      ],
+      "value": "Data zakończenia: 2021-06-20"
+    }, {
+      "id": "8a41c842-6722-4cf9-96b2-8113a1ef7a11",
+      "comment": "",
+      "command": "click",
+      "target": "id=Seniorzy 80+",
+      "targets": [
+        ["id=Seniorzy 80+", "id"],
+        ["css=.fs:nth-child(1) #Seniorzy\\ 80\\+", "css:finder"],
+        ["xpath=//button[@id='Seniorzy 80+']", "xpath:attributes"],
+        ["xpath=//div[@id='insidecompetitionsDetailRightDiv']/fieldset/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Seniorzy 80+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "edc4121e-afad-4cb8-8ecb-61d7f03fcdce",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=mainHeader",
+      "targets": [
+        ["id=mainHeader", "id"],
+        ["css=#mainHeader", "css:finder"],
+        ["xpath=//p[@id='mainHeader']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Rozstawienie')]", "xpath:innerText"]
+      ],
+      "value": "Rozstawienie"
+    }, {
+      "id": "1f55db9c-f485-48f5-9a7e-81b31312075a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lista zawodów",
+      "targets": [
+        ["linkText=Lista zawodów", "linkText"],
+        ["css=.DesktopOnly .NavigationLink:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Lista zawodów')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/header/nav/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/competitions')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Lista zawodów')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "20428ec8-2cdf-4983-a198-2940b6f7221e",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(18) .linkText",
+      "targets": [
+        ["css=tr:nth-child(17) .linkText", "css:finder"],
+        ["xpath=//table[@id='competitionsTable']/tbody/tr[17]/td/div/span", "xpath:idRelative"],
+        ["xpath=//tr[17]/td/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Krakowski turniej łuczniczy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5370f4ae-f99f-4727-b5e8-32b45c39fd09",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fs:nth-child(2) #Seniorzy\\ 80\\+",
+      "targets": [
+        ["css=.fs:nth-child(2) #Seniorzy\\ 80\\+", "css:finder"],
+        ["xpath=(//button[@id='Seniorzy 80+'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='insidecompetitionsDetailRightDiv']/fieldset[2]/div/button", "xpath:idRelative"],
+        ["xpath=//fieldset[2]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78a7d5c1-871d-41cf-83dc-b87b92093703",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=mainHeader",
+      "targets": [
+        ["id=mainHeader", "id"],
+        ["css=#mainHeader", "css:finder"],
+        ["xpath=//p[@id='mainHeader']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Wyniki kwalifikacji')]", "xpath:innerText"]
+      ],
+      "value": "Wyniki kwalifikacji"
+    }]
+  }],
+  "suites": [{
+    "id": "b2f6d39f-d7eb-4079-bdf5-03238f8d5755",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}

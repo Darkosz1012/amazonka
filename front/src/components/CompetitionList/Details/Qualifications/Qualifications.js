@@ -92,7 +92,7 @@ function Qualifications() {
             let scores = data?.scores.map((item) => {
                 return {
                     id: item._id,
-                    position: item.stand,
+                    stand: item.stand,
                     order: item.order,
                     fullname: item.participant.full_name,
                     club: item.participant.club,

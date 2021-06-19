@@ -848,7 +848,7 @@ function InsertQualificationScores(props) {
                     disabled="true"
                     className="btn btn-info btn-lg custom-button-1 submitSaveScoresFromSerieButton"
                     type="submit"
-                    placeholder="Przekaż wyniki kategorii do eliminacji"
+                    placeholder="Podlicz kategorię"
                     onClick={handleSubmitSaveFromSeries}
                 />
             </div>
